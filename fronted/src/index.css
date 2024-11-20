@@ -6,4 +6,7 @@
   .border-r-1 {
     border-right-width: 1px;
   }
+  .padding-large {
+    @apply px-12 py-4;
+  }
 }
