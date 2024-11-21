@@ -4,7 +4,7 @@ import Input from "../UI/Input.jsx";
 
 export default function MainNav() {
   return (
-    <div className="padding-large flex justify-between items-center text-base">
+    <div className="padding-large py-2 flex justify-between items-center text-base">
       <div className="flex-1 flex justify-start">
         <img src={logo} alt="SH-Select Logo" className="w-14" />
       </div>

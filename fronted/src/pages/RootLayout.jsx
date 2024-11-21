@@ -1,5 +1,7 @@
-import BannerBar from "../components/BannerBar.jsx";
+import { Outlet } from "react-router-dom";
+
 import MainNavigation from "../components/navigation/MainNavigation.jsx";
+import BannerBar from "../components/BannerBar.jsx";
 
 export default function RootLayout() {
   return (
@@ -7,6 +9,7 @@ export default function RootLayout() {
       <MainNavigation />
       <main>
         <BannerBar />
+        <Outlet />
       </main>
     </>
   );

@@ -18,7 +18,7 @@ export default function BannerBar() {
   }, []);
 
   return (
-    <div className="px-12 py-5 bg-gray-100 text-center overflow-hidden">
+    <div className="padding-large py-5 bg-gray-100 text-center overflow-hidden">
       <div
         className={`flex transition-transform duration-500 ease-in-out`}
         style={{
