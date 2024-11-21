@@ -7,6 +7,6 @@
     border-right-width: 1px;
   }
   .padding-large {
-    @apply px-12 py-4;
+    @apply px-12 py-2;
   }
 }

@@ -20,12 +20,7 @@ export default function MainNav() {
       </nav>
 
       <div className="flex-1 flex justify-end items-center gap-4">
-        <div className="relative w-[33%]">
-          <div className="absolute bottom-2 left-2">
-            <Icon type="search" />
-          </div>
-          <Input />
-        </div>
+        <Input />
         <Icon type="heart" />
         <Icon type="shopping-cart" />
       </div>
