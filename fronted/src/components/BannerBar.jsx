@@ -28,9 +28,10 @@ export default function BannerBar() {
         {BANNER_MESSAGES.map((message, index) => (
           <div key={index} className="w-full flex-shrink-0">
             <p className="pb-1">{message.text}</p>
-            <p className="text-[0.8rem]">
-              {message.noLinkText + message.linkText}
-            </p>
+            <div className="flex justify-center text-[0.8rem]">
+              <p>{message.noLinkText}</p>
+              <p className="underline font-500">{message.linkText}</p>
+            </div>
           </div>
         ))}
       </div>
