@@ -6,7 +6,7 @@ export default function MainNav() {
   return (
     <div className="padding-large flex justify-between items-center text-base">
       <div className="flex-1 flex justify-start">
-        <img src={logo} alt="SH-Select Logo" className="w-16" />
+        <img src={logo} alt="SH-Select Logo" className="w-14" />
       </div>
 
       <nav>
