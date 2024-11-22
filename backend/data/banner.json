@@ -1,0 +1,21 @@
+{
+  "homePage": {
+    "banner": {
+      "image": "home-banner-image.jpg"
+    },
+    "featuredProducts": [
+      {
+        "image": "nike-air-jorden.jpg",
+        "name": "Nike Air Jorden 1"
+      },
+      {
+        "image": "carhartt-bag.jpg",
+        "name": "Carhartt Bag"
+      },
+      {
+        "image": "the-north-face-jacket.jpg",
+        "name": "The North Face"
+      }
+    ]
+  }
+}
