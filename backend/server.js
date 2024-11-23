@@ -32,14 +32,12 @@ app.get("/banner/:page", async (req, res) => {
   const fileContent = await fs.readFile("./data/banner.json");
   const eventsData = JSON.parse(fileContent); // 將 JSON 內容轉換為物件
 
-  setTimeout(() => {
-    if (eventsData[page]) {
-      // 如果找到對應頁面資料
-      return res.status(200).json(eventsData[page]);
-    } else {
-      return res.status(404).json({ message: `Page ${page} not found` }); // 頁面分類不存在
-    }
-  }, 1000); // 延遲一秒再返回響應
+  if (eventsData[page]) {
+    // 如果找到對應頁面資料
+    return res.status(200).json(eventsData[page]);
+  } else {
+    return res.status(404).json({ message: `Page ${page} not found` }); // 頁面分類不存在
+  }
 });
 
 // 404 處理

@@ -1,14 +1,16 @@
 import { useQuery } from "@tanstack/react-query";
+
 import Banner from "../components/banner/Banner.jsx";
 import { fetchBanner } from "../util/http.js";
+import ErrorBlock from "../components/UI/ErrorBlock.jsx";
+import LoadingIndicator from "../components/UI/LoadingIndicator.jsx";
 
-export default function Home() {
+export default function HomePage() {
   const {
     data: bannerImage,
     isPending,
     isError,
     error,
-    refetch, // 添加重試功能
   } = useQuery({
     queryKey: ["banners", { page: "homePage" }],
     queryFn: ({ queryKey, signal }) => fetchBanner({ ...queryKey[1], signal }),
@@ -21,25 +23,14 @@ export default function Home() {
 
   if (isPending) {
     return (
-      <div className="text-center py-8">
-        <p>載入中...</p>
+      <div className="my-20 flex justify-center">
+        <LoadingIndicator />
       </div>
     );
   }
 
   if (isError) {
-    return (
-      <div className="text-center py-8">
-        <p className="text-red-500">{error.info?.message || "載入圖片失敗"}</p>
-
-        <button
-          onClick={() => refetch()}
-          className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-        >
-          重試
-        </button>
-      </div>
-    );
+    return <ErrorBlock message={error.info?.message || "資料加載失敗"} />;
   }
 
   // 成功狀態
