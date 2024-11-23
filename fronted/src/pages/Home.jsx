@@ -4,7 +4,7 @@ import Banner from "../components/banner/Banner.jsx";
 import { fetchBanner } from "../util/http.js";
 import ErrorBlock from "../components/UI/ErrorBlock.jsx";
 import LoadingIndicator from "../components/UI/LoadingIndicator.jsx";
-import FeaturedProducts from "../components/banner/FeaturedProducts.jsx";
+import Products from "../components/banner/Products.jsx";
 
 export default function HomePage() {
   const {
@@ -36,11 +36,8 @@ export default function HomePage() {
 
   return (
     <>
-      <Banner
-        bannerImage={`http://localhost:3000/${bannerData.banner.image}`}
-        {...bannerData.banner.bannerContent}
-      />
-      <FeaturedProducts />
+      <Banner {...bannerData.banner} />
+      <Products />
     </>
   );
 }

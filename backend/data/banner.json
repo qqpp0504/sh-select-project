@@ -2,29 +2,32 @@
   "homePage": {
     "banner": {
       "image": "home-banner-image.jpg",
-      "bannerContent": {
-        "title": "精挑細選，只為你獻上理想之選",
-        "description": "我們篩選全球優質單品，結合實用與風格，讓每件商品都成為生活中的必備精品。",
-        "buttonText": "探索我們的推薦單品",
-        "link": "/"
-      }
+      "alt": "SH-Select 商店圖片",
+      "title": "精挑細選，只為你獻上理想之選",
+      "description": "我們篩選全球優質單品，結合實用與風格，讓每件商品都成為生活中的必備精品。",
+      "buttonText": "探索我們的推薦單品",
+      "link": "/"
     },
-    "featuredProducts": [
+    "products": [
       {
         "image": "nike-air-jorden.jpg",
-        "name": "Nike Air Jorden 1"
+        "alt": "Nike Air Jorden 1 圖片",
+        "title": "Nike Air Jorden 1"
       },
       {
         "image": "carhartt-bag.jpg",
-        "name": "Carhartt Bag"
+        "alt": "Carhartt 後背包圖片",
+        "title": "Carhartt Bag"
       },
       {
         "image": "the-north-face-jacket.jpg",
-        "name": "The North Face Jacket"
+        "alt": "The North Face 外套圖片",
+        "title": "The North Face Jacket"
       },
       {
         "image": "adidas-samba.jpg",
-        "name": "Adidas Samba"
+        "alt": "Adidas Samba 圖片",
+        "title": "Adidas Samba"
       }
     ]
   }

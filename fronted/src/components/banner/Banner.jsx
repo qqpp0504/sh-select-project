@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import Button from "../UI/Button.jsx";
 
 export default function Banner({
-  bannerImage,
+  image,
+  alt,
   title,
   description,
   buttonText,
@@ -14,8 +15,8 @@ export default function Banner({
     <section className="padding-large">
       <div className="h-[60vh] flex justify-center">
         <img
-          src={bannerImage}
-          alt="Banner image"
+          src={`http://localhost:3000/${image}`}
+          alt={alt}
           className="w-full h-full object-cover"
         />
       </div>
