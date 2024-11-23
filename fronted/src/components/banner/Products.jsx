@@ -1,6 +1,9 @@
+/* eslint-disable react/prop-types */
+import { Link } from "react-router-dom";
+import Button from "../UI/Button.jsx";
 import Icon from "../UI/Icon.jsx";
 
-export default function Products({ productImage, productTitle }) {
+export default function Products({ products }) {
   return (
     <section className="padding-large my-16">
       <div className="flex items-center justify-between">
@@ -14,9 +17,25 @@ export default function Products({ productImage, productTitle }) {
           </button>
         </div>
       </div>
-      <article>
-        <img src={productImage} />
-        <h3>{productTitle}</h3>
+
+      <article className="my-3">
+        <ul className="flex flex-row gap-3">
+          {products.map((product) => (
+            <li key={product.title} className="w-1/3 h-[60vh] relative">
+              <img
+                src={`http://localhost:3000/${product.image}`}
+                alt={product.alt}
+                className="w-full h-full"
+              />
+              <div className="absolute bottom-7 left-12">
+                <h2 className="text-white text-xl font-400">{product.title}</h2>
+                <Link to="/">
+                  <Button bgColor="white">立即選購</Button>
+                </Link>
+              </div>
+            </li>
+          ))}
+        </ul>
       </article>
     </section>
   );
