@@ -36,8 +36,8 @@ export default function HomePage() {
 
   return (
     <>
-      <Banner {...bannerData.banner} />
-      <Products products={bannerData.products} />
+      <Banner {...bannerData.firstBanner} />
+      <Products products={bannerData.selectedProducts} />
     </>
   );
 }
