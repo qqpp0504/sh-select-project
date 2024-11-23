@@ -5,8 +5,8 @@ import Icon from "../UI/Icon.jsx";
 
 export default function Products({ products }) {
   return (
-    <section className="padding-large my-16">
-      <div className="flex items-center justify-between">
+    <section className="my-16">
+      <div className="padding-large flex items-center justify-between">
         <h2 className="text-2xl font-500">精選</h2>
         <div>
           <button className="bg-gray-200 p-[0.875rem] rounded-[50%] mr-[0.625rem] opacity-40">
@@ -18,14 +18,17 @@ export default function Products({ products }) {
         </div>
       </div>
 
-      <article className="my-3">
-        <ul className="flex flex-row gap-3">
+      <article className="mx-2 my-3">
+        <ul className="flex flex-row gap-3 overflow-x-auto scrollbar-thin pb-8 px-10">
           {products.map((product) => (
-            <li key={product.title} className="w-1/3 h-[60vh] relative">
+            <li
+              key={product.title}
+              className="w-[27rem] h-[34rem] relative flex-shrink-0"
+            >
               <img
                 src={`http://localhost:3000/${product.image}`}
                 alt={product.alt}
-                className="w-full h-full"
+                className="w-full h-full object-cover object-bottom"
               />
               <div className="absolute bottom-7 left-12">
                 <h2 className="text-white text-xl font-400">{product.title}</h2>
