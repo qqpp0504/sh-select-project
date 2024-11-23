@@ -13,6 +13,10 @@ export default {
         700: "700",
         900: "900",
       },
+      colors: {
+        "black-hoverColor": "#707072",
+        "white-hoverColor": "#cacacb",
+      },
     },
   },
   plugins: [],

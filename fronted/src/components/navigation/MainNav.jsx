@@ -1,8 +1,12 @@
+import { Link } from "react-router-dom";
+
 import logo from "../../assets/logo.png";
 import Icon from "../UI/Icon.jsx";
 import Input from "../UI/Input.jsx";
 
 export default function MainNav() {
+  const TAGS = ["新品和精選", "品牌", "男款", "女款", "特惠商品"];
+
   return (
     <div className="padding-large py-2 flex flex-row items-center text-base">
       <div className="flex-1 flex justify-start">
@@ -11,11 +15,13 @@ export default function MainNav() {
 
       <nav>
         <ul className="flex-1 flex justify-center gap-6 font-400">
-          <li>新品和精選</li>
-          <li>品牌</li>
-          <li>男款</li>
-          <li>女款</li>
-          <li>特惠商品</li>
+          {TAGS.map((tag) => (
+            <li key={tag}>
+              <Link to="/" className="pb-1 hover:border-b-2 hover:border-black">
+                {tag}
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
 
