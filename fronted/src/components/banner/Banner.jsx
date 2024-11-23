@@ -11,7 +11,7 @@ export default function Banner({
   link,
 }) {
   return (
-    <div className="padding-large py-4">
+    <section className="padding-large">
       <div className="h-[60vh] flex justify-center">
         <img
           src={bannerImage}
@@ -26,6 +26,6 @@ export default function Banner({
           <Button>{buttonText}</Button>
         </Link>
       </div>
-    </div>
+    </section>
   );
 }
