@@ -23,7 +23,7 @@ export default function ScrollContainer({ title, children }) {
   }
 
   return (
-    <section className="my-16">
+    <section className="mb-20">
       <div className="padding-large flex items-center justify-between">
         <h2 className="text-2xl font-500">{title}</h2>
         <div>

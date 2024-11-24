@@ -1,9 +1,11 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 
 import Button from "../UI/Button.jsx";
 
 export default function Banner({
+  sectionTitle = null,
   image,
   alt,
   title,
@@ -13,7 +15,10 @@ export default function Banner({
 }) {
   return (
     <section className="padding-large">
-      <div className="h-[60vh] flex justify-center">
+      {sectionTitle && (
+        <h2 className="text-2xl font-500 mb-[1.625rem]">{sectionTitle}</h2>
+      )}
+      <div className="h-[70vh] flex justify-center">
         <img
           src={`http://localhost:3000/${image}`}
           alt={alt}

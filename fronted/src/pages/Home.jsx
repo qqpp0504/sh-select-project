@@ -4,7 +4,7 @@ import Banner from "../components/banner/Banner.jsx";
 import { fetchBanner } from "../util/http.js";
 import ErrorBlock from "../components/UI/ErrorBlock.jsx";
 import LoadingIndicator from "../components/UI/LoadingIndicator.jsx";
-import Products from "../components/banner/Products.jsx";
+import SelectedProducts from "../components/banner/SelectProducts.jsx";
 
 export default function HomePage() {
   const {
@@ -37,7 +37,8 @@ export default function HomePage() {
   return (
     <>
       <Banner {...bannerData.firstBanner} />
-      <Products products={bannerData.selectedProducts} />
+      <SelectedProducts products={bannerData.selectedProducts} />
+      <Banner sectionTitle="流行趨勢" {...bannerData.secondBanner} />
     </>
   );
 }
