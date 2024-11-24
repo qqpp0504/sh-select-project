@@ -67,6 +67,48 @@
         "alt": "Nike Logo 長襪圖片",
         "title": "Nike - Logo 運動長襪"
       }
+    ],
+    "brandsProducts": [
+      {
+        "image": "nike-logo.jpg",
+        "alt": "Nike Logo圖片",
+        "title": "Nike"
+      },
+      {
+        "image": "asics-logo.jpg",
+        "alt": "Asics Logo圖片",
+        "title": "Asics"
+      },
+      {
+        "image": "the-north-face-logo.jpg",
+        "alt": "The North Face Logo圖片",
+        "title": "The North Face"
+      },
+      {
+        "image": "mizuno-logo.jpg",
+        "alt": "Mizuno Logo圖片",
+        "title": "Mizuno"
+      },
+      {
+        "image": "adidas-logo.jpg",
+        "alt": "Adidas Logo圖片",
+        "title": "Adidas"
+      },
+      {
+        "image": "nautica-logo.jpg",
+        "alt": "Nautica Logo圖片",
+        "title": "Nautica"
+      },
+      {
+        "image": "converse-logo.jpg",
+        "alt": "Converse Logo圖片",
+        "title": "Converse"
+      },
+      {
+        "image": "ordinary-logo.jpg",
+        "alt": "Oridnary Logo圖片",
+        "title": "Ordinary"
+      }
     ]
   }
 }
