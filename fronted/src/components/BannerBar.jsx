@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { BANNER_MESSAGES } from "../bannerMessages.js";
+import { BANNER_MESSAGES } from "../data.js";
 
 export default function BannerBar() {
   const interval = useRef();

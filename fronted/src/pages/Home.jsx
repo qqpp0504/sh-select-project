@@ -7,6 +7,7 @@ import LoadingIndicator from "../components/UI/LoadingIndicator.jsx";
 import SelectedProducts from "../components/banner/SelectProducts.jsx";
 import Products from "../components/banner/Products.jsx";
 import BrandsProducts from "../components/banner/BrandsProducts.jsx";
+import VipBlock from "../components/banner/VipBlock.jsx";
 
 export default function HomePage() {
   const {
@@ -44,6 +45,7 @@ export default function HomePage() {
       <Products products={bannerData.newProducts} />
       <Banner sectionTitle="頂尖潮流品牌" {...bannerData.thirdBanner} />
       <BrandsProducts products={bannerData.brandsProducts} />
+      <VipBlock />
     </>
   );
 }
