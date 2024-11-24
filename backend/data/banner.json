@@ -37,6 +37,28 @@
         "alt": "Adidas Samba 圖片",
         "title": "Adidas Samba"
       }
+    ],
+    "newProducts": [
+      {
+        "image": "ordinary-tee.jpg",
+        "alt": "Ordinary 長袖Tee圖片",
+        "title": "Ordinary - 長袖Tee"
+      },
+      {
+        "image": "nautica-hoodie.jpg",
+        "alt": "Nautica 帽T圖片",
+        "title": "Nautica - 大logo帽Tee"
+      },
+      {
+        "image": "nike-socks-short.jpg",
+        "alt": "Nike Logo 短襪圖片",
+        "title": "Nike - Logo 運動短襪"
+      },
+      {
+        "image": "nike-socks-long.jpg",
+        "alt": "Nike Logo 長襪圖片",
+        "title": "Nike - Logo 運動長襪"
+      }
     ]
   }
 }
