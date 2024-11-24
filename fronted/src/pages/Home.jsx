@@ -41,6 +41,7 @@ export default function HomePage() {
       <SelectedProducts products={bannerData.selectedProducts} />
       <Banner sectionTitle="流行趨勢" {...bannerData.secondBanner} />
       <Products products={bannerData.newProducts} />
+      <Banner sectionTitle="頂尖潮流品牌" {...bannerData.thirdBanner} />
     </>
   );
 }

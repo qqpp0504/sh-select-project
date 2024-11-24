@@ -12,7 +12,7 @@ export default function SelectedProducts({ products }) {
           className="w-[25rem] h-[32rem] relative flex-shrink-0"
         >
           <Link to="/">
-            <div className="bg-gray-200 flex justify-center items-center h-[85%]">
+            <div className="bg-gray-100 flex justify-center items-center h-[85%] rounded-xl">
               <img
                 src={`http://localhost:3000/${product.image}`}
                 alt={product.alt}
@@ -21,7 +21,7 @@ export default function SelectedProducts({ products }) {
             </div>
 
             <div className="mt-10">
-              <h2 className="text-black text-xl font-400">{product.title}</h2>
+              <h2 className="text-black text-xl font-500">{product.title}</h2>
             </div>
           </Link>
         </li>

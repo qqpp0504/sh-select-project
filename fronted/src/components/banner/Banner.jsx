@@ -18,7 +18,7 @@ export default function Banner({
       {sectionTitle && (
         <h2 className="text-2xl font-500 mb-[1.625rem]">{sectionTitle}</h2>
       )}
-      <div className="h-[70vh] flex justify-center">
+      <div className="h-[85vh] flex justify-center">
         <img
           src={`http://localhost:3000/${image}`}
           alt={alt}

@@ -16,6 +16,14 @@
       "buttonText": "立即查看新品",
       "link": "/"
     },
+    "thirdBanner": {
+      "image": "brands-banner.jpg",
+      "alt": "各種品牌圖片",
+      "title": "探索頂尖品牌，展現非凡選擇",
+      "description": "匯聚全球知名品牌，為你帶來更豐富的生活選擇。",
+      "buttonText": "探索各種品牌",
+      "link": "/"
+    },
     "selectedProducts": [
       {
         "image": "nike-air-jorden.jpg",
