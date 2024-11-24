@@ -6,6 +6,7 @@ import ErrorBlock from "../components/UI/ErrorBlock.jsx";
 import LoadingIndicator from "../components/UI/LoadingIndicator.jsx";
 import SelectedProducts from "../components/banner/SelectProducts.jsx";
 import Products from "../components/banner/Products.jsx";
+import BrandsProducts from "../components/banner/BrandsProducts.jsx";
 
 export default function HomePage() {
   const {
@@ -42,6 +43,7 @@ export default function HomePage() {
       <Banner sectionTitle="流行趨勢" {...bannerData.secondBanner} />
       <Products products={bannerData.newProducts} />
       <Banner sectionTitle="頂尖潮流品牌" {...bannerData.thirdBanner} />
+      <BrandsProducts products={bannerData.brandsProducts} />
     </>
   );
 }
