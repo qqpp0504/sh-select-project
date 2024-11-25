@@ -18,10 +18,10 @@ export default function Footer() {
 
               <div className="text-gray my-8">
                 <ul>
-                  {links.map(({ text, link }, index) => (
-                    <Link to={link} key={index}>
-                      <li className="py-1">{text}</li>
-                    </Link>
+                  {links.map(({ text, link }) => (
+                    <li key={text} className="py-1">
+                      <Link to={link}>{text}</Link>
+                    </li>
                   ))}
                 </ul>
               </div>

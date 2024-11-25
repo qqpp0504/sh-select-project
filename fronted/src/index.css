@@ -12,4 +12,8 @@
   .text-gray {
     color: #848486;
   }
+
+  .active {
+    @apply pb-1 border-b-2 border-black;
+  }
 }
