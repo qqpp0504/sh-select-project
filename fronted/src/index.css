@@ -9,4 +9,7 @@
   .padding-large {
     @apply px-12;
   }
+  .text-gray {
+    color: #848486;
+  }
 }
