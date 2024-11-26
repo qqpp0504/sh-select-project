@@ -22,7 +22,7 @@ app.use((req, res, next) => {
 
 // 讀取並返回不同頁面的資料
 app.get("/banner/:page", async (req, res) => {
-  const page = req.params.page; // 獲取頁面分類 (homePage, menPage, womenPage)
+  const page = req.params.page; // 獲取頁面分類 (homePage, menPage, womenPage, ...)
 
   // 如果頁面參數無效，直接返回 400
   if (!page || typeof page !== "string") {

@@ -110,5 +110,15 @@
         "title": "Ordinary"
       }
     ]
+  },
+  "menPage": {
+    "banner": {
+      "image": "men-banner.jpg",
+      "alt": "男款商品圖片",
+      "title": "精選男士必備單品，風格與實用兼具",
+      "description": "挑選全球優質男款，讓每件商品都成為日常必需。",
+      "buttonText": "查看男款單品",
+      "link": "/men"
+    }
   }
 }

@@ -16,7 +16,7 @@ export default function HomePage() {
     isError,
     error,
   } = useQuery({
-    queryKey: ["banners", { page: "homePage" }],
+    queryKey: ["homeBanners", { page: "homePage" }],
     queryFn: ({ queryKey, signal }) => fetchBanner({ ...queryKey[1], signal }),
     staleTime: 0,
     retry: 1, // 設定重試次數
