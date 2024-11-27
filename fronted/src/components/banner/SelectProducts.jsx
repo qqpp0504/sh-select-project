@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import Button from "../UI/Button.jsx";
 import ScrollContainer from "../UI/ScrollContainer.jsx";
 
-export default function SelectedProducts({ products }) {
+export default function SelectedProducts({ products, sectionTitle }) {
   return (
-    <ScrollContainer title="精選">
+    <ScrollContainer title={sectionTitle}>
       {products.map((product) => (
         <li
           key={product.title}
@@ -17,6 +17,7 @@ export default function SelectedProducts({ products }) {
             alt={product.alt}
             className="w-full h-full object-cover object-bottom"
           />
+
           <div className="absolute bottom-7 left-12">
             <h2 className="text-white text-xl font-400">{product.title}</h2>
             <Link to="/">

@@ -4,6 +4,7 @@ import { fetchBanner } from "../util/http.js";
 import Banner from "../components/banner/Banner.jsx";
 import LoadingIndicator from "../components/UI/LoadingIndicator.jsx";
 import ErrorBlock from "../components/UI/ErrorBlock.jsx";
+import NewSelectedProducts from "../components/banner/NewSelectProducts";
 
 export default function MenPage() {
   const {
@@ -35,6 +36,7 @@ export default function MenPage() {
   return (
     <>
       <Banner {...bannerData.banner} />
+      <NewSelectedProducts products={bannerData.selectedProducts} />
     </>
   );
 }

@@ -36,7 +36,7 @@
         "title": "Carhartt Bag"
       },
       {
-        "image": "the-north-face-jacket.jpg",
+        "image": "the-north-face-jacket-banner.jpg",
         "alt": "The North Face 外套圖片",
         "title": "The North Face Jacket"
       },
@@ -54,7 +54,7 @@
       },
       {
         "image": "nautica-hoodie.jpg",
-        "alt": "Nautica 帽T圖片",
+        "alt": "Nautica 帽Tee圖片",
         "title": "Nautica - 大logo帽Tee"
       },
       {
@@ -119,6 +119,50 @@
       "description": "挑選全球優質男款，讓每件商品都成為日常必需。",
       "buttonText": "查看男款單品",
       "link": "/men"
-    }
+    },
+    "selectedProducts": [
+      {
+        "image": "ordinary-men.jpg",
+        "alt": "Ordinary 長袖Tee圖片",
+        "title": "Ordinary - 長袖Tee"
+      },
+      {
+        "image": "nautica-men.jpg",
+        "alt": "Nautica 帽Tee圖片",
+        "title": "Nautica - 大logo帽Tee"
+      },
+      {
+        "image": "mizuno-men.jpg",
+        "alt": "Mizuno Wave Prophecy Moc 圖片",
+        "title": "Mizuno Wave Prophecy Moc"
+      },
+      {
+        "image": "ordinary-paint-men.jpg",
+        "alt": "Ordinary 長褲圖片",
+        "title": "Ordinary - 潑漆做舊水洗工作褲"
+      }
+    ],
+    "recommendationProducts": [
+      {
+        "image": "adidas-blcg.jpg",
+        "alt": "Adidas x BLCG 聯名西裝外套圖片",
+        "title": "ADIDAS x BLCG 巴黎世家聯名寬鬆廓形西裝外套"
+      },
+      {
+        "image": "the-north-face-jacket.jpg",
+        "alt": "The North Face 衝鋒衣圖片",
+        "title": "The North Face - 可拆卸三合一搖粒絨衝鋒衣"
+      },
+      {
+        "image": "mizuno-wave.jpg",
+        "alt": "Mizuno Wave Prophecy Moc 圖片",
+        "title": "Mizuno Wave Prophecy Moc Suede 麂皮休閒鞋"
+      },
+      {
+        "image": "carhartt-beanie.jpg",
+        "alt": "Carhartt 經典方標 針織毛帽圖片",
+        "title": "Carhartt - 經典方標針織毛帽"
+      }
+    ]
   }
 }

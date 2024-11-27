@@ -40,7 +40,10 @@ export default function HomePage() {
   return (
     <>
       <Banner {...bannerData.firstBanner} />
-      <SelectedProducts products={bannerData.selectedProducts} />
+      <SelectedProducts
+        sectionTitle="精選"
+        products={bannerData.selectedProducts}
+      />
       <Banner sectionTitle="流行趨勢" {...bannerData.secondBanner} />
       <Products products={bannerData.newProducts} />
       <Banner sectionTitle="頂尖潮流品牌" {...bannerData.thirdBanner} />

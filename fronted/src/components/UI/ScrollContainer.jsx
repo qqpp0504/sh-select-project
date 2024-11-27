@@ -45,7 +45,9 @@ export default function ScrollContainer({ title, children }) {
       <article className="mx-2 my-3">
         <ul
           ref={scrollContainerRef}
-          className="flex flex-row gap-3 overflow-x-auto scrollbar-thin pb-8 px-10"
+          className={`flex flex-row gap-3 overflow-x-auto scrollbar-thin px-10 ${
+            title == "新品和精選" ? "pb-24" : "pb-8"
+          }`}
         >
           {children}
         </ul>
