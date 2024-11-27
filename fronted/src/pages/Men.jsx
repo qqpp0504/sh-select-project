@@ -8,6 +8,7 @@ import NewSelectedProducts from "../components/banner/NewSelectProducts.jsx";
 import RecommendationProducts from "../components/banner/RecommendationProducts.jsx";
 import BrandsProducts from "../components/banner/BrandsProducts.jsx";
 import VipBlock from "../components/banner/VipBlock.jsx";
+import MenNavigation from "../components/navigation/MenNavigation.jsx";
 
 export default function MenPage() {
   const {
@@ -38,6 +39,7 @@ export default function MenPage() {
 
   return (
     <>
+      <MenNavigation />
       <Banner {...bannerData.banner} />
       <NewSelectedProducts products={bannerData.selectedProducts} />
       <RecommendationProducts products={bannerData.recommendationProducts} />
