@@ -4,6 +4,7 @@ import { fetchBanner } from "../util/http.js";
 import LoadingIndicator from "../components/UI/LoadingIndicator.jsx";
 import ErrorBlock from "../components/UI/ErrorBlock.jsx";
 import Banner from "../components/banner/Banner";
+import SexClassNavigation from "../components/navigation/SexClassNavigation.jsx";
 
 export default function FemalePage() {
   const {
@@ -34,6 +35,7 @@ export default function FemalePage() {
 
   return (
     <>
+      <SexClassNavigation sex="female" />
       <Banner {...bannerData.banner} />
     </>
   );

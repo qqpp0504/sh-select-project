@@ -8,5 +8,5 @@ export default function Button({ children, bgColor = "black" }) {
     classes += " bg-black text-white hover:bg-black-hoverColor";
   }
 
-  return <p className={classes}>{children}</p>;
+  return <span className={classes}>{children}</span>;
 }

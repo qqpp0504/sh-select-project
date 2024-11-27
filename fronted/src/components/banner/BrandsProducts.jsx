@@ -17,11 +17,12 @@ export default function SelectedProducts({ products }) {
             alt={product.alt}
             className="w-full h-full object-cover"
           />
-          <Link to="/">
-            <div className="absolute bottom-1 left-12">
+
+          <div className="absolute bottom-1 left-12">
+            <Link to="/">
               <Button bgColor="white">{product.title}</Button>
-            </div>
-          </Link>
+            </Link>
+          </div>
         </li>
       ))}
     </ScrollContainer>

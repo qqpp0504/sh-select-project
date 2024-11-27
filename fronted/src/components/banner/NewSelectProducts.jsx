@@ -10,11 +10,8 @@ export default function NewSelectedProducts({
   return (
     <ScrollContainer title={sectionTitle}>
       {products.map((product) => (
-        <li
-          key={product.title}
-          className="w-[27rem] h-[34rem] relative flex-shrink-0"
-        >
-          <Link to="/men">
+        <Link key={product.title} to="/men">
+          <li className="w-[27rem] h-[34rem] relative flex-shrink-0">
             <img
               src={`http://localhost:3000/${product.image}`}
               alt={product.alt}
@@ -22,8 +19,8 @@ export default function NewSelectedProducts({
             />
 
             <h2 className="my-9 text-xl font-400">{product.title}</h2>
-          </Link>
-        </li>
+          </li>
+        </Link>
       ))}
     </ScrollContainer>
   );

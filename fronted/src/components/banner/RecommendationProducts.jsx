@@ -8,11 +8,8 @@ export default function RecommendationProducts({ products }) {
   return (
     <ScrollContainer title="推薦單品">
       {products.map((product) => (
-        <li
-          key={product.title}
-          className="w-[27rem] h-[34rem] relative flex-shrink-0"
-        >
-          <Link to="/men">
+        <Link key={product.title} to="/men">
+          <li className="w-[27rem] h-[34rem] relative flex-shrink-0">
             <div className="bg-gray-100 flex justify-center items-center h-[83%]">
               <img
                 src={`http://localhost:3000/${product.image}`}
@@ -30,8 +27,8 @@ export default function RecommendationProducts({ products }) {
               </h2>
               <span>NT{currencyFormatter.format(product.price)}</span>
             </div>
-          </Link>
-        </li>
+          </li>
+        </Link>
       ))}
     </ScrollContainer>
   );
