@@ -5,6 +5,7 @@ import Banner from "../components/banner/Banner.jsx";
 import LoadingIndicator from "../components/UI/LoadingIndicator.jsx";
 import ErrorBlock from "../components/UI/ErrorBlock.jsx";
 import NewSelectedProducts from "../components/banner/NewSelectProducts";
+import RecommendationProducts from "../components/banner/RecommendationProducts.jsx";
 
 export default function MenPage() {
   const {
@@ -37,6 +38,7 @@ export default function MenPage() {
     <>
       <Banner {...bannerData.banner} />
       <NewSelectedProducts products={bannerData.selectedProducts} />
+      <RecommendationProducts products={bannerData.recommendationProducts} />
     </>
   );
 }

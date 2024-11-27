@@ -5,7 +5,7 @@ import { fetchBanner } from "../util/http.js";
 import ErrorBlock from "../components/UI/ErrorBlock.jsx";
 import LoadingIndicator from "../components/UI/LoadingIndicator.jsx";
 import SelectedProducts from "../components/banner/SelectProducts.jsx";
-import Products from "../components/banner/Products.jsx";
+import NewProducts from "../components/banner/NewProducts.jsx";
 import BrandsProducts from "../components/banner/BrandsProducts.jsx";
 import VipBlock from "../components/banner/VipBlock.jsx";
 
@@ -45,7 +45,7 @@ export default function HomePage() {
         products={bannerData.selectedProducts}
       />
       <Banner sectionTitle="流行趨勢" {...bannerData.secondBanner} />
-      <Products products={bannerData.newProducts} />
+      <NewProducts products={bannerData.newProducts} />
       <Banner sectionTitle="頂尖潮流品牌" {...bannerData.thirdBanner} />
       <BrandsProducts products={bannerData.brandsProducts} />
       <VipBlock />

@@ -1,0 +1,38 @@
+/* eslint-disable react/prop-types */
+import { Link } from "react-router-dom";
+
+import ScrollContainer from "../UI/ScrollContainer.jsx";
+import { currencyFormatter } from "../../util/formatting.js";
+
+export default function RecommendationProducts({ products }) {
+  return (
+    <ScrollContainer title="推薦單品">
+      {products.map((product) => (
+        <li
+          key={product.title}
+          className="w-[27rem] h-[34rem] relative flex-shrink-0"
+        >
+          <Link to="/men">
+            <div className="bg-gray-100 flex justify-center items-center h-[83%]">
+              <img
+                src={`http://localhost:3000/${product.image}`}
+                alt={product.alt}
+                className="w-[90%] h-[80%] object-cover"
+              />
+            </div>
+
+            <div className="mt-3">
+              <h2 className="text-gray text-base font-400">
+                {product.brand} -{" "}
+              </h2>
+              <h2 className="text-black text-lg font-400 my-1">
+                {product.name}
+              </h2>
+              <span>NT{currencyFormatter.format(product.price)}</span>
+            </div>
+          </Link>
+        </li>
+      ))}
+    </ScrollContainer>
+  );
+}

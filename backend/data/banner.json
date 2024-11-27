@@ -146,22 +146,30 @@
       {
         "image": "adidas-blcg.jpg",
         "alt": "Adidas x BLCG 聯名西裝外套圖片",
-        "title": "ADIDAS x BLCG 巴黎世家聯名寬鬆廓形西裝外套"
+        "brand": "ADIDAS x BLCG 巴黎世家聯名",
+        "name": "寬鬆廓形西裝外套",
+        "price": "2980"
       },
       {
         "image": "the-north-face-jacket.jpg",
         "alt": "The North Face 衝鋒衣圖片",
-        "title": "The North Face - 可拆卸三合一搖粒絨衝鋒衣"
+        "brand": "The North Face",
+        "name": "可拆卸三合一搖粒絨衝鋒衣",
+        "price": "2500"
       },
       {
         "image": "mizuno-wave.jpg",
         "alt": "Mizuno Wave Prophecy Moc 圖片",
-        "title": "Mizuno Wave Prophecy Moc Suede 麂皮休閒鞋"
+        "brand": "Mizuno",
+        "name": "Wave Prophecy Moc Suede 麂皮休閒鞋",
+        "price": "10800"
       },
       {
         "image": "carhartt-beanie.jpg",
         "alt": "Carhartt 經典方標 針織毛帽圖片",
-        "title": "Carhartt - 經典方標針織毛帽"
+        "brand": "Carhartt",
+        "name": "經典方標針織毛帽",
+        "price": "550"
       }
     ]
   }

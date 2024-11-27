@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import ScrollContainer from "../UI/ScrollContainer.jsx";
 
-export default function SelectedProducts({ products }) {
+export default function newProducts({ products }) {
   return (
     <ScrollContainer title="新上架">
       {products.map((product) => (
