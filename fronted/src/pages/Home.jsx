@@ -48,7 +48,7 @@ export default function HomePage() {
       <NewProducts products={bannerData.newProducts} />
       <Banner sectionTitle="頂尖潮流品牌" {...bannerData.thirdBanner} />
       <BrandsProducts products={bannerData.brandsProducts} />
-      <VipBlock />
+      <VipBlock {...bannerData.vipImage} />
     </>
   );
 }

@@ -4,7 +4,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./util/http.js";
 import RootLayout from "./pages/RootLayout.jsx";
 import HomePage from "./pages/Home.jsx";
-import MenPage from "./pages/Man.jsx";
+import MenPage from "./pages/Men.jsx";
 import FemalePage from "./pages/Female.jsx";
 import Brands from "./pages/Brands.jsx";
 import Promotion from "./pages/Promotion.jsx";

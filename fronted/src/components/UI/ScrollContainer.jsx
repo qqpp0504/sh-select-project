@@ -29,13 +29,13 @@ export default function ScrollContainer({ title, children }) {
         <div>
           <button
             onClick={handleScrollLeft}
-            className="bg-gray-200 p-[0.875rem] rounded-[50%] mr-[0.625rem] opacity-40"
+            className="bg-gray-200 p-2 rounded-[50%] mr-[0.625rem] opacity-40"
           >
             <Icon type="left-arrow" />
           </button>
           <button
             onClick={handleScrollRight}
-            className="bg-gray-200 p-[0.875rem] rounded-[50%]"
+            className="bg-gray-200 p-2 rounded-[50%]"
           >
             <Icon type="right-arrow" />
           </button>

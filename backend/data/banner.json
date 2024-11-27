@@ -109,7 +109,11 @@
         "alt": "Oridnary Logo圖片",
         "title": "Ordinary"
       }
-    ]
+    ],
+    "vipImage": {
+      "image": "vip-banner.jpg",
+      "alt": "會員圖片"
+    }
   },
   "menPage": {
     "banner": {
@@ -117,7 +121,7 @@
       "alt": "男款商品圖片",
       "title": "精選男士必備單品，風格與實用兼具",
       "description": "挑選全球優質男款，讓每件商品都成為日常必需。",
-      "buttonText": "查看男款單品",
+      "buttonText": "查看所有男款單品",
       "link": "/men"
     },
     "selectedProducts": [
@@ -171,6 +175,52 @@
         "name": "經典方標針織毛帽",
         "price": "550"
       }
-    ]
+    ],
+    "brandsProducts": [
+      {
+        "image": "nike-logo.jpg",
+        "alt": "Nike Logo圖片",
+        "title": "Nike"
+      },
+      {
+        "image": "asics-logo.jpg",
+        "alt": "Asics Logo圖片",
+        "title": "Asics"
+      },
+      {
+        "image": "the-north-face-logo.jpg",
+        "alt": "The North Face Logo圖片",
+        "title": "The North Face"
+      },
+      {
+        "image": "mizuno-logo.jpg",
+        "alt": "Mizuno Logo圖片",
+        "title": "Mizuno"
+      },
+      {
+        "image": "adidas-logo.jpg",
+        "alt": "Adidas Logo圖片",
+        "title": "Adidas"
+      },
+      {
+        "image": "nautica-logo.jpg",
+        "alt": "Nautica Logo圖片",
+        "title": "Nautica"
+      },
+      {
+        "image": "converse-logo.jpg",
+        "alt": "Converse Logo圖片",
+        "title": "Converse"
+      },
+      {
+        "image": "ordinary-logo.jpg",
+        "alt": "Oridnary Logo圖片",
+        "title": "Ordinary"
+      }
+    ],
+    "vipImage": {
+      "image": "vip-men.jpg",
+      "alt": "會員圖片"
+    }
   }
 }

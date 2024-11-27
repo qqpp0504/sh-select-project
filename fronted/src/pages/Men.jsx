@@ -4,8 +4,10 @@ import { fetchBanner } from "../util/http.js";
 import Banner from "../components/banner/Banner.jsx";
 import LoadingIndicator from "../components/UI/LoadingIndicator.jsx";
 import ErrorBlock from "../components/UI/ErrorBlock.jsx";
-import NewSelectedProducts from "../components/banner/NewSelectProducts";
+import NewSelectedProducts from "../components/banner/NewSelectProducts.jsx";
 import RecommendationProducts from "../components/banner/RecommendationProducts.jsx";
+import BrandsProducts from "../components/banner/BrandsProducts.jsx";
+import VipBlock from "../components/banner/VipBlock.jsx";
 
 export default function MenPage() {
   const {
@@ -39,6 +41,8 @@ export default function MenPage() {
       <Banner {...bannerData.banner} />
       <NewSelectedProducts products={bannerData.selectedProducts} />
       <RecommendationProducts products={bannerData.recommendationProducts} />
+      <BrandsProducts products={bannerData.brandsProducts} />
+      <VipBlock {...bannerData.vipImage} />
     </>
   );
 }
