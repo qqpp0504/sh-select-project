@@ -5,6 +5,7 @@ import LoadingIndicator from "../components/UI/LoadingIndicator.jsx";
 import ErrorBlock from "../components/UI/ErrorBlock.jsx";
 import Banner from "../components/banner/Banner";
 import SexClassNavigation from "../components/navigation/SexClassNavigation.jsx";
+import NewSelectedProducts from "../components/banner/NewSelectProducts.jsx";
 
 export default function FemalePage() {
   const {
@@ -37,6 +38,7 @@ export default function FemalePage() {
     <>
       <SexClassNavigation sex="female" />
       <Banner {...bannerData.banner} />
+      <NewSelectedProducts products={bannerData.selectedProducts} />
     </>
   );
 }

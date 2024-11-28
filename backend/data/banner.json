@@ -138,7 +138,7 @@
       {
         "image": "mizuno-men.jpg",
         "alt": "Mizuno Wave Prophecy Moc 圖片",
-        "title": "Mizuno Wave Prophecy Moc"
+        "title": "Mizuno - Wave Prophecy Moc"
       },
       {
         "image": "ordinary-paint-men.jpg",
@@ -231,6 +231,28 @@
       "description": "精選女性服飾，讓妳每一天都充滿魅力。",
       "buttonText": "查看所有女款單品",
       "link": "/female"
-    }
+    },
+    "selectedProducts": [
+      {
+        "image": "ordinary-female.jpg",
+        "alt": "Ordinary 長袖Tee圖片",
+        "title": "Ordinary - 長袖Tee"
+      },
+      {
+        "image": "nautica-female.jpg",
+        "alt": "Nautica 帽Tee圖片",
+        "title": "Nautica - 大logo帽Tee"
+      },
+      {
+        "image": "mizuno-female.jpg",
+        "alt": "Mizuno Wave Prophecy Moc 圖片",
+        "title": "Mizuno - Wave Prophecy Moc"
+      },
+      {
+        "image": "adidas-female.jpg",
+        "alt": "Adidas 寬鬆廓形運動長褲圖片",
+        "title": "Adidas Originals - 寬鬆廓形運動長褲"
+      }
+    ]
   }
 }
