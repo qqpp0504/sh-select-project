@@ -6,6 +6,9 @@ import ErrorBlock from "../components/UI/ErrorBlock.jsx";
 import Banner from "../components/banner/Banner";
 import SexClassNavigation from "../components/navigation/SexClassNavigation.jsx";
 import NewSelectedProducts from "../components/banner/NewSelectProducts.jsx";
+import RecommendationProducts from "../components/banner/RecommendationProducts.jsx";
+import BrandsProducts from "../components/banner/BrandsProducts.jsx";
+import VipBlock from "../components/banner/VipBlock.jsx";
 
 export default function FemalePage() {
   const {
@@ -39,6 +42,9 @@ export default function FemalePage() {
       <SexClassNavigation sex="female" />
       <Banner {...bannerData.banner} />
       <NewSelectedProducts products={bannerData.selectedProducts} />
+      <RecommendationProducts products={bannerData.recommendationProducts} />
+      <BrandsProducts products={bannerData.brandsProducts} />
+      <VipBlock {...bannerData.vipImage} />
     </>
   );
 }

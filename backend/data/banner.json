@@ -41,9 +41,9 @@
         "title": "The North Face Jacket"
       },
       {
-        "image": "adidas-samba.jpg",
-        "alt": "Adidas Samba 圖片",
-        "title": "Adidas Samba"
+        "image": "adidas-gazelle-home.jpg",
+        "alt": "Adidas Gazelle Bold W 圖片",
+        "title": "Adidas Gazelle Bold W"
       }
     ],
     "newProducts": [
@@ -253,6 +253,82 @@
         "alt": "Adidas 寬鬆廓形運動長褲圖片",
         "title": "Adidas Originals - 寬鬆廓形運動長褲"
       }
-    ]
+    ],
+    "recommendationProducts": [
+      {
+        "image": "adidas-sporty-rich.jpg",
+        "alt": "Adidas x Sporty & Rich 聯名復古長袖T恤圖片",
+        "brand": "Adidas x Sporty & Rich 聯名",
+        "name": "復古長袖T恤",
+        "price": "1500"
+      },
+      {
+        "image": "adidas-short.jpg",
+        "alt": "Adidas Orginals 運動短褲圖片",
+        "brand": "Adidas Orginals",
+        "name": "運動短褲",
+        "price": "900"
+      },
+      {
+        "image": "mizuno-wave.jpg",
+        "alt": "Mizuno Wave Prophecy Moc 圖片",
+        "brand": "Mizuno",
+        "name": "Wave Prophecy Moc Suede 麂皮休閒鞋",
+        "price": "10800"
+      },
+      {
+        "image": "adidas-gazelle.jpg",
+        "alt": "Adidas Gazelle Bold W 粉綠色厚底鞋圖片",
+        "brand": "Adidas Gazelle",
+        "name": "Bold W 粉綠色厚底鞋",
+        "price": "4950"
+      }
+    ],
+    "brandsProducts": [
+      {
+        "image": "nike-logo.jpg",
+        "alt": "Nike Logo圖片",
+        "title": "Nike"
+      },
+      {
+        "image": "asics-logo.jpg",
+        "alt": "Asics Logo圖片",
+        "title": "Asics"
+      },
+      {
+        "image": "the-north-face-logo.jpg",
+        "alt": "The North Face Logo圖片",
+        "title": "The North Face"
+      },
+      {
+        "image": "mizuno-logo.jpg",
+        "alt": "Mizuno Logo圖片",
+        "title": "Mizuno"
+      },
+      {
+        "image": "adidas-logo.jpg",
+        "alt": "Adidas Logo圖片",
+        "title": "Adidas"
+      },
+      {
+        "image": "nautica-logo.jpg",
+        "alt": "Nautica Logo圖片",
+        "title": "Nautica"
+      },
+      {
+        "image": "converse-logo.jpg",
+        "alt": "Converse Logo圖片",
+        "title": "Converse"
+      },
+      {
+        "image": "ordinary-logo.jpg",
+        "alt": "Oridnary Logo圖片",
+        "title": "Ordinary"
+      }
+    ],
+    "vipImage": {
+      "image": "vip-female.jpg",
+      "alt": "會員圖片"
+    }
   }
 }
