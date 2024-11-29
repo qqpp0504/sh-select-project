@@ -17,11 +17,31 @@
     @apply pb-1 border-b-2 border-black;
   }
 
-  .custom-checkbox img {
-    transition: transform 0.3s ease;
+  .accordion-header {
+    @apply py-4 block cursor-pointer;
   }
 
-  .custom-checkbox input:checked + img {
-    transform: scale(-1);
+  .accordion-header img {
+    transition: transform 0.4s ease;
+  }
+
+  .accordion-toggle {
+    display: none;
+  }
+
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .accordion-toggle:checked ~ .accordion-content {
+    max-height: 200px;
+  }
+
+  .accordion-toggle:checked + .accordion-header img {
+    transform: rotate(180deg);
   }
 }

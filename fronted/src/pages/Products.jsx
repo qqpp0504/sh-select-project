@@ -42,13 +42,21 @@ export default function Products() {
 
         <hr />
 
-        <label className="py-4 block cursor-pointer custom-checkbox">
-          <div className="flex flex-row justify-between items-center">
-            <span className="font-500">優惠商品</span>
-            <input type="checkbox" className="hidden" />
-            <img src={showIcon} alt="Filter icon" className="w-4 h-4" />
+        <div>
+          <input id="toggle" type="checkbox" className="accordion-toggle" />
+          <label htmlFor="toggle" className="accordion-header">
+            <div className="flex flex-row justify-between items-center">
+              <span className="font-500">優惠商品</span>
+              <img src={showIcon} alt="Filter icon" className="w-4 h-4" />
+            </div>
+          </label>
+
+          <div className="accordion-content gap-1">
+            <span>7折以下商品</span>
+            <span>8折以下商品</span>
+            <div className="py-2"></div>
           </div>
-        </label>
+        </div>
 
         <hr />
       </aside>
