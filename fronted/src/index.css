@@ -16,4 +16,12 @@
   .active {
     @apply pb-1 border-b-2 border-black;
   }
+
+  .custom-checkbox img {
+    transition: transform 0.3s ease;
+  }
+
+  .custom-checkbox input:checked + img {
+    transform: scale(-1);
+  }
 }

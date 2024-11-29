@@ -8,6 +8,7 @@ import MenPage from "./pages/Men.jsx";
 import FemalePage from "./pages/Female.jsx";
 import Brands from "./pages/Brands.jsx";
 import Promotion from "./pages/Promotion.jsx";
+import Products from "./pages/Products.jsx";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,7 @@ const router = createBrowserRouter([
         element: <Brands />,
       },
       { path: "promotion", element: <Promotion /> },
+      { path: "products", element: <Products /> },
     ],
   },
 ]);

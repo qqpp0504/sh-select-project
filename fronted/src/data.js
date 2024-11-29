@@ -54,3 +54,13 @@ export const FOOTERDATA = {
     },
   ],
 };
+
+export const PRODUCTSNAV = [
+  "上衣",
+  "外套及背心",
+  "下著",
+  "運動內衣",
+  "襪子",
+  "鞋款",
+  "其他配件",
+];

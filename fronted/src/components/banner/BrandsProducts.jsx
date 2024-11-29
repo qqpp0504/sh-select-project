@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Button from "../UI/Button.jsx";
 import ScrollContainer from "../UI/ScrollContainer.jsx";
 
-export default function SelectedProducts({ products }) {
+export default function BrandsProducts({ products }) {
   return (
     <ScrollContainer title="依品牌選購">
       {products.map((product) => (
