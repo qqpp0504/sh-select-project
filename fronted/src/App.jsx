@@ -1,28 +1,45 @@
+import { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { QueryClientProvider } from "@tanstack/react-query";
 
 import { queryClient } from "./util/http.js";
 import RootLayout from "./pages/RootLayout.jsx";
-import HomePage from "./pages/Home.jsx";
-import MenPage from "./pages/Men.jsx";
-import FemalePage from "./pages/Female.jsx";
 import BrandsPage from "./pages/Brands.jsx";
 import PromotionPage from "./pages/Promotion.jsx";
 import ProductsPage from "./pages/Products.jsx";
+
+const HomePage = lazy(() => import("./pages/Home.jsx"));
+const MenPage = lazy(() => import("./pages/Men.jsx"));
+const FemalePage = lazy(() => import("./pages/Female.jsx"));
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
     children: [
-      { index: true, element: <HomePage /> },
+      {
+        index: true,
+        element: (
+          <Suspense fallback={null}>
+            <HomePage />
+          </Suspense>
+        ),
+      },
       {
         path: "men",
-        element: <MenPage />,
+        element: (
+          <Suspense fallback={null}>
+            <MenPage />
+          </Suspense>
+        ),
       },
       {
         path: "female",
-        element: <FemalePage />,
+        element: (
+          <Suspense fallback={null}>
+            <FemalePage />
+          </Suspense>
+        ),
       },
       {
         path: "brands",

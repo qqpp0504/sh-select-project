@@ -26,14 +26,14 @@
     },
     "selectedProducts": [
       {
-        "image": "nike-air-jorden.jpg",
-        "alt": "Nike Air Jorden 1 圖片",
-        "title": "Nike Air Jorden 1"
+        "image": "nike-air-jordan.jpg",
+        "alt": "Nike Air Jordan 1 圖片",
+        "title": "Nike Air Jordan 1"
       },
       {
         "image": "carhartt-bag.jpg",
         "alt": "Carhartt 後背包圖片",
-        "title": "Carhartt Bag"
+        "title": "Carhartt Backpack"
       },
       {
         "image": "the-north-face-jacket-banner.jpg",
