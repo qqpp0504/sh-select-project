@@ -38,56 +38,63 @@ export default function SideBar({ title, children }) {
           </ul>
         </nav>
       </div>
-      <div className="flex flex-row justify-between">
+
+      <div className="flex">
         <aside
-          className={`w-[15vw] h-[80vh] pr-5 overflow-y-scroll scrollbar-thin transition-all duration-300 ease ${
-            isShowing ? "translate-x-0" : "-translate-x-[calc(14vw+3rem)]"
+          className={`h-[80vh] overflow-y-scroll scrollbar-thin transition-all duration-300 ease hidden lg:block ${
+            isShowing
+              ? "w-[16rem] translate-x-0"
+              : "w-0 -translate-x-[calc(16rem+3rem)]"
           }`}
         >
-          <nav className="pb-10">
-            <ul>
-              {PRODUCTSNAV.map((tag) => (
-                <li key={tag} className="py-1">
-                  <Link to="/products">
-                    <span className="font-500">{tag}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          <div className="pr-5">
+            <nav className="pb-10">
+              <ul>
+                {PRODUCTSNAV.map((tag) => (
+                  <li key={tag} className="py-1">
+                    <Link to="/products">
+                      <span className="font-500">{tag}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
 
-          <Accordion tag="性別" id="sex">
-            <span>男子</span>
-            <span>女子</span>
-          </Accordion>
+            <Accordion tag="性別" id="sex">
+              <span>男子</span>
+              <span>女子</span>
+            </Accordion>
 
-          <Accordion tag="優惠商品" id="discount">
-            <span>7折以下商品</span>
-            <span>8折以下商品</span>
-          </Accordion>
+            <Accordion tag="優惠商品" id="discount">
+              <span>7折以下商品</span>
+              <span>8折以下商品</span>
+            </Accordion>
 
-          <Accordion tag="品牌" id="brands">
-            <ShowMore
-              content={
-                <>
-                  <span>Asics</span>
-                  <span>Adidas</span>
-                  <span>Converse</span>
-                  <span>Mizuno</span>
-                </>
-              }
-              more={
-                <>
-                  <span>Nautica</span>
-                  <span>Nike</span>
-                  <span>Ordinary</span>
-                  <span>The North Face</span>
-                </>
-              }
-            />
-          </Accordion>
+            <Accordion tag="品牌" id="brands">
+              <ShowMore
+                content={
+                  <>
+                    <span>Asics</span>
+                    <span>Adidas</span>
+                    <span>Converse</span>
+                    <span>Mizuno</span>
+                  </>
+                }
+                more={
+                  <>
+                    <span>Nautica</span>
+                    <span>Nike</span>
+                    <span>Ordinary</span>
+                    <span>The North Face</span>
+                  </>
+                }
+              />
+            </Accordion>
+          </div>
         </aside>
-        <section className="w-[85vw] ml-14">{children}</section>
+        <section className={`w-full ${isShowing ? "lg:pl-12" : undefined}`}>
+          {children}
+        </section>
       </div>
     </div>
   );

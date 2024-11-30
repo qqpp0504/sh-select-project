@@ -1,6 +1,6 @@
 export default function ProductsList() {
   return (
-    <div className="grid grid-cols-[repeat(auto-fill,minmax(18rem,1fr))] gap-4">
+    <div className="grid grid-cols-2 gap-4 lg:grid-cols-3">
       <div>Item 1</div>
     </div>
   );
