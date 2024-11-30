@@ -6,9 +6,9 @@ import RootLayout from "./pages/RootLayout.jsx";
 import HomePage from "./pages/Home.jsx";
 import MenPage from "./pages/Men.jsx";
 import FemalePage from "./pages/Female.jsx";
-import Brands from "./pages/Brands.jsx";
-import Promotion from "./pages/Promotion.jsx";
-import Products from "./pages/Products.jsx";
+import BrandsPage from "./pages/Brands.jsx";
+import PromotionPage from "./pages/Promotion.jsx";
+import ProductsPage from "./pages/Products.jsx";
 
 const router = createBrowserRouter([
   {
@@ -26,10 +26,10 @@ const router = createBrowserRouter([
       },
       {
         path: "brands",
-        element: <Brands />,
+        element: <BrandsPage />,
       },
-      { path: "promotion", element: <Promotion /> },
-      { path: "products", element: <Products /> },
+      { path: "promotion", element: <PromotionPage /> },
+      { path: "products", element: <ProductsPage /> },
     ],
   },
 ]);

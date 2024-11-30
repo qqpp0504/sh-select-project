@@ -1,3 +1,3 @@
-export default function Promotion() {
+export default function PromotionPage() {
   return;
 }

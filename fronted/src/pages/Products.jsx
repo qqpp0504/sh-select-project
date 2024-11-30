@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import filterIcon from "../assets/filter-icon.png";
 import showIcon from "../assets/show-icon.png";
 import { PRODUCTSNAV } from "../data.js";
+import Accordion from "../components/UI/Accordion.jsx";
 
-export default function Products() {
+export default function ProductsPage() {
   return (
     <div className="padding-large">
       <div className="flex flex-row items-center justify-between my-6">
@@ -40,23 +41,10 @@ export default function Products() {
           </ul>
         </nav>
 
-        <hr />
-
-        <div>
-          <input id="toggle" type="checkbox" className="accordion-toggle" />
-          <label htmlFor="toggle" className="accordion-header">
-            <div className="flex flex-row justify-between items-center">
-              <span className="font-500">優惠商品</span>
-              <img src={showIcon} alt="Filter icon" className="w-4 h-4" />
-            </div>
-          </label>
-
-          <div className="accordion-content gap-1">
-            <span>7折以下商品</span>
-            <span>8折以下商品</span>
-            <div className="py-2"></div>
-          </div>
-        </div>
+        <Accordion tag="優惠商品">
+          <span>7折以下商品</span>
+          <span>8折以下商品</span>
+        </Accordion>
 
         <hr />
       </aside>

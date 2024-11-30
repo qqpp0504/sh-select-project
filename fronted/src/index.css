@@ -22,7 +22,7 @@
   }
 
   .accordion-header img {
-    transition: transform 0.4s ease;
+    transition: transform 0.2s ease;
   }
 
   .accordion-toggle {
@@ -32,13 +32,13 @@
   .accordion-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease-in-out;
+    transition: max-height 0.2s ease-in-out;
     display: flex;
     flex-direction: column;
   }
 
   .accordion-toggle:checked ~ .accordion-content {
-    max-height: 200px;
+    max-height: 10rem;
   }
 
   .accordion-toggle:checked + .accordion-header img {

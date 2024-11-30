@@ -1,3 +1,3 @@
-export default function Brands() {
+export default function BrandsPage() {
   return;
 }
