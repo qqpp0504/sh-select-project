@@ -40,7 +40,7 @@ export default function ProductsPage() {
       </div>
 
       <aside
-        className={`w-[14%] transition-all duration-300 ease overflow-hidden ${
+        className={`w-[15%] h-[80vh] pr-5 overflow-y-scroll scrollbar-thin transition-all duration-300 ease ${
           isShowing ? "translate-x-0" : "-translate-x-[calc(14vw+3rem)]"
         }`}
       >
@@ -86,8 +86,6 @@ export default function ProductsPage() {
             }
           />
         </Accordion>
-
-        <hr />
       </aside>
     </div>
   );
