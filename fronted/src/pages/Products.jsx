@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import filterIcon from "../assets/filter-icon.png";
@@ -7,6 +8,12 @@ import Accordion from "../components/UI/Accordion.jsx";
 import ShowMore from "../components/UI/ShowMore.jsx";
 
 export default function ProductsPage() {
+  const [isShowing, setIsShowing] = useState(true);
+
+  function handleShowing() {
+    setIsShowing((showing) => !showing);
+  }
+
   return (
     <div className="padding-large">
       <div className="flex flex-row items-center justify-between my-6">
@@ -14,8 +21,11 @@ export default function ProductsPage() {
         <nav>
           <ul className="flex flex-row gap-8">
             <li>
-              <button className="flex flex-row items-center gap-[0.625rem]">
-                隱藏篩選條件
+              <button
+                onClick={handleShowing}
+                className="flex flex-row items-center gap-[0.625rem]"
+              >
+                {isShowing ? "隱藏篩選條件" : "顯示篩選條件"}
                 <img src={filterIcon} alt="Filter icon" className="w-5" />
               </button>
             </li>
@@ -29,7 +39,11 @@ export default function ProductsPage() {
         </nav>
       </div>
 
-      <aside className="w-[14%]">
+      <aside
+        className={`w-[14%] transition-all duration-300 ease overflow-hidden ${
+          isShowing ? "translate-x-0" : "-translate-x-[calc(14vw+3rem)]"
+        }`}
+      >
         <nav className="pb-10">
           <ul>
             {PRODUCTSNAV.map((tag) => (
@@ -70,7 +84,7 @@ export default function ProductsPage() {
                 <span>The North Face</span>
               </>
             }
-          ></ShowMore>
+          />
         </Accordion>
 
         <hr />
