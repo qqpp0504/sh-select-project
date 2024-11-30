@@ -38,10 +38,35 @@
   }
 
   .accordion-toggle:checked ~ .accordion-content {
-    max-height: 10rem;
+    max-height: 20rem;
   }
 
   .accordion-toggle:checked + .accordion-header img {
     transform: rotate(180deg);
   }
+}
+
+.more-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-in-out;
+}
+
+.show-more-checkbox:checked + .filter-content .more-content {
+  max-height: 10rem;
+}
+
+.show-more-label {
+  display: block;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.show-more-checkbox:checked ~ .filter-content .show-more-label::before {
+  content: "- 精簡";
+}
+
+.show-more-checkbox:not(:checked) ~ .filter-content .show-more-label::before {
+  content: "+ 更多";
 }

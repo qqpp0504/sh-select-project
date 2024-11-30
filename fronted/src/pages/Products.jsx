@@ -4,6 +4,7 @@ import filterIcon from "../assets/filter-icon.png";
 import showIcon from "../assets/show-icon.png";
 import { PRODUCTSNAV } from "../data.js";
 import Accordion from "../components/UI/Accordion.jsx";
+import ShowMore from "../components/UI/ShowMore.jsx";
 
 export default function ProductsPage() {
   return (
@@ -41,9 +42,35 @@ export default function ProductsPage() {
           </ul>
         </nav>
 
-        <Accordion tag="優惠商品">
+        <Accordion tag="性別" id="sex">
+          <span>男子</span>
+          <span>女子</span>
+        </Accordion>
+
+        <Accordion tag="優惠商品" id="discount">
           <span>7折以下商品</span>
           <span>8折以下商品</span>
+        </Accordion>
+
+        <Accordion tag="品牌" id="brands">
+          <ShowMore
+            content={
+              <>
+                <span>Asics</span>
+                <span>Adidas</span>
+                <span>Converse</span>
+                <span>Mizuno</span>
+              </>
+            }
+            more={
+              <>
+                <span>Nautica</span>
+                <span>Nike</span>
+                <span>Ordinary</span>
+                <span>The North Face</span>
+              </>
+            }
+          ></ShowMore>
         </Accordion>
 
         <hr />
