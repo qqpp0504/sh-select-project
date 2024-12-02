@@ -21,11 +21,43 @@ app.use((req, res, next) => {
   next();
 });
 
-// 讀取並返回不同頁面的資料
+app.get("/products", async (req, res) => {
+  const { category, onSale, gender, isNew } = req.query;
+
+  try {
+    const fileContent = await fs.readFile("./data/products.json");
+    const products = JSON.parse(fileContent);
+
+    // 如果沒有任何篩選條件，直接返回所有商品
+    if (!category && !onSale && !gender && !isNew) {
+      return res.status(200).json(products);
+    }
+
+    // 篩選產品
+    const filteredProducts = products.filter((product) => {
+      const matchesGender = gender
+        ? gender.split(",").includes(product.gender)
+        : true; // 如果未提供 gender，匹配所有
+      const matchesCategory = category ? product.category === category : true;
+      const matchesOnSale = onSale
+        ? product.isOnSale === (onSale === "true")
+        : true;
+      const matchesIsNew = isNew ? product.isNew === (isNew === "true") : true;
+
+      // 返回符合所有條件的產品
+      return matchesGender && matchesCategory && matchesOnSale && matchesIsNew;
+    });
+
+    return res.status(200).json(filteredProducts);
+  } catch (error) {
+    console.error("Error reading products:", error.message);
+    return res.status(500).json({ message: "Internal server error" });
+  }
+});
+
 app.get("/:page", async (req, res) => {
   const page = req.params.page; // 獲取頁面分類 (homePage, menPage, womenPage, ...)
 
-  // 如果頁面參數無效，直接返回 400
   if (!page || typeof page !== "string") {
     return res.status(400).json({ message: "Invalid page parameter" });
   }
@@ -37,49 +69,8 @@ app.get("/:page", async (req, res) => {
     // 如果找到對應頁面資料
     return res.status(200).json(eventsData[page]);
   } else {
-    return res.status(404).json({ message: `Page ${page} not found` }); // 頁面分類不存在
+    return res.status(404).json({ message: `Page ${page} not found` });
   }
-});
-
-app.get("/products", async (req, res) => {
-  const category = req.query.category;
-  const onSale = req.query.onSale === "true";
-  const gender = req.query.gender; // 新增性別查詢
-
-  try {
-    const fileContent = await fs.readFile("./data/products.json");
-    const productsData = JSON.parse(fileContent);
-
-    let products = productsData.all;
-
-    // 依性別篩選
-    if (gender) {
-      products = products.filter((product) => product.gender === gender);
-    }
-
-    // 依分類篩選
-    if (category) {
-      products = products.filter((product) => product.category === category);
-    }
-
-    // 依是否在售篩選
-    if (onSale) {
-      products = products.filter((product) => product.isOnSale);
-    }
-
-    return res.status(200).json(products);
-  } catch (error) {
-    console.error("Error reading products:", error);
-    return res.status(500).json({ message: "Internal server error" });
-  }
-});
-
-// 404 處理
-app.use((req, res, next) => {
-  if (req.method === "OPTIONS") {
-    return next(); // 處理 OPTIONS 預檢請求
-  }
-  res.status(404).json({ message: "404 - Not Found" });
 });
 
 // 啟動伺服器
