@@ -1,0 +1,37 @@
+{
+  "all": [
+    {
+      "id": "p1",
+      "name": "商品名稱1",
+      "originalPrice": 1000,
+      "discountPrice": 800,
+      "discountPercentage": 20,
+      "category": "上衣",
+      "subcategory": "T恤",
+      "gender": "women",
+      "image": "product1.jpg",
+      "isOnSale": true
+    },
+    {
+      "id": "p2",
+      "name": "運動外套",
+      "originalPrice": 1500,
+      "discountPrice": 1500,
+      "discountPercentage": 0,
+      "category": "外套及背心",
+      "subcategory": "運動外套",
+      "gender": "men",
+      "image": "product2.jpg",
+      "isOnSale": false
+    }
+  ],
+  "categories": [
+    "上衣",
+    "外套及背心",
+    "下著",
+    "運動內衣",
+    "襪子",
+    "鞋款",
+    "其他配件"
+  ]
+}

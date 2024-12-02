@@ -3,7 +3,7 @@ import { QueryClient } from "@tanstack/react-query";
 export const queryClient = new QueryClient();
 
 export async function fetchBanner({ page, signal }) {
-  const response = await fetch(`http://localhost:3000/banner/${page}`, {
+  const response = await fetch(`http://localhost:3000/${page}`, {
     signal,
   });
 
