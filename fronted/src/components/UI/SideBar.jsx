@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { PRODUCTSNAV } from "../../data.js";
 import filterIcon from "../../assets/filter-icon.png";
@@ -8,8 +8,25 @@ import showIcon from "../../assets/show-icon.png";
 import Accordion from "../../components/UI/Accordion.jsx";
 import ShowMore from "../../components/UI/ShowMore.jsx";
 
-export default function SideBar({ title, children }) {
+export default function SideBar({ children }) {
   const [isShowing, setIsShowing] = useState(true);
+  const navigate = useNavigate();
+
+  function handleCategoryClick(newCategory) {
+    const currentPath = window.location.pathname;
+
+    const pathParts = currentPath.split("/").filter(Boolean);
+    if (pathParts.includes(newCategory)) {
+      return;
+    }
+
+    let newPath =
+      currentPath === "/products"
+        ? `/products/${newCategory}`
+        : `${currentPath}-${newCategory}`;
+
+    navigate(newPath);
+  }
 
   function handleShowing() {
     setIsShowing((showing) => !showing);
@@ -17,7 +34,7 @@ export default function SideBar({ title, children }) {
   return (
     <div className="padding-large">
       <div className="flex flex-row items-center justify-between my-6">
-        <h1 className="text-2xl font-500">{title}</h1>
+        <h1 className="text-2xl font-500">所有產品</h1>
         <nav>
           <ul className="flex flex-row gap-8">
             <li>
@@ -62,20 +79,17 @@ export default function SideBar({ title, children }) {
 
             <Accordion tag="性別" id="sex">
               <ul className="unchecked">
-                <Link>
+                <button onClick={() => handleCategoryClick("men")}>
                   <li>男子</li>
-                </Link>
-                <Link>
-                  <li>女子</li>
-                </Link>
+                </button>
+
+                <li>女子</li>
               </ul>
             </Accordion>
 
             <Accordion tag="促銷與折扣" id="discount">
               <ul className="unchecked">
-                <Link>
-                  <li>超值優惠商品</li>
-                </Link>
+                <li>超值優惠商品</li>
               </ul>
             </Accordion>
 
@@ -83,34 +97,18 @@ export default function SideBar({ title, children }) {
               <ShowMore
                 content={
                   <ul className="unchecked">
-                    <Link>
-                      <li>Asics</li>
-                    </Link>
-                    <Link>
-                      <li>Adidas</li>
-                    </Link>
-                    <Link>
-                      <li>Converse</li>
-                    </Link>
-                    <Link>
-                      <li>Mizuno</li>
-                    </Link>
+                    <li>Asics</li>
+                    <li>Adidas</li>
+                    <li>Converse</li>
+                    <li>Mizuno</li>
                   </ul>
                 }
                 more={
                   <ul className="unchecked">
-                    <Link>
-                      <li>Nautica</li>
-                    </Link>
-                    <Link>
-                      <li>Nike</li>
-                    </Link>
-                    <Link>
-                      <li>Ordinary</li>
-                    </Link>
-                    <Link>
-                      <li>The North Face</li>
-                    </Link>
+                    <li>Nautica</li>
+                    <li>Nike</li>
+                    <li>Ordinary</li>
+                    <li>The North Face</li>
                   </ul>
                 }
               />

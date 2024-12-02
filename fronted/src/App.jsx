@@ -7,6 +7,8 @@ import RootLayout from "./pages/RootLayout.jsx";
 import BrandsPage from "./pages/Brands.jsx";
 import PromotionPage from "./pages/Promotion.jsx";
 import ProductsPage from "./pages/Products.jsx";
+import ProductCategoryPage from "./pages/ProductCategoryPage.jsx";
+import ProductsRoot from "./pages/ProductsRoot.jsx";
 
 const HomePage = lazy(() => import("./pages/Home.jsx"));
 const MenPage = lazy(() => import("./pages/Men.jsx"));
@@ -46,7 +48,14 @@ const router = createBrowserRouter([
         element: <BrandsPage />,
       },
       { path: "promotion", element: <PromotionPage /> },
-      { path: "products", element: <ProductsPage /> },
+      {
+        path: "products",
+        element: <ProductsRoot />,
+        children: [
+          { index: true, element: <ProductsPage /> },
+          { path: ":category", element: <ProductCategoryPage /> },
+        ],
+      },
     ],
   },
 ]);
