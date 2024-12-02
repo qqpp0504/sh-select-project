@@ -46,6 +46,38 @@
   .accordion-toggle:checked + .accordion-header img {
     transform: rotate(180deg);
   }
+
+  .unchecked li {
+    @apply flex items-center;
+  }
+
+  .unchecked li::before {
+    content: "";
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background-image: url("./assets/checkbox-unchecked-icon.png");
+    background-size: contain;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-right: 3px;
+  }
+
+  .checked li {
+    @apply flex items-center;
+  }
+
+  .checked li::before {
+    content: "";
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background-image: url("./assets/checkbox-checked-icon.png");
+    background-size: contain;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-right: 3px;
+  }
 }
 
 .more-content {

@@ -61,32 +61,57 @@ export default function SideBar({ title, children }) {
             </nav>
 
             <Accordion tag="性別" id="sex">
-              <span>男子</span>
-              <span>女子</span>
+              <ul className="unchecked">
+                <Link>
+                  <li>男子</li>
+                </Link>
+                <Link>
+                  <li>女子</li>
+                </Link>
+              </ul>
             </Accordion>
 
-            <Accordion tag="優惠商品" id="discount">
-              <span>7折以下商品</span>
-              <span>8折以下商品</span>
+            <Accordion tag="促銷與折扣" id="discount">
+              <ul className="unchecked">
+                <Link>
+                  <li>超值優惠商品</li>
+                </Link>
+              </ul>
             </Accordion>
 
             <Accordion tag="品牌" id="brands">
               <ShowMore
                 content={
-                  <>
-                    <span>Asics</span>
-                    <span>Adidas</span>
-                    <span>Converse</span>
-                    <span>Mizuno</span>
-                  </>
+                  <ul className="unchecked">
+                    <Link>
+                      <li>Asics</li>
+                    </Link>
+                    <Link>
+                      <li>Adidas</li>
+                    </Link>
+                    <Link>
+                      <li>Converse</li>
+                    </Link>
+                    <Link>
+                      <li>Mizuno</li>
+                    </Link>
+                  </ul>
                 }
                 more={
-                  <>
-                    <span>Nautica</span>
-                    <span>Nike</span>
-                    <span>Ordinary</span>
-                    <span>The North Face</span>
-                  </>
+                  <ul className="unchecked">
+                    <Link>
+                      <li>Nautica</li>
+                    </Link>
+                    <Link>
+                      <li>Nike</li>
+                    </Link>
+                    <Link>
+                      <li>Ordinary</li>
+                    </Link>
+                    <Link>
+                      <li>The North Face</li>
+                    </Link>
+                  </ul>
                 }
               />
             </Accordion>
