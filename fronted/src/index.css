@@ -3,14 +3,16 @@
 @tailwind utilities;
 
 @layer utilities {
-  .border-r-1 {
-    border-right-width: 1px;
-  }
   .padding-large {
     @apply px-12;
   }
+
   .text-gray {
     color: #848486;
+  }
+
+  .text-new {
+    color: #9e3501;
   }
 
   .active {

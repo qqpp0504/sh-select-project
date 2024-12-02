@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchProducts } from "../../util/http.js";
 import ErrorBlock from "../UI/ErrorBlock.jsx";
 import LoadingIndicator from "../UI/LoadingIndicator.jsx";
+import { currencyFormatter } from "../../util/formatting.js";
 
 export default function ProductsList() {
   const {
@@ -29,17 +30,47 @@ export default function ProductsList() {
   }
 
   return (
-    <div className="grid grid-cols-2 gap-4 lg:grid-cols-3">
-      {products.map((product) => (
-        <div key={product.id}>
-          <img src={`/products/${product.image}`} alt={product.name} />
-          <h3>{product.name}</h3>
-          <p>原價: {product.originalPrice}</p>
-          <p>售價: {product.discountPrice}</p>
-          {product.isNew && <span>新品</span>}
-          {product.isOnSale && <span>特賣</span>}
-        </div>
-      ))}
+    <div>
+      <ul className="grid grid-cols-2 gap-4 lg:grid-cols-3">
+        {products.map((product) => (
+          <li key={product.id} className="mb-14">
+            <div className="bg-gray-100 mb-4 flex justify-center items-center h-[22rem]">
+              <img
+                className="w-[90%] h-auto"
+                src={`http://localhost:3000/${product.image}`}
+                alt={product.alt}
+              />
+            </div>
+
+            {product.isNew && <h3 className="text-new font-500">新品上市</h3>}
+            <h3 className="font-500">
+              {product.brand} - {product.name}
+            </h3>
+            <h3 className="text-gray">{product.category}</h3>
+
+            {product.discountPrice !== product.originalPrice ? (
+              <>
+                <div className="py-2">
+                  <span className="pr-2 font-500">
+                    NT{currencyFormatter.format(product.discountPrice)}
+                  </span>
+                  <s className="text-gray">
+                    NT{currencyFormatter.format(product.originalPrice)}
+                  </s>
+                </div>
+
+                <span className="block text-green-700 font-500">
+                  {product.discountPercentage}% 折扣
+                </span>
+              </>
+            ) : (
+              <span className="py-2 block font-500">
+                NT{currencyFormatter.format(product.originalPrice)}
+              </span>
+            )}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
