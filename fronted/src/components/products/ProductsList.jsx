@@ -1,6 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 
 import { fetchProducts } from "../../util/http.js";
+import ErrorBlock from "../UI/ErrorBlock.jsx";
+import LoadingIndicator from "../UI/LoadingIndicator.jsx";
 
 export default function ProductsList() {
   const {
@@ -9,8 +11,9 @@ export default function ProductsList() {
     isError,
     error,
   } = useQuery({
-    queryKey: ["products"],
-    queryFn: ({ signal }) => fetchProducts({ signal }),
+    queryKey: ["products", { filters: {} }],
+    queryFn: ({ signal, queryKey }) =>
+      fetchProducts({ signal, ...queryKey[1] }),
     staleTime: 0,
     retry: 1,
     retryDelay: 1000,
@@ -18,11 +21,11 @@ export default function ProductsList() {
   });
 
   if (isPending) {
-    return <div>載入中...</div>;
+    return <LoadingIndicator />;
   }
 
   if (isError) {
-    return <div>發生錯誤：{error.message}</div>;
+    return <ErrorBlock message={error.info?.message || "資料加載失敗"} />;
   }
 
   return (

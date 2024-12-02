@@ -26,11 +26,7 @@ export default function MenPage() {
   });
 
   if (isPending) {
-    return (
-      <div className="my-20 flex justify-center">
-        <LoadingIndicator />
-      </div>
-    );
+    return <LoadingIndicator />;
   }
 
   if (isError) {
