@@ -47,12 +47,12 @@
     transform: rotate(180deg);
   }
 
-  .unchecked button,
-  .checked button {
+  .unchecked,
+  .checked {
     @apply flex items-center pr-10;
   }
 
-  .unchecked button::before {
+  .unchecked::before {
     content: "";
     display: inline-block;
     width: 26px;
@@ -63,7 +63,7 @@
     margin-right: 3px;
   }
 
-  .checked button::before {
+  .checked::before {
     content: "";
     display: inline-block;
     width: 26px;

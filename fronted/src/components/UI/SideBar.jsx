@@ -17,6 +17,11 @@ export default function SideBar({ children }) {
     category === "men" ? "男子" : category === "women" ? "女子" : "所有產品";
 
   function updateFilter(newGender) {
+    if (newGender === category) {
+      navigate(".");
+      return;
+    }
+
     const newPath = `/products/${newGender}`;
     navigate(newPath);
   }
@@ -71,35 +76,78 @@ export default function SideBar({ children }) {
             </nav>
 
             <Accordion tag="性別" id="sex">
-              <div className="unchecked">
-                <button onClick={() => updateFilter("men")}>男子</button>
-
-                <button onClick={() => updateFilter("women")}>女子</button>
+              <div>
+                <button
+                  onClick={() => updateFilter("men")}
+                  className={category === "men" ? "checked" : "unchecked"}
+                >
+                  男子
+                </button>
+                <button
+                  onClick={() => updateFilter("women")}
+                  className={category === "women" ? "checked" : "unchecked"}
+                >
+                  女子
+                </button>
               </div>
             </Accordion>
 
             <Accordion tag="促銷與折扣" id="discount">
-              <div className="unchecked">
-                <button>超值優惠商品</button>
+              <div>
+                <button className={category === "" ? "checked" : "unchecked"}>
+                  超值優惠商品
+                </button>
               </div>
             </Accordion>
 
             <Accordion tag="品牌" id="brands">
               <ShowMore
                 content={
-                  <div className="unchecked">
-                    <button>Asics</button>
-                    <button>Adidas</button>
-                    <button>Converse</button>
-                    <button>Mizuno</button>
+                  <div>
+                    <button
+                      className={category === "" ? "checked" : "unchecked"}
+                    >
+                      Asics
+                    </button>
+                    <button
+                      className={category === "" ? "checked" : "unchecked"}
+                    >
+                      Adidas
+                    </button>
+                    <button
+                      className={category === "" ? "checked" : "unchecked"}
+                    >
+                      Converse
+                    </button>
+                    <button
+                      className={category === "" ? "checked" : "unchecked"}
+                    >
+                      Mizuno
+                    </button>
                   </div>
                 }
                 more={
-                  <div className="unchecked">
-                    <button>Nautica</button>
-                    <button>Nike</button>
-                    <button>Ordinary</button>
-                    <button>The North Face</button>
+                  <div>
+                    <button
+                      className={category === "" ? "checked" : "unchecked"}
+                    >
+                      Nautica
+                    </button>
+                    <button
+                      className={category === "" ? "checked" : "unchecked"}
+                    >
+                      Nike
+                    </button>
+                    <button
+                      className={category === "" ? "checked" : "unchecked"}
+                    >
+                      Ordinary
+                    </button>
+                    <button
+                      className={category === "" ? "checked" : "unchecked"}
+                    >
+                      The North Face
+                    </button>
                   </div>
                 }
               />
