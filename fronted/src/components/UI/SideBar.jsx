@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 import { PRODUCTSNAV } from "../../data.js";
 import filterIcon from "../../assets/filter-icon.png";
@@ -9,22 +9,15 @@ import Accordion from "../../components/UI/Accordion.jsx";
 import ShowMore from "../../components/UI/ShowMore.jsx";
 
 export default function SideBar({ children }) {
+  const { category } = useParams();
   const [isShowing, setIsShowing] = useState(true);
   const navigate = useNavigate();
 
-  function handleCategoryClick(newCategory) {
-    const currentPath = window.location.pathname;
+  const genderText =
+    category === "men" ? "男子" : category === "women" ? "女子" : "所有產品";
 
-    const pathParts = currentPath.split("/").filter(Boolean);
-    if (pathParts.includes(newCategory)) {
-      return;
-    }
-
-    let newPath =
-      currentPath === "/products"
-        ? `/products/${newCategory}`
-        : `${currentPath}-${newCategory}`;
-
+  function updateFilter(newGender) {
+    const newPath = `/products/${newGender}`;
     navigate(newPath);
   }
 
@@ -34,7 +27,7 @@ export default function SideBar({ children }) {
   return (
     <div className="padding-large">
       <div className="flex flex-row items-center justify-between my-6">
-        <h1 className="text-2xl font-500">所有產品</h1>
+        <h1 className="text-2xl font-500">{genderText}</h1>
         <nav>
           <ul className="flex flex-row gap-8">
             <li>
@@ -78,38 +71,36 @@ export default function SideBar({ children }) {
             </nav>
 
             <Accordion tag="性別" id="sex">
-              <ul className="unchecked">
-                <button onClick={() => handleCategoryClick("men")}>
-                  <li>男子</li>
-                </button>
+              <div className="unchecked">
+                <button onClick={() => updateFilter("men")}>男子</button>
 
-                <li>女子</li>
-              </ul>
+                <button onClick={() => updateFilter("women")}>女子</button>
+              </div>
             </Accordion>
 
             <Accordion tag="促銷與折扣" id="discount">
-              <ul className="unchecked">
-                <li>超值優惠商品</li>
-              </ul>
+              <div className="unchecked">
+                <button>超值優惠商品</button>
+              </div>
             </Accordion>
 
             <Accordion tag="品牌" id="brands">
               <ShowMore
                 content={
-                  <ul className="unchecked">
-                    <li>Asics</li>
-                    <li>Adidas</li>
-                    <li>Converse</li>
-                    <li>Mizuno</li>
-                  </ul>
+                  <div className="unchecked">
+                    <button>Asics</button>
+                    <button>Adidas</button>
+                    <button>Converse</button>
+                    <button>Mizuno</button>
+                  </div>
                 }
                 more={
-                  <ul className="unchecked">
-                    <li>Nautica</li>
-                    <li>Nike</li>
-                    <li>Ordinary</li>
-                    <li>The North Face</li>
-                  </ul>
+                  <div className="unchecked">
+                    <button>Nautica</button>
+                    <button>Nike</button>
+                    <button>Ordinary</button>
+                    <button>The North Face</button>
+                  </div>
                 }
               />
             </Accordion>
