@@ -64,3 +64,23 @@ export const PRODUCTSNAV = [
   "鞋款",
   "其他配件",
 ];
+
+export const FILTERS = {
+  gender: [
+    { param: "men", filterName: "男子" },
+    { param: "women", filterName: "女子" },
+  ],
+  onSale: [{ param: "sale", filterName: "超值優惠商品" }],
+  brandsTop: [
+    { param: "asics", filterName: "Asics" },
+    { param: "adidas", filterName: "Adidas" },
+    { param: "converse", filterName: "Converse" },
+    { param: "mizuno", filterName: "Mizuno" },
+  ],
+  brandsBottom: [
+    { param: "nautica", filterName: "Nautica" },
+    { param: "nike", filterName: "Nike" },
+    { param: "ordinary", filterName: "Ordinary" },
+    { param: "the-north-face", filterName: "The North Face" },
+  ],
+};
