@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { QueryClientProvider } from "@tanstack/react-query";
+import { Provider } from "react-redux";
 
 import { queryClient } from "./util/http.js";
 import RootLayout from "./pages/RootLayout.jsx";
@@ -9,6 +10,7 @@ import PromotionPage from "./pages/Promotion.jsx";
 import ProductsPage from "./pages/Products.jsx";
 import ProductCategoryPage from "./pages/ProductCategoryPage.jsx";
 import ProductsRoot from "./pages/ProductsRoot.jsx";
+import store from "./store/index.js";
 
 const HomePage = lazy(() => import("./pages/Home.jsx"));
 const MenPage = lazy(() => import("./pages/Men.jsx"));
@@ -62,9 +64,11 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>
+    <Provider store={store}>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
+    </Provider>
   );
 }
 

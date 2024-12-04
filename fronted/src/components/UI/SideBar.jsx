@@ -1,51 +1,39 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 import { PRODUCTSNAV } from "../../data.js";
 import filterIcon from "../../assets/filter-icon.png";
 import showIcon from "../../assets/show-icon.png";
 import Accordion from "../../components/UI/Accordion.jsx";
 import ShowMore from "../../components/UI/ShowMore.jsx";
+import { filterActions } from "../../store/filter-slice.js";
 
 export default function SideBar({ children }) {
+  const filters = useSelector((state) => state.filter);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const { category } = useParams();
   const [isShowing, setIsShowing] = useState(true); // 可以改成不要用狀態管理
-  const [selectedCategory, setSelectedCategory] = useState({
-    gender: [],
-    onSale: [],
-    brands: [],
-  });
 
   const genderText =
     category === "men" ? "男子" : category === "women" ? "女子" : "所有產品";
 
-  function toggleFilter(filterType, value) {
-    setSelectedCategory((prev) => {
-      const valuesOfFilterType = prev[filterType];
-      const updateFilter = valuesOfFilterType.includes(value)
-        ? valuesOfFilterType.filter((item) => item !== value)
-        : [...valuesOfFilterType, value];
-
-      const newFilters = { ...prev, [filterType]: updateFilter };
-
-      updateUrl(newFilters);
-
-      return newFilters;
-    });
+  function handleToggleFilter(filterType, value) {
+    dispatch(filterActions.toggleFilter({ filterType, value }));
   }
 
-  function updateUrl(filters) {
+  // 自動同步 URL，根據所選擇的篩選條件狀態來更改 URL
+  useEffect(() => {
     const { gender, onSale, brands } = filters;
-
-    let path = "/products/";
+    let path = "/products";
 
     if (gender.length > 0) {
       if (gender.includes("men") && gender.includes("women")) {
-        path += "unisex/";
+        path += "/unisex";
       } else {
-        path += gender.join("-") + "/";
+        path += "/" + gender.join("-");
       }
     }
 
@@ -58,11 +46,13 @@ export default function SideBar({ children }) {
     }
 
     navigate(path);
-  }
+  }, [filters, navigate]);
 
   function handleShowing() {
     setIsShowing((showing) => !showing);
   }
+
+  console.log("類別" + category);
 
   return (
     <div className="padding-large">
@@ -113,9 +103,10 @@ export default function SideBar({ children }) {
             <Accordion tag="性別" id="sex">
               <div>
                 <button
-                  onClick={() => toggleFilter("gender", "men")}
+                  onClick={() => handleToggleFilter("gender", "men")}
                   className={
-                    selectedCategory.gender.includes("men")
+                    filters.gender.includes("men") ||
+                    filters.gender.includes("unisex")
                       ? "checked"
                       : "unchecked"
                   }
@@ -123,9 +114,10 @@ export default function SideBar({ children }) {
                   男子
                 </button>
                 <button
-                  onClick={() => toggleFilter("gender", "women")}
+                  onClick={() => handleToggleFilter("gender", "women")}
                   className={
-                    selectedCategory.gender.includes("women")
+                    filters.gender.includes("women") ||
+                    filters.gender.includes("unisex")
                       ? "checked"
                       : "unchecked"
                   }
