@@ -36,9 +36,12 @@ app.get("/products", async (req, res) => {
     // 篩選產品
     const filteredProducts = products.filter((product) => {
       const matchesGender = gender
-        ? gender.split(",").includes(product.gender) ||
-          product.gender === "unisex"
+        ? // 當選擇 men 時，只顯示含有 men 的商品
+          (gender.includes("men") && product.gender.includes("men")) ||
+          (gender.includes("women") && product.gender.includes("women")) ||
+          (gender.includes("unisex") && product.gender.includes("unisex"))
         : true;
+
       const matchesCategory = category ? product.category === category : true;
       const matchesOnSale = onSale
         ? product.isOnSale === (onSale === "true")

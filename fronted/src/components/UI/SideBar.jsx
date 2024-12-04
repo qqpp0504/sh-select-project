@@ -9,26 +9,61 @@ import Accordion from "../../components/UI/Accordion.jsx";
 import ShowMore from "../../components/UI/ShowMore.jsx";
 
 export default function SideBar({ children }) {
-  const { category } = useParams();
-  const [isShowing, setIsShowing] = useState(true);
   const navigate = useNavigate();
+  const { category } = useParams();
+  const [isShowing, setIsShowing] = useState(true); // 可以改成不要用狀態管理
+  const [selectedCategory, setSelectedCategory] = useState({
+    gender: [],
+    onSale: [],
+    brands: [],
+  });
 
   const genderText =
     category === "men" ? "男子" : category === "women" ? "女子" : "所有產品";
 
-  function updateFilter(newGender) {
-    if (newGender === category) {
-      navigate(".");
-      return;
+  function toggleFilter(filterType, value) {
+    setSelectedCategory((prev) => {
+      const valuesOfFilterType = prev[filterType];
+      const updateFilter = valuesOfFilterType.includes(value)
+        ? valuesOfFilterType.filter((item) => item !== value)
+        : [...valuesOfFilterType, value];
+
+      const newFilters = { ...prev, [filterType]: updateFilter };
+
+      updateUrl(newFilters);
+
+      return newFilters;
+    });
+  }
+
+  function updateUrl(filters) {
+    const { gender, onSale, brands } = filters;
+
+    let path = "/products/";
+
+    if (gender.length > 0) {
+      if (gender.includes("men") && gender.includes("women")) {
+        path += "unisex/";
+      } else {
+        path += gender.join("-") + "/";
+      }
     }
 
-    const newPath = `/products/${newGender}`;
-    navigate(newPath);
+    if (onSale.length > 0) {
+      path += onSale + "/";
+    }
+
+    if (brands.length > 0) {
+      path += brands.join("-") + "/";
+    }
+
+    navigate(path);
   }
 
   function handleShowing() {
     setIsShowing((showing) => !showing);
   }
+
   return (
     <div className="padding-large">
       <div className="flex flex-row items-center justify-between my-6">
@@ -78,14 +113,22 @@ export default function SideBar({ children }) {
             <Accordion tag="性別" id="sex">
               <div>
                 <button
-                  onClick={() => updateFilter("men")}
-                  className={category === "men" ? "checked" : "unchecked"}
+                  onClick={() => toggleFilter("gender", "men")}
+                  className={
+                    selectedCategory.gender.includes("men")
+                      ? "checked"
+                      : "unchecked"
+                  }
                 >
                   男子
                 </button>
                 <button
-                  onClick={() => updateFilter("women")}
-                  className={category === "women" ? "checked" : "unchecked"}
+                  onClick={() => toggleFilter("gender", "women")}
+                  className={
+                    selectedCategory.gender.includes("women")
+                      ? "checked"
+                      : "unchecked"
+                  }
                 >
                   女子
                 </button>
