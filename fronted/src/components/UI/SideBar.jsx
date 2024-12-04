@@ -37,12 +37,15 @@ export default function SideBar({ children }) {
       }
     }
 
+    console.log(gender);
+
     if (onSale.length > 0) {
-      path += onSale + "/";
+      path += "/" + onSale;
     }
 
     if (brands.length > 0) {
-      path += brands.join("-") + "/";
+      const sortedBrands = [...brands].sort();
+      path += "/" + sortedBrands.join("-");
     }
 
     navigate(path);
@@ -51,8 +54,6 @@ export default function SideBar({ children }) {
   function handleShowing() {
     setIsShowing((showing) => !showing);
   }
-
-  console.log("類別" + category);
 
   return (
     <div className="padding-large">
@@ -129,7 +130,12 @@ export default function SideBar({ children }) {
 
             <Accordion tag="促銷與折扣" id="discount">
               <div>
-                <button className={category === "" ? "checked" : "unchecked"}>
+                <button
+                  onClick={() => handleToggleFilter("onSale", "sale")}
+                  className={
+                    filters.onSale.includes("sale") ? "checked" : "unchecked"
+                  }
+                >
                   超值優惠商品
                 </button>
               </div>
@@ -140,22 +146,42 @@ export default function SideBar({ children }) {
                 content={
                   <div>
                     <button
-                      className={category === "" ? "checked" : "unchecked"}
+                      onClick={() => handleToggleFilter("brands", "asics")}
+                      className={
+                        filters.brands.includes("asics")
+                          ? "checked"
+                          : "unchecked"
+                      }
                     >
                       Asics
                     </button>
                     <button
-                      className={category === "" ? "checked" : "unchecked"}
+                      onClick={() => handleToggleFilter("brands", "adidas")}
+                      className={
+                        filters.brands.includes("adidas")
+                          ? "checked"
+                          : "unchecked"
+                      }
                     >
                       Adidas
                     </button>
                     <button
-                      className={category === "" ? "checked" : "unchecked"}
+                      onClick={() => handleToggleFilter("brands", "converse")}
+                      className={
+                        filters.brands.includes("converse")
+                          ? "checked"
+                          : "unchecked"
+                      }
                     >
                       Converse
                     </button>
                     <button
-                      className={category === "" ? "checked" : "unchecked"}
+                      onClick={() => handleToggleFilter("brands", "mizuno")}
+                      className={
+                        filters.brands.includes("mizuno")
+                          ? "checked"
+                          : "unchecked"
+                      }
                     >
                       Mizuno
                     </button>
@@ -164,22 +190,44 @@ export default function SideBar({ children }) {
                 more={
                   <div>
                     <button
-                      className={category === "" ? "checked" : "unchecked"}
+                      onClick={() => handleToggleFilter("brands", "nautica")}
+                      className={
+                        filters.brands.includes("nautica")
+                          ? "checked"
+                          : "unchecked"
+                      }
                     >
                       Nautica
                     </button>
                     <button
-                      className={category === "" ? "checked" : "unchecked"}
+                      onClick={() => handleToggleFilter("brands", "nike")}
+                      className={
+                        filters.brands.includes("nike")
+                          ? "checked"
+                          : "unchecked"
+                      }
                     >
                       Nike
                     </button>
                     <button
-                      className={category === "" ? "checked" : "unchecked"}
+                      onClick={() => handleToggleFilter("brands", "ordinary")}
+                      className={
+                        filters.brands.includes("ordinary")
+                          ? "checked"
+                          : "unchecked"
+                      }
                     >
                       Ordinary
                     </button>
                     <button
-                      className={category === "" ? "checked" : "unchecked"}
+                      onClick={() =>
+                        handleToggleFilter("brands", "the-north-face")
+                      }
+                      className={
+                        filters.brands.includes("the-north-face")
+                          ? "checked"
+                          : "unchecked"
+                      }
                     >
                       The North Face
                     </button>
