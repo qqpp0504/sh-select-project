@@ -1,6 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialFilterState = { gender: [], onSale: [], brands: [] };
+const initialFilterState = {
+  gender: [],
+  newProduct: [],
+  onSale: [],
+  brands: [],
+};
 
 const filterSlice = createSlice({
   name: "filters",

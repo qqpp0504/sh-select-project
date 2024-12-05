@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import { PRODUCTSNAV } from "../../data.js";
+import { PRODUCTSNAV, PRODUCTSNAVMEN } from "../../data.js";
 import filterIcon from "../../assets/filter-icon.png";
 import showIcon from "../../assets/show-icon.png";
 import Accordion from "../../components/UI/Accordion.jsx";
@@ -14,15 +14,17 @@ import { FILTERS } from "../../data.js";
 export default function SideBar({ children }) {
   const filters = useSelector((state) => state.filter);
   const navigate = useNavigate();
-  const { category } = useParams();
+  const { gender } = useParams();
   const [isShowing, setIsShowing] = useState(true); // 可以改成不要用狀態管理
 
+  const navItems = gender === "men" ? PRODUCTSNAVMEN : PRODUCTSNAV;
+
   const genderText =
-    category === "men" ? "男子" : category === "women" ? "女子" : "所有產品";
+    gender === "men" ? "男子" : gender === "women" ? "女子" : "所有產品";
 
   // 自動同步 URL，根據所選擇的篩選條件狀態來更改 URL
   useEffect(() => {
-    const { gender, onSale, brands } = filters;
+    const { gender, onSale, brands, newProduct } = filters;
     let path = "/products";
 
     if (gender.length > 0) {
@@ -31,6 +33,10 @@ export default function SideBar({ children }) {
       } else {
         path += "/" + gender.join("-");
       }
+    }
+
+    if (newProduct.length > 0) {
+      path += "/" + newProduct;
     }
 
     if (onSale.length > 0) {
@@ -85,7 +91,7 @@ export default function SideBar({ children }) {
           <div className="pr-5">
             <nav className="pb-10">
               <ul>
-                {PRODUCTSNAV.map((tag) => (
+                {navItems.map((tag) => (
                   <li key={tag} className="py-1">
                     <Link to="/products">
                       <span className="font-500">{tag}</span>
@@ -95,12 +101,26 @@ export default function SideBar({ children }) {
               </ul>
             </nav>
 
-            <Accordion tag="性別" id="sex">
+            <Accordion tag="性別" id="gender">
               <div>
                 {FILTERS.gender.map((option) => (
                   <FilterButton
                     key={option.param}
                     filterType="gender"
+                    filterName={option.param}
+                  >
+                    {option.filterName}
+                  </FilterButton>
+                ))}
+              </div>
+            </Accordion>
+
+            <Accordion tag="新上架" id="newProduct">
+              <div>
+                {FILTERS.new.map((option) => (
+                  <FilterButton
+                    key={option.param}
+                    filterType="newProduct"
                     filterName={option.param}
                   >
                     {option.filterName}

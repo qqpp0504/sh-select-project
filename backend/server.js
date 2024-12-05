@@ -22,34 +22,53 @@ app.use((req, res, next) => {
 });
 
 app.get("/products", async (req, res) => {
-  const { category, onSale, gender, isNew } = req.query;
+  const { category, onSale, gender, newProduct, brands } = req.query;
 
   try {
     const fileContent = await fs.readFile("./data/products.json");
     const products = JSON.parse(fileContent);
 
     // 如果沒有任何篩選條件，直接返回所有商品
-    if (!category && !onSale && !gender && !isNew) {
+    if (!category && !onSale && !gender && !newProduct && !brands) {
       return res.status(200).json(products);
     }
 
     // 篩選產品
     const filteredProducts = products.filter((product) => {
-      const matchesGender = gender
-        ? // 當選擇 men 時，只顯示含有 men 的商品
-          (gender.includes("men") && product.gender.includes("men")) ||
-          (gender.includes("women") && product.gender.includes("women")) ||
-          (gender.includes("unisex") && product.gender.includes("unisex"))
-        : true;
+      const matchesGender =
+        !gender || // 如果 gender 為空，直接通過
+        (gender.includes("men") && product.gender.includes("men")) ||
+        (gender.includes("women") && product.gender.includes("women")) ||
+        (gender.includes("unisex") && product.gender.includes("unisex"));
+
+      const matchesOnSale =
+        onSale === "sale" ? product.isOnSale === true : true;
+
+      const matchesBrands =
+        !brands ||
+        (brands.includes("adidas") && product.brand.includes("Adidas")) ||
+        (brands.includes("asics") && product.brand.includes("Asics")) ||
+        (brands.includes("carhartt") && product.brand.includes("Carhartt")) ||
+        (brands.includes("converse") && product.brand.includes("Converse")) ||
+        (brands.includes("mizuno") && product.brand.includes("Mizuno")) ||
+        (brands.includes("nautica") && product.brand.includes("Nautica")) ||
+        (brands.includes("nike") && product.brand.includes("Nike")) ||
+        (brands.includes("ordinary") && product.brand.includes("Ordinary")) ||
+        (brands.includes("the-north-face") &&
+          product.brand.includes("The North Face"));
 
       const matchesCategory = category ? product.category === category : true;
-      const matchesOnSale = onSale
-        ? product.isOnSale === (onSale === "true")
-        : true;
-      const matchesIsNew = isNew ? product.isNew === (isNew === "true") : true;
+
+      const matchesIsNew = newProduct === "new" ? product.isNew === true : true;
 
       // 返回符合所有條件的產品
-      return matchesGender && matchesCategory && matchesOnSale && matchesIsNew;
+      return (
+        matchesGender &&
+        matchesCategory &&
+        matchesOnSale &&
+        matchesIsNew &&
+        matchesBrands
+      );
     });
 
     return res.status(200).json(filteredProducts);
