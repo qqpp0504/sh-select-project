@@ -14,7 +14,6 @@ import ProductFilter from "../products/ProductFilter.jsx";
 
 export default function SideBar({ children }) {
   const filters = useSelector((state) => state.filter);
-
   const [isShowing, setIsShowing] = useState(true); // 可以改成不要用狀態管理
 
   const { gender, newProduct, onSale, brands } = filters;

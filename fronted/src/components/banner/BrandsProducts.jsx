@@ -18,7 +18,7 @@ export default function BrandsProducts({ products }) {
             className="w-full h-full object-cover"
           />
 
-          <div className="absolute bottom-1 left-12">
+          <div className="absolute bottom-5 left-12">
             <Link to="/">
               <Button bgColor="white">{product.title}</Button>
             </Link>

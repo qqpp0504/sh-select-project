@@ -28,7 +28,7 @@ export default function VipBlock({ image, alt }) {
             ))}
           </table>
         </div>
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+        <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2">
           <Link to="/">
             <Button bgColor="white">加入會員</Button>
           </Link>

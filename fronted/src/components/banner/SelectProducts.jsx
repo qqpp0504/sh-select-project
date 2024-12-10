@@ -18,8 +18,10 @@ export default function SelectedProducts({ products, sectionTitle }) {
             className="w-full h-full object-cover object-bottom"
           />
 
-          <div className="absolute bottom-7 left-12">
-            <h2 className="text-white text-xl font-400">{product.title}</h2>
+          <div className="absolute bottom-12 left-12">
+            <h2 className="text-white text-xl font-400 mb-6">
+              {product.title}
+            </h2>
             <Link to="/">
               <Button bgColor="white">立即選購</Button>
             </Link>

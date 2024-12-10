@@ -2,10 +2,30 @@
 import { Link } from "react-router-dom";
 
 import { currencyFormatter } from "../../util/formatting.js";
+import Button from "../UI/Button.jsx";
+import emptyIconImg from "../../assets/empty-icon.png";
 
 export default function ProductsList({ products }) {
+  let noProductsContent;
+
+  if (products.length == 0) {
+    noProductsContent = (
+      <div className="flex flex-col justify-center items-center mt-20">
+        <div className="flex flex-row rounded-lg w-96 pt-5 justify-center text-4xl mb-10 gap-4">
+          <img src={emptyIconImg} alt="Empty Icon" className="w-10 h-10" />
+          <span>Nothing!</span>
+        </div>
+        <p>找不到符合條件的商品，試試修改篩選條件或探索其他分類吧！</p>
+        <Link to="/products" className="my-6">
+          <Button>重新篩選商品條件</Button>
+        </Link>
+      </div>
+    );
+  }
+
   return (
     <div>
+      {noProductsContent}
       <ul className="grid grid-cols-2 gap-4 lg:grid-cols-3">
         {products.map((product) => (
           <li key={product.id} className="mb-14">
