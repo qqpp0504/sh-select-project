@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialFilterState = {
+  category: "",
   gender: [],
   newProduct: [],
   onSale: [],
@@ -14,14 +15,27 @@ const filterSlice = createSlice({
     // 切換篩選條件，允許添加或移除特定篩選值
     toggleFilter(state, action) {
       const { filterType, value } = action.payload;
-      const valuesOfFilterType = state[filterType];
-      state[filterType] = valuesOfFilterType.includes(value)
-        ? valuesOfFilterType.filter((item) => item !== value)
-        : [...valuesOfFilterType, value];
+
+      if (filterType === "category") {
+        if (state[filterType] === value) {
+          return;
+        }
+
+        state[filterType] = value;
+      } else {
+        const valuesOfFilterType = state[filterType];
+        state[filterType] = valuesOfFilterType.includes(value)
+          ? valuesOfFilterType.filter((item) => item !== value)
+          : [...valuesOfFilterType, value];
+      }
     },
     // 清空所有篩選條件
     clearFilters() {
       return { ...initialFilterState };
+    },
+
+    updateCategoryFilter(state, action) {
+      state.category = action.payload;
     },
     // 更新性別篩選條件
     updateGenderFilter(state, action) {

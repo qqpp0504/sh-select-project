@@ -6,7 +6,6 @@ import { queryClient } from "./util/http.js";
 import RootLayout from "./pages/RootLayout.jsx";
 import BrandsPage from "./pages/Brands.jsx";
 import PromotionPage from "./pages/Promotion.jsx";
-import ProductsPage from "./pages/Products.jsx";
 import ProductCategoryPage from "./pages/ProductCategoryPage.jsx";
 import ProductsRoot from "./pages/ProductsRoot.jsx";
 

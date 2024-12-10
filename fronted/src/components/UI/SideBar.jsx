@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import { PRODUCTSNAV, PRODUCTSNAVMEN } from "../../data.js";
@@ -10,13 +9,12 @@ import Accordion from "../../components/UI/Accordion.jsx";
 import ShowMore from "../../components/UI/ShowMore.jsx";
 import FilterButton from "../products/FilterButton.jsx";
 import { FILTERS } from "../../data.js";
-import ProductFilter from "../products/ProductFilter.jsx";
 
 export default function SideBar({ children }) {
   const filters = useSelector((state) => state.filter);
   const [isShowing, setIsShowing] = useState(true); // 可以改成不要用狀態管理
 
-  const { gender, newProduct, onSale, brands } = filters;
+  const { category, gender, newProduct, onSale, brands } = filters;
 
   let navItems = PRODUCTSNAV;
   let filterText = "所有產品";
@@ -26,6 +24,22 @@ export default function SideBar({ children }) {
   }
 
   const activeFilters = [
+    category.length > 0 &&
+      (category === "top"
+        ? "上衣"
+        : category === "jacket"
+        ? "外套及背心"
+        : category === "bottom"
+        ? "下著"
+        : category === "sportsbar"
+        ? "運動內衣"
+        : category === "socks"
+        ? "襪子"
+        : category === "shoes"
+        ? "鞋款"
+        : category === "other"
+        ? "其他配件"
+        : ""),
     gender.length === 1 &&
       (gender[0] === "men" ? "男子" : gender[0] === "women" ? "女子" : ""),
     newProduct.length > 0 && "新品",
@@ -44,6 +58,36 @@ export default function SideBar({ children }) {
 
   function handleShowing() {
     setIsShowing((showing) => !showing);
+  }
+
+  let genderFilters = (
+    <div>
+      {FILTERS.gender.map((option) => (
+        <FilterButton
+          key={option.param}
+          filterType="gender"
+          filterName={option.param}
+        >
+          {option.filterName}
+        </FilterButton>
+      ))}
+    </div>
+  );
+
+  if (category === "sportsbar") {
+    genderFilters = (
+      <div>
+        {FILTERS.genderWomen.map((option) => (
+          <FilterButton
+            key={option.param}
+            filterType="gender"
+            filterName={option.param}
+          >
+            {option.filterName}
+          </FilterButton>
+        ))}
+      </div>
+    );
   }
 
   let moreFilters;
@@ -67,7 +111,6 @@ export default function SideBar({ children }) {
 
   return (
     <>
-      <ProductFilter />
       <div className="padding-large">
         {moreFilters}
         <div className="flex flex-row items-center justify-between pb-6">
@@ -104,28 +147,22 @@ export default function SideBar({ children }) {
             <div className="pr-5">
               <nav className="pb-10">
                 <ul>
-                  {navItems.map((tag) => (
-                    <li key={tag} className="py-1">
-                      <Link to="/products">
-                        <span className="font-500">{tag}</span>
-                      </Link>
+                  {navItems.map((option) => (
+                    <li key={option.param} className="py-1 font-500">
+                      <FilterButton
+                        filterType="category"
+                        filterName={option.param}
+                        disableStyle={true}
+                      >
+                        {option.filterName}
+                      </FilterButton>
                     </li>
                   ))}
                 </ul>
               </nav>
 
               <Accordion tag="性別" id="gender">
-                <div>
-                  {FILTERS.gender.map((option) => (
-                    <FilterButton
-                      key={option.param}
-                      filterType="gender"
-                      filterName={option.param}
-                    >
-                      {option.filterName}
-                    </FilterButton>
-                  ))}
-                </div>
+                {genderFilters}
               </Accordion>
 
               <Accordion tag="新上架" id="newProduct">

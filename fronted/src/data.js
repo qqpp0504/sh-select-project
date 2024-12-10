@@ -56,22 +56,22 @@ export const FOOTERDATA = {
 };
 
 export const PRODUCTSNAV = [
-  "上衣",
-  "外套及背心",
-  "下著",
-  "運動內衣",
-  "襪子",
-  "鞋款",
-  "其他配件",
+  { param: "top", filterName: "上衣" },
+  { param: "jacket", filterName: "外套及背心" },
+  { param: "bottom", filterName: "下著" },
+  { param: "sportsbar", filterName: "運動內衣" },
+  { param: "socks", filterName: "襪子" },
+  { param: "shoes", filterName: "鞋款" },
+  { param: "other", filterName: "其他配件" },
 ];
 
 export const PRODUCTSNAVMEN = [
-  "上衣",
-  "外套及背心",
-  "下著",
-  "襪子",
-  "鞋款",
-  "其他配件",
+  { param: "top", filterName: "上衣" },
+  { param: "jacket", filterName: "外套及背心" },
+  { param: "bottom", filterName: "下著" },
+  { param: "socks", filterName: "襪子" },
+  { param: "shoes", filterName: "鞋款" },
+  { param: "other", filterName: "其他配件" },
 ];
 
 export const FILTERS = {
@@ -79,6 +79,7 @@ export const FILTERS = {
     { param: "men", filterName: "男子" },
     { param: "women", filterName: "女子" },
   ],
+  genderWomen: [{ param: "women", filterName: "女子" }],
   new: [{ param: "new", filterName: "新品推薦" }],
   onSale: [{ param: "sale", filterName: "超值優惠商品" }],
   brandsTop: [

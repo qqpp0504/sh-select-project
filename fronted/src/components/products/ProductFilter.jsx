@@ -12,7 +12,7 @@ export default function ProductFilter() {
 
   // 根據 Redux 狀態更新 URL
   useEffect(() => {
-    const { gender, newProduct, onSale, brands } = filters;
+    const { category, gender, newProduct, onSale, brands } = filters;
     const queryParams = new URLSearchParams();
 
     if (gender.length > 0) {
@@ -22,6 +22,7 @@ export default function ProductFilter() {
         queryParams.set("gender", gender);
       }
     }
+    if (category.length > 0) queryParams.set("category", category);
     if (newProduct.length > 0) queryParams.set("newProduct", "new");
     if (onSale.length > 0) queryParams.set("onSale", "sale");
     if (brands.length > 0) queryParams.set("brands", brands.join("-"));
@@ -31,6 +32,7 @@ export default function ProductFilter() {
 
   // 根據 URL 同步 Redux 狀態
   useEffect(() => {
+    const category = searchParams.get("category") || "";
     const genderParam = searchParams.get("gender");
     const newProduct = searchParams.get("newProduct") === "new";
     const onSale = searchParams.get("onSale") === "sale";
@@ -44,6 +46,7 @@ export default function ProductFilter() {
       dispatch(filterActions.updateGenderFilter([]));
     }
 
+    dispatch(filterActions.updateCategoryFilter(category));
     dispatch(filterActions.updateNewProductFilter(newProduct ? ["new"] : []));
     dispatch(filterActions.updateSaleFilter(onSale ? ["sale"] : []));
     dispatch(filterActions.updateBrandFilter(brands));

@@ -3,7 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { filterActions } from "../../store/filter-slice.js";
 
-export default function FilterButton({ filterType, filterName, children }) {
+export default function FilterButton({
+  filterType,
+  filterName,
+  children,
+  disableStyle = false,
+}) {
   const filters = useSelector((state) => state.filter);
   const dispatch = useDispatch();
 
@@ -16,7 +21,11 @@ export default function FilterButton({ filterType, filterName, children }) {
       <button
         onClick={() => handleToggleFilter(filterType, filterName)}
         className={
-          filters[filterType].includes(filterName) ? "checked" : "unchecked"
+          disableStyle
+            ? ""
+            : filters[filterType].includes(filterName)
+            ? "checked"
+            : "unchecked"
         }
       >
         {children}
