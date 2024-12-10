@@ -1,14 +1,24 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 import { currencyFormatter } from "../../util/formatting.js";
 import Button from "../UI/Button.jsx";
 import emptyIconImg from "../../assets/empty-icon.png";
+import { filterActions } from "../../store/filter-slice.js";
+import { useEffect } from "react";
 
 export default function ProductsList({ products }) {
+  const dispatch = useDispatch();
   let noProductsContent;
 
-  if (products.length == 0) {
+  const productsQuantity = products.length;
+
+  useEffect(() => {
+    dispatch(filterActions.updateQuantity(productsQuantity));
+  }, [productsQuantity, dispatch]);
+
+  if (productsQuantity == 0) {
     noProductsContent = (
       <div className="flex flex-col justify-center items-center mt-20">
         <div className="flex flex-row rounded-lg w-96 pt-5 justify-center text-4xl mb-10 gap-4">

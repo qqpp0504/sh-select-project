@@ -10,7 +10,7 @@ import ErrorBlock from "../components/UI/ErrorBlock.jsx";
 import ProductsList from "../components/products/ProductsList.jsx";
 
 export default function ProductCategoryPage() {
-  const filters = useSelector((state) => state.filter);
+  const filters = useSelector((state) => state.filter.allFilters);
   const location = useLocation(); // 監聽路由變化
   const queryClient = useQueryClient(); // 使用 queryClient 進行數據管理
 

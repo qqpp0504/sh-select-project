@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { filterActions } from "../../store/filter-slice.js";
 
 export default function ProductFilter() {
-  const filters = useSelector((state) => state.filter);
+  const filters = useSelector((state) => state.filter.allFilters);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();

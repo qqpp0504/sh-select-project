@@ -9,7 +9,7 @@ export default function FilterButton({
   children,
   disableStyle = false,
 }) {
-  const filters = useSelector((state) => state.filter);
+  const filters = useSelector((state) => state.filter.allFilters);
   const dispatch = useDispatch();
 
   function handleToggleFilter(filterType, value) {

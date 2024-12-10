@@ -11,7 +11,8 @@ import FilterButton from "../products/FilterButton.jsx";
 import { FILTERS } from "../../data.js";
 
 export default function SideBar({ children }) {
-  const filters = useSelector((state) => state.filter);
+  const filters = useSelector((state) => state.filter.allFilters);
+  const productsQuantity = useSelector((state) => state.filter.quantity);
   const [isShowing, setIsShowing] = useState(true); // 可以改成不要用狀態管理
 
   const { category, gender, newProduct, onSale, brands } = filters;
@@ -114,7 +115,9 @@ export default function SideBar({ children }) {
       <div className="padding-large">
         {moreFilters}
         <div className="flex flex-row items-center justify-between pb-6">
-          <h1 className="text-2xl font-500">{filterText}</h1>
+          <h1 className="text-2xl font-500">
+            {filterText} ({productsQuantity})
+          </h1>
           <nav>
             <ul className="flex flex-row gap-8">
               <li>
