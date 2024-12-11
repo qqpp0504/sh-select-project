@@ -5,9 +5,9 @@ import { useSelector } from "react-redux";
 import { PRODUCTSNAV, PRODUCTSNAVMEN } from "../../data.js";
 import filterIcon from "../../assets/filter-icon.png";
 import showIcon from "../../assets/show-icon.png";
-import Accordion from "../../components/UI/Accordion.jsx";
-import ShowMore from "../../components/UI/ShowMore.jsx";
-import FilterButton from "../products/FilterButton.jsx";
+import Accordion from "../UI/Accordion.jsx";
+import ShowMore from "../UI/ShowMore.jsx";
+import FilterButton from "./FilterButton.jsx";
 import { FILTERS } from "../../data.js";
 
 export default function SideBar({ children }) {
@@ -61,6 +61,7 @@ export default function SideBar({ children }) {
     setIsShowing((showing) => !showing);
   }
 
+  // 若用戶先點選運動內衣，那就不能出現男子之篩選條件
   let genderFilters = (
     <div>
       {FILTERS.gender.map((option) => (
@@ -91,6 +92,7 @@ export default function SideBar({ children }) {
     );
   }
 
+  // 更多品牌篩選條件（最上面）
   let moreFilters;
 
   if (brands.length > 1) {

@@ -39,6 +39,10 @@
     flex-direction: column;
   }
 
+  .accordion-content button:hover {
+    @apply text-gray-600;
+  }
+
   .accordion-toggle:checked ~ .accordion-content {
     max-height: 20rem;
   }

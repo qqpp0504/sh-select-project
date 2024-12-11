@@ -14,7 +14,7 @@
       "title": "新品上架，驚喜不斷",
       "description": "發掘全球最酷商品，為你的生活帶來新選擇。",
       "buttonText": "立即查看新品",
-      "link": "/"
+      "link": "/products?newProduct=new"
     },
     "thirdBanner": {
       "image": "brands-banner.jpg",
@@ -22,7 +22,7 @@
       "title": "探索頂尖品牌，展現非凡選擇",
       "description": "匯聚全球知名品牌，為你帶來更豐富的生活選擇。",
       "buttonText": "探索各種品牌",
-      "link": "/"
+      "link": "/products"
     },
     "selectedProducts": [
       {
@@ -72,42 +72,50 @@
       {
         "image": "nike-logo.jpg",
         "alt": "Nike Logo圖片",
-        "title": "Nike"
+        "title": "Nike",
+        "link": "/products?brands=nike"
       },
       {
         "image": "asics-logo.jpg",
         "alt": "Asics Logo圖片",
-        "title": "Asics"
+        "title": "Asics",
+        "link": "/products?brands=asics"
       },
       {
         "image": "the-north-face-logo.jpg",
         "alt": "The North Face Logo圖片",
-        "title": "The North Face"
+        "title": "The North Face",
+        "link": "/products?brands=theNorthFace"
       },
       {
         "image": "mizuno-logo.jpg",
         "alt": "Mizuno Logo圖片",
-        "title": "Mizuno"
+        "title": "Mizuno",
+        "link": "/products?brands=mizuno"
       },
       {
         "image": "adidas-logo.jpg",
         "alt": "Adidas Logo圖片",
-        "title": "Adidas"
+        "title": "Adidas",
+        "link": "/products?brands=adidas"
       },
       {
         "image": "nautica-logo.jpg",
         "alt": "Nautica Logo圖片",
-        "title": "Nautica"
+        "title": "Nautica",
+        "link": "/products?brands=nautica"
       },
       {
         "image": "converse-logo.jpg",
         "alt": "Converse Logo圖片",
-        "title": "Converse"
+        "title": "Converse",
+        "link": "/products?brands=converse"
       },
       {
         "image": "ordinary-logo.jpg",
         "alt": "Oridnary Logo圖片",
-        "title": "Ordinary"
+        "title": "Ordinary",
+        "link": "/products?brands=ordinary"
       }
     ],
     "vipImage": {
@@ -122,7 +130,7 @@
       "title": "精選男士必備單品，風格與實用兼具",
       "description": "挑選全球優質男款，讓每件商品都成為日常必需。",
       "buttonText": "查看所有男款單品",
-      "link": "/products/men"
+      "link": "/products?gender=men"
     },
     "selectedProducts": [
       {
@@ -230,7 +238,7 @@
       "title": "發現獨特風格，展現自信優雅",
       "description": "精選女性服飾，讓妳每一天都充滿魅力。",
       "buttonText": "查看所有女款單品",
-      "link": "/female"
+      "link": "/products?gender=women"
     },
     "selectedProducts": [
       {

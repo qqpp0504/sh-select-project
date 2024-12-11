@@ -3,13 +3,13 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import { fetchProducts } from "../util/http.js";
+import { fetchProducts } from "../../util/http.js";
 
-import LoadingIndicator from "../components/UI/LoadingIndicator.jsx";
-import ErrorBlock from "../components/UI/ErrorBlock.jsx";
-import ProductsList from "../components/products/ProductsList.jsx";
+import LoadingIndicator from "../UI/LoadingIndicator.jsx";
+import ErrorBlock from "../UI/ErrorBlock.jsx";
+import ProductsList from "./ProductsList.jsx";
 
-export default function ProductCategoryPage() {
+export default function ProductCategoryData() {
   const filters = useSelector((state) => state.filter.allFilters);
   const location = useLocation(); // 監聽路由變化
   const queryClient = useQueryClient(); // 使用 queryClient 進行數據管理

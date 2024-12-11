@@ -19,7 +19,7 @@ export default function BrandsProducts({ products }) {
           />
 
           <div className="absolute bottom-5 left-12">
-            <Link to="/">
+            <Link to={product.link}>
               <Button bgColor="white">{product.title}</Button>
             </Link>
           </div>

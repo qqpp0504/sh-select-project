@@ -93,6 +93,6 @@ export const FILTERS = {
     { param: "nautica", filterName: "Nautica" },
     { param: "nike", filterName: "Nike" },
     { param: "ordinary", filterName: "Ordinary" },
-    { param: "the-north-face", filterName: "The North Face" },
+    { param: "theNorthFace", filterName: "The North Face" },
   ],
 };

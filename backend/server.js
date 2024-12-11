@@ -54,7 +54,7 @@ app.get("/products", async (req, res) => {
         (brands.includes("nautica") && product.brand.includes("Nautica")) ||
         (brands.includes("nike") && product.brand.includes("Nike")) ||
         (brands.includes("ordinary") && product.brand.includes("Ordinary")) ||
-        (brands.includes("the-north-face") &&
+        (brands.includes("theNorthFace") &&
           product.brand.includes("The North Face"));
 
       const matchesCategory = category ? product.category === category : true;
