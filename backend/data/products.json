@@ -7,11 +7,19 @@
     "discountPrice": 1680,
     "discountPercentage": 0,
     "category": "top",
+    "categoryCh": "上衣",
     "gender": ["unisex", "men"],
     "image": "ordinary-tee.jpg",
     "alt": "Ordinary 拼接滾邊冰球長Tee圖片",
     "isOnSale": false,
-    "isNew": true
+    "isNew": true,
+    "images": [
+      "ordinary-tee-2.jpg",
+      "ordinary-tee-3.jpg",
+      "ordinary-tee-4.jpg",
+      "ordinary-tee-5.jpg",
+      "ordinary-tee-6.jpg"
+    ]
   },
   {
     "id": "p2",
@@ -21,11 +29,19 @@
     "discountPrice": 2500,
     "discountPercentage": 0,
     "category": "top",
+    "categoryCh": "上衣",
     "gender": ["unisex", "men"],
     "image": "nautica-hoodie.jpg",
     "alt": "Nautica 大Logo帽Tee圖片",
     "isOnSale": false,
-    "isNew": true
+    "isNew": true,
+    "images": [
+      "nautica-hoodie-2.jpg",
+      "nautica-hoodie-3.jpg",
+      "nautica-hoodie-4.jpg",
+      "nautica-hoodie-5.jpg",
+      "nautica-hoodie-6.jpg"
+    ]
   },
   {
     "id": "p3",
@@ -35,11 +51,18 @@
     "discountPrice": 350,
     "discountPercentage": 0,
     "category": "socks",
+    "categoryCh": "襪子",
     "gender": ["unisex", "men"],
     "image": "nike-socks-short.jpg",
     "alt": "Nike 運動短襪圖片",
     "isOnSale": false,
-    "isNew": true
+    "isNew": true,
+    "images": [
+      "nike-socks-short-2.jpg",
+      "nike-socks-short-3.jpg",
+      "nike-socks-short-4.jpg",
+      "nike-socks-short-5.jpg"
+    ]
   },
   {
     "id": "p4",
@@ -49,11 +72,17 @@
     "discountPrice": 350,
     "discountPercentage": 0,
     "category": "socks",
+    "categoryCh": "襪子",
     "gender": ["unisex", "men"],
     "image": "nike-socks-long.jpg",
     "alt": "Nike 運動長襪圖片",
     "isOnSale": false,
-    "isNew": true
+    "isNew": true,
+    "images": [
+      "nike-socks-long-2.jpg",
+      "nike-socks-long-3.jpg",
+      "nike-socks-long-4.jpg"
+    ]
   },
   {
     "id": "p5",
@@ -63,11 +92,19 @@
     "discountPrice": 10800,
     "discountPercentage": 0,
     "category": "shoes",
+    "categoryCh": "鞋款",
     "gender": ["unisex", "men"],
     "image": "mizuno-wave.jpg",
     "alt": "Mizuno Wave Prophecy Moc圖片",
     "isOnSale": false,
-    "isNew": false
+    "isNew": false,
+    "images": [
+      "mizuno-wave-2.jpg",
+      "mizuno-wave-3.jpg",
+      "mizuno-wave-4.jpg",
+      "mizuno-wave-5.jpg",
+      "mizuno-wave-6.jpg"
+    ]
   },
   {
     "id": "p6",
@@ -77,11 +114,18 @@
     "discountPrice": 3500,
     "discountPercentage": 0,
     "category": "jacket",
+    "categoryCh": "外套及背心",
     "gender": ["unisex", "men"],
     "image": "the-north-face-jacket.jpg",
     "alt": "The North Face 可拆卸三合一搖粒絨衝鋒衣圖片",
     "isOnSale": false,
-    "isNew": false
+    "isNew": false,
+    "images": [
+      "the-north-face-jacket-2.jpg",
+      "the-north-face-jacket-3.jpg",
+      "the-north-face-jacket-4.jpg",
+      "the-north-face-jacket-5.jpg"
+    ]
   },
   {
     "id": "p7",
@@ -91,11 +135,19 @@
     "discountPrice": 9000,
     "discountPercentage": 0,
     "category": "jacket",
+    "categoryCh": "外套及背心",
     "gender": ["unisex", "men"],
     "image": "adidas-blcg.jpg",
     "alt": "Adidas x BLCG 聯名寬鬆廓形西裝外套圖片",
     "isOnSale": false,
-    "isNew": false
+    "isNew": false,
+    "images": [
+      "adidas-blcg-2.jpg",
+      "adidas-blcg-3.jpg",
+      "adidas-blcg-4.jpg",
+      "adidas-blcg-5.jpg",
+      "adidas-blcg-6.jpg"
+    ]
   },
   {
     "id": "p8",
@@ -105,11 +157,20 @@
     "discountPrice": 2880,
     "discountPercentage": 0,
     "category": "bottom",
+    "categoryCh": "下著",
     "gender": ["unisex", "men"],
     "image": "ordinary-pants.jpg",
     "alt": "Ordinary 潑漆做舊水洗工作褲圖片",
     "isOnSale": false,
-    "isNew": false
+    "isNew": false,
+    "images": [
+      "ordinary-pants-2.jpg",
+      "ordinary-pants-3.jpg",
+      "ordinary-pants-4.jpg",
+      "ordinary-pants-5.jpg",
+      "ordinary-pants-6.jpg",
+      "ordinary-pants-7.jpg"
+    ]
   },
   {
     "id": "p9",
@@ -119,11 +180,18 @@
     "discountPrice": 1800,
     "discountPercentage": 0,
     "category": "bottom",
+    "categoryCh": "下著",
     "gender": ["unisex", "women"],
     "image": "adidas-originals-pants.jpg",
     "alt": "Adidas Originals 寬鬆廓形運動長褲圖片",
     "isOnSale": false,
-    "isNew": false
+    "isNew": false,
+    "images": [
+      "adidas-originals-pants-2.jpg",
+      "adidas-originals-pants-3.jpg",
+      "adidas-originals-pants-4.jpg",
+      "adidas-originals-pants-5.jpg"
+    ]
   },
   {
     "id": "p10",
@@ -133,11 +201,19 @@
     "discountPrice": 2480,
     "discountPercentage": 0,
     "category": "top",
+    "categoryCh": "上衣",
     "gender": ["unisex", "men"],
     "image": "nautica-tee.jpg",
     "alt": "Nautica TOO HEAVY Arch Logo Tee圖片",
     "isOnSale": false,
-    "isNew": false
+    "isNew": false,
+    "images": [
+      "nautica-tee-2.jpg",
+      "nautica-tee-3.jpg",
+      "nautica-tee-4.jpg",
+      "nautica-tee-5.jpg",
+      "nautica-tee-6.jpg"
+    ]
   },
   {
     "id": "p11",
@@ -147,11 +223,19 @@
     "discountPrice": 5680,
     "discountPercentage": 0,
     "category": "jacket",
+    "categoryCh": "外套及背心",
     "gender": ["unisex", "men"],
     "image": "carhartt-jacket.jpg",
     "alt": "Carhartt WIP 衝鋒外套圖片",
     "isOnSale": false,
-    "isNew": false
+    "isNew": false,
+    "images": [
+      "carhartt-jacket-2.jpg",
+      "carhartt-jacket-3.jpg",
+      "carhartt-jacket-4.jpg",
+      "carhartt-jacket-5.jpg",
+      "carhartt-jacket-6.jpg"
+    ]
   },
   {
     "id": "p12",
@@ -161,11 +245,19 @@
     "discountPrice": 2080,
     "discountPercentage": 0,
     "category": "top",
-    "gender": ["unisex", "women"],
+    "categoryCh": "上衣",
+    "gender": ["unisex", "men"],
     "image": "adidas-sporty-rich.jpg",
     "alt": "Adidas x Sporty & Rich 聯名復古長袖T恤圖片",
     "isOnSale": false,
-    "isNew": false
+    "isNew": false,
+    "images": [
+      "adidas-sporty-rich-2.jpg",
+      "adidas-sporty-rich-3.jpg",
+      "adidas-sporty-rich-4.jpg",
+      "adidas-sporty-rich-5.jpg",
+      "adidas-sporty-rich-6.jpg"
+    ]
   },
   {
     "id": "p13",
@@ -175,11 +267,13 @@
     "discountPrice": 890,
     "discountPercentage": 0,
     "category": "bottom",
+    "categoryCh": "下著",
     "gender": ["unisex", "women"],
     "image": "adidas-short.jpg",
     "alt": "Adidas Originals 運動短褲圖片",
     "isOnSale": false,
-    "isNew": false
+    "isNew": false,
+    "images": ["adidas-short-2.jpg", "adidas-short-3.jpg", "adidas-short-4.jpg"]
   },
   {
     "id": "p14",
@@ -189,11 +283,18 @@
     "discountPrice": 7980,
     "discountPercentage": 0,
     "category": "shoes",
+    "categoryCh": "鞋款",
     "gender": ["unisex", "men"],
     "image": "asics-kayano-black.jpg",
     "alt": "Asics x Unaffected Gel-Kayano 14 黑銀圖片",
     "isOnSale": false,
-    "isNew": false
+    "isNew": false,
+    "images": [
+      "asics-kayano-black-2.jpg",
+      "asics-kayano-black-3.jpg",
+      "asics-kayano-black-4.jpg",
+      "asics-kayano-black-5.jpg"
+    ]
   },
   {
     "id": "p15",
@@ -203,11 +304,18 @@
     "discountPrice": 5880,
     "discountPercentage": 0,
     "category": "shoes",
+    "categoryCh": "鞋款",
     "gender": ["unisex", "men"],
     "image": "asics-kayano.jpg",
     "alt": "Asics Gel-Kayano 14 \"Silver Cream\" 灰銀圖片",
     "isOnSale": false,
-    "isNew": false
+    "isNew": false,
+    "images": [
+      "asics-kayano-2.jpg",
+      "asics-kayano-3.jpg",
+      "asics-kayano-4.jpg",
+      "asics-kayano-5.jpg"
+    ]
   },
   {
     "id": "p16",
@@ -217,11 +325,19 @@
     "discountPrice": 5800,
     "discountPercentage": 0,
     "category": "shoes",
+    "categoryCh": "鞋款",
     "gender": ["unisex", "men"],
     "image": "nike-air-jordan-1-retro.jpg",
     "alt": "Nike Air Jordan 1 Low Golf x Travis Scott Neutral Olive圖片",
     "isOnSale": false,
-    "isNew": false
+    "isNew": false,
+    "images": [
+      "nike-air-jordan-1-retro-2.jpg",
+      "nike-air-jordan-1-retro-3.jpg",
+      "nike-air-jordan-1-retro-4.jpg",
+      "nike-air-jordan-1-retro-5.jpg",
+      "nike-air-jordan-1-retro-6.jpg"
+    ]
   },
   {
     "id": "p17",
@@ -231,11 +347,18 @@
     "discountPrice": 4500,
     "discountPercentage": 0,
     "category": "shoes",
+    "categoryCh": "鞋款",
     "gender": ["unisex", "men"],
     "image": "nike-air-jordan-mid.jpg",
     "alt": "Nike Air Jordan 1 Mid Light Smoke Grey圖片",
     "isOnSale": false,
-    "isNew": false
+    "isNew": false,
+    "images": [
+      "nike-air-jordan-mid-2.jpg",
+      "nike-air-jordan-mid-3.jpg",
+      "nike-air-jordan-mid-4.jpg",
+      "nike-air-jordan-mid-5.jpg"
+    ]
   },
   {
     "id": "p18",
@@ -245,11 +368,18 @@
     "discountPrice": 2380,
     "discountPercentage": 0,
     "category": "shoes",
+    "categoryCh": "鞋款",
     "gender": ["unisex", "men"],
     "image": "nike-dunk-panda.jpg",
     "alt": "Nike Dunk Low Retro White Black圖片",
     "isOnSale": false,
-    "isNew": false
+    "isNew": false,
+    "images": [
+      "nike-dunk-panda-2.jpg",
+      "nike-dunk-panda-3.jpg",
+      "nike-dunk-panda-4.jpg",
+      "nike-dunk-panda-5.jpg"
+    ]
   },
   {
     "id": "p19",
@@ -259,11 +389,18 @@
     "discountPrice": 3340,
     "discountPercentage": 30,
     "category": "shoes",
+    "categoryCh": "鞋款",
     "gender": ["unisex", "men"],
     "image": "adidas-gazelle.jpg",
     "alt": "Adidas Originals Gazelle Bold W圖片",
     "isOnSale": true,
-    "isNew": false
+    "isNew": false,
+    "images": [
+      "adidas-gazelle-2.jpg",
+      "adidas-gazelle-3.jpg",
+      "adidas-gazelle-4.jpg",
+      "adidas-gazelle-5.jpg"
+    ]
   },
   {
     "id": "p20",
@@ -273,11 +410,13 @@
     "discountPrice": 1600,
     "discountPercentage": 20,
     "category": "shoes",
+    "categoryCh": "鞋款",
     "gender": ["unisex", "men"],
     "image": "converse-black-1.jpg",
     "alt": "Converse 1970 Chuck Taylor All Star '70 黑色圖片",
     "isOnSale": true,
-    "isNew": false
+    "isNew": false,
+    "images": ["converse-black-2.jpg", "converse-black-3.jpg"]
   },
   {
     "id": "p21",
@@ -287,11 +426,17 @@
     "discountPrice": 1600,
     "discountPercentage": 20,
     "category": "shoes",
+    "categoryCh": "鞋款",
     "gender": ["unisex", "men"],
     "image": "converse-beige-1.jpg",
     "alt": "Converse 1970 Chuck Taylor All Star '70 奶茶色圖片",
     "isOnSale": true,
-    "isNew": false
+    "isNew": false,
+    "images": [
+      "converse-beige-2.jpg",
+      "converse-beige-3.jpg",
+      "converse-beige-4.jpg"
+    ]
   },
   {
     "id": "p22",
@@ -301,11 +446,13 @@
     "discountPrice": 1440,
     "discountPercentage": 20,
     "category": "shoes",
+    "categoryCh": "鞋款",
     "gender": ["unisex", "men"],
     "image": "converse-red-1.jpg",
     "alt": "Converse 1970 Chuck Taylor All Star '70 酒紅色圖片",
     "isOnSale": true,
-    "isNew": false
+    "isNew": false,
+    "images": ["converse-red-2.jpg", "converse-red-3.jpg"]
   },
   {
     "id": "p23",
@@ -315,11 +462,17 @@
     "discountPrice": 990,
     "discountPercentage": 0,
     "category": "sportsbar",
+    "categoryCh": "運動內衣",
     "gender": ["unisex", "women"],
     "image": "nike-sports-bra.jpg",
     "alt": "Nike Dri-Fit 中度支撐運動內衣圖片",
     "isOnSale": false,
-    "isNew": false
+    "isNew": false,
+    "images": [
+      "nike-sports-bra-2.jpg",
+      "nike-sports-bra-3.jpg",
+      "nike-sports-bra-4.jpg"
+    ]
   },
   {
     "id": "p24",
@@ -329,11 +482,17 @@
     "discountPrice": 880,
     "discountPercentage": 0,
     "category": "other",
+    "categoryCh": "其他配件",
     "gender": ["unisex", "men"],
     "image": "carhartt-beanie.jpg",
     "alt": "Carhartt WIP 經典方標針織毛帽圖片",
     "isOnSale": false,
-    "isNew": false
+    "isNew": false,
+    "images": [
+      "carhartt-beanie-2.jpg",
+      "carhartt-beanie-3.jpg",
+      "carhartt-beanie-4.jpg"
+    ]
   },
   {
     "id": "p25",
@@ -343,11 +502,19 @@
     "discountPrice": 1380,
     "discountPercentage": 0,
     "category": "other",
+    "categoryCh": "其他配件",
     "gender": ["unisex", "men"],
     "image": "the-north-face-crossbody-bag.jpg",
     "alt": "The North Face 側背包圖片",
     "isOnSale": false,
-    "isNew": false
+    "isNew": false,
+    "images": [
+      "the-north-face-crossbody-bag-2.jpg",
+      "the-north-face-crossbody-bag-3.jpg",
+      "the-north-face-crossbody-bag-4.jpg",
+      "the-north-face-crossbody-bag-5.jpg",
+      "the-north-face-crossbody-bag-6.jpg"
+    ]
   },
   {
     "id": "p26",
@@ -357,10 +524,12 @@
     "discountPrice": 1980,
     "discountPercentage": 0,
     "category": "other",
+    "categoryCh": "其他配件",
     "gender": ["unisex", "men"],
     "image": "carhartt-d89.jpg",
     "alt": "Carhartt D89 後背包圖片",
     "isOnSale": false,
-    "isNew": false
+    "isNew": false,
+    "images": ["carhartt-d89-2.jpg", "carhartt-d89-3.jpg", "carhartt-d89-4.jpg"]
   }
 ]

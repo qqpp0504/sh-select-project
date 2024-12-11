@@ -51,7 +51,7 @@ export default function ProductsList({ products }) {
               <h3 className="font-500">
                 {product.brand} - {product.name}
               </h3>
-              <h3 className="text-gray">{product.category}</h3>
+              <h3 className="text-gray">{product.categoryCh}</h3>
 
               {product.discountPrice !== product.originalPrice ? (
                 <>
