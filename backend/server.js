@@ -26,7 +26,7 @@ app.get("/products", async (req, res) => {
 
   try {
     const fileContent = await fs.readFile("./data/products.json");
-    const products = JSON.parse(fileContent);
+    let products = JSON.parse(fileContent);
 
     // 如果沒有任何篩選條件，直接返回所有商品
     if (!category && !onSale && !gender && !newProduct && !brands) {
@@ -78,7 +78,31 @@ app.get("/products", async (req, res) => {
   }
 });
 
-app.get("/:page", async (req, res) => {
+app.get("/products/:slug", async (req, res) => {
+  const { slug } = req.params; // 從路徑參數中獲取 slug
+
+  try {
+    // 讀取商品數據
+    const fileContent = await fs.readFile("./data/products.json");
+    const products = JSON.parse(fileContent);
+
+    // 查找對應 slug 的商品
+    const product = products.find((product) => product.slug === slug);
+
+    if (product) {
+      // 如果找到商品，返回詳細資訊
+      return res.status(200).json(product);
+    } else {
+      // 如果未找到商品，返回 404 錯誤
+      return res.status(404).json({ message: "Product not found" });
+    }
+  } catch (error) {
+    console.error("Error reading products:", error.message);
+    return res.status(500).json({ message: "Internal server error" });
+  }
+});
+
+app.get("/:page(homePage|menPage|femalePage)", async (req, res) => {
   const page = req.params.page; // 獲取頁面分類 (homePage, menPage, womenPage, ...)
 
   if (!page || typeof page !== "string") {

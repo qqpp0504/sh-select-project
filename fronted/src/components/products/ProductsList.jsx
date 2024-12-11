@@ -39,7 +39,7 @@ export default function ProductsList({ products }) {
       <ul className="grid grid-cols-2 gap-4 lg:grid-cols-3">
         {products.map((product) => (
           <li key={product.id} className="mb-14">
-            <Link to="/products">
+            <Link to={`/products/${product.slug}`}>
               <div className="bg-gray-100 mb-4 flex justify-center items-center">
                 <img
                   src={`http://localhost:3000/${product.image}`}

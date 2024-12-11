@@ -15,7 +15,6 @@ export async function fetchBanner({ page, signal }) {
   }
 
   const resData = await response.json();
-
   return resData;
 }
 
@@ -28,6 +27,25 @@ export async function fetchProducts({ filters, signal }) {
   const response = await fetch(`http://localhost:3000/products${query}`, {
     signal,
   });
+
+  if (!response.ok) {
+    const error = new Error("發生錯誤，無法獲取商品資訊");
+    error.code = response.status;
+    error.info = await response.json();
+    throw error;
+  }
+
+  const resData = await response.json();
+  return resData;
+}
+
+export async function fetchProductDetail({ slug, signal }) {
+  const response = await fetch(
+    `http://localhost:3000/products/${encodeURIComponent(slug)}`,
+    {
+      signal,
+    }
+  );
 
   if (!response.ok) {
     const error = new Error("發生錯誤，無法獲取商品資訊");
