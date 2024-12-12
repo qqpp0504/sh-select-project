@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchProductDetail } from "../util/http.js";
 import LoadingIndicator from "../components/UI/LoadingIndicator.jsx";
 import ErrorBlock from "../components/UI/ErrorBlock.jsx";
+import ProductItem from "../components/productDetail/productItem.jsx";
 
 export default function ProductDetailPage() {
   const { slug } = useParams();
@@ -31,10 +32,5 @@ export default function ProductDetailPage() {
     return <ErrorBlock message={error.info?.message || "商品資料加載失敗"} />;
   }
 
-  return (
-    <div>
-      <h1>{productData.name}</h1>
-      <p>品牌: {productData.brand}</p>
-    </div>
-  );
+  return <ProductItem product={productData} />;
 }

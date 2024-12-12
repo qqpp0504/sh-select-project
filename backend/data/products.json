@@ -20,7 +20,8 @@
       "ordinary-tee-4.jpg",
       "ordinary-tee-5.jpg",
       "ordinary-tee-6.jpg"
-    ]
+    ],
+    "size": ["S", "M", "L"]
   },
   {
     "id": "p2",
@@ -43,7 +44,8 @@
       "nautica-hoodie-4.jpg",
       "nautica-hoodie-5.jpg",
       "nautica-hoodie-6.jpg"
-    ]
+    ],
+    "size": ["S", "M", "L", "XL"]
   },
   {
     "id": "p3",
@@ -65,7 +67,8 @@
       "nike-socks-short-3.jpg",
       "nike-socks-short-4.jpg",
       "nike-socks-short-5.jpg"
-    ]
+    ],
+    "size": ["M", "L"]
   },
   {
     "id": "p4",
@@ -86,7 +89,8 @@
       "nike-socks-long-2.jpg",
       "nike-socks-long-3.jpg",
       "nike-socks-long-4.jpg"
-    ]
+    ],
+    "size": ["M", "L"]
   },
   {
     "id": "p5",
@@ -109,6 +113,15 @@
       "mizuno-wave-4.jpg",
       "mizuno-wave-5.jpg",
       "mizuno-wave-6.jpg"
+    ],
+    "size": [
+      "CM 24.5",
+      "CM 25.5",
+      "CM 26",
+      "CM 26.5",
+      "CM 27",
+      "CM 27.5",
+      "CM 28"
     ]
   },
   {
@@ -131,7 +144,8 @@
       "the-north-face-jacket-3.jpg",
       "the-north-face-jacket-4.jpg",
       "the-north-face-jacket-5.jpg"
-    ]
+    ],
+    "size": ["M", "L", "XL", "2XL", "3XL"]
   },
   {
     "id": "p7",
@@ -154,7 +168,8 @@
       "adidas-blcg-4.jpg",
       "adidas-blcg-5.jpg",
       "adidas-blcg-6.jpg"
-    ]
+    ],
+    "size": ["S", "M", "L", "XL"]
   },
   {
     "id": "p8",
@@ -178,7 +193,8 @@
       "ordinary-pants-5.jpg",
       "ordinary-pants-6.jpg",
       "ordinary-pants-7.jpg"
-    ]
+    ],
+    "size": ["M", "L", "XL"]
   },
   {
     "id": "p9",
@@ -200,7 +216,8 @@
       "adidas-originals-pants-3.jpg",
       "adidas-originals-pants-4.jpg",
       "adidas-originals-pants-5.jpg"
-    ]
+    ],
+    "size": ["S", "M", "L"]
   },
   {
     "id": "p10",
@@ -223,13 +240,14 @@
       "nautica-tee-4.jpg",
       "nautica-tee-5.jpg",
       "nautica-tee-6.jpg"
-    ]
+    ],
+    "size": ["M", "L", "XL"]
   },
   {
     "id": "p11",
     "brand": "Carhartt",
-    "name": "WIP 衝鋒外套",
-    "slug": "p11-carhartt-WIP衝鋒外套",
+    "name": "WIP 輕量連帽外套",
+    "slug": "p11-carhartt-WIP輕量連帽外套",
     "originalPrice": 5680,
     "discountPrice": 5680,
     "discountPercentage": 0,
@@ -237,7 +255,7 @@
     "categoryCh": "外套及背心",
     "gender": ["unisex", "men"],
     "image": "carhartt-jacket.jpg",
-    "alt": "Carhartt WIP 衝鋒外套圖片",
+    "alt": "Carhartt WIP 輕量連帽外套圖片",
     "isOnSale": false,
     "isNew": false,
     "images": [
@@ -246,13 +264,14 @@
       "carhartt-jacket-4.jpg",
       "carhartt-jacket-5.jpg",
       "carhartt-jacket-6.jpg"
-    ]
+    ],
+    "size": ["S", "M", "L", "XL"]
   },
   {
     "id": "p12",
     "brand": "Adidas x Sporty & Rich 聯名",
-    "name": "復古長袖T恤",
-    "slug": "p12-adidasxSportyxRich-復古長袖T恤",
+    "name": "復古長袖Tee",
+    "slug": "p12-adidasxSportyxRich-復古長袖Tee",
     "originalPrice": 2080,
     "discountPrice": 2080,
     "discountPercentage": 0,
@@ -260,7 +279,7 @@
     "categoryCh": "上衣",
     "gender": ["unisex", "men"],
     "image": "adidas-sporty-rich.jpg",
-    "alt": "Adidas x Sporty & Rich 聯名復古長袖T恤圖片",
+    "alt": "Adidas x Sporty & Rich 聯名復古長袖Tee圖片",
     "isOnSale": false,
     "isNew": false,
     "images": [
@@ -269,7 +288,8 @@
       "adidas-sporty-rich-4.jpg",
       "adidas-sporty-rich-5.jpg",
       "adidas-sporty-rich-6.jpg"
-    ]
+    ],
+    "size": ["S", "M", "L", "XL"]
   },
   {
     "id": "p13",
@@ -286,7 +306,12 @@
     "alt": "Adidas Originals 運動短褲圖片",
     "isOnSale": false,
     "isNew": false,
-    "images": ["adidas-short-2.jpg", "adidas-short-3.jpg", "adidas-short-4.jpg"]
+    "images": [
+      "adidas-short-2.jpg",
+      "adidas-short-3.jpg",
+      "adidas-short-4.jpg"
+    ],
+    "size": ["S", "M", "L"]
   },
   {
     "id": "p14",
@@ -308,6 +333,20 @@
       "asics-kayano-black-3.jpg",
       "asics-kayano-black-4.jpg",
       "asics-kayano-black-5.jpg"
+    ],
+    "size": [
+      "CM 22.5",
+      "CM 23",
+      "CM 23.5",
+      "CM 24",
+      "CM 24.5",
+      "CM 25",
+      "CM 25.5",
+      "CM 26",
+      "CM 26.5",
+      "CM 27",
+      "CM 27.5",
+      "CM 28"
     ]
   },
   {
@@ -330,6 +369,20 @@
       "asics-kayano-3.jpg",
       "asics-kayano-4.jpg",
       "asics-kayano-5.jpg"
+    ],
+    "size": [
+      "CM 22.5",
+      "CM 23",
+      "CM 23.5",
+      "CM 24",
+      "CM 24.5",
+      "CM 25",
+      "CM 25.5",
+      "CM 26",
+      "CM 26.5",
+      "CM 27",
+      "CM 27.5",
+      "CM 28"
     ]
   },
   {
@@ -353,6 +406,23 @@
       "nike-air-jordan-1-retro-4.jpg",
       "nike-air-jordan-1-retro-5.jpg",
       "nike-air-jordan-1-retro-6.jpg"
+    ],
+    "size": [
+      "CM 23",
+      "CM 23.5",
+      "CM 24",
+      "CM 24.5",
+      "CM 25",
+      "CM 25.5",
+      "CM 26",
+      "CM 26.5",
+      "CM 27",
+      "CM 27.5",
+      "CM 28",
+      "CM 28.5",
+      "CM 29",
+      "CM 29.5",
+      "CM 30"
     ]
   },
   {
@@ -375,6 +445,23 @@
       "nike-air-jordan-mid-3.jpg",
       "nike-air-jordan-mid-4.jpg",
       "nike-air-jordan-mid-5.jpg"
+    ],
+    "size": [
+      "CM 23",
+      "CM 23.5",
+      "CM 24",
+      "CM 24.5",
+      "CM 25",
+      "CM 25.5",
+      "CM 26",
+      "CM 26.5",
+      "CM 27",
+      "CM 27.5",
+      "CM 28",
+      "CM 28.5",
+      "CM 29",
+      "CM 29.5",
+      "CM 30"
     ]
   },
   {
@@ -397,6 +484,23 @@
       "nike-dunk-panda-3.jpg",
       "nike-dunk-panda-4.jpg",
       "nike-dunk-panda-5.jpg"
+    ],
+    "size": [
+      "CM 23",
+      "CM 23.5",
+      "CM 24",
+      "CM 24.5",
+      "CM 25",
+      "CM 25.5",
+      "CM 26",
+      "CM 26.5",
+      "CM 27",
+      "CM 27.5",
+      "CM 28",
+      "CM 28.5",
+      "CM 29",
+      "CM 29.5",
+      "CM 30"
     ]
   },
   {
@@ -419,6 +523,15 @@
       "adidas-gazelle-3.jpg",
       "adidas-gazelle-4.jpg",
       "adidas-gazelle-5.jpg"
+    ],
+    "size": [
+      "CM 22.5",
+      "CM 23",
+      "CM 23.5",
+      "CM 24",
+      "CM 24.5",
+      "CM 25",
+      "CM 25.5"
     ]
   },
   {
@@ -436,7 +549,21 @@
     "alt": "Converse 1970 Chuck Taylor All Star '70 黑色圖片",
     "isOnSale": true,
     "isNew": false,
-    "images": ["converse-black-2.jpg", "converse-black-3.jpg"]
+    "images": ["converse-black-2.jpg", "converse-black-3.jpg"],
+    "size": [
+      "CM 23",
+      "CM 23.5",
+      "CM 24",
+      "CM 24.5",
+      "CM 25",
+      "CM 25.5",
+      "CM 26",
+      "CM 26.5",
+      "CM 27",
+      "CM 27.5",
+      "CM 28",
+      "CM 28.5"
+    ]
   },
   {
     "id": "p21",
@@ -457,6 +584,20 @@
       "converse-beige-2.jpg",
       "converse-beige-3.jpg",
       "converse-beige-4.jpg"
+    ],
+    "size": [
+      "CM 23",
+      "CM 23.5",
+      "CM 24",
+      "CM 24.5",
+      "CM 25",
+      "CM 25.5",
+      "CM 26",
+      "CM 26.5",
+      "CM 27",
+      "CM 27.5",
+      "CM 28",
+      "CM 28.5"
     ]
   },
   {
@@ -474,7 +615,21 @@
     "alt": "Converse 1970 Chuck Taylor All Star '70 酒紅色圖片",
     "isOnSale": true,
     "isNew": false,
-    "images": ["converse-red-2.jpg", "converse-red-3.jpg"]
+    "images": ["converse-red-2.jpg", "converse-red-3.jpg"],
+    "size": [
+      "CM 23",
+      "CM 23.5",
+      "CM 24",
+      "CM 24.5",
+      "CM 25",
+      "CM 25.5",
+      "CM 26",
+      "CM 26.5",
+      "CM 27",
+      "CM 27.5",
+      "CM 28",
+      "CM 28.5"
+    ]
   },
   {
     "id": "p23",
@@ -495,7 +650,8 @@
       "nike-sports-bra-2.jpg",
       "nike-sports-bra-3.jpg",
       "nike-sports-bra-4.jpg"
-    ]
+    ],
+    "size": ["S", "M", "L"]
   },
   {
     "id": "p24",
@@ -516,7 +672,8 @@
       "carhartt-beanie-2.jpg",
       "carhartt-beanie-3.jpg",
       "carhartt-beanie-4.jpg"
-    ]
+    ],
+    "size": ["F"]
   },
   {
     "id": "p25",
@@ -539,7 +696,8 @@
       "the-north-face-crossbody-bag-4.jpg",
       "the-north-face-crossbody-bag-5.jpg",
       "the-north-face-crossbody-bag-6.jpg"
-    ]
+    ],
+    "size": ["F"]
   },
   {
     "id": "p26",
@@ -556,6 +714,11 @@
     "alt": "Carhartt D89 後背包圖片",
     "isOnSale": false,
     "isNew": false,
-    "images": ["carhartt-d89-2.jpg", "carhartt-d89-3.jpg", "carhartt-d89-4.jpg"]
+    "images": [
+      "carhartt-d89-2.jpg",
+      "carhartt-d89-3.jpg",
+      "carhartt-d89-4.jpg"
+    ],
+    "size": ["F"]
   }
 ]
