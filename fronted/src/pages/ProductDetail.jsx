@@ -5,6 +5,7 @@ import { fetchProductDetail } from "../util/http.js";
 import LoadingIndicator from "../components/UI/LoadingIndicator.jsx";
 import ErrorBlock from "../components/UI/ErrorBlock.jsx";
 import ProductItem from "../components/productDetail/productItem.jsx";
+import DetailInformation from "../components/productDetail/DetailInformation.jsx";
 
 export default function ProductDetailPage() {
   const { slug } = useParams();
@@ -32,5 +33,10 @@ export default function ProductDetailPage() {
     return <ErrorBlock message={error.info?.message || "商品資料加載失敗"} />;
   }
 
-  return <ProductItem product={productData} />;
+  return (
+    <>
+      <ProductItem product={productData} />
+      <DetailInformation product={productData} />
+    </>
+  );
 }

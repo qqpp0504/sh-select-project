@@ -1,11 +1,20 @@
 /* eslint-disable react/prop-types */
+import { useDispatch } from "react-redux";
+
 import { currencyFormatter } from "../../util/formatting.js";
 import heartIcon from "../../assets/heart-icon.png";
 import rulerIcon from "../../assets/ruler-icon.png";
 import Accordion from "../UI/Accordion.jsx";
 import DeliveryInformation from "../UI/DeliveryInformation.jsx";
+import { modalActions } from "../../store/modal-slice.js";
 
 export default function ProductItem({ product }) {
+  const dispatch = useDispatch();
+
+  function handleShowDetail() {
+    dispatch(modalActions.showModal());
+  }
+
   return (
     <section>
       <div className="padding-large my-12">
@@ -87,8 +96,11 @@ export default function ProductItem({ product }) {
               </div>
 
               <div className="mt-14">
-                <p>{product.summary}</p>
-                <button className="mt-8 inline-block font-500 border-b-[1.5px] border-black">
+                <p>{product.summary.productDescription}</p>
+                <button
+                  onClick={handleShowDetail}
+                  className="mt-8 inline-block font-500 border-b-[1.5px] border-black"
+                >
                   檢視產品詳細資料
                 </button>
               </div>
