@@ -2,6 +2,8 @@
 import { currencyFormatter } from "../../util/formatting.js";
 import heartIcon from "../../assets/heart-icon.png";
 import rulerIcon from "../../assets/ruler-icon.png";
+import Accordion from "../UI/Accordion.jsx";
+import DeliveryInformation from "../UI/DeliveryInformation.jsx";
 
 export default function ProductItem({ product }) {
   return (
@@ -20,7 +22,7 @@ export default function ProductItem({ product }) {
                     <label>
                       <img
                         src={`http://localhost:3000/${image}`}
-                        alt=""
+                        alt={product.alt}
                         className="w-full h-full object-cover bg-gray-100"
                       />
                     </label>
@@ -82,6 +84,56 @@ export default function ProductItem({ product }) {
                     <img src={heartIcon} alt="Heart Icon" className="w-6" />
                   </button>
                 </div>
+              </div>
+
+              <div className="mt-14">
+                <p>{product.summary}</p>
+                <button className="mt-8 inline-block font-500 border-b-[1.5px] border-black">
+                  檢視產品詳細資料
+                </button>
+              </div>
+
+              <div>
+                <Accordion
+                  tag="尺寸與版型"
+                  id="size"
+                  fontSize="text-xl"
+                  margin="my-3"
+                >
+                  {product.sizeDetail ? (
+                    <ul
+                      role="list"
+                      className="marker:text-lg pl-8 list-disc space-y-[0.15rem]"
+                    >
+                      {product.sizeDetail.map((list) => (
+                        <li key={list}>{list}</li>
+                      ))}
+                      <li className="font-500">尺寸指南</li>
+                    </ul>
+                  ) : (
+                    <ul>
+                      <li className="font-500">尺寸指南</li>
+                    </ul>
+                  )}
+                </Accordion>
+
+                <Accordion
+                  tag="免費寄送及退貨"
+                  id="deliveryInformation"
+                  fontSize="text-xl"
+                  margin="my-3"
+                >
+                  <DeliveryInformation />
+                </Accordion>
+
+                <Accordion
+                  tag="評價"
+                  id="feedback"
+                  fontSize="text-xl"
+                  margin="my-3"
+                >
+                  這裡還很空
+                </Accordion>
               </div>
             </div>
           </div>

@@ -15,13 +15,19 @@
     "isOnSale": false,
     "isNew": true,
     "images": [
+      "ordinary-tee.jpg",
       "ordinary-tee-2.jpg",
       "ordinary-tee-3.jpg",
       "ordinary-tee-4.jpg",
       "ordinary-tee-5.jpg",
       "ordinary-tee-6.jpg"
     ],
-    "size": ["S", "M", "L"]
+    "size": ["S", "M", "L"],
+    "sizeDetail": [
+      "女模特兒身高 166 公分，穿著 S 號",
+      "男模特兒身高 173 公分，穿著 M 號"
+    ],
+    "summary": "採用輕便耐用尼龍材質，融入冰球運動元素與拼接滾邊設計，展現力量感與層次感。細節包含通氣洞與彈性下擺，寬鬆版型適合日常通勤，兼具舒適與辨識度。"
   },
   {
     "id": "p2",
@@ -39,19 +45,25 @@
     "isOnSale": false,
     "isNew": true,
     "images": [
+      "nautica-hoodie.jpg",
       "nautica-hoodie-2.jpg",
       "nautica-hoodie-3.jpg",
       "nautica-hoodie-4.jpg",
       "nautica-hoodie-5.jpg",
       "nautica-hoodie-6.jpg"
     ],
-    "size": ["S", "M", "L", "XL"]
+    "size": ["S", "M", "L", "XL"],
+    "sizeDetail": [
+      "女模特兒身高 166 公分，穿著 M 號",
+      "男模特兒身高 174 公分，穿著 XL 號"
+    ],
+    "summary": "撞色LOGO設計，增添時髦感。帽子抽繩設計，可自由調節大小。100%純棉材質，穿著保暖舒適。寬鬆版型設計，率性又百搭。"
   },
   {
     "id": "p3",
     "brand": "Nike",
-    "name": "運動短襪",
-    "slug": "p3-nike-運動短襪",
+    "name": "Logo Socks 運動短襪",
+    "slug": "p3-nike-LogoSocks運動短襪",
     "originalPrice": 350,
     "discountPrice": 350,
     "discountPercentage": 0,
@@ -63,18 +75,21 @@
     "isOnSale": false,
     "isNew": true,
     "images": [
+      "nike-socks-short.jpg",
       "nike-socks-short-2.jpg",
       "nike-socks-short-3.jpg",
       "nike-socks-short-4.jpg",
       "nike-socks-short-5.jpg"
     ],
-    "size": ["M", "L"]
+    "size": ["M", "L"],
+    "sizeDetail": ["低筒款式，著用後約在腳踝位置"],
+    "summary": "採用輕量設計，適合日常運動與休閒穿搭。襪子設計簡約，正面繡有 Nike 經典小勾 Logo，易於搭配各種服飾風格。襪子為低筒款式，約在腳踝位置，適合多種運動需求。"
   },
   {
     "id": "p4",
     "brand": "Nike",
-    "name": "運動長襪",
-    "slug": "p4-nike-運動長襪",
+    "name": "Logo Socks 運動長襪",
+    "slug": "p4-nike-LogoSocks運動長襪",
     "originalPrice": 350,
     "discountPrice": 350,
     "discountPercentage": 0,
@@ -86,11 +101,14 @@
     "isOnSale": false,
     "isNew": true,
     "images": [
+      "nike-socks-long.jpg",
       "nike-socks-long-2.jpg",
       "nike-socks-long-3.jpg",
       "nike-socks-long-4.jpg"
     ],
-    "size": ["M", "L"]
+    "size": ["M", "L"],
+    "sizeDetail": ["長筒款式，著用後約覆蓋至小腿位置"],
+    "summary": "採用輕量設計，適合日常運動與休閒穿搭。襪子設計簡約，正面繡有 Nike 經典小勾 Logo，易於搭配各種服飾風格。襪子為長筒款式，覆蓋至小腿位置，提供額外支撐與保護，適合多種運動需求。"
   },
   {
     "id": "p5",
@@ -108,6 +126,7 @@
     "isOnSale": false,
     "isNew": false,
     "images": [
+      "mizuno-wave.jpg",
       "mizuno-wave-2.jpg",
       "mizuno-wave-3.jpg",
       "mizuno-wave-4.jpg",
@@ -122,7 +141,9 @@
       "CM 27",
       "CM 27.5",
       "CM 28"
-    ]
+    ],
+    "sizeDetail": ["版型較小，建議選購大半號或一號尺寸"],
+    "summary": "Mizuno Wave Prophecy Moc 是一款融合時尚與功能性的鞋款，靈感源自印第安傳統的莫卡辛鞋（Moccasin），並結合 Mizuno 獨家研發的 Wave Prophecy 中底技術。這款鞋子採用麂皮材質，提供舒適的穿著感受，同時具備優異的耐磨性。"
   },
   {
     "id": "p6",
@@ -140,12 +161,14 @@
     "isOnSale": false,
     "isNew": false,
     "images": [
+      "the-north-face-jacket.jpg",
       "the-north-face-jacket-2.jpg",
       "the-north-face-jacket-3.jpg",
       "the-north-face-jacket-4.jpg",
       "the-north-face-jacket-5.jpg"
     ],
-    "size": ["M", "L", "XL", "2XL", "3XL"]
+    "size": ["M", "L", "XL", "2XL", "3XL"],
+    "summary": "此款多功能外套的輕量化設計，外殼採用 DRIVENT 防風防水材質，內裡的搖粒絨提供保暖效果。可拆卸式設計讓您隨心所欲地調整穿著方式，適應不同的天氣和活動需求。"
   },
   {
     "id": "p7",
@@ -163,13 +186,15 @@
     "isOnSale": false,
     "isNew": false,
     "images": [
+      "adidas-blcg.jpg",
       "adidas-blcg-2.jpg",
       "adidas-blcg-3.jpg",
       "adidas-blcg-4.jpg",
       "adidas-blcg-5.jpg",
       "adidas-blcg-6.jpg"
     ],
-    "size": ["S", "M", "L", "XL"]
+    "size": ["S", "M", "L", "XL"],
+    "summary": "Adidas 與 Balenciaga 於 2023 年春季合作，推出聯名系列，融合兩大品牌的獨特風格。此款寬鬆廓形西裝外套採用 Balenciaga 標誌性的誇張剪裁，並融入 Adidas 的經典元素，如三條紋設計，展現高級時尚與運動美學的完美結合。"
   },
   {
     "id": "p8",
@@ -187,6 +212,7 @@
     "isOnSale": false,
     "isNew": false,
     "images": [
+      "ordinary-pants.jpg",
       "ordinary-pants-2.jpg",
       "ordinary-pants-3.jpg",
       "ordinary-pants-4.jpg",
@@ -194,7 +220,8 @@
       "ordinary-pants-6.jpg",
       "ordinary-pants-7.jpg"
     ],
-    "size": ["M", "L", "XL"]
+    "size": ["M", "L", "XL"],
+    "summary": "底特律套裝源自 90 年代街頭文化，結合重磅橫竹紋布、復古洗舊效果、隨意潑漆、精緻工藝，模擬使用痕跡，呈現獨特街頭風格，細節如麂皮標與皮標。"
   },
   {
     "id": "p9",
@@ -212,12 +239,14 @@
     "isOnSale": false,
     "isNew": false,
     "images": [
+      "adidas-originals-pants.jpg",
       "adidas-originals-pants-2.jpg",
       "adidas-originals-pants-3.jpg",
       "adidas-originals-pants-4.jpg",
       "adidas-originals-pants-5.jpg"
     ],
-    "size": ["S", "M", "L"]
+    "size": ["S", "M", "L"],
+    "summary": "採用錦綸與聚酯纖維材質，提供舒適穿著感。其寬鬆剪裁設計，搭配彈性鬆緊抽繩腰圍，適合日常休閒穿搭。褲側繡有經典三葉草標誌，增添品牌辨識度。"
   },
   {
     "id": "p10",
@@ -235,13 +264,15 @@
     "isOnSale": false,
     "isNew": false,
     "images": [
+      "nautica-tee.jpg",
       "nautica-tee-2.jpg",
       "nautica-tee-3.jpg",
       "nautica-tee-4.jpg",
       "nautica-tee-5.jpg",
       "nautica-tee-6.jpg"
     ],
-    "size": ["M", "L", "XL"]
+    "size": ["M", "L", "XL"],
+    "summary": "Nautica JP 的「Too Heavy」弧形標誌短袖T恤採用厚重針織面料，模仿美國製造的堅實質感。正面印有復古風格的弧形標誌，左側配有特殊的 HBX 標籤，展現街頭風格。此款T恤提供舒適的穿著體驗，適合日常休閒穿搭。"
   },
   {
     "id": "p11",
@@ -259,13 +290,15 @@
     "isOnSale": false,
     "isNew": false,
     "images": [
+      "carhartt-jacket.jpg",
       "carhartt-jacket-2.jpg",
       "carhartt-jacket-3.jpg",
       "carhartt-jacket-4.jpg",
       "carhartt-jacket-5.jpg",
       "carhartt-jacket-6.jpg"
     ],
-    "size": ["S", "M", "L", "XL"]
+    "size": ["S", "M", "L", "XL"],
+    "summary": "採用 100% 尼龍 PERTEX 材質，具備防風、防水、透氣等特性，適合戶外活動或日常穿著。夾克設計有全拉鍊開身，連帽上配有抽繩設計，可防止風灌入脖部，下擺也有抽繩設計，袖口收緊，提供良好的防風效果。"
   },
   {
     "id": "p12",
@@ -283,13 +316,15 @@
     "isOnSale": false,
     "isNew": false,
     "images": [
+      "adidas-sporty-rich.jpg",
       "adidas-sporty-rich-2.jpg",
       "adidas-sporty-rich-3.jpg",
       "adidas-sporty-rich-4.jpg",
       "adidas-sporty-rich-5.jpg",
       "adidas-sporty-rich-6.jpg"
     ],
-    "size": ["S", "M", "L", "XL"]
+    "size": ["S", "M", "L", "XL"],
+    "summary": "Adidas 與洛杉磯品牌 Sporty & Rich 合作，推出復古風格的長袖T恤。此款T恤採用深藍色設計，正面印有兩個品牌的簡約標誌，展現品牌聯名特色。材質為棉與滌綸混紡，提供舒適的穿著感受。"
   },
   {
     "id": "p13",
@@ -307,11 +342,13 @@
     "isOnSale": false,
     "isNew": false,
     "images": [
+      "adidas-short.jpg",
       "adidas-short-2.jpg",
       "adidas-short-3.jpg",
       "adidas-short-4.jpg"
     ],
-    "size": ["S", "M", "L"]
+    "size": ["S", "M", "L"],
+    "summary": "採用 100% 聚酯纖維製成，提供舒適的穿著感受。其直筒剪裁設計，適合日常休閒穿搭。彈性鬆緊腰圍，方便調整，並配有簡約的三條線刺繡 Logo，展現品牌特色。"
   },
   {
     "id": "p14",
@@ -329,6 +366,7 @@
     "isOnSale": false,
     "isNew": false,
     "images": [
+      "asics-kayano-black.jpg",
       "asics-kayano-black-2.jpg",
       "asics-kayano-black-3.jpg",
       "asics-kayano-black-4.jpg",
@@ -347,7 +385,9 @@
       "CM 27",
       "CM 27.5",
       "CM 28"
-    ]
+    ],
+    "sizeDetail": ["版型正常，若腳板偏寬建議選購大半號尺寸"],
+    "summary": "Asics 與南韓品牌 Unaffected 合作，推出 Gel-Kayano 14 聯名款，黑銀配色。此鞋款融合復古跑鞋設計與現代元素，採用網布與合成皮革材質，提供舒適透氣的穿著感。"
   },
   {
     "id": "p15",
@@ -365,6 +405,7 @@
     "isOnSale": false,
     "isNew": false,
     "images": [
+      "asics-kayano.jpg",
       "asics-kayano-2.jpg",
       "asics-kayano-3.jpg",
       "asics-kayano-4.jpg",
@@ -383,7 +424,9 @@
       "CM 27",
       "CM 27.5",
       "CM 28"
-    ]
+    ],
+    "sizeDetail": ["版型正常，若腳板偏寬建議選購大半號尺寸"],
+    "summary": "融合復古與現代設計，鞋面採用奶油色調，搭配純銀色細節，展現時尚感。鞋底採用GEL®技術，提供卓越的緩震效果，適合日常穿著與運動使用。"
   },
   {
     "id": "p16",
@@ -401,6 +444,7 @@
     "isOnSale": false,
     "isNew": false,
     "images": [
+      "nike-air-jordan-1-retro.jpg",
       "nike-air-jordan-1-retro-2.jpg",
       "nike-air-jordan-1-retro-3.jpg",
       "nike-air-jordan-1-retro-4.jpg",
@@ -423,7 +467,9 @@
       "CM 29",
       "CM 29.5",
       "CM 30"
-    ]
+    ],
+    "sizeDetail": ["版型正常，若腳板偏寬建議選購大半號尺寸"],
+    "summary": "此鞋款為 Nike 與 美國饒舌歌手 Travis Scott 的聯名款。鞋面採用奶油色和中性橄欖色皮革，搭配反向 Swoosh 設計，鞋跟刺繡有 Cactus Jack 標誌，內底印有聯名圖案，展現獨特風格。"
   },
   {
     "id": "p17",
@@ -441,6 +487,7 @@
     "isOnSale": false,
     "isNew": false,
     "images": [
+      "nike-air-jordan-mid.jpg",
       "nike-air-jordan-mid-2.jpg",
       "nike-air-jordan-mid-3.jpg",
       "nike-air-jordan-mid-4.jpg",
@@ -462,7 +509,9 @@
       "CM 29",
       "CM 29.5",
       "CM 30"
-    ]
+    ],
+    "sizeDetail": ["版型正常，若腳板偏寬建議選購大半號尺寸"],
+    "summary": "此款中筒鞋採用白色皮革鞋面，搭配煙灰色皮革覆蓋層，黑色 Swoosh 標誌增添對比。鞋舌上印有灰色 Jumpman 標誌，側邊則有黑色 Jordan Wings 標誌，展現品牌特色。鞋底採用泡棉中底，並在鞋跟處配有 Nike Air 緩震技術，提供舒適的穿著體驗。"
   },
   {
     "id": "p18",
@@ -480,6 +529,7 @@
     "isOnSale": false,
     "isNew": false,
     "images": [
+      "nike-dunk-panda.jpg",
       "nike-dunk-panda-2.jpg",
       "nike-dunk-panda-3.jpg",
       "nike-dunk-panda-4.jpg",
@@ -501,7 +551,9 @@
       "CM 29",
       "CM 29.5",
       "CM 30"
-    ]
+    ],
+    "sizeDetail": ["版型正常，若腳板偏寬建議選購大半號尺寸"],
+    "summary": "此款經典的黑白配色運動鞋，融合了籃球與街頭風格。鞋面採用高品質皮革，提供耐用性與舒適感。中底使用泡棉材質，外底則為耐磨橡膠，確保良好的抓地力。"
   },
   {
     "id": "p19",
@@ -513,12 +565,13 @@
     "discountPercentage": 30,
     "category": "shoes",
     "categoryCh": "鞋款",
-    "gender": ["unisex", "men"],
+    "gender": ["unisex", "women"],
     "image": "adidas-gazelle.jpg",
     "alt": "Adidas Originals Gazelle Bold W圖片",
     "isOnSale": true,
     "isNew": false,
     "images": [
+      "adidas-gazelle.jpg",
       "adidas-gazelle-2.jpg",
       "adidas-gazelle-3.jpg",
       "adidas-gazelle-4.jpg",
@@ -532,13 +585,15 @@
       "CM 24.5",
       "CM 25",
       "CM 25.5"
-    ]
+    ],
+    "sizeDetail": ["版型偏大，建議選購小半號尺寸"],
+    "summary": "採用柔軟麂皮鞋面，搭配平台鞋底，增添時尚感。鞋側的三條經典條紋和金色「Gazelle」字樣，彰顯品牌傳承。這款鞋款適合日常穿搭，提供舒適與風格兼具的選擇。"
   },
   {
     "id": "p20",
     "brand": "Converse",
-    "name": "1970 Chuck Taylor All Star '70 黑色",
-    "slug": "p20-converse-1970ChuckTaylorAllStar黑色",
+    "name": "1970 Chuck Taylor All Star '70",
+    "slug": "p20-converse-1970ChuckTaylorAllStar",
     "originalPrice": 2000,
     "discountPrice": 1600,
     "discountPercentage": 20,
@@ -546,44 +601,18 @@
     "categoryCh": "鞋款",
     "gender": ["unisex", "men"],
     "image": "converse-black-1.jpg",
-    "alt": "Converse 1970 Chuck Taylor All Star '70 黑色圖片",
-    "isOnSale": true,
-    "isNew": false,
-    "images": ["converse-black-2.jpg", "converse-black-3.jpg"],
-    "size": [
-      "CM 23",
-      "CM 23.5",
-      "CM 24",
-      "CM 24.5",
-      "CM 25",
-      "CM 25.5",
-      "CM 26",
-      "CM 26.5",
-      "CM 27",
-      "CM 27.5",
-      "CM 28",
-      "CM 28.5"
-    ]
-  },
-  {
-    "id": "p21",
-    "brand": "Converse",
-    "name": "1970 Chuck Taylor All Star '70 奶茶色",
-    "slug": "p21-converse-1970ChuckTaylorAllStar奶茶色",
-    "originalPrice": 2000,
-    "discountPrice": 1600,
-    "discountPercentage": 20,
-    "category": "shoes",
-    "categoryCh": "鞋款",
-    "gender": ["unisex", "men"],
-    "image": "converse-beige-1.jpg",
-    "alt": "Converse 1970 Chuck Taylor All Star '70 奶茶色圖片",
+    "alt": "Converse 1970 Chuck Taylor All Star '70 圖片",
     "isOnSale": true,
     "isNew": false,
     "images": [
+      "converse-black-1.jpg",
+      "converse-black-2.jpg",
+      "converse-black-3.jpg",
+      "converse-beige-1.jpg",
       "converse-beige-2.jpg",
       "converse-beige-3.jpg",
-      "converse-beige-4.jpg"
+      "converse-red-1.jpg",
+      "converse-red-2.jpg"
     ],
     "size": [
       "CM 23",
@@ -598,44 +627,15 @@
       "CM 27.5",
       "CM 28",
       "CM 28.5"
-    ]
+    ],
+    "sizeDetail": ["版型偏小，建議選購大半號或一號尺寸"],
+    "summary": "此款為 Converse 對 1970 年代經典 All Star 鞋款的復刻，融合復古設計與現代元素。其特點包括較厚的鞋底、堅挺的鞋身和高品質的帆布材質，提供卓越的舒適感和耐用性。"
   },
   {
-    "id": "p22",
-    "brand": "Converse",
-    "name": "1970 Chuck Taylor All Star '70 酒紅色",
-    "slug": "p22-converse-1970ChuckTaylorAllStar酒紅色",
-    "originalPrice": 1800,
-    "discountPrice": 1440,
-    "discountPercentage": 20,
-    "category": "shoes",
-    "categoryCh": "鞋款",
-    "gender": ["unisex", "men"],
-    "image": "converse-red-1.jpg",
-    "alt": "Converse 1970 Chuck Taylor All Star '70 酒紅色圖片",
-    "isOnSale": true,
-    "isNew": false,
-    "images": ["converse-red-2.jpg", "converse-red-3.jpg"],
-    "size": [
-      "CM 23",
-      "CM 23.5",
-      "CM 24",
-      "CM 24.5",
-      "CM 25",
-      "CM 25.5",
-      "CM 26",
-      "CM 26.5",
-      "CM 27",
-      "CM 27.5",
-      "CM 28",
-      "CM 28.5"
-    ]
-  },
-  {
-    "id": "p23",
+    "id": "p21",
     "brand": "Nike",
     "name": "Dri-Fit 中度支撐運動內衣",
-    "slug": "p23-nike-Dri-Fit中度支撐運動內衣",
+    "slug": "p21-nike-Dri-Fit中度支撐運動內衣",
     "originalPrice": 990,
     "discountPrice": 990,
     "discountPercentage": 0,
@@ -647,17 +647,19 @@
     "isOnSale": false,
     "isNew": false,
     "images": [
+      "nike-sports-bra.jpg",
       "nike-sports-bra-2.jpg",
       "nike-sports-bra-3.jpg",
       "nike-sports-bra-4.jpg"
     ],
-    "size": ["S", "M", "L"]
+    "size": ["S", "M", "L"],
+    "summary": "採用Dri-FIT技術，能迅速排汗，保持乾爽。其設計提供適度支撐，適合中等強度運動，如瑜伽、健身訓練等。內衣通常配有可調式肩帶，確保舒適貼合。"
   },
   {
-    "id": "p24",
+    "id": "p22",
     "brand": "Carhartt",
     "name": "WIP 經典方標針織毛帽",
-    "slug": "p24-carhartt-WIP經典方標針織毛帽",
+    "slug": "p22-carhartt-WIP經典方標針織毛帽",
     "originalPrice": 880,
     "discountPrice": 880,
     "discountPercentage": 0,
@@ -669,17 +671,20 @@
     "isOnSale": false,
     "isNew": false,
     "images": [
+      "carhartt-beanie.jpg",
       "carhartt-beanie-2.jpg",
       "carhartt-beanie-3.jpg",
       "carhartt-beanie-4.jpg"
     ],
-    "size": ["F"]
+    "size": ["F"],
+    "sizeDetail": ["此商品為單一尺寸(One Size)"],
+    "summary": "採用羊毛混紡材質，提供舒適保暖的佩戴體驗。帽身設計為瓜皮帽，服貼軟頂，適合男女同款。"
   },
   {
-    "id": "p25",
+    "id": "p23",
     "brand": "The North Face",
     "name": "側背包",
-    "slug": "p25-theNorthFace-側背包",
+    "slug": "p23-theNorthFace-側背包",
     "originalPrice": 1380,
     "discountPrice": 1380,
     "discountPercentage": 0,
@@ -691,19 +696,22 @@
     "isOnSale": false,
     "isNew": false,
     "images": [
+      "the-north-face-crossbody-bag.jpg",
       "the-north-face-crossbody-bag-2.jpg",
       "the-north-face-crossbody-bag-3.jpg",
       "the-north-face-crossbody-bag-4.jpg",
       "the-north-face-crossbody-bag-5.jpg",
       "the-north-face-crossbody-bag-6.jpg"
     ],
-    "size": ["F"]
+    "size": ["F"],
+    "sizeDetail": ["此商品為單一尺寸(One Size)"],
+    "summary": "這款改良版輕量化尼龍斜背包採用更紮實的質料，提升質感。多夾層設計方便分類收納物品，拉鍊設計確保物品安全，不易掉落。是日常使用的實用且可靠選擇。"
   },
   {
-    "id": "p26",
+    "id": "p24",
     "brand": "Carhartt",
     "name": "D89 後背包",
-    "slug": "p26-carhartt-D89後背包",
+    "slug": "p24-carhartt-D89後背包",
     "originalPrice": 1980,
     "discountPrice": 1980,
     "discountPercentage": 0,
@@ -715,10 +723,13 @@
     "isOnSale": false,
     "isNew": false,
     "images": [
+      "carhartt-d89.jpg",
       "carhartt-d89-2.jpg",
       "carhartt-d89-3.jpg",
       "carhartt-d89-4.jpg"
     ],
-    "size": ["F"]
+    "size": ["F"],
+    "sizeDetail": ["此商品為單一尺寸(One Size)"],
+    "summary": "這款經典的工裝風格雙肩背包，採用防水牛津布材質。背包設計多夾層，方便分類收納物品，並配有雙側水壺袋，實用性高。背包內部設有筆電隔層，適合日常通勤或休閒使用。"
   }
 ]
