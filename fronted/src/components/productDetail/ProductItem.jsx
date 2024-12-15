@@ -5,14 +5,18 @@ import { currencyFormatter } from "../../util/formatting.js";
 import heartIcon from "../../assets/heart-icon.png";
 import rulerIcon from "../../assets/ruler-icon.png";
 import Accordion from "../UI/Accordion.jsx";
-import DeliveryInformation from "../UI/DeliveryInformation.jsx";
+import DeliveryInformation from "./DeliveryInformation.jsx";
 import { modalActions } from "../../store/modal-slice.js";
 
 export default function ProductItem({ product }) {
   const dispatch = useDispatch();
 
-  function handleShowDetail() {
-    dispatch(modalActions.showModal());
+  function handleShowProductDetail() {
+    dispatch(modalActions.showProductModal());
+  }
+
+  function handleShowSizeDetail() {
+    dispatch(modalActions.showSizeModal());
   }
 
   return (
@@ -69,10 +73,13 @@ export default function ProductItem({ product }) {
               <div>
                 <div className="mt-16 mb-3 font-500 flex justify-between items-center">
                   <span>選取尺寸</span>
-                  <span className="text-sm flex items-center gap-1">
+                  <button
+                    onClick={handleShowSizeDetail}
+                    className="text-sm flex items-center gap-1"
+                  >
                     <img src={rulerIcon} alt="Ruler Icon" className="w-6" />
                     尺寸指南
-                  </span>
+                  </button>
                 </div>
                 <div className="grid grid-cols-4 gap-[0.45rem] mb-8">
                   {product.size.map((option) => (
@@ -98,8 +105,8 @@ export default function ProductItem({ product }) {
               <div className="mt-14">
                 <p>{product.summary.productDescription}</p>
                 <button
-                  onClick={handleShowDetail}
-                  className="mt-8 inline-block font-500 border-b-[1.5px] border-black"
+                  onClick={handleShowProductDetail}
+                  className="mt-8 inline-block font-500 border-b-[1.5px] border-black hover:text-gray-500 hover:border-gray-500"
                 >
                   檢視產品詳細資料
                 </button>
@@ -120,11 +127,15 @@ export default function ProductItem({ product }) {
                       {product.sizeDetail.map((list) => (
                         <li key={list}>{list}</li>
                       ))}
-                      <li className="font-500">尺寸指南</li>
+                      <li className="font-500">
+                        <button onClick={handleShowSizeDetail}>尺寸指南</button>
+                      </li>
                     </ul>
                   ) : (
                     <ul>
-                      <li className="font-500">尺寸指南</li>
+                      <li className="font-500">
+                        <button onClick={handleShowSizeDetail}>尺寸指南</button>
+                      </li>
                     </ul>
                   )}
                 </Accordion>

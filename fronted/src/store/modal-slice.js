@@ -1,18 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialModalState = {
-  isShowing: false,
+  isProductShowing: false,
+  isSizeShowing: false,
 };
 
 const modalSlice = createSlice({
   name: "modal",
   initialState: initialModalState,
   reducers: {
-    showModal(state) {
-      state.isShowing = true;
+    showProductModal(state) {
+      state.isProductShowing = true;
     },
-    closeModal(state) {
-      state.isShowing = false;
+    closeProductModal(state) {
+      state.isProductShowing = false;
+    },
+    showSizeModal(state) {
+      state.isSizeShowing = true;
+    },
+    closeSizeModal(state) {
+      state.isSizeShowing = false;
     },
   },
 });

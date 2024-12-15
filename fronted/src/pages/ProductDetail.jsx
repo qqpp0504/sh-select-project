@@ -6,6 +6,7 @@ import LoadingIndicator from "../components/UI/LoadingIndicator.jsx";
 import ErrorBlock from "../components/UI/ErrorBlock.jsx";
 import ProductItem from "../components/productDetail/productItem.jsx";
 import DetailInformation from "../components/productDetail/DetailInformation.jsx";
+import SizeDetail from "../components/productDetail/SizeDetail.jsx";
 
 export default function ProductDetailPage() {
   const { slug } = useParams();
@@ -37,6 +38,7 @@ export default function ProductDetailPage() {
     <>
       <ProductItem product={productData} />
       <DetailInformation product={productData} />
+      <SizeDetail productSizeInfo={productData.sizeGuide} />
     </>
   );
 }
