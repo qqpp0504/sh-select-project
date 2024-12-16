@@ -28,44 +28,52 @@
       {
         "image": "nike-air-jordan.jpg",
         "alt": "Nike Air Jordan 1 圖片",
-        "title": "Nike Air Jordan 1"
+        "title": "Nike Air Jordan 1",
+        "slug": "p17-nike-air-Jordan1-MidLightSmokeGrey"
       },
       {
         "image": "carhartt-bag.jpg",
         "alt": "Carhartt 後背包圖片",
-        "title": "Carhartt Backpack"
+        "title": "Carhartt D89 後背包",
+        "slug": "p24-carhartt-D89後背包"
       },
       {
         "image": "the-north-face-jacket-banner.jpg",
         "alt": "The North Face 外套圖片",
-        "title": "The North Face Jacket"
+        "title": "The North Face Jacket",
+        "slug": "p6-theNorthFace-可拆卸三合一搖粒絨衝鋒衣"
       },
       {
         "image": "adidas-gazelle-home.jpg",
         "alt": "Adidas Gazelle Bold W 圖片",
-        "title": "Adidas Gazelle Bold W"
+        "title": "Adidas Gazelle Bold W",
+        "slug": "p19-adidas-GazelleBoldW"
       }
     ],
     "newProducts": [
       {
         "image": "ordinary-tee.jpg",
         "alt": "Ordinary 長袖Tee圖片",
-        "title": "Ordinary - 長袖Tee"
+        "title": "Ordinary - 長袖Tee",
+        "slug": "p1-ordinary-拼接滾邊冰球長Tee"
       },
       {
         "image": "nautica-hoodie.jpg",
         "alt": "Nautica 帽Tee圖片",
-        "title": "Nautica - 大logo帽Tee"
+        "title": "Nautica - 大logo帽Tee",
+        "slug": "p2-nautica-大Logo帽Tee"
       },
       {
         "image": "nike-socks-short.jpg",
         "alt": "Nike Logo 短襪圖片",
-        "title": "Nike - Logo 運動短襪"
+        "title": "Nike - Logo 運動短襪",
+        "slug": "p3-nike-LogoSocks運動短襪"
       },
       {
         "image": "nike-socks-long.jpg",
         "alt": "Nike Logo 長襪圖片",
-        "title": "Nike - Logo 運動長襪"
+        "title": "Nike - Logo 運動長襪",
+        "slug": "p4-nike-LogoSocks運動長襪"
       }
     ],
     "brandsProducts": [
@@ -136,22 +144,26 @@
       {
         "image": "ordinary-men.jpg",
         "alt": "Ordinary 長袖Tee圖片",
-        "title": "Ordinary - 長袖Tee"
+        "title": "Ordinary - 長袖Tee",
+        "slug": "p1-ordinary-拼接滾邊冰球長Tee"
       },
       {
         "image": "nautica-men.jpg",
         "alt": "Nautica 帽Tee圖片",
-        "title": "Nautica - 大logo帽Tee"
+        "title": "Nautica - 大logo帽Tee",
+        "slug": "p2-nautica-大Logo帽Tee"
       },
       {
         "image": "mizuno-men.jpg",
         "alt": "Mizuno Wave Prophecy Moc 圖片",
-        "title": "Mizuno - Wave Prophecy Moc"
+        "title": "Mizuno - Wave Prophecy Moc",
+        "slug": "p5-mizuno-WaveProphecyMoc"
       },
       {
         "image": "ordinary-paint-men.jpg",
         "alt": "Ordinary 長褲圖片",
-        "title": "Ordinary - 潑漆做舊水洗工作褲"
+        "title": "Ordinary - 潑漆做舊水洗工作褲",
+        "slug": "p8-ordinary-潑漆做舊水洗工作褲"
       }
     ],
     "recommendationProducts": [
@@ -160,28 +172,32 @@
         "alt": "Adidas x BLCG 聯名西裝外套圖片",
         "brand": "ADIDAS x BLCG 巴黎世家聯名",
         "name": "寬鬆廓形西裝外套",
-        "price": "2980"
+        "price": "2980",
+        "slug": "p7-adidasxBLCG-寬鬆廓形西裝外套"
       },
       {
         "image": "the-north-face-jacket.jpg",
         "alt": "The North Face 衝鋒衣圖片",
         "brand": "The North Face",
         "name": "可拆卸三合一搖粒絨衝鋒衣",
-        "price": "2500"
+        "price": "2500",
+        "slug": "p6-theNorthFace-可拆卸三合一搖粒絨衝鋒衣"
       },
       {
         "image": "mizuno-wave.jpg",
         "alt": "Mizuno Wave Prophecy Moc 圖片",
         "brand": "Mizuno",
         "name": "Wave Prophecy Moc Suede 麂皮休閒鞋",
-        "price": "10800"
+        "price": "10800",
+        "slug": "p5-mizuno-WaveProphecyMoc"
       },
       {
         "image": "carhartt-beanie.jpg",
         "alt": "Carhartt 經典方標 針織毛帽圖片",
         "brand": "Carhartt",
         "name": "經典方標針織毛帽",
-        "price": "550"
+        "price": "550",
+        "slug": "p22-carhartt-WIP經典方標針織毛帽"
       }
     ],
     "brandsProducts": [
@@ -244,22 +260,26 @@
       {
         "image": "ordinary-female.jpg",
         "alt": "Ordinary 長袖Tee圖片",
-        "title": "Ordinary - 長袖Tee"
+        "title": "Ordinary - 長袖Tee",
+        "slug": "p1-ordinary-拼接滾邊冰球長Tee"
       },
       {
         "image": "nautica-female.jpg",
         "alt": "Nautica 帽Tee圖片",
-        "title": "Nautica - 大logo帽Tee"
+        "title": "Nautica - 大logo帽Tee",
+        "slug": "p2-nautica-大Logo帽Tee"
       },
       {
         "image": "mizuno-female.jpg",
         "alt": "Mizuno Wave Prophecy Moc 圖片",
-        "title": "Mizuno - Wave Prophecy Moc"
+        "title": "Mizuno - Wave Prophecy Moc",
+        "slug": "p5-mizuno-WaveProphecyMoc"
       },
       {
         "image": "adidas-female.jpg",
         "alt": "Adidas 寬鬆廓形運動長褲圖片",
-        "title": "Adidas Originals - 寬鬆廓形運動長褲"
+        "title": "Adidas Originals - 寬鬆廓形運動長褲",
+        "slug": "p9-adidas-寬鬆廓形運動長褲"
       }
     ],
     "recommendationProducts": [
@@ -268,28 +288,32 @@
         "alt": "Adidas x Sporty & Rich 聯名復古長袖Tee圖片",
         "brand": "Adidas x Sporty & Rich 聯名",
         "name": "復古長袖Tee",
-        "price": "1500"
+        "price": "1500",
+        "slug": "p12-adidasxSportyxRich-復古長袖Tee"
       },
       {
         "image": "adidas-short.jpg",
         "alt": "Adidas Orginals 運動短褲圖片",
         "brand": "Adidas Orginals",
         "name": "運動短褲",
-        "price": "900"
+        "price": "900",
+        "slug": "p13-adidas-運動短褲"
       },
       {
         "image": "mizuno-wave.jpg",
         "alt": "Mizuno Wave Prophecy Moc 圖片",
         "brand": "Mizuno",
         "name": "Wave Prophecy Moc Suede 麂皮休閒鞋",
-        "price": "10800"
+        "price": "10800",
+        "slug": "p5-mizuno-WaveProphecyMoc"
       },
       {
         "image": "adidas-gazelle.jpg",
         "alt": "Adidas Gazelle Bold W 粉綠色厚底鞋圖片",
-        "brand": "Adidas Gazelle",
-        "name": "Bold W 粉綠色厚底鞋",
-        "price": "4950"
+        "brand": "Adidas",
+        "name": "Gazelle Bold W",
+        "price": "4950",
+        "slug": "p19-adidas-GazelleBoldW"
       }
     ],
     "brandsProducts": [

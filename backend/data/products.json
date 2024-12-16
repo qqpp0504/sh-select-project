@@ -14,13 +14,24 @@
     "alt": "Ordinary 拼接滾邊冰球長Tee圖片",
     "isOnSale": false,
     "isNew": true,
-    "images": [
-      "ordinary-tee.jpg",
-      "ordinary-tee-2.jpg",
-      "ordinary-tee-3.jpg",
-      "ordinary-tee-4.jpg",
-      "ordinary-tee-5.jpg",
-      "ordinary-tee-6.jpg"
+    "images": {
+      "noBg": ["ordinary-tee.jpg", "ordinary-tee-2.jpg"],
+      "hasBg": [
+        "ordinary-tee-3.jpg",
+        "ordinary-tee-4.jpg",
+        "ordinary-tee-5.jpg",
+        "ordinary-tee-6.jpg"
+      ]
+    },
+    "color": [
+      {
+        "name": "黑灰色",
+        "image": "ordinary-tee.jpg"
+      },
+      {
+        "name": "藍灰色",
+        "image": "ordinary-tee-2.jpg"
+      }
     ],
     "size": ["S", "M", "L"],
     "sizeDetail": [
@@ -46,7 +57,7 @@
       "details": {
         "材質": "輕便耐用尼龍",
         "風格": "寬鬆",
-        "顏色": ["黑灰色", "藍灰色"],
+        "顏色": "黑灰色、藍灰色",
         "產地": "中國"
       }
     },
@@ -77,13 +88,31 @@
     "alt": "Nautica 大Logo帽Tee圖片",
     "isOnSale": false,
     "isNew": true,
-    "images": [
-      "nautica-hoodie.jpg",
-      "nautica-hoodie-2.jpg",
-      "nautica-hoodie-3.jpg",
-      "nautica-hoodie-4.jpg",
-      "nautica-hoodie-5.jpg",
-      "nautica-hoodie-6.jpg"
+    "images": {
+      "noBg": [
+        "nautica-hoodie.jpg",
+        "nautica-hoodie-2.jpg",
+        "nautica-hoodie-3.jpg"
+      ],
+      "hasBg": [
+        "nautica-hoodie-4.jpg",
+        "nautica-hoodie-5.jpg",
+        "nautica-hoodie-6.jpg"
+      ]
+    },
+    "color": [
+      {
+        "name": "綠色",
+        "image": "nautica-hoodie.jpg"
+      },
+      {
+        "name": "灰色",
+        "image": "nautica-hoodie-2.jpg"
+      },
+      {
+        "name": "藍色",
+        "image": "nautica-hoodie-3.jpg"
+      }
     ],
     "size": ["S", "M", "L", "XL"],
     "sizeDetail": [
@@ -109,7 +138,7 @@
       "details": {
         "材質": "100%純棉",
         "風格": "寬鬆",
-        "顏色": ["綠色", "灰色", "藍色"],
+        "顏色": "綠色、灰色、藍色",
         "產地": "中國"
       }
     },
@@ -141,12 +170,24 @@
     "alt": "Nike 運動短襪圖片",
     "isOnSale": false,
     "isNew": true,
-    "images": [
-      "nike-socks-short.jpg",
-      "nike-socks-short-2.jpg",
-      "nike-socks-short-3.jpg",
-      "nike-socks-short-4.jpg",
-      "nike-socks-short-5.jpg"
+    "images": {
+      "noBg": [
+        "nike-socks-short.jpg",
+        "nike-socks-short-2.jpg",
+        "nike-socks-short-3.jpg",
+        "nike-socks-short-4.jpg",
+        "nike-socks-short-5.jpg"
+      ]
+    },
+    "color": [
+      {
+        "name": "白色",
+        "image": "nike-socks-short-3.jpg"
+      },
+      {
+        "name": "黑色",
+        "image": "nike-socks-short.jpg"
+      }
     ],
     "size": ["S", "M", "L", "XL"],
     "sizeDetail": ["低筒款式，著用後約在腳踝位置"],
@@ -169,7 +210,7 @@
       "details": {
         "材質": "棉、聚酯纖維混紡",
         "風格": "貼合",
-        "顏色": ["白色", "黑色"],
+        "顏色": "白色、黑色",
         "產地": "中國"
       }
     },
@@ -201,11 +242,23 @@
     "alt": "Nike 運動長襪圖片",
     "isOnSale": false,
     "isNew": true,
-    "images": [
-      "nike-socks-long.jpg",
-      "nike-socks-long-2.jpg",
-      "nike-socks-long-3.jpg",
-      "nike-socks-long-4.jpg"
+    "images": {
+      "noBg": [
+        "nike-socks-long.jpg",
+        "nike-socks-long-2.jpg",
+        "nike-socks-long-3.jpg",
+        "nike-socks-long-4.jpg"
+      ]
+    },
+    "color": [
+      {
+        "name": "白色",
+        "image": "nike-socks-long.jpg"
+      },
+      {
+        "name": "黑色",
+        "image": "nike-socks-long-4.jpg"
+      }
     ],
     "size": ["S", "M", "L", "XL"],
     "sizeDetail": ["長筒款式，著用後約覆蓋至小腿位置"],
@@ -228,7 +281,7 @@
       "details": {
         "材質": "棉、聚酯纖維混紡",
         "風格": "貼合",
-        "顏色": ["白色", "黑色"],
+        "顏色": "白色、黑色",
         "產地": "中國"
       }
     },
@@ -260,13 +313,25 @@
     "alt": "Mizuno Wave Prophecy Moc圖片",
     "isOnSale": false,
     "isNew": false,
-    "images": [
-      "mizuno-wave.jpg",
-      "mizuno-wave-2.jpg",
-      "mizuno-wave-3.jpg",
-      "mizuno-wave-4.jpg",
-      "mizuno-wave-5.jpg",
-      "mizuno-wave-6.jpg"
+    "images": {
+      "noBg": [
+        "mizuno-wave.jpg",
+        "mizuno-wave-2.jpg",
+        "mizuno-wave-3.jpg",
+        "mizuno-wave-4.jpg",
+        "mizuno-wave-5.jpg",
+        "mizuno-wave-6.jpg"
+      ]
+    },
+    "color": [
+      {
+        "name": "灰色",
+        "image": "mizuno-wave.jpg"
+      },
+      {
+        "name": "咖啡色",
+        "image": "mizuno-wave-2.jpg"
+      }
     ],
     "size": [
       "CM 24.5",
@@ -297,7 +362,7 @@
       "details": {
         "材質": "麂皮",
         "風格": "舒適",
-        "顏色": ["灰色", "咖啡色"],
+        "顏色": "灰色、咖啡色",
         "產地": "日本"
       }
     },
@@ -320,12 +385,28 @@
     "alt": "The North Face 可拆卸三合一搖粒絨衝鋒衣圖片",
     "isOnSale": false,
     "isNew": false,
-    "images": [
-      "the-north-face-jacket.jpg",
-      "the-north-face-jacket-2.jpg",
-      "the-north-face-jacket-3.jpg",
-      "the-north-face-jacket-4.jpg",
-      "the-north-face-jacket-5.jpg"
+    "images": {
+      "noBg": [
+        "the-north-face-jacket.jpg",
+        "the-north-face-jacket-2.jpg",
+        "the-north-face-jacket-3.jpg",
+        "the-north-face-jacket-4.jpg",
+        "the-north-face-jacket-5.jpg"
+      ]
+    },
+    "color": [
+      {
+        "name": "綠色",
+        "image": "the-north-face-jacket.jpg"
+      },
+      {
+        "name": "紫色",
+        "image": "the-north-face-jacket-3.jpg"
+      },
+      {
+        "name": "黑色",
+        "image": "the-north-face-jacket-2.jpg"
+      }
     ],
     "size": ["M", "L", "XL", "2XL", "3XL"],
     "summary": {
@@ -347,7 +428,7 @@
       "details": {
         "材質": "搖粒絨",
         "風格": "舒適剪裁",
-        "顏色": ["綠色", "紫色", "黑色"],
+        "顏色": "綠色、紫色、黑色",
         "產地": "中國"
       }
     },
@@ -388,14 +469,11 @@
     "alt": "Adidas x BLCG 聯名寬鬆廓形西裝外套圖片",
     "isOnSale": false,
     "isNew": false,
-    "images": [
-      "adidas-blcg.jpg",
-      "adidas-blcg-2.jpg",
-      "adidas-blcg-3.jpg",
-      "adidas-blcg-4.jpg",
-      "adidas-blcg-5.jpg",
-      "adidas-blcg-6.jpg"
-    ],
+    "images": {
+      "noBg": ["adidas-blcg.jpg", "adidas-blcg-2.jpg", "adidas-blcg-3.jpg"],
+      "hasBg": ["adidas-blcg-4.jpg", "adidas-blcg-5.jpg", "adidas-blcg-6.jpg"]
+    },
+    "color": ["黑色"],
     "size": ["S", "M", "L", "XL"],
     "summary": {
       "productDescription": "Adidas 與 Balenciaga 於 2023 年春季合作，推出聯名系列，融合兩大品牌的獨特風格。此款寬鬆廓形西裝外套採用 Balenciaga 標誌性的誇張剪裁，並融入 Adidas 的經典元素，如三條紋設計，展現高級時尚與運動美學的完美結合。",
@@ -416,7 +494,7 @@
       "details": {
         "材質": "高品質混紡面料",
         "風格": "Oversized 寬鬆剪裁",
-        "顏色": ["黑色"],
+        "顏色": "黑色",
         "產地": "葡萄牙"
       }
     },
@@ -448,14 +526,26 @@
     "alt": "Ordinary 潑漆做舊水洗工作褲圖片",
     "isOnSale": false,
     "isNew": false,
-    "images": [
-      "ordinary-pants.jpg",
-      "ordinary-pants-2.jpg",
-      "ordinary-pants-3.jpg",
-      "ordinary-pants-4.jpg",
-      "ordinary-pants-5.jpg",
-      "ordinary-pants-6.jpg",
-      "ordinary-pants-7.jpg"
+    "images": {
+      "hasBg": [
+        "ordinary-pants.jpg",
+        "ordinary-pants-2.jpg",
+        "ordinary-pants-3.jpg",
+        "ordinary-pants-4.jpg",
+        "ordinary-pants-5.jpg",
+        "ordinary-pants-6.jpg",
+        "ordinary-pants-7.jpg"
+      ]
+    },
+    "color": [
+      {
+        "name": "水洗灰",
+        "image": "ordinary-pants-2.jpg"
+      },
+      {
+        "name": "水洗卡其",
+        "image": "ordinary-pants-3.jpg"
+      }
     ],
     "size": ["M", "L", "XL"],
     "summary": {
@@ -476,7 +566,7 @@
       ],
       "details": {
         "風格": "寬鬆剪裁，適合日常與街頭風搭配",
-        "顏色": ["水洗灰", "水洗卡其"],
+        "顏色": "水洗灰、水洗卡其",
         "產地": "中國"
       }
     },
@@ -507,12 +597,23 @@
     "alt": "Adidas Originals 寬鬆廓形運動長褲圖片",
     "isOnSale": false,
     "isNew": false,
-    "images": [
-      "adidas-originals-pants.jpg",
-      "adidas-originals-pants-2.jpg",
-      "adidas-originals-pants-3.jpg",
-      "adidas-originals-pants-4.jpg",
-      "adidas-originals-pants-5.jpg"
+    "images": {
+      "noBg": ["adidas-originals-pants.jpg", "adidas-originals-pants-2.jpg"],
+      "hasBg": [
+        "adidas-originals-pants-3.jpg",
+        "adidas-originals-pants-4.jpg",
+        "adidas-originals-pants-5.jpg"
+      ]
+    },
+    "color": [
+      {
+        "name": "黑色",
+        "image": "adidas-originals-pants-2.jpg"
+      },
+      {
+        "name": "灰色",
+        "image": "adidas-originals-pants.jpg"
+      }
     ],
     "size": ["S", "M", "L"],
     "summary": {
@@ -533,7 +634,7 @@
       ],
       "details": {
         "風格": "寬鬆版型，適合日常穿搭",
-        "顏色": ["黑色", "灰色"],
+        "顏色": "黑色、灰色",
         "產地": "中國"
       }
     },
@@ -564,13 +665,28 @@
     "alt": "Nautica TOO HEAVY Arch Logo Tee圖片",
     "isOnSale": false,
     "isNew": false,
-    "images": [
-      "nautica-tee.jpg",
-      "nautica-tee-2.jpg",
-      "nautica-tee-3.jpg",
-      "nautica-tee-4.jpg",
-      "nautica-tee-5.jpg",
-      "nautica-tee-6.jpg"
+    "images": {
+      "noBg": [
+        "nautica-tee.jpg",
+        "nautica-tee-2.jpg",
+        "nautica-tee-3.jpg",
+        "nautica-tee-4.jpg"
+      ],
+      "has": ["nautica-tee-5.jpg", "nautica-tee-6.jpg"]
+    },
+    "color": [
+      {
+        "name": "藍色",
+        "image": "nautica-tee-2.jpg"
+      },
+      {
+        "name": "白色",
+        "image": "nautica-tee-3.jpg"
+      },
+      {
+        "name": "灰色",
+        "image": "nautica-tee-4.jpg"
+      }
     ],
     "size": ["M", "L", "XL"],
     "summary": {
@@ -591,7 +707,7 @@
       ],
       "details": {
         "風格": "舒適版型，適合日常穿著",
-        "顏色": ["藍色", "白色", "灰色"],
+        "顏色": "藍色、白色、灰色",
         "產地": "中國"
       }
     },
@@ -622,13 +738,25 @@
     "alt": "Carhartt WIP 輕量連帽外套圖片",
     "isOnSale": false,
     "isNew": false,
-    "images": [
-      "carhartt-jacket.jpg",
-      "carhartt-jacket-2.jpg",
-      "carhartt-jacket-3.jpg",
-      "carhartt-jacket-4.jpg",
-      "carhartt-jacket-5.jpg",
-      "carhartt-jacket-6.jpg"
+    "images": {
+      "hasBg": [
+        "carhartt-jacket.jpg",
+        "carhartt-jacket-2.jpg",
+        "carhartt-jacket-3.jpg",
+        "carhartt-jacket-4.jpg",
+        "carhartt-jacket-5.jpg",
+        "carhartt-jacket-6.jpg"
+      ]
+    },
+    "color": [
+      {
+        "name": "灰綠色",
+        "image": "carhartt-jacket.jpg"
+      },
+      {
+        "name": "黑色",
+        "image": "carhartt-jacket-2.jpg"
+      }
     ],
     "size": ["S", "M", "L", "XL"],
     "summary": {
@@ -649,7 +777,7 @@
       ],
       "details": {
         "風格": "修身設計，提供靈活活動空間",
-        "顏色": ["灰綠色", "黑色"],
+        "顏色": "灰綠色、黑色",
         "產地": "日本"
       }
     },
@@ -681,14 +809,16 @@
     "alt": "Adidas x Sporty & Rich 聯名復古長袖Tee圖片",
     "isOnSale": false,
     "isNew": false,
-    "images": [
-      "adidas-sporty-rich.jpg",
-      "adidas-sporty-rich-2.jpg",
-      "adidas-sporty-rich-3.jpg",
-      "adidas-sporty-rich-4.jpg",
-      "adidas-sporty-rich-5.jpg",
-      "adidas-sporty-rich-6.jpg"
-    ],
+    "images": {
+      "noBg": ["adidas-sporty-rich.jpg", "adidas-sporty-rich-2.jpg"],
+      "hasBg": [
+        "adidas-sporty-rich-3.jpg",
+        "adidas-sporty-rich-4.jpg",
+        "adidas-sporty-rich-5.jpg",
+        "adidas-sporty-rich-6.jpg"
+      ]
+    },
+    "color": ["深藍色"],
     "size": ["S", "M", "L", "XL"],
     "summary": {
       "productDescription": "Adidas 與洛杉磯品牌 Sporty & Rich 合作，推出復古風格的長袖T恤。此款T恤採用深藍色設計，正面印有兩個品牌的簡約標誌，展現品牌聯名特色。材質為棉與滌綸混紡，提供舒適的穿著感受。",
@@ -708,7 +838,7 @@
       ],
       "details": {
         "風格": "舒適版型，適合日常穿著",
-        "顏色": ["深藍色"],
+        "顏色": "深藍色",
         "產地": "中國"
       }
     },
@@ -740,12 +870,15 @@
     "alt": "Adidas Originals 運動短褲圖片",
     "isOnSale": false,
     "isNew": false,
-    "images": [
-      "adidas-short.jpg",
-      "adidas-short-2.jpg",
-      "adidas-short-3.jpg",
-      "adidas-short-4.jpg"
-    ],
+    "images": {
+      "noBg": ["adidas-short.jpg"],
+      "hasBg": [
+        "adidas-short-2.jpg",
+        "adidas-short-3.jpg",
+        "adidas-short-4.jpg"
+      ]
+    },
+    "color": ["黑色"],
     "size": ["S", "M", "L"],
     "summary": {
       "productDescription": "採用 100% 聚酯纖維製成，提供舒適的穿著感受。其直筒剪裁設計，適合日常休閒穿搭。彈性鬆緊腰圍，方便調整，並配有簡約的三條線刺繡 Logo，展現品牌特色。此款短褲特別適合運動穿著，提升活動自由度。",
@@ -765,7 +898,7 @@
       ],
       "details": {
         "風格": "直筒剪裁，適合運動與日常穿著",
-        "顏色": ["黑色"],
+        "顏色": "黑色",
         "產地": "中國"
       }
     },
@@ -796,13 +929,16 @@
     "alt": "Asics x Unaffected Gel-Kayano 14 黑銀圖片",
     "isOnSale": false,
     "isNew": false,
-    "images": [
-      "asics-kayano-black.jpg",
-      "asics-kayano-black-2.jpg",
-      "asics-kayano-black-3.jpg",
-      "asics-kayano-black-4.jpg",
-      "asics-kayano-black-5.jpg"
-    ],
+    "images": {
+      "noBg": [
+        "asics-kayano-black.jpg",
+        "asics-kayano-black-2.jpg",
+        "asics-kayano-black-3.jpg",
+        "asics-kayano-black-4.jpg",
+        "asics-kayano-black-5.jpg"
+      ]
+    },
+    "color": ["黑銀"],
     "size": [
       "CM 22.5",
       "CM 23",
@@ -836,7 +972,7 @@
       ],
       "details": {
         "風格": "適合日常穿著與輕度運動",
-        "顏色": ["黑銀"],
+        "顏色": "黑銀",
         "產地": "日本"
       }
     },
@@ -859,13 +995,16 @@
     "alt": "Asics Gel-Kayano 14 \"Silver Cream\" 灰銀圖片",
     "isOnSale": false,
     "isNew": false,
-    "images": [
-      "asics-kayano.jpg",
-      "asics-kayano-2.jpg",
-      "asics-kayano-3.jpg",
-      "asics-kayano-4.jpg",
-      "asics-kayano-5.jpg"
-    ],
+    "images": {
+      "noBg": [
+        "asics-kayano.jpg",
+        "asics-kayano-2.jpg",
+        "asics-kayano-3.jpg",
+        "asics-kayano-4.jpg",
+        "asics-kayano-5.jpg"
+      ]
+    },
+    "color": ["灰銀"],
     "size": [
       "CM 22.5",
       "CM 23",
@@ -899,7 +1038,7 @@
       ],
       "details": {
         "風格": "適合日常穿搭與運動",
-        "顏色": ["灰銀"],
+        "顏色": "灰銀",
         "產地": "越南"
       }
     },
@@ -922,14 +1061,17 @@
     "alt": "Nike Air Jordan 1 Low Golf x Travis Scott Neutral Olive圖片",
     "isOnSale": false,
     "isNew": false,
-    "images": [
-      "nike-air-jordan-1-retro.jpg",
-      "nike-air-jordan-1-retro-2.jpg",
-      "nike-air-jordan-1-retro-3.jpg",
-      "nike-air-jordan-1-retro-4.jpg",
-      "nike-air-jordan-1-retro-5.jpg",
-      "nike-air-jordan-1-retro-6.jpg"
-    ],
+    "images": {
+      "noBg": [
+        "nike-air-jordan-1-retro.jpg",
+        "nike-air-jordan-1-retro-2.jpg",
+        "nike-air-jordan-1-retro-3.jpg",
+        "nike-air-jordan-1-retro-4.jpg",
+        "nike-air-jordan-1-retro-5.jpg",
+        "nike-air-jordan-1-retro-6.jpg"
+      ]
+    },
+    "color": ["橄欖綠"],
     "size": [
       "CM 23",
       "CM 23.5",
@@ -966,7 +1108,7 @@
       ],
       "details": {
         "風格": "適合日常穿搭與運動",
-        "顏色": ["橄欖綠"],
+        "顏色": "橄欖綠",
         "產地": "越南"
       }
     },
@@ -989,13 +1131,16 @@
     "alt": "Nike Air Jordan 1 Mid Light Smoke Grey圖片",
     "isOnSale": false,
     "isNew": false,
-    "images": [
-      "nike-air-jordan-mid.jpg",
-      "nike-air-jordan-mid-2.jpg",
-      "nike-air-jordan-mid-3.jpg",
-      "nike-air-jordan-mid-4.jpg",
-      "nike-air-jordan-mid-5.jpg"
-    ],
+    "images": {
+      "noBg": [
+        "nike-air-jordan-mid.jpg",
+        "nike-air-jordan-mid-2.jpg",
+        "nike-air-jordan-mid-3.jpg",
+        "nike-air-jordan-mid-4.jpg",
+        "nike-air-jordan-mid-5.jpg"
+      ]
+    },
+    "color": ["黑灰色"],
     "size": [
       "CM 23",
       "CM 23.5",
@@ -1032,7 +1177,7 @@
       ],
       "details": {
         "風格": "中筒設計",
-        "顏色": ["黑灰色"],
+        "顏色": "黑灰色",
         "產地": "中國"
       }
     },
@@ -1055,13 +1200,16 @@
     "alt": "Nike Dunk Low Retro White Black圖片",
     "isOnSale": false,
     "isNew": false,
-    "images": [
-      "nike-dunk-panda.jpg",
-      "nike-dunk-panda-2.jpg",
-      "nike-dunk-panda-3.jpg",
-      "nike-dunk-panda-4.jpg",
-      "nike-dunk-panda-5.jpg"
-    ],
+    "images": {
+      "noBg": [
+        "nike-dunk-panda.jpg",
+        "nike-dunk-panda-2.jpg",
+        "nike-dunk-panda-3.jpg",
+        "nike-dunk-panda-4.jpg",
+        "nike-dunk-panda-5.jpg"
+      ]
+    },
+    "color": ["黑白"],
     "size": [
       "CM 23",
       "CM 23.5",
@@ -1098,7 +1246,7 @@
       ],
       "details": {
         "風格": "低筒設計",
-        "顏色": ["黑白"],
+        "顏色": "黑白",
         "產地": "中國"
       }
     },
@@ -1121,13 +1269,16 @@
     "alt": "Adidas Originals Gazelle Bold W圖片",
     "isOnSale": true,
     "isNew": false,
-    "images": [
-      "adidas-gazelle.jpg",
-      "adidas-gazelle-2.jpg",
-      "adidas-gazelle-3.jpg",
-      "adidas-gazelle-4.jpg",
-      "adidas-gazelle-5.jpg"
-    ],
+    "images": {
+      "noBg": [
+        "adidas-gazelle.jpg",
+        "adidas-gazelle-2.jpg",
+        "adidas-gazelle-3.jpg",
+        "adidas-gazelle-4.jpg",
+        "adidas-gazelle-5.jpg"
+      ]
+    },
+    "color": ["粉綠"],
     "size": [
       "CM 22.5",
       "CM 23",
@@ -1156,7 +1307,7 @@
       ],
       "details": {
         "風格": "低筒、厚底",
-        "顏色": ["粉綠"],
+        "顏色": "粉綠",
         "產地": "越南"
       }
     },
@@ -1179,15 +1330,31 @@
     "alt": "Converse 1970 Chuck Taylor All Star '70 圖片",
     "isOnSale": true,
     "isNew": false,
-    "images": [
-      "converse-black-1.jpg",
-      "converse-black-2.jpg",
-      "converse-black-3.jpg",
-      "converse-beige-1.jpg",
-      "converse-beige-2.jpg",
-      "converse-beige-3.jpg",
-      "converse-red-1.jpg",
-      "converse-red-2.jpg"
+    "images": {
+      "noBg": [
+        "converse-black-1.jpg",
+        "converse-black-2.jpg",
+        "converse-black-3.jpg",
+        "converse-beige-1.jpg",
+        "converse-beige-2.jpg",
+        "converse-beige-3.jpg",
+        "converse-red-1.jpg",
+        "converse-red-2.jpg"
+      ]
+    },
+    "color": [
+      {
+        "name": "黑色",
+        "image": "converse-black-1.jpg"
+      },
+      {
+        "name": "奶茶色",
+        "image": "converse-beige-1.jpg"
+      },
+      {
+        "name": "酒紅色",
+        "image": "converse-red-1.jpg"
+      }
     ],
     "size": [
       "CM 23",
@@ -1222,7 +1389,7 @@
       ],
       "details": {
         "風格": "低筒設計",
-        "顏色": ["黑色", "奶茶色", "酒紅色"],
+        "顏色": "黑色、奶茶色、酒紅色",
         "產地": "越南"
       }
     },
@@ -1245,12 +1412,11 @@
     "alt": "Nike Dri-Fit 中度支撐運動內衣圖片",
     "isOnSale": false,
     "isNew": false,
-    "images": [
-      "nike-sports-bra.jpg",
-      "nike-sports-bra-2.jpg",
-      "nike-sports-bra-3.jpg",
-      "nike-sports-bra-4.jpg"
-    ],
+    "images": {
+      "noBg": ["nike-sports-bra.jpg", "nike-sports-bra-2.jpg"],
+      "hasBg": ["nike-sports-bra-3.jpg", "nike-sports-bra-4.jpg"]
+    },
+    "color": ["黑色"],
     "size": ["S", "M", "L"],
     "summary": {
       "productDescription": "採用Dri-FIT技術，能迅速排汗，保持乾爽。其設計提供適度支撐，適合中等強度運動，如瑜伽、健身訓練等。",
@@ -1267,7 +1433,7 @@
       "details": {
         "材質": "高品質彈性纖維",
         "風格": "舒適貼合設計",
-        "顏色": ["黑色"],
+        "顏色": "黑色",
         "產地": "美國"
       }
     },
@@ -1298,11 +1464,31 @@
     "alt": "Carhartt WIP 經典方標針織毛帽圖片",
     "isOnSale": false,
     "isNew": false,
-    "images": [
-      "carhartt-beanie.jpg",
-      "carhartt-beanie-2.jpg",
-      "carhartt-beanie-3.jpg",
-      "carhartt-beanie-4.jpg"
+    "images": {
+      "noBg": [
+        "carhartt-beanie.jpg",
+        "carhartt-beanie-2.jpg",
+        "carhartt-beanie-3.jpg",
+        "carhartt-beanie-4.jpg"
+      ]
+    },
+    "color": [
+      {
+        "name": "黃色",
+        "image": "carhartt-beanie.jpg"
+      },
+      {
+        "name": "黑色",
+        "image": "carhartt-beanie-2.jpg"
+      },
+      {
+        "name": "灰色",
+        "image": "carhartt-beanie-3.jpg"
+      },
+      {
+        "name": "杏色",
+        "image": "carhartt-beanie-4.jpg"
+      }
     ],
     "size": ["F"],
     "sizeDetail": ["此商品為單一尺寸(One Size)"],
@@ -1324,7 +1510,7 @@
       ],
       "details": {
         "風格": "單一尺寸、瓜皮帽設計，服貼軟頂",
-        "顏色": ["黃色", "黑色", "灰色", "杏色"],
+        "顏色": "黃色、黑色、灰色、杏色",
         "產地": "中國"
       }
     },
@@ -1347,13 +1533,25 @@
     "alt": "The North Face 側背包圖片",
     "isOnSale": false,
     "isNew": false,
-    "images": [
-      "the-north-face-crossbody-bag.jpg",
-      "the-north-face-crossbody-bag-2.jpg",
-      "the-north-face-crossbody-bag-3.jpg",
-      "the-north-face-crossbody-bag-4.jpg",
-      "the-north-face-crossbody-bag-5.jpg",
-      "the-north-face-crossbody-bag-6.jpg"
+    "images": {
+      "noBg": [
+        "the-north-face-crossbody-bag.jpg",
+        "the-north-face-crossbody-bag-2.jpg",
+        "the-north-face-crossbody-bag-3.jpg",
+        "the-north-face-crossbody-bag-4.jpg",
+        "the-north-face-crossbody-bag-5.jpg"
+      ],
+      "hasBg": ["the-north-face-crossbody-bag-6.jpg"]
+    },
+    "color": [
+      {
+        "name": "黑色",
+        "image": "the-north-face-crossbody-bag-4.jpg"
+      },
+      {
+        "name": "變形蟲",
+        "image": "the-north-face-crossbody-bag-2.jpg"
+      }
     ],
     "size": ["F"],
     "sizeDetail": ["此商品為單一尺寸(One Size)"],
@@ -1375,7 +1573,7 @@
       ],
       "details": {
         "風格": "單一尺寸、輕量化、多夾層、拉鍊設計",
-        "顏色": ["黑色", "變形蟲"],
+        "顏色": "黑色、變形蟲",
         "產地": "中國"
       }
     },
@@ -1398,12 +1596,15 @@
     "alt": "Carhartt D89 後背包圖片",
     "isOnSale": false,
     "isNew": false,
-    "images": [
-      "carhartt-d89.jpg",
-      "carhartt-d89-2.jpg",
-      "carhartt-d89-3.jpg",
-      "carhartt-d89-4.jpg"
-    ],
+    "images": {
+      "noBg": [
+        "carhartt-d89.jpg",
+        "carhartt-d89-2.jpg",
+        "carhartt-d89-3.jpg",
+        "carhartt-d89-4.jpg"
+      ]
+    },
+    "color": ["黑色"],
     "size": ["F"],
     "sizeDetail": ["此商品為單一尺寸(One Size)"],
     "summary": {
@@ -1428,7 +1629,7 @@
       ],
       "details": {
         "風格": "單一尺寸、多夾層、雙側水壺袋、筆電隔層",
-        "顏色": ["黑色"],
+        "顏色": "黑色",
         "產地": "中國"
       }
     },

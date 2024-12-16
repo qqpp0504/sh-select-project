@@ -10,7 +10,7 @@ export default function newProducts({ products }) {
           key={product.title}
           className="w-[25rem] h-[32rem] relative flex-shrink-0"
         >
-          <Link to="/">
+          <Link to={`/products/${product.slug}`}>
             <div className="bg-gray-100 flex justify-center items-center h-[85%] rounded-xl">
               <img
                 src={`http://localhost:3000/${product.image}`}

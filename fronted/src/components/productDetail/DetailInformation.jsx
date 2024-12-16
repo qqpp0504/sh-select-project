@@ -15,7 +15,7 @@ export default function DetailInformation({ product }) {
   }
 
   return (
-    <Modal open={isShowing}>
+    <Modal open={isShowing} onClose={handleCloseDetail}>
       <section className="max-w-full w-[44rem] lg:w-[40rem]">
         <div className="flex items-center justify-between">
           <div className="flex items-center flex-wrap">
@@ -46,9 +46,9 @@ export default function DetailInformation({ product }) {
           <div>
             <button
               onClick={handleCloseDetail}
-              className="p-[0.3rem] bg-gray-100 rounded-full hover:bg-gray-300"
+              className="p-[0.3rem] bg-gray-100 rounded-full hover:bg-gray-300 w-9 h-9"
             >
-              <img src={closeIcon} alt="Close icon" className="w-7" />
+              <img src={closeIcon} alt="Close icon" className="w-full h-full" />
             </button>
           </div>
         </div>

@@ -14,21 +14,21 @@ export default function SizeDetail({ productSizeInfo }) {
   }
 
   return (
-    <Modal open={isShowing}>
-      <section className="min-w-[25rem]">
+    <Modal open={isShowing} onClose={handleCloseSizeDetail}>
+      <section>
         <div className="flex items-center justify-between mb-6">
           <h3 className="text-xl font-500">尺寸資訊</h3>
           <button
             onClick={handleCloseSizeDetail}
-            className="p-[0.3rem] bg-gray-100 rounded-full hover:bg-gray-300"
+            className="p-[0.3rem] bg-gray-100 rounded-full hover:bg-gray-300 w-9 h-9"
           >
-            <img src={closeIcon} alt="Close icon" className="w-7" />
+            <img src={closeIcon} alt="Close icon" className="w-full h-full" />
           </button>
         </div>
 
         {productSizeInfo.sizes && (
-          <div className="flex flex-col">
-            <table className="text-center table-fixed">
+          <div className="flex flex-col overflow-x-auto">
+            <table className="min-w-[25rem] text-center table-fixed">
               <thead>
                 <tr>
                   {productSizeInfo.sizes.name.map((header) => (

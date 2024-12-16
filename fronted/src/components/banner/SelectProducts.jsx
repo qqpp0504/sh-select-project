@@ -22,7 +22,7 @@ export default function SelectedProducts({ products, sectionTitle }) {
             <h2 className="text-white text-xl font-400 mb-6">
               {product.title}
             </h2>
-            <Link to="/">
+            <Link to={`/products/${product.slug}`}>
               <Button bgColor="white">立即選購</Button>
             </Link>
           </div>

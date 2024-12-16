@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
 import { currencyFormatter } from "../../util/formatting.js";
@@ -7,9 +8,11 @@ import rulerIcon from "../../assets/ruler-icon.png";
 import Accordion from "../UI/Accordion.jsx";
 import DeliveryInformation from "./DeliveryInformation.jsx";
 import { modalActions } from "../../store/modal-slice.js";
+import SelectBlock from "./SelectBlock.jsx";
 
 export default function ProductItem({ product }) {
   const dispatch = useDispatch();
+  const [previewImage, setPreviewImage] = useState("");
 
   function handleShowProductDetail() {
     dispatch(modalActions.showProductModal());
@@ -19,6 +22,20 @@ export default function ProductItem({ product }) {
     dispatch(modalActions.showSizeModal());
   }
 
+  const allImages = Object.values(product.images).flat();
+  useEffect(() => {
+    setPreviewImage(allImages[0]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  function handleMouseEnter(image) {
+    setPreviewImage(image);
+  }
+
+  function handleSelectColor(colorImage) {
+    setPreviewImage(colorImage);
+  }
+
   return (
     <section>
       <div className="padding-large my-12">
@@ -26,27 +43,31 @@ export default function ProductItem({ product }) {
           <div className="flex flex-row w-[40rem] h-[43rem]">
             <div>
               <div className="w-26 h-full flex flex-col items-end mr-4">
-                {product.images.map((image) => (
+                {allImages.map((image) => (
                   <div
                     key={image}
                     className="w-[5rem] h-[5rem] mb-2 rounded-md overflow-hidden"
+                    onMouseEnter={() => handleMouseEnter(image)}
                   >
-                    <input className="hidden" />
-                    <label>
-                      <img
-                        src={`http://localhost:3000/${image}`}
-                        alt={product.alt}
-                        className="w-full h-full object-cover bg-gray-100"
-                      />
-                    </label>
+                    <img
+                      src={`http://localhost:3000/${image}`}
+                      alt={product.alt}
+                      className="w-full h-full object-cover bg-gray-100"
+                    />
                   </div>
                 ))}
               </div>
             </div>
-            <div className="flex justify-center items-center bg-gray-100 rounded-lg mr-8">
+            <div className="flex justify-center items-center bg-gray-100 rounded-lg mr-8 overflow-hidden">
               <img
-                src={`http://localhost:3000/${product.image}`}
+                src={`http://localhost:3000/${previewImage}`}
                 alt={product.alt}
+                className={`w-full object-cover ${
+                  product.images.noBg &&
+                  product.images.noBg.includes(previewImage)
+                    ? undefined
+                    : "h-full"
+                }`}
               />
             </div>
           </div>
@@ -56,7 +77,7 @@ export default function ProductItem({ product }) {
                 {product.brand} - {product.name}
               </h1>
               <h2 className="text-gray">{product.categoryCh}</h2>
-              <div className="my-3 flex gap-2 font-500">
+              <div className="my-2 flex gap-2 font-500">
                 <span>NT{currencyFormatter.format(product.originalPrice)}</span>
                 {product.originalPrice !== product.discountPrice && (
                   <>
@@ -71,7 +92,26 @@ export default function ProductItem({ product }) {
               </div>
 
               <div>
-                <div className="mt-16 mb-3 font-500 flex justify-between items-center">
+                {product.color.length > 1 ? (
+                  <div className="mt-8">
+                    <span className="font-500 mb-3 inline-block">選取顏色</span>
+                    <div className="grid grid-cols-4 gap-[0.45rem] mb-8 text-center">
+                      {product.color.map((option, index) => (
+                        <SelectBlock
+                          key={option.name}
+                          id={`color-${index}`}
+                          name="color"
+                          onSelect={() => handleSelectColor(option.image)}
+                        >
+                          {option.name}
+                        </SelectBlock>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <div className="mt-12"></div>
+                )}
+                <div className="mb-3 font-500 flex justify-between items-center">
                   <span>選取尺寸</span>
                   <button
                     onClick={handleShowSizeDetail}
@@ -81,14 +121,11 @@ export default function ProductItem({ product }) {
                     尺寸指南
                   </button>
                 </div>
-                <div className="grid grid-cols-4 gap-[0.45rem] mb-8">
+                <div className="grid grid-cols-4 gap-[0.45rem] mb-8 text-center">
                   {product.size.map((option) => (
-                    <button
-                      key={option}
-                      className="p-3 border-[1px] border-gray-200 rounded-[0.25rem] hover:border-black"
-                    >
+                    <SelectBlock key={option} id={option} name="size">
                       {option}
-                    </button>
+                    </SelectBlock>
                   ))}
                 </div>
                 <div className="flex flex-col gap-3">
@@ -104,6 +141,11 @@ export default function ProductItem({ product }) {
 
               <div className="mt-14">
                 <p>{product.summary.productDescription}</p>
+                {product.color.length === 1 && (
+                  <ul className="marker:text-lg list-disc pl-4 mt-8">
+                    <li>顏色：{product.color}</li>
+                  </ul>
+                )}
                 <button
                   onClick={handleShowProductDetail}
                   className="mt-8 inline-block font-500 border-b-[1.5px] border-black hover:text-gray-500 hover:border-gray-500"

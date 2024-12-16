@@ -8,7 +8,7 @@ export default function RecommendationProducts({ products }) {
   return (
     <ScrollContainer title="推薦單品">
       {products.map((product) => (
-        <Link key={product.title} to="/men">
+        <Link key={product.title} to={`/products/${product.slug}`}>
           <li className="w-[27rem] h-[34rem] relative flex-shrink-0">
             <div className="bg-gray-100 flex justify-center items-center h-[83%]">
               <img

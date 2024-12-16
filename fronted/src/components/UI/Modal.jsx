@@ -1,21 +1,41 @@
 import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 
-export default function Modal({ children, open }) {
+export default function Modal({ children, open, onClose }) {
   const dialog = useRef();
 
   useEffect(() => {
     const modal = dialog.current;
 
-    if (open) {
-      modal.showModal();
+    function handleDialogClose() {
+      onClose();
     }
 
-    return () => modal.close();
-  }, [open]);
+    if (open) {
+      modal.showModal();
+    } else {
+      modal.close();
+    }
+
+    modal.addEventListener("close", handleDialogClose);
+
+    return () => {
+      modal.removeEventListener("close", handleDialogClose);
+    };
+  }, [open, onClose]);
+
+  function handleBackdropClick(event) {
+    if (event.target === dialog.current) {
+      onClose();
+    }
+  }
 
   return createPortal(
-    <dialog ref={dialog} className="p-12 rounded-3xl">
+    <dialog
+      ref={dialog}
+      className="p-12 rounded-3xl"
+      onClick={handleBackdropClick}
+    >
       {children}
     </dialog>,
     document.getElementById("modal")

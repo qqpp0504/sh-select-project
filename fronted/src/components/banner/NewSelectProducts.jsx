@@ -10,7 +10,7 @@ export default function NewSelectedProducts({
   return (
     <ScrollContainer title={sectionTitle}>
       {products.map((product) => (
-        <Link key={product.title} to="/men">
+        <Link key={product.title} to={`/products/${product.slug}`}>
           <li className="w-[27rem] h-[34rem] relative flex-shrink-0">
             <img
               src={`http://localhost:3000/${product.image}`}
