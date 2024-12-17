@@ -181,12 +181,12 @@
     },
     "color": [
       {
-        "name": "白色",
-        "image": "nike-socks-short-3.jpg"
-      },
-      {
         "name": "黑色",
         "image": "nike-socks-short.jpg"
+      },
+      {
+        "name": "白色",
+        "image": "nike-socks-short-3.jpg"
       }
     ],
     "size": ["S", "M", "L", "XL"],
@@ -528,8 +528,8 @@
     "isNew": false,
     "images": {
       "hasBg": [
-        "ordinary-pants.jpg",
         "ordinary-pants-2.jpg",
+        "ordinary-pants.jpg",
         "ordinary-pants-3.jpg",
         "ordinary-pants-4.jpg",
         "ordinary-pants-5.jpg",
@@ -1535,8 +1535,8 @@
     "isNew": false,
     "images": {
       "noBg": [
-        "the-north-face-crossbody-bag.jpg",
         "the-north-face-crossbody-bag-2.jpg",
+        "the-north-face-crossbody-bag.jpg",
         "the-north-face-crossbody-bag-3.jpg",
         "the-north-face-crossbody-bag-4.jpg",
         "the-north-face-crossbody-bag-5.jpg"
@@ -1545,12 +1545,12 @@
     },
     "color": [
       {
-        "name": "黑色",
-        "image": "the-north-face-crossbody-bag-4.jpg"
-      },
-      {
         "name": "變形蟲",
         "image": "the-north-face-crossbody-bag-2.jpg"
+      },
+      {
+        "name": "黑色",
+        "image": "the-north-face-crossbody-bag-4.jpg"
       }
     ],
     "size": ["F"],

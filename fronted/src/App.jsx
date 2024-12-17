@@ -8,6 +8,7 @@ import BrandsPage from "./pages/Brands.jsx";
 import PromotionPage from "./pages/Promotion.jsx";
 import ProductsPage from "./pages/Products.jsx";
 import ProductDetail from "./pages/ProductDetail.jsx";
+import CartPage from "./pages/Cart.jsx";
 
 const HomePage = lazy(() => import("./pages/Home.jsx"));
 const MenPage = lazy(() => import("./pages/Men.jsx"));
@@ -57,6 +58,7 @@ const router = createBrowserRouter([
           },
         ],
       },
+      { path: "cart", element: <CartPage /> },
     ],
   },
 ]);

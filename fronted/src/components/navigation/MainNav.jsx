@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 
 import logo from "../../assets/logo.png";
 import Icon from "../UI/Icon.jsx";
-import Input from "../UI/Input.jsx";
+import SearchInput from "../UI/SearchInput.jsx";
 
 export default function MainNav() {
   const TAGS = [
@@ -39,9 +39,13 @@ export default function MainNav() {
       </div>
 
       <div className="flex-1 flex justify-end items-center gap-4">
-        <Input />
-        <Icon type="heart" />
-        <Icon type="shopping-cart" />
+        <SearchInput />
+        <Link to="/">
+          <Icon type="heart" />
+        </Link>
+        <Link to="/cart">
+          <Icon type="shopping-cart" />
+        </Link>
       </div>
     </nav>
   );

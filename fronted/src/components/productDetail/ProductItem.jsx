@@ -9,6 +9,7 @@ import Accordion from "../UI/Accordion.jsx";
 import DeliveryInformation from "./DeliveryInformation.jsx";
 import { modalActions } from "../../store/modal-slice.js";
 import SelectBlock from "./SelectBlock.jsx";
+import FeatureButton from "../UI/FeatureButton.jsx";
 
 export default function ProductItem({ product }) {
   const dispatch = useDispatch();
@@ -99,9 +100,10 @@ export default function ProductItem({ product }) {
                       {product.color.map((option, index) => (
                         <SelectBlock
                           key={option.name}
-                          id={`color-${index}`}
+                          id={`${option.name}`}
                           name="color"
                           onSelect={() => handleSelectColor(option.image)}
+                          defaultChecked={index === 0}
                         >
                           {option.name}
                         </SelectBlock>
@@ -129,13 +131,14 @@ export default function ProductItem({ product }) {
                   ))}
                 </div>
                 <div className="flex flex-col gap-3">
-                  <button className="bg-black rounded-full text-white w-full py-[1.2rem] hover:bg-black-hoverColor">
-                    加入購物車
-                  </button>
-                  <button className="rounded-full text-black w-full py-[1.2rem] border-[1.5px] border-gray-300 flex justify-center gap-1 hover:border-black">
-                    最愛
-                    <img src={heartIcon} alt="Heart Icon" className="w-6" />
-                  </button>
+                  <FeatureButton>加入購物車</FeatureButton>
+                  <FeatureButton
+                    bgColor="white"
+                    className="flex justify-center gap-1"
+                  >
+                    最愛{" "}
+                    <img src={heartIcon} alt="Heart icon" className="w-6" />
+                  </FeatureButton>
                 </div>
               </div>
 

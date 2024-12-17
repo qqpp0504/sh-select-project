@@ -1,6 +1,6 @@
 import searchIcon from "../../assets/search-icon.png";
 
-export default function Input() {
+export default function SearchInput() {
   return (
     <div className="relative w-[33%] group">
       <div className="absolute rounded-3xl p-[0.375rem] bg-gray-100 hover:bg-white-hoverColor">
