@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
 export default function FeatureButton({
   children,
+  type = "button",
   bgColor = "black",
   className = "",
+  ...props
 }) {
   let classes = ` rounded-full w-full py-[1.2rem] ${className}`;
 
@@ -14,5 +16,9 @@ export default function FeatureButton({
     classes += " text-gray bg-gray-100";
   }
 
-  return <button className={classes}>{children}</button>;
+  return (
+    <button type={type} className={classes} {...props}>
+      {children}
+    </button>
+  );
 }

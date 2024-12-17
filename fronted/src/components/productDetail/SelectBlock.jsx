@@ -2,6 +2,7 @@
 export default function SelectBlock({
   onSelect = null,
   id,
+  value,
   name,
   defaultChecked = false,
   children,
@@ -11,6 +12,7 @@ export default function SelectBlock({
       <input
         type="radio"
         id={id}
+        value={value}
         name={name}
         className="hidden peer"
         defaultChecked={defaultChecked}

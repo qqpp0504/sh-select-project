@@ -6,7 +6,7 @@ export default function CartOverview() {
     <section className="padding-large mt-6">
       <div className="flex justify-center">
         <div className="max-w-[67rem] w-full">
-          <div className="flex">
+          <div className="flex gap-6">
             <ShoppingCart />
             <ShoppingSummary />
           </div>

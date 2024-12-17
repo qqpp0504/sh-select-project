@@ -3,13 +3,10 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
 import { currencyFormatter } from "../../util/formatting.js";
-import heartIcon from "../../assets/heart-icon.png";
-import rulerIcon from "../../assets/ruler-icon.png";
 import Accordion from "../UI/Accordion.jsx";
 import DeliveryInformation from "./DeliveryInformation.jsx";
 import { modalActions } from "../../store/modal-slice.js";
-import SelectBlock from "./SelectBlock.jsx";
-import FeatureButton from "../UI/FeatureButton.jsx";
+import CartForm from "./CartForm.jsx";
 
 export default function ProductItem({ product }) {
   const dispatch = useDispatch();
@@ -93,53 +90,7 @@ export default function ProductItem({ product }) {
               </div>
 
               <div>
-                {product.color.length > 1 ? (
-                  <div className="mt-8">
-                    <span className="font-500 mb-3 inline-block">選取顏色</span>
-                    <div className="grid grid-cols-4 gap-[0.45rem] mb-8 text-center">
-                      {product.color.map((option, index) => (
-                        <SelectBlock
-                          key={option.name}
-                          id={`${option.name}`}
-                          name="color"
-                          onSelect={() => handleSelectColor(option.image)}
-                          defaultChecked={index === 0}
-                        >
-                          {option.name}
-                        </SelectBlock>
-                      ))}
-                    </div>
-                  </div>
-                ) : (
-                  <div className="mt-12"></div>
-                )}
-                <div className="mb-3 font-500 flex justify-between items-center">
-                  <span>選取尺寸</span>
-                  <button
-                    onClick={handleShowSizeDetail}
-                    className="text-sm flex items-center gap-1"
-                  >
-                    <img src={rulerIcon} alt="Ruler Icon" className="w-6" />
-                    尺寸指南
-                  </button>
-                </div>
-                <div className="grid grid-cols-4 gap-[0.45rem] mb-8 text-center">
-                  {product.size.map((option) => (
-                    <SelectBlock key={option} id={option} name="size">
-                      {option}
-                    </SelectBlock>
-                  ))}
-                </div>
-                <div className="flex flex-col gap-3">
-                  <FeatureButton>加入購物車</FeatureButton>
-                  <FeatureButton
-                    bgColor="white"
-                    className="flex justify-center gap-1"
-                  >
-                    最愛{" "}
-                    <img src={heartIcon} alt="Heart icon" className="w-6" />
-                  </FeatureButton>
-                </div>
+                <CartForm product={product} onSelect={handleSelectColor} />
               </div>
 
               <div className="mt-14">
