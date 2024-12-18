@@ -5,6 +5,8 @@ export default function SelectBlock({
   value,
   name,
   defaultChecked = false,
+  roundedStyle = "rounded-[0.25rem]",
+  className = "",
   children,
 }) {
   return (
@@ -19,7 +21,7 @@ export default function SelectBlock({
       />
       <label
         htmlFor={id}
-        className="cursor-pointer block p-3 border-[1px] border-gray-200 rounded-[0.25rem] hover:border-black peer-checked:border-black"
+        className={`cursor-pointer block p-3 border-[1px] border-gray-200 hover:border-black peer-checked:border-black ${roundedStyle} ${className}`}
       >
         {children}
       </label>

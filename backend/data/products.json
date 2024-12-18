@@ -473,7 +473,12 @@
       "noBg": ["adidas-blcg.jpg", "adidas-blcg-2.jpg", "adidas-blcg-3.jpg"],
       "hasBg": ["adidas-blcg-4.jpg", "adidas-blcg-5.jpg", "adidas-blcg-6.jpg"]
     },
-    "color": ["黑色"],
+    "color": [
+      {
+        "name": "黑色",
+        "image": "adidas-blcg.jpg"
+      }
+    ],
     "size": ["S", "M", "L", "XL"],
     "summary": {
       "productDescription": "Adidas 與 Balenciaga 於 2023 年春季合作，推出聯名系列，融合兩大品牌的獨特風格。此款寬鬆廓形西裝外套採用 Balenciaga 標誌性的誇張剪裁，並融入 Adidas 的經典元素，如三條紋設計，展現高級時尚與運動美學的完美結合。",
@@ -818,7 +823,12 @@
         "adidas-sporty-rich-6.jpg"
       ]
     },
-    "color": ["深藍色"],
+    "color": [
+      {
+        "name": "深藍色",
+        "image": "adidas-sporty-rich.jpg"
+      }
+    ],
     "size": ["S", "M", "L", "XL"],
     "summary": {
       "productDescription": "Adidas 與洛杉磯品牌 Sporty & Rich 合作，推出復古風格的長袖T恤。此款T恤採用深藍色設計，正面印有兩個品牌的簡約標誌，展現品牌聯名特色。材質為棉與滌綸混紡，提供舒適的穿著感受。",
@@ -878,7 +888,12 @@
         "adidas-short-4.jpg"
       ]
     },
-    "color": ["黑色"],
+    "color": [
+      {
+        "name": "黑色",
+        "image": "adidas-short.jpg"
+      }
+    ],
     "size": ["S", "M", "L"],
     "summary": {
       "productDescription": "採用 100% 聚酯纖維製成，提供舒適的穿著感受。其直筒剪裁設計，適合日常休閒穿搭。彈性鬆緊腰圍，方便調整，並配有簡約的三條線刺繡 Logo，展現品牌特色。此款短褲特別適合運動穿著，提升活動自由度。",
@@ -938,7 +953,12 @@
         "asics-kayano-black-5.jpg"
       ]
     },
-    "color": ["黑銀"],
+    "color": [
+      {
+        "name": "黑銀",
+        "image": "asics-kayano-black.jpg"
+      }
+    ],
     "size": [
       "CM 22.5",
       "CM 23",
@@ -1004,7 +1024,12 @@
         "asics-kayano-5.jpg"
       ]
     },
-    "color": ["灰銀"],
+    "color": [
+      {
+        "name": "灰銀",
+        "image": "asics-kayano.jpg"
+      }
+    ],
     "size": [
       "CM 22.5",
       "CM 23",
@@ -1071,7 +1096,12 @@
         "nike-air-jordan-1-retro-6.jpg"
       ]
     },
-    "color": ["橄欖綠"],
+    "color": [
+      {
+        "name": "橄欖綠",
+        "image": "nike-air-jordan-1-retro.jpg"
+      }
+    ],
     "size": [
       "CM 23",
       "CM 23.5",
@@ -1140,7 +1170,12 @@
         "nike-air-jordan-mid-5.jpg"
       ]
     },
-    "color": ["黑灰色"],
+    "color": [
+      {
+        "name": "黑灰色",
+        "image": "nike-air-jordan-mid.jpg"
+      }
+    ],
     "size": [
       "CM 23",
       "CM 23.5",
@@ -1209,7 +1244,12 @@
         "nike-dunk-panda-5.jpg"
       ]
     },
-    "color": ["黑白"],
+    "color": [
+      {
+        "name": "黑白",
+        "image": "nike-dunk-panda.jpg"
+      }
+    ],
     "size": [
       "CM 23",
       "CM 23.5",
@@ -1278,7 +1318,12 @@
         "adidas-gazelle-5.jpg"
       ]
     },
-    "color": ["粉綠"],
+    "color": [
+      {
+        "name": "粉綠",
+        "image": "adidas-gazelle.jpg"
+      }
+    ],
     "size": [
       "CM 22.5",
       "CM 23",
@@ -1416,7 +1461,12 @@
       "noBg": ["nike-sports-bra.jpg", "nike-sports-bra-2.jpg"],
       "hasBg": ["nike-sports-bra-3.jpg", "nike-sports-bra-4.jpg"]
     },
-    "color": ["黑色"],
+    "color": [
+      {
+        "name": "黑色",
+        "image": "nike-sports-bra.jpg"
+      }
+    ],
     "size": ["S", "M", "L"],
     "summary": {
       "productDescription": "採用Dri-FIT技術，能迅速排汗，保持乾爽。其設計提供適度支撐，適合中等強度運動，如瑜伽、健身訓練等。",
@@ -1604,7 +1654,12 @@
         "carhartt-d89-4.jpg"
       ]
     },
-    "color": ["黑色"],
+    "color": [
+      {
+        "name": "黑色",
+        "image": "carhartt-d89.jpg"
+      }
+    ],
     "size": ["F"],
     "sizeDetail": ["此商品為單一尺寸(One Size)"],
     "summary": {

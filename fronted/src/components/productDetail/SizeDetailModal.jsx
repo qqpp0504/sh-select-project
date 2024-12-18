@@ -5,7 +5,7 @@ import Modal from "../UI/Modal.jsx";
 import { modalActions } from "../../store/modal-slice.js";
 import closeIcon from "../../assets/close-icon.png";
 
-export default function SizeDetail({ productSizeInfo }) {
+export default function SizeDetailModal({ productSizeInfo }) {
   const isShowing = useSelector((state) => state.modal.isSizeShowing);
   const dispatch = useDispatch();
 
@@ -15,7 +15,7 @@ export default function SizeDetail({ productSizeInfo }) {
 
   return (
     <Modal open={isShowing} onClose={handleCloseSizeDetail}>
-      <section>
+      <section className="p-12">
         <div className="flex items-center justify-between mb-6">
           <h3 className="text-xl font-500">尺寸資訊</h3>
           <button

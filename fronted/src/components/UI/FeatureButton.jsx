@@ -4,9 +4,10 @@ export default function FeatureButton({
   type = "button",
   bgColor = "black",
   className = "",
+  paddingStyle = "py-[1.2rem]",
   ...props
 }) {
-  let classes = ` rounded-full w-full py-[1.2rem] ${className}`;
+  let classes = ` rounded-full w-full ${paddingStyle} ${className}`;
 
   if (bgColor === "black") {
     classes += " bg-black text-white border-[1.5px] hover:bg-black-hoverColor";

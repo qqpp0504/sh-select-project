@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useDispatch } from "react-redux";
 
-import SelectBlock from "./SelectBlock.jsx";
+import SelectBlock from "../UI/SelectBlock.jsx";
 import { modalActions } from "../../store/modal-slice.js";
 import rulerIcon from "../../assets/ruler-icon.png";
 import FeatureButton from "../UI/FeatureButton.jsx";
@@ -21,7 +21,7 @@ export default function CartForm({ product, onSelect }) {
           return [key, Number(value)];
         }
 
-        if (key === "color") {
+        if (key === "color" || key === "allSizes") {
           return [key, JSON.parse(value)];
         }
 
@@ -43,6 +43,11 @@ export default function CartForm({ product, onSelect }) {
       <input type="hidden" name="brand" value={product.brand} />
       <input type="hidden" name="alt" value={product.alt} />
       <input type="hidden" name="category" value={product.categoryCh} />
+      <input
+        type="hidden"
+        name="allSizes"
+        value={JSON.stringify(product.size)}
+      />
       <input
         name="originalPrice"
         value={product.originalPrice}
@@ -73,7 +78,14 @@ export default function CartForm({ product, onSelect }) {
           </div>
         </div>
       ) : (
-        <div className="mt-12"></div>
+        <>
+          <input
+            type="hidden"
+            name="color"
+            value={JSON.stringify(product.color[0])}
+          />
+          <div className="mt-12"></div>
+        </>
       )}
       <div className="mb-3 font-500 flex justify-between items-center">
         <span>選取尺寸</span>

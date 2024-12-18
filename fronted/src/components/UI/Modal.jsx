@@ -31,11 +31,7 @@ export default function Modal({ children, open, onClose }) {
   }
 
   return createPortal(
-    <dialog
-      ref={dialog}
-      className="p-12 rounded-3xl"
-      onClick={handleBackdropClick}
-    >
+    <dialog ref={dialog} onClick={handleBackdropClick} className="rounded-3xl">
       {children}
     </dialog>,
     document.getElementById("modal")

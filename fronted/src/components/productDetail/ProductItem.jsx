@@ -97,7 +97,7 @@ export default function ProductItem({ product }) {
                 <p>{product.summary.productDescription}</p>
                 {product.color.length === 1 && (
                   <ul className="marker:text-lg list-disc pl-4 mt-8">
-                    <li>顏色：{product.color}</li>
+                    <li>顏色：{product.color[0].name}</li>
                   </ul>
                 )}
                 <button

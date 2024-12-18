@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialModalState = {
   isProductShowing: false,
   isSizeShowing: false,
+  isChangeSizeShowing: false,
 };
 
 const modalSlice = createSlice({
@@ -20,6 +21,12 @@ const modalSlice = createSlice({
     },
     closeSizeModal(state) {
       state.isSizeShowing = false;
+    },
+    showChangeSizeModal(state) {
+      state.isChangeSizeShowing = true;
+    },
+    closeChangeSizeModal(state) {
+      state.isChangeSizeShowing = false;
     },
   },
 });

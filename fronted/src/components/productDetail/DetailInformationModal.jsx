@@ -6,7 +6,7 @@ import { modalActions } from "../../store/modal-slice.js";
 import { currencyFormatter } from "../../util/formatting.js";
 import closeIcon from "../../assets/close-icon.png";
 
-export default function DetailInformation({ product }) {
+export default function DetailInformationModal({ product }) {
   const isShowing = useSelector((state) => state.modal.isProductShowing);
   const dispatch = useDispatch();
 
@@ -16,7 +16,7 @@ export default function DetailInformation({ product }) {
 
   return (
     <Modal open={isShowing} onClose={handleCloseDetail}>
-      <section className="max-w-full w-[44rem] lg:w-[40rem]">
+      <section className="p-12 max-w-full w-[44rem] lg:w-[40rem]">
         <div className="flex items-center justify-between">
           <div className="flex items-center flex-wrap">
             <img
