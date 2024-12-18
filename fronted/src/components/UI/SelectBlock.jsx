@@ -8,6 +8,7 @@ export default function SelectBlock({
   roundedStyle = "rounded-[0.25rem]",
   className = "",
   children,
+  ...props
 }) {
   return (
     <div onClick={onSelect} className="cursor-pointer">
@@ -18,6 +19,7 @@ export default function SelectBlock({
         name={name}
         className="hidden peer"
         defaultChecked={defaultChecked}
+        {...props}
       />
       <label
         htmlFor={id}

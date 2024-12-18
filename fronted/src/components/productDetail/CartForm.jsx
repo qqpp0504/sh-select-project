@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 
 import SelectBlock from "../UI/SelectBlock.jsx";
@@ -9,10 +10,18 @@ import heartIcon from "../../assets/heart-icon.png";
 import { cartActions } from "../../store/cart-slice.js";
 
 export default function CartForm({ product, onSelect }) {
+  const [sizeData, setSizeData] = useState(null);
+  const [reminder, setReminder] = useState("");
   const dispatch = useDispatch();
 
   function handleSubmit(event) {
     event.preventDefault();
+
+    if (!sizeData) {
+      setReminder("請選擇尺寸");
+      return;
+    }
+
     const fd = new FormData(event.target);
     const data = Object.fromEntries(
       Array.from(fd.entries()).map(([key, value]) => {
@@ -30,6 +39,12 @@ export default function CartForm({ product, onSelect }) {
     );
 
     dispatch(cartActions.addToCart(data));
+  }
+
+  function handleSizeChange(event) {
+    const { value } = event.target;
+    setSizeData(value);
+    setReminder("");
   }
 
   function handleShowSizeDetail() {
@@ -88,7 +103,9 @@ export default function CartForm({ product, onSelect }) {
         </>
       )}
       <div className="mb-3 font-500 flex justify-between items-center">
-        <span>選取尺寸</span>
+        <span className={`${reminder ? "text-red-500" : undefined}`}>
+          選取尺寸
+        </span>
         <button
           onClick={handleShowSizeDetail}
           type="button"
@@ -99,13 +116,28 @@ export default function CartForm({ product, onSelect }) {
         </button>
       </div>
 
-      <div className="grid grid-cols-4 gap-[0.45rem] mb-8 text-center">
+      <div
+        className={`grid grid-cols-4 gap-[0.45rem] text-center ${
+          reminder ? "border-[1px] border-red-500" : undefined
+        }`}
+      >
         {product.size.map((option) => (
-          <SelectBlock key={option} id={option} value={option} name="size">
+          <SelectBlock
+            key={option}
+            id={option}
+            value={option}
+            name="size"
+            onChange={handleSizeChange}
+          >
             {option}
           </SelectBlock>
         ))}
       </div>
+
+      <span
+        className={`mb-8 block ${reminder ? "text-red-600 mt-3" : undefined}`}
+      >{`${reminder ? reminder : ""}`}</span>
+
       <div className="flex flex-col gap-3">
         <FeatureButton type="submit">加入購物車</FeatureButton>
         <FeatureButton bgColor="white" className="flex justify-center gap-1">
