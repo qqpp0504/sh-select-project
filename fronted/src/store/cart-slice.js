@@ -60,6 +60,14 @@ const cartSlice = createSlice({
 
       state.activeItem = existingItem;
     },
+    updatedSize(state, action) {
+      const { id, color, size } = action.payload;
+      const existingItem = state.items.find(
+        (item) => item.id === id && item.color.name === color
+      );
+
+      existingItem.size = size;
+    },
   },
 });
 
