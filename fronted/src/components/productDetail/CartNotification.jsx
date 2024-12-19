@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -12,6 +12,7 @@ export default function CartNotification() {
   const { activeItem, totalQuantity, scrollPosition } = useSelector(
     (state) => state.cart
   );
+  const timeout = useRef();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -47,6 +48,17 @@ export default function CartNotification() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {
+    timeout.current = setTimeout(() => {
+      handleCloseNotification();
+    }, 5000);
+
+    return () => {
+      clearTimeout(timeout.current);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className="absolute right-12 top-full bg-white w-[25rem] h-[17rem] rounded-b-3xl z-10 p-5 text-[0.95rem]">
       <div className="flex flex-col justify-between h-full">
@@ -62,11 +74,13 @@ export default function CartNotification() {
         </button>
 
         <div className="flex gap-3">
-          <img
-            src={`http://localhost:3000/${activeItem.color.image}`}
-            alt={activeItem.alt}
-            className="w-24 h-24 bg-slate-100"
-          />
+          <div className="w-24 h-24 bg-slate-100 flex justify-center items-center">
+            <img
+              src={`http://localhost:3000/${activeItem.color.image}`}
+              alt={activeItem.alt}
+              className="w-[90%] "
+            />
+          </div>
           <div className="flex flex-col justify-between">
             <h2 className="font-500">
               {activeItem.brand} - {activeItem.productName}
@@ -94,7 +108,9 @@ export default function CartNotification() {
           >
             查看購物車 ({totalQuantity})
           </FeatureButton>
-          <FeatureButton paddingStyle="py-4">結帳</FeatureButton>
+          <FeatureButton paddingStyle="py-4" link="/checkout">
+            結帳
+          </FeatureButton>
         </div>
       </div>
     </div>

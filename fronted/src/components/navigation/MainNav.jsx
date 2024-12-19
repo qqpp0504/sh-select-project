@@ -6,7 +6,9 @@ import Icon from "../UI/Icon.jsx";
 import SearchInput from "../UI/SearchInput.jsx";
 
 export default function MainNav() {
-  const { isShowingNotification } = useSelector((state) => state.cart);
+  const { isShowingNotification, totalQuantity } = useSelector(
+    (state) => state.cart
+  );
 
   const TAGS = [
     { name: "新品和精選", link: "/" },
@@ -53,8 +55,17 @@ export default function MainNav() {
         <Link to="/" onClick={handlePreventDefault}>
           <Icon type="heart" />
         </Link>
-        <Link to="/cart" onClick={handlePreventDefault}>
+        <Link to="/cart" onClick={handlePreventDefault} className="relative">
           <Icon type="shopping-cart" />
+          {totalQuantity > 0 && (
+            <span
+              className={`absolute bottom-[2.5px] text-[0.5rem] ${
+                totalQuantity > 9 ? "left-[13px]" : "left-[15.5px]"
+              }`}
+            >
+              {`${totalQuantity > 9 ? "9+" : totalQuantity}`}
+            </span>
+          )}
         </Link>
       </div>
     </nav>

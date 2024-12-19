@@ -148,8 +148,12 @@ export default function CartForm({ product, onSelect }) {
 
       <div className="flex flex-col gap-3">
         <FeatureButton type="submit">加入購物車</FeatureButton>
-        <FeatureButton bgColor="white" className="flex justify-center gap-1">
-          最愛 <img src={heartIcon} alt="Heart icon" className="w-6" />
+        <FeatureButton
+          bgColor="white"
+          className="flex justify-center items-center gap-[0.3rem]"
+        >
+          最愛
+          <img src={heartIcon} alt="Heart icon" className="w-[22px]" />
         </FeatureButton>
       </div>
     </form>

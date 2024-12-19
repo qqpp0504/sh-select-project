@@ -39,6 +39,7 @@ export default function ShoppingSummary() {
           bgColor={`${
             typeof total === "number" && total > 0 ? "black" : "gray"
           }`}
+          link="/checkout"
         >
           訪客結帳
         </FeatureButton>

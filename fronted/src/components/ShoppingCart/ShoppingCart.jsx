@@ -72,7 +72,7 @@ export default function ShoppingCart() {
                   </div>
 
                   <button className="p-[0.6rem] hover:bg-gray-200 rounded-full border-[1px] border-gray-200">
-                    <img src={heartIcon} alt="Heart icon" className="w-5" />
+                    <img src={heartIcon} alt="Heart icon" className="w-4" />
                   </button>
                 </div>
               </div>
