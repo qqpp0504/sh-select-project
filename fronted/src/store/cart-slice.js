@@ -5,6 +5,8 @@ const initialCartState = {
   activeItem: null,
   totalQuantity: 0,
   totalAmount: 0,
+  isShowingNotification: false,
+  scrollPosition: 0,
 };
 
 const cartSlice = createSlice({
@@ -67,6 +69,15 @@ const cartSlice = createSlice({
       );
 
       existingItem.size = size;
+    },
+    showNotification(state) {
+      state.isShowingNotification = true;
+    },
+    closeNotification(state) {
+      state.isShowingNotification = false;
+    },
+    updatedScrollPosition(state, action) {
+      state.scrollPosition = action.payload;
     },
   },
 });

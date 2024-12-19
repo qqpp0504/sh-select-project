@@ -7,6 +7,10 @@
     @apply px-12;
   }
 
+  .custom-dialog::backdrop {
+    @apply opacity-0;
+  }
+
   .text-gray {
     color: #848486;
   }

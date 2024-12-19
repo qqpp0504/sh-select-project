@@ -1,10 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import logo from "../../assets/logo.png";
 import Icon from "../UI/Icon.jsx";
 import SearchInput from "../UI/SearchInput.jsx";
 
 export default function MainNav() {
+  const { isShowingNotification } = useSelector((state) => state.cart);
+
   const TAGS = [
     { name: "新品和精選", link: "/" },
     { name: "男款", link: "men" },
@@ -13,10 +16,16 @@ export default function MainNav() {
     { name: "特惠商品", link: "promotion" },
   ];
 
+  function handlePreventDefault(event) {
+    if (isShowingNotification) {
+      event.preventDefault();
+    }
+  }
+
   return (
     <nav className="padding-large py-2 flex flex-row items-center text-base">
       <div className="flex-1 flex justify-start">
-        <Link to="/">
+        <Link to="/" onClick={handlePreventDefault}>
           <img src={logo} alt="SH-Select Logo" className="w-14" />
         </Link>
       </div>
@@ -30,6 +39,7 @@ export default function MainNav() {
                 className={({ isActive }) =>
                   `hover:active ${isActive ? "active" : undefined}`
                 }
+                onClick={handlePreventDefault}
               >
                 {tag.name}
               </NavLink>
@@ -40,10 +50,10 @@ export default function MainNav() {
 
       <div className="flex-1 flex justify-end items-center gap-4">
         <SearchInput />
-        <Link to="/">
+        <Link to="/" onClick={handlePreventDefault}>
           <Icon type="heart" />
         </Link>
-        <Link to="/cart">
+        <Link to="/cart" onClick={handlePreventDefault}>
           <Icon type="shopping-cart" />
         </Link>
       </div>

@@ -39,6 +39,14 @@ export default function CartForm({ product, onSelect }) {
     );
 
     dispatch(cartActions.addToCart(data));
+    dispatch(cartActions.checkItemStatus(data));
+
+    dispatch(cartActions.updatedScrollPosition(window.scrollY));
+    window.scrollTo({
+      top: 0,
+    });
+
+    dispatch(cartActions.showNotification());
   }
 
   function handleSizeChange(event) {
