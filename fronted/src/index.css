@@ -81,6 +81,17 @@
     vertical-align: middle;
     margin-right: 3px;
   }
+
+  .dropdown-toggle:checked ~ .dropdown-form {
+    max-height: fit-content;
+  }
+
+  .dropdown-form {
+    max-height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .more-content {

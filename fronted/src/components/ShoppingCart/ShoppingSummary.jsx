@@ -20,7 +20,7 @@ export default function ShoppingSummary() {
   }
 
   return (
-    <div className="w-[30%]">
+    <aside className="w-[30%]">
       <h2 className="text-2xl font-500 mb-6">摘要</h2>
       <Summary
         tag={
@@ -40,6 +40,7 @@ export default function ShoppingSummary() {
             typeof total === "number" && total > 0 ? "black" : "gray"
           }`}
           link="/checkout"
+          disable={`${typeof total === "number"}`}
         >
           訪客結帳
         </FeatureButton>
@@ -51,6 +52,6 @@ export default function ShoppingSummary() {
           會員結帳
         </FeatureButton>
       </div>
-    </div>
+    </aside>
   );
 }

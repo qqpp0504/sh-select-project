@@ -10,14 +10,19 @@ export default function FeatureButton({
   link = null,
   ...props
 }) {
-  let classes = ` rounded-full w-full text-center ${paddingStyle} ${className}`;
+  let classes = ` rounded-full w-full ${paddingStyle} ${className}`;
 
   if (bgColor === "black") {
-    classes += " bg-black text-white border-[1.5px] hover:bg-black-hoverColor";
+    classes +=
+      " bg-black text-white border-[1.5px] text-center hover:bg-black-hoverColor";
   } else if (bgColor === "white") {
-    classes += " text-black border-[1.5px] border-gray-300 hover:border-black";
+    classes +=
+      " text-black border-[1.5px] border-gray-300 text-center hover:border-black";
   } else if (bgColor === "gray") {
-    classes += " text-gray bg-gray-100";
+    classes += " text-gray bg-gray-100 text-center";
+  } else if (bgColor === "checkoutWhite") {
+    classes +=
+      " text-black border-[1.5px] text-left px-6 py-6 rounded-xl flex items-center gap-4";
   }
 
   let content = (
@@ -26,7 +31,15 @@ export default function FeatureButton({
     </button>
   );
 
-  if (link) {
+  if (bgColor === "gray") {
+    content = (
+      <button type={type} className={classes} disabled>
+        {children}
+      </button>
+    );
+  }
+
+  if (link && bgColor !== "gray") {
     content = (
       <Link to={link} type={type} className={classes}>
         {children}

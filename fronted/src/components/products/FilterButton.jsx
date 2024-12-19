@@ -22,7 +22,7 @@ export default function FilterButton({
         onClick={() => handleToggleFilter(filterType, filterName)}
         className={
           disableStyle
-            ? ""
+            ? undefined
             : filters[filterType].includes(filterName)
             ? "checked"
             : "unchecked"
