@@ -11,8 +11,8 @@ export default function ShoppingCart() {
   const productItems = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
 
-  function handleRemoveFromCart({ id, color }) {
-    dispatch(cartActions.removeFromCart({ id, color }));
+  function handleRemoveFromCart({ id, color, size }) {
+    dispatch(cartActions.removeFromCart({ id, color, size }));
   }
 
   function handleAddToCart(productItem) {
@@ -52,6 +52,7 @@ export default function ShoppingCart() {
                         handleRemoveFromCart({
                           id: productItem.id,
                           color: productItem.color.name,
+                          size: productItem.size,
                         })
                       }
                       className="p-[0.625rem] hover:bg-gray-200 rounded-full"

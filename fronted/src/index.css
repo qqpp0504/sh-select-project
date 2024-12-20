@@ -92,6 +92,14 @@
     display: flex;
     flex-direction: column;
   }
+
+  progress::-webkit-progress-bar {
+    background-color: #e5e7eb;
+    border-radius: 10px;
+  }
+  progress::-webkit-progress-value {
+    border-radius: 10px;
+  }
 }
 
 .more-content {

@@ -9,16 +9,16 @@ import Information from "./Information.jsx";
 import { currencyFormatter } from "../../util/formatting.js";
 import FeatureButton from "../UI/FeatureButton.jsx";
 import cardIcon from "../../assets/card-icon.png";
+import DeliveryTime from "./DeliveryTime.jsx";
 
 export default function ShippingInformation() {
   const [isShowingPayInfo, setIsShowingPayInfo] = useState(false);
-  const { totalAmount } = useSelector((state) => state.cart);
+  const { shippingFee } = useSelector((state) => state.cart);
 
-  let shippingFee = `NT${currencyFormatter.format(120)} 運費`;
-
-  if (totalAmount > 4500) {
-    shippingFee = "免運費";
-  }
+  let displayShippingFee =
+    shippingFee > 0
+      ? `NT${currencyFormatter.format(shippingFee)} 運費`
+      : "免運費";
 
   function handleShowPayInfo() {
     setIsShowingPayInfo((isShowing) => !isShowing);
@@ -91,7 +91,8 @@ export default function ShippingInformation() {
 
         <Information title="運送資訊">
           <div className="text-gray flex flex-col gap-3">
-            <p>{shippingFee}</p>
+            <p>{displayShippingFee}</p>
+            <DeliveryTime className="text-gray" />
             <p>此為國際配送，必須進行清關作業</p>
           </div>
         </Information>

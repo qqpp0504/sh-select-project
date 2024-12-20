@@ -73,15 +73,15 @@ export default function CartNotification() {
           <img src={closeIcom} alt="Close Icon" className="w-7" />
         </button>
 
-        <div className="flex gap-3">
-          <div className="w-24 h-24 bg-slate-100 flex justify-center items-center">
+        <div className="h-28 flex items-center gap-3">
+          <div className="w-28 h-full bg-slate-100 flex justify-center items-center">
             <img
               src={`http://localhost:3000/${activeItem.color.image}`}
               alt={activeItem.alt}
-              className="w-[90%] "
+              className="w-[90%]"
             />
           </div>
-          <div className="flex flex-col justify-between">
+          <div className="w-[14rem] h-full flex flex-col justify-between">
             <h2 className="font-500">
               {activeItem.brand} - {activeItem.productName}
             </h2>
