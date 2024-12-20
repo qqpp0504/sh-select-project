@@ -7,8 +7,9 @@ import ErrorBlock from "../components/UI/ErrorBlock.jsx";
 import NewSelectedProducts from "../components/banner/NewSelectProducts.jsx";
 import RecommendationProducts from "../components/banner/RecommendationProducts.jsx";
 import BrandsProducts from "../components/banner/BrandsProducts.jsx";
-import VipBlock from "../components/banner/VipBlock.jsx";
+import MembershipBlock from "../components/banner/MembershipBlock.jsx";
 import SexClassNavigation from "../components/navigation/SexClassNavigation.jsx";
+import membershipBannerImage from "../assets/membership-men.jpg";
 
 export default function MenPage() {
   const {
@@ -40,7 +41,7 @@ export default function MenPage() {
       <NewSelectedProducts products={bannerData.selectedProducts} />
       <RecommendationProducts products={bannerData.recommendationProducts} />
       <BrandsProducts products={bannerData.brandsProducts} />
-      <VipBlock {...bannerData.vipImage} />
+      <MembershipBlock image={membershipBannerImage} alt="Membership image" />
     </>
   );
 }

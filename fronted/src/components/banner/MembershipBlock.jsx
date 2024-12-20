@@ -4,17 +4,18 @@ import { Link } from "react-router-dom";
 import { DISCOUNTS } from "../../data.js";
 import Button from "../UI/Button.jsx";
 
-export default function VipBlock({ image, alt }) {
+export default function MembershipBlock({
+  image,
+  alt,
+  paddingStyle = "mb-[1.625rem]",
+  className,
+}) {
   return (
-    <section className="padding-large">
-      <h2 className="text-2xl font-500 mb-[1.625rem]">會員福利</h2>
+    <section className={`padding-large ${className}`}>
+      <h2 className={`text-2xl font-500 ${paddingStyle}`}>會員福利</h2>
       <div className="relative">
         <div className="h-[60vh] flex justify-center">
-          <img
-            src={`http://localhost:3000/${image}`}
-            alt={alt}
-            className="w-full h-full object-cover"
-          />
+          <img src={image} alt={alt} className="w-full h-full object-cover" />
         </div>
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <table className="text-white text-left text-lg">

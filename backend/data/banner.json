@@ -125,11 +125,7 @@
         "title": "Ordinary",
         "link": "/products?brands=ordinary"
       }
-    ],
-    "vipImage": {
-      "image": "vip-banner.jpg",
-      "alt": "會員圖片"
-    }
+    ]
   },
   "menPage": {
     "banner": {
@@ -241,11 +237,7 @@
         "alt": "Oridnary Logo圖片",
         "title": "Ordinary"
       }
-    ],
-    "vipImage": {
-      "image": "vip-men.jpg",
-      "alt": "會員圖片"
-    }
+    ]
   },
   "femalePage": {
     "banner": {
@@ -357,10 +349,6 @@
         "alt": "Oridnary Logo圖片",
         "title": "Ordinary"
       }
-    ],
-    "vipImage": {
-      "image": "vip-female.jpg",
-      "alt": "會員圖片"
-    }
+    ]
   }
 }

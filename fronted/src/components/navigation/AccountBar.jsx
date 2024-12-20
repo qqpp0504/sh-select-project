@@ -21,7 +21,7 @@ export default function AccountBar() {
             </Link>
           </li>
           <li className="border-solid border-r-1 border-black px-3 hover:text-gray">
-            <Link to="/" onClick={handlePreventDefault}>
+            <Link to="/membership" onClick={handlePreventDefault}>
               加入
             </Link>
           </li>

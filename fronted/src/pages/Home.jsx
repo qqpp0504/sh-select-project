@@ -7,7 +7,8 @@ import LoadingIndicator from "../components/UI/LoadingIndicator.jsx";
 import SelectedProducts from "../components/banner/SelectProducts.jsx";
 import NewProducts from "../components/banner/NewProducts.jsx";
 import BrandsProducts from "../components/banner/BrandsProducts.jsx";
-import VipBlock from "../components/banner/VipBlock.jsx";
+import MembershipBlock from "../components/banner/MembershipBlock.jsx";
+import membershipBannerImage from "../assets/membership-banner.jpg";
 
 export default function HomePage() {
   const {
@@ -44,7 +45,7 @@ export default function HomePage() {
       <NewProducts products={bannerData.newProducts} />
       <Banner sectionTitle="頂尖潮流品牌" {...bannerData.thirdBanner} />
       <BrandsProducts products={bannerData.brandsProducts} />
-      <VipBlock {...bannerData.vipImage} />
+      <MembershipBlock image={membershipBannerImage} alt="Membership image" />
     </>
   );
 }
