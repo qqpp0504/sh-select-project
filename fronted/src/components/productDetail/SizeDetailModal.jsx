@@ -49,9 +49,9 @@ export default function SizeDetailModal({ productSizeInfo }) {
               <tbody>
                 {productSizeInfo.sizes.info.map((size, index) => (
                   <tr key={index}>
-                    {size.map((data) => (
+                    {size.map((data, index) => (
                       <td
-                        key={data[0]}
+                        key={`${data}-${index}`}
                         className="border-[1px] border-gray-200 px-8 py-3"
                       >
                         {data}

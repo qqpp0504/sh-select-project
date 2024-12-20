@@ -15,7 +15,7 @@ export default function MainNav() {
     { name: "男款", link: "men" },
     { name: "女款", link: "female" },
     { name: "品牌", link: "brands" },
-    { name: "特惠商品", link: "promotion" },
+    { name: "特惠商品", link: "/products?onSale=sale" },
   ];
 
   function handlePreventDefault(event) {

@@ -5,7 +5,6 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./util/http.js";
 import RootLayout from "./pages/RootLayout.jsx";
 import BrandsPage from "./pages/Brands.jsx";
-import PromotionPage from "./pages/Promotion.jsx";
 import ProductsPage from "./pages/Products.jsx";
 import ProductDetail from "./pages/ProductDetail.jsx";
 import CartPage from "./pages/Cart.jsx";
@@ -48,7 +47,6 @@ const router = createBrowserRouter([
         path: "brands",
         element: <BrandsPage />,
       },
-      { path: "promotion", element: <PromotionPage /> },
       {
         path: "products",
         children: [

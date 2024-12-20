@@ -81,7 +81,7 @@ export default function OrderSummary() {
           <div>
             <ul className="flex flex-col gap-4">
               {items.map((item) => (
-                <li key={item.id} className="flex gap-3">
+                <li key={item.idNumber} className="flex gap-3">
                   <div className="bg-gray-100 w-[13rem] h-[13rem] flex justify-center items-center">
                     <img
                       src={`http://localhost:3000/${item.color.image}`}
@@ -98,7 +98,7 @@ export default function OrderSummary() {
                     <span className="text-gray">{`數量 ${item.quantity}`}</span>
                     <span className="text-gray">{`尺寸 ${item.size}`}</span>
                     <span className="text-gray">{`NT${currencyFormatter.format(
-                      item.discountPrice
+                      item.itemTotalPrice
                     )}`}</span>
                   </div>
                 </li>

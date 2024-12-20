@@ -9,7 +9,7 @@ import { cartActions } from "../../store/cart-slice.js";
 
 export default function ResizableModal() {
   const isShowing = useSelector((state) => state.modal.isChangeSizeShowing);
-  const activeItem = useSelector((state) => state.cart.activeItem);
+  const { activeItem } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
   function handleCloseModal() {
@@ -27,6 +27,7 @@ export default function ResizableModal() {
         id: activeItem.id,
         color: activeItem.color.name,
         size: size.size,
+        idNumber: activeItem.idNumber,
       })
     );
   }
@@ -64,7 +65,7 @@ export default function ResizableModal() {
                     name="size"
                     value={size}
                     roundedStyle="rounded-lg"
-                    defaultChecked={size === activeItem.size}
+                    defaultChecked={size == activeItem.size}
                   >
                     {size.replace(/CM\s*/, "")}
                   </SelectBlock>

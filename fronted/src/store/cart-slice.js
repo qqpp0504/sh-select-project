@@ -28,11 +28,12 @@ const cartSlice = createSlice({
         state.items.push({
           ...newItem,
           quantity: 1,
-          totalPrice: newItem.discountPrice,
+          itemTotalPrice: newItem.discountPrice,
+          idNumber: Date.now(),
         });
       } else {
         existingItem.quantity++;
-        existingItem.totalPrice += newItem.discountPrice;
+        existingItem.itemTotalPrice += newItem.discountPrice;
       }
 
       state.totalQuantity++;
@@ -47,20 +48,28 @@ const cartSlice = createSlice({
       }
     },
     removeFromCart(state, action) {
-      const { id, color, size } = action.payload;
+      const { id, color, size, idNumber } = action.payload;
       const existingItem = state.items.find(
         (item) =>
-          item.id === id && item.color.name === color && item.size === size
+          item.id === id &&
+          item.color.name === color &&
+          item.size === size &&
+          item.idNumber === idNumber
       );
 
       if (existingItem.quantity === 1) {
         state.items = state.items.filter(
           (item) =>
-            !(item.id === id && item.color.name === color && item.size === size)
+            !(
+              item.id === id &&
+              item.color.name === color &&
+              item.size === size &&
+              item.idNumber === idNumber
+            )
         );
       } else {
         existingItem.quantity--;
-        existingItem.totalPrice -= existingItem.discountPrice;
+        existingItem.itemTotalPrice -= existingItem.discountPrice;
       }
 
       state.totalQuantity--;
@@ -86,9 +95,12 @@ const cartSlice = createSlice({
       state.activeItem = existingItem;
     },
     updatedSize(state, action) {
-      const { id, color, size } = action.payload;
+      const { id, color, size, idNumber } = action.payload;
       const existingItem = state.items.find(
-        (item) => item.id === id && item.color.name === color
+        (item) =>
+          item.id === id &&
+          item.color.name === color &&
+          item.idNumber === idNumber
       );
 
       existingItem.size = size;

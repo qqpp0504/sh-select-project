@@ -11,8 +11,8 @@ export default function ShoppingCart() {
   const productItems = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
 
-  function handleRemoveFromCart({ id, color, size }) {
-    dispatch(cartActions.removeFromCart({ id, color, size }));
+  function handleRemoveFromCart({ id, color, size, idNumber }) {
+    dispatch(cartActions.removeFromCart({ id, color, size, idNumber }));
   }
 
   function handleAddToCart(productItem) {
@@ -34,7 +34,7 @@ export default function ShoppingCart() {
         <ul className="flex flex-col gap-6">
           {productItems.map((productItem) => (
             <li
-              key={productItem.id}
+              key={productItem.idNumber}
               className="flex items-start gap-5 w-full border-b-[1px] border-gray-200 pb-14"
             >
               <div>
@@ -53,6 +53,7 @@ export default function ShoppingCart() {
                           id: productItem.id,
                           color: productItem.color.name,
                           size: productItem.size,
+                          idNumber: productItem.idNumber,
                         })
                       }
                       className="p-[0.625rem] hover:bg-gray-200 rounded-full"
