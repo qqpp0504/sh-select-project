@@ -26,7 +26,7 @@ export default function AccountBar() {
             </Link>
           </li>
           <li className="pl-3 hover:text-gray-500">
-            <Link to="/" onClick={handlePreventDefault}>
+            <Link to="/accounts" onClick={handlePreventDefault}>
               登入
             </Link>
           </li>

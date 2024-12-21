@@ -10,6 +10,9 @@ import ProductDetail from "./pages/ProductDetail.jsx";
 import CartPage from "./pages/Cart.jsx";
 import CheckoutPage from "./pages/Checkout.jsx";
 import MembershipPage from "./pages/Membership.jsx";
+import AccountsPage from "./pages/Accounts.jsx";
+import RegisterPage from "./pages/Register.jsx";
+import AccountsRoot from "./pages/AccountsRoot.jsx";
 
 const HomePage = lazy(() => import("./pages/Home.jsx"));
 const MenPage = lazy(() => import("./pages/Men.jsx"));
@@ -63,6 +66,14 @@ const router = createBrowserRouter([
     ],
   },
   { path: "checkout", element: <CheckoutPage /> },
+  {
+    path: "accounts",
+    element: <AccountsRoot />,
+    children: [
+      { index: true, element: <AccountsPage /> },
+      { path: "register", element: <RegisterPage /> },
+    ],
+  },
 ]);
 
 function App() {
