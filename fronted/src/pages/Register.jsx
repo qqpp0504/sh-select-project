@@ -1,3 +1,5 @@
+import RegisterForm from "../components/accounts/RegisterForm.jsx";
+
 export default function RegisterPage() {
-  return <p>abc</p>;
+  return <RegisterForm />;
 }

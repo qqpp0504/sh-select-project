@@ -51,10 +51,10 @@ export default function ShippingInformation() {
         <div className="my-12">
           <h2 className="font-500 text-xl mb-3">你的聯絡資訊為何？</h2>
           <div className="py-4 flex flex-col gap-7">
-            <Input type="email" id="email" placeholder="電子郵件">
+            <Input type="email" id="email" placeholderText="電子郵件">
               結帳後會寄發確認電子郵件
             </Input>
-            <Input type="tel" id="phone" placeholder="電話號碼">
+            <Input type="tel" id="phone" placeholderText="電話號碼">
               請輸入你的電話號碼，以利辦理清關手續
             </Input>
           </div>
@@ -77,9 +77,9 @@ export default function ShippingInformation() {
               帳單地址同送貨地址
             </label>
             <div className="dropdown-form">
-              <CustomerForm />
+              <CustomerForm bill="bill" />
               <div className="my-2"></div>
-              <Input type="tel" id="phone" placeholder="電話號碼">
+              <Input type="tel" id="bill-phone" placeholderText="電話號碼">
                 請輸入你的電話號碼，以利辦理清關手續
               </Input>
               <div className="my-3"></div>
@@ -144,7 +144,7 @@ export default function ShippingInformation() {
                     placeholder="卡號"
                     readOnly
                   />
-                  <div className="flex gap-5">
+                  <div className="grid grid-cols-2 gap-5">
                     <Input
                       type="number"
                       id="cardMD"

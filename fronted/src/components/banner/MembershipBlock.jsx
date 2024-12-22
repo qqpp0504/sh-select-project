@@ -19,14 +19,16 @@ export default function MembershipBlock({
         </div>
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <table className="text-white text-left text-lg">
-            {DISCOUNTS.map((discount) => (
-              <tr key={discount}>
-                <th className="border-solid border-r-2 px-8 py-2">
-                  {discount.description}
-                </th>
-                <td className="px-8 py-2">{discount.details}</td>
-              </tr>
-            ))}
+            <tbody>
+              {DISCOUNTS.map((discount) => (
+                <tr key={discount.description}>
+                  <th className="border-solid border-r-2 px-8 py-2">
+                    {discount.description}
+                  </th>
+                  <td className="px-8 py-2">{discount.details}</td>
+                </tr>
+              ))}
+            </tbody>
           </table>
         </div>
         <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2">
