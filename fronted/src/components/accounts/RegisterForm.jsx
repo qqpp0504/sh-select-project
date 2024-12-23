@@ -2,20 +2,20 @@ import Input from "../UI/Input.jsx";
 import FeatureButton from "../UI/FeatureButton.jsx";
 import { useInput } from "../hooks/useInput.js";
 import PasswordInput from "./PasswordInput.jsx";
-import { isNotEmpty, isNumeric, hasMinLength } from "../../util/validation.js";
+import BirthdayInput from "./BirthdayInput.jsx";
+import {
+  isNotEmpty,
+  isNumeric,
+  hasExactLength,
+} from "../../util/validation.js";
 
 export default function RegisterForm() {
   const authCodeInput = useInput(
     "",
-    (value) => hasMinLength(value, 8) && isNumeric(value),
-    "驗證碼必須為 8 位數"
+    (value) => hasExactLength(value, 8) && isNumeric(value)
   );
   const authLastNameInput = useInput("", (value) => isNotEmpty(value));
   const authFirstNameInput = useInput("", (value) => isNotEmpty(value));
-
-  const authYearInput = useInput("", (value) => isNotEmpty(value));
-  const authMonthInput = useInput("", (value) => isNotEmpty(value));
-  const authDateInput = useInput("", (value) => isNotEmpty(value));
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -26,22 +26,15 @@ export default function RegisterForm() {
   }
 
   let authCodeInputMessage;
-  if (authCodeInput.message.text) {
-    if (
-      !(
-        hasMinLength(authCodeInput.value, 8) || isNumeric(authCodeInput.value)
-      ) ||
-      (!hasMinLength(authCodeInput.value, 8) && isNumeric(authCodeInput.value))
-    ) {
-      authCodeInputMessage = authCodeInput.message.text;
+  if (authCodeInput.value) {
+    if (!hasExactLength(authCodeInput.value, 8)) {
+      authCodeInputMessage = "驗證碼必須為 8 位數";
     } else if (
-      hasMinLength(authCodeInput.value, 8) &&
+      hasExactLength(authCodeInput.value, 8) &&
       !isNumeric(authCodeInput.value)
     ) {
-      authCodeInputMessage = "驗證碼無效";
+      authCodeInputMessage = "驗證無效";
     }
-  } else {
-    authCodeInputMessage = authCodeInput.message.text;
   }
 
   return (
@@ -86,41 +79,8 @@ export default function RegisterForm() {
               placeholderText="名字*"
             />
           </div>
-
           <PasswordInput />
-
-          <div className="grid grid-cols-[12rem_1fr_1fr] gap-3">
-            <Input
-              type="number"
-              id="birthday-year"
-              name="birthdayYear"
-              value={authYearInput.value}
-              onBlur={authYearInput.handleInputBlur}
-              onChange={authYearInput.handleInputChange}
-              error={authYearInput.hasError && "年*"}
-              placeholderText="年*"
-            />
-            <Input
-              type="number"
-              id="birthday-month"
-              name="birthdayMonth"
-              value={authMonthInput.value}
-              onBlur={authMonthInput.handleInputBlur}
-              onChange={authMonthInput.handleInputChange}
-              error={authMonthInput.hasError && "月*"}
-              placeholderText="月*"
-            />
-            <Input
-              type="number"
-              id="birthday-date"
-              name="birthdayDate"
-              value={authDateInput.value}
-              onBlur={authDateInput.handleInputBlur}
-              onChange={authDateInput.handleInputChange}
-              error={authDateInput.hasError && "日*"}
-              placeholderText="日*"
-            />
-          </div>
+          <BirthdayInput />
         </div>
         <div className="text-gray-600 mt-10 flex flex-col gap-4">
           <div>

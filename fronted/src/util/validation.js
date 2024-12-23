@@ -22,6 +22,10 @@ export function isNumeric(value) {
   return /^\d+$/.test(value);
 }
 
+export function isGreaterThanZero(value) {
+  return value > 0;
+}
+
 export function isValidPassword(value) {
   const pattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).+$/;
   return pattern.test(value);
@@ -29,4 +33,8 @@ export function isValidPassword(value) {
 
 export function hasMinLength(value, minLength) {
   return value.length >= minLength;
+}
+
+export function hasExactLength(value, length) {
+  return value.length === length;
 }

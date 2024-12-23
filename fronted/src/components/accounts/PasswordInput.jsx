@@ -38,7 +38,7 @@ export default function PasswordInput() {
         errorTextStyle="password"
         placeholderText="密碼*"
       />
-      <div className="flex flex-col gap-2 text-xs text-gray pl-4 pt-2">
+      <div className="flex flex-col gap-1 text-xs text-gray pl-4 pt-2">
         <p
           className={`${errorHasMinLengthStyle} flex items-center gap-[0.35rem]`}
         >
