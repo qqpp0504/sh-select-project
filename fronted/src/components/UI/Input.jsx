@@ -4,21 +4,27 @@ export default function Input({
   placeholderText,
   error,
   errorText,
+  errorTextStyle,
   value,
   className,
   ...props
 }) {
   let defaultTextClassName = "absolute text-xs text-gray left-4 bottom-[-19px]";
   let inputClass = "border-gray-300 rounded-[0.3rem]";
+  let defaultErrorTextClass = "absolute left-4 bottom-[-21px]";
 
   if (className === "greenPoint") {
     defaultTextClassName =
       "absolute bg-green-600 rounded-full w-2 h-2 right-4 top-1/2 -translate-y-1/2";
   }
 
-  let defaultErrorText = "必填*";
+  let defaultErrorText = "必填";
   if (errorText) {
     defaultErrorText = errorText;
+  }
+
+  if (errorTextStyle === "password") {
+    defaultErrorTextClass = "pl-4 pt-[0.3rem]";
   }
 
   return (
@@ -41,12 +47,14 @@ export default function Input({
       >
         {placeholderText}
       </label>
-      {children && <p className={defaultTextClassName}>{children}</p>}
-      {error && (
-        <p className="text-red-600 absolute text-xs font-light left-4 bottom-[-21px]">
+      {error && !value && (
+        <p
+          className={`text-red-600 text-xs font-light ${defaultErrorTextClass}`}
+        >
           {defaultErrorText}
         </p>
       )}
+      {children && <p className={defaultTextClassName}>{children}</p>}
     </div>
   );
 }

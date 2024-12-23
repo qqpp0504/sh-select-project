@@ -17,3 +17,16 @@ export function isEmail(value) {
 export function isNotEmpty(value) {
   return value.trim() !== "";
 }
+
+export function isNumeric(value) {
+  return /^\d+$/.test(value);
+}
+
+export function isValidPassword(value) {
+  const pattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).+$/;
+  return pattern.test(value);
+}
+
+export function hasMinLength(value, minLength) {
+  return value.length >= minLength;
+}

@@ -1,13 +1,18 @@
 import Input from "../UI/Input.jsx";
 import FeatureButton from "../UI/FeatureButton.jsx";
 import { useInput } from "../hooks/useInput.js";
-import { isNotEmpty } from "../../util/validation.js";
+import PasswordInput from "./PasswordInput.jsx";
+import { isNotEmpty, isNumeric, hasMinLength } from "../../util/validation.js";
 
 export default function RegisterForm() {
-  const authCodeInput = useInput("", (value) => isNotEmpty(value));
+  const authCodeInput = useInput(
+    "",
+    (value) => hasMinLength(value, 8) && isNumeric(value),
+    "驗證碼必須為 8 位數"
+  );
   const authLastNameInput = useInput("", (value) => isNotEmpty(value));
   const authFirstNameInput = useInput("", (value) => isNotEmpty(value));
-  const authPasswordInput = useInput("", (value) => isNotEmpty(value));
+
   const authYearInput = useInput("", (value) => isNotEmpty(value));
   const authMonthInput = useInput("", (value) => isNotEmpty(value));
   const authDateInput = useInput("", (value) => isNotEmpty(value));
@@ -18,6 +23,25 @@ export default function RegisterForm() {
     const data = Object.fromEntries(fd.entries());
 
     console.log(data);
+  }
+
+  let authCodeInputMessage;
+  if (authCodeInput.message.text) {
+    if (
+      !(
+        hasMinLength(authCodeInput.value, 8) || isNumeric(authCodeInput.value)
+      ) ||
+      (!hasMinLength(authCodeInput.value, 8) && isNumeric(authCodeInput.value))
+    ) {
+      authCodeInputMessage = authCodeInput.message.text;
+    } else if (
+      hasMinLength(authCodeInput.value, 8) &&
+      !isNumeric(authCodeInput.value)
+    ) {
+      authCodeInputMessage = "驗證碼無效";
+    }
+  } else {
+    authCodeInputMessage = authCodeInput.message.text;
   }
 
   return (
@@ -35,8 +59,9 @@ export default function RegisterForm() {
             name="authCode"
             value={authCodeInput.value}
             onBlur={authCodeInput.handleInputBlur}
-            onChange={authCodeInput.handleInputChange}
+            onChange={authCodeInput.handleEditInputChange}
             error={authCodeInput.hasError && "驗證碼*"}
+            errorText={authCodeInputMessage}
             placeholderText="驗證碼*"
           />
           <div className="grid grid-cols-2 gap-4">
@@ -61,16 +86,9 @@ export default function RegisterForm() {
               placeholderText="名字*"
             />
           </div>
-          <Input
-            type="password"
-            id="password"
-            name="authPassword"
-            value={authPasswordInput.value}
-            onBlur={authPasswordInput.handleInputBlur}
-            onChange={authPasswordInput.handleInputChange}
-            error={authPasswordInput.hasError && "密碼*"}
-            placeholderText="密碼*"
-          />
+
+          <PasswordInput />
+
           <div className="grid grid-cols-[12rem_1fr_1fr] gap-3">
             <Input
               type="number"
