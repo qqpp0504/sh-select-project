@@ -1,29 +1,17 @@
+/* eslint-disable react/prop-types */
 import { useRef } from "react";
 
 import Input from "../UI/Input.jsx";
-import { useInput } from "../hooks/useInput.js";
-import {
-  isNotEmpty,
-  hasMinLength,
-  isGreaterThanZero,
-} from "../../util/validation.js";
 
-export default function BirthdayInput() {
+import { hasMinLength } from "../../util/validation.js";
+
+export default function BirthdayInput({
+  authYearInput,
+  authMonthInput,
+  authDayInput,
+}) {
   const monthInputRef = useRef(null);
   const dayInputRef = useRef(null);
-  const authYearInput = useInput(
-    "",
-    (value) =>
-      isNotEmpty(value) && hasMinLength(value, 4) && isGreaterThanZero(value)
-  );
-  const authMonthInput = useInput(
-    "",
-    (value) => isNotEmpty(value) && isGreaterThanZero(value)
-  );
-  const authDayInput = useInput(
-    "",
-    (value) => isNotEmpty(value) && isGreaterThanZero(value)
-  );
 
   function handleInput(e, nextRef) {
     let inputValue = e.target.value;

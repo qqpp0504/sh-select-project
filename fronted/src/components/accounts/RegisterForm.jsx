@@ -1,62 +1,27 @@
 import Input from "../UI/Input.jsx";
 import FeatureButton from "../UI/FeatureButton.jsx";
-import { useInput } from "../hooks/useInput.js";
 import PasswordInput from "./PasswordInput.jsx";
 import BirthdayInput from "./BirthdayInput.jsx";
-import {
-  isNotEmpty,
-  isNumeric,
-  hasExactLength,
-  hasMinLength,
-  isValidPassword,
-  isGreaterThanZero,
-} from "../../util/validation.js";
+import { useAuthForm } from "../hooks/useAuthForm.js";
+import { isNumeric, hasExactLength } from "../../util/validation.js";
 
 export default function RegisterForm() {
-  const authInput = {
-    authCodeInput: useInput(
-      "",
-      (value) => hasExactLength(value, 8) && isNumeric(value)
-    ),
-    authLastNameInput: useInput("", (value) => isNotEmpty(value)),
-    authFirstNameInput: useInput("", (value) => isNotEmpty(value)),
-    authSubscribeInput: useInput("", () => true),
-    authAgreeInput: useInput("", () => true),
-    authPasswordInput: useInput(
-      "",
-      (value) => hasMinLength(value, 8) && isValidPassword(value)
-    ),
-    authYearInput: useInput(
-      "",
-      (value) =>
-        isNotEmpty(value) && hasMinLength(value, 4) && isGreaterThanZero(value)
-    ),
-    authMonthInput: useInput(
-      "",
-      (value) => isNotEmpty(value) && isGreaterThanZero(value)
-    ),
-    authDayInput: useInput(
-      "",
-      (value) => isNotEmpty(value) && isGreaterThanZero(value)
-    ),
-  };
-
   const {
     authCodeInput,
     authLastNameInput,
     authFirstNameInput,
     authSubscribeInput,
     authAgreeInput,
-  } = authInput;
-
-  const hasError = Object.values(authInput).some((input) => input.hasError);
+    authPasswordInput,
+    authYearInput,
+    authMonthInput,
+    authDayInput,
+    hasError,
+    allErrorsInput,
+  } = useAuthForm();
 
   function handleSubmit(event) {
     event.preventDefault();
-
-    if (hasError) {
-      return;
-    }
 
     const fd = new FormData(event.target);
     const authInputData = Object.fromEntries(
@@ -68,6 +33,17 @@ export default function RegisterForm() {
         return [key, value]; // 其他欄位保持字串
       })
     );
+
+    const authInputValueIsEmpty = Object.values(authInputData).some(
+      (value) => !value
+    );
+
+    if (hasError || authInputValueIsEmpty) {
+      allErrorsInput.forEach((errorInput) => {
+        errorInput.handleInputBlur();
+      });
+      return;
+    }
 
     console.log(authInputData);
   }
@@ -126,8 +102,12 @@ export default function RegisterForm() {
               placeholderText="名字*"
             />
           </div>
-          <PasswordInput />
-          <BirthdayInput />
+          <PasswordInput authPasswordInput={authPasswordInput} />
+          <BirthdayInput
+            authYearInput={authYearInput}
+            authMonthInput={authMonthInput}
+            authDayInput={authDayInput}
+          />
         </div>
         <div className="text-gray-600 mt-10 flex flex-col gap-4">
           <div>
@@ -161,10 +141,32 @@ export default function RegisterForm() {
               htmlFor="agree"
               className="account-unchecked peer-checked:account-checked cursor-pointer"
             >
-              <p className="w-full">
+              <p
+                className={`w-full ${
+                  authAgreeInput.hasCheckedError && "text-red-600"
+                }`}
+              >
                 我同意 SH SELECT 的{" "}
-                <span className="underline text-black">隱私權政策</span>與
-                <span className="underline text-black">使用條款</span>。
+                <span
+                  className={`underline ${
+                    authAgreeInput.hasCheckedError
+                      ? "text-red-600"
+                      : "text-black"
+                  }`}
+                >
+                  隱私權政策
+                </span>
+                與
+                <span
+                  className={`underline ${
+                    authAgreeInput.hasCheckedError
+                      ? "text-red-600"
+                      : "text-black"
+                  }`}
+                >
+                  使用條款
+                </span>
+                。
               </p>
             </label>
           </div>

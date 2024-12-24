@@ -2,7 +2,6 @@ import { useState } from "react";
 
 export function useInput(defaultValue, validationFn) {
   const [enteredValue, setEnteredValue] = useState(defaultValue);
-  const [isChecked, setIsChecked] = useState(false);
   const [didEdit, setDidEdit] = useState(false);
 
   const valueIsValid = validationFn(enteredValue);
@@ -17,10 +16,6 @@ export function useInput(defaultValue, validationFn) {
     setDidEdit(true);
   }
 
-  const handleCheckboxChange = (e) => {
-    setIsChecked(e.target.checked);
-  };
-
   function handleInputBlur() {
     setDidEdit(true);
   }
@@ -29,9 +24,7 @@ export function useInput(defaultValue, validationFn) {
     value: enteredValue,
     handleInputChange,
     handleEditInputChange,
-    handleCheckboxChange,
     handleInputBlur,
-    isChecked,
     hasError: didEdit && !valueIsValid,
   };
 }

@@ -1,17 +1,13 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 
 import Input from "../UI/Input.jsx";
-import { useInput } from "../hooks/useInput.js";
 import { isValidPassword, hasMinLength } from "../../util/validation.js";
 import showPasswordIcon from "../../assets/show-password-icon.png";
 import hidePasswordIcon from "../../assets/hide-password-icon.png";
 
-export default function PasswordInput() {
+export default function PasswordInput({ authPasswordInput }) {
   const [showPassword, setShowPassword] = useState(false);
-  const authPasswordInput = useInput(
-    "",
-    (value) => hasMinLength(value, 8) && isValidPassword(value)
-  );
 
   let errorHasMinLengthStyle;
   let errorPasswordStyle;
