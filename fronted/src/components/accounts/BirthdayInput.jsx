@@ -68,45 +68,52 @@ export default function BirthdayInput() {
   }
 
   return (
-    <div className="grid grid-cols-[12rem_1fr_1fr] gap-3">
-      <Input
-        type="number"
-        id="birthday-year"
-        name="birthdayYear"
-        value={authYearInput.value}
-        onBlur={authYearInput.handleInputBlur}
-        onChange={authYearInput.handleInputChange}
-        error={hasBirthdayInputError && "年*"}
-        errorText={authBirthdayInputMessage}
-        placeholderText="年*"
-        onInput={(e) => handleInput(e, monthInputRef)}
-      />
-      <Input
-        ref={monthInputRef}
-        type="number"
-        id="birthday-month"
-        name="birthdayMonth"
-        value={authMonthInput.value}
-        onBlur={authMonthInput.handleInputBlur}
-        onChange={authMonthInput.handleInputChange}
-        error={hasBirthdayInputError && "月*"}
-        errorText=" "
-        placeholderText="月*"
-        onInput={(e) => handleInput(e, dayInputRef)}
-      />
-      <Input
-        ref={dayInputRef}
-        type="number"
-        id="birthday-day"
-        name="birthdayDay"
-        value={authDayInput.value}
-        onBlur={authDayInput.handleInputBlur}
-        onChange={authDayInput.handleInputChange}
-        error={hasBirthdayInputError && "日*"}
-        errorText=" "
-        placeholderText="日*"
-        onInput={handleInput}
-      />
+    <div>
+      <span className="mb-3 inline-block pl-4 font-light text-sm">
+        出生日期
+      </span>
+      <div className="grid grid-cols-[12rem_1fr_1fr] gap-3">
+        <Input
+          type="number"
+          id="birthday-year"
+          name="birthdayYear"
+          value={authYearInput.value}
+          onBlur={authYearInput.handleInputBlur}
+          onChange={authYearInput.handleInputChange}
+          error={hasBirthdayInputError && "年*"}
+          errorText={authBirthdayInputMessage}
+          placeholderText="年*"
+          onInput={(e) => handleInput(e, monthInputRef)}
+        >
+          生日時獲得 Nike 會員獎勵。
+        </Input>
+        <Input
+          ref={monthInputRef}
+          type="number"
+          id="birthday-month"
+          name="birthdayMonth"
+          value={authMonthInput.value}
+          onBlur={authMonthInput.handleInputBlur}
+          onChange={authMonthInput.handleInputChange}
+          error={hasBirthdayInputError && "月*"}
+          errorText=" "
+          placeholderText="月*"
+          onInput={(e) => handleInput(e, dayInputRef)}
+        />
+        <Input
+          ref={dayInputRef}
+          type="number"
+          id="birthday-day"
+          name="birthdayDay"
+          value={authDayInput.value}
+          onBlur={authDayInput.handleInputBlur}
+          onChange={authDayInput.handleInputChange}
+          error={hasBirthdayInputError && "日*"}
+          errorText=" "
+          placeholderText="日*"
+          onInput={handleInput}
+        />
+      </div>
     </div>
   );
 }
