@@ -60,7 +60,7 @@ export default function BirthdayInput() {
   const hasBirthdayInputError =
     authYearInput.hasError || authMonthInput.hasError || authDayInput.hasError;
   if (hasBirthdayInputError) {
-    if (!hasMinLength(authYearInput.value, 4)) {
+    if (!hasMinLength(authYearInput.value, 4) && authYearInput.value) {
       authBirthdayInputMessage = "出生日期無效（請輸入西元年）";
     } else {
       authBirthdayInputMessage = "必填";

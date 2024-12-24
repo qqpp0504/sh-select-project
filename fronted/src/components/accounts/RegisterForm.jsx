@@ -7,22 +7,69 @@ import {
   isNotEmpty,
   isNumeric,
   hasExactLength,
+  hasMinLength,
+  isValidPassword,
+  isGreaterThanZero,
 } from "../../util/validation.js";
 
 export default function RegisterForm() {
-  const authCodeInput = useInput(
-    "",
-    (value) => hasExactLength(value, 8) && isNumeric(value)
-  );
-  const authLastNameInput = useInput("", (value) => isNotEmpty(value));
-  const authFirstNameInput = useInput("", (value) => isNotEmpty(value));
+  const authInput = {
+    authCodeInput: useInput(
+      "",
+      (value) => hasExactLength(value, 8) && isNumeric(value)
+    ),
+    authLastNameInput: useInput("", (value) => isNotEmpty(value)),
+    authFirstNameInput: useInput("", (value) => isNotEmpty(value)),
+    authSubscribeInput: useInput("", () => true),
+    authAgreeInput: useInput("", () => true),
+    authPasswordInput: useInput(
+      "",
+      (value) => hasMinLength(value, 8) && isValidPassword(value)
+    ),
+    authYearInput: useInput(
+      "",
+      (value) =>
+        isNotEmpty(value) && hasMinLength(value, 4) && isGreaterThanZero(value)
+    ),
+    authMonthInput: useInput(
+      "",
+      (value) => isNotEmpty(value) && isGreaterThanZero(value)
+    ),
+    authDayInput: useInput(
+      "",
+      (value) => isNotEmpty(value) && isGreaterThanZero(value)
+    ),
+  };
+
+  const {
+    authCodeInput,
+    authLastNameInput,
+    authFirstNameInput,
+    authSubscribeInput,
+    authAgreeInput,
+  } = authInput;
+
+  const hasError = Object.values(authInput).some((input) => input.hasError);
 
   function handleSubmit(event) {
     event.preventDefault();
-    const fd = new FormData(event.target);
-    const data = Object.fromEntries(fd.entries());
 
-    console.log(data);
+    if (hasError) {
+      return;
+    }
+
+    const fd = new FormData(event.target);
+    const authInputData = Object.fromEntries(
+      Array.from(fd.entries()).map(([key, value]) => {
+        if (key === "subscribe" || key === "agree") {
+          return [key, value === "true"];
+        }
+
+        return [key, value]; // 其他欄位保持字串
+      })
+    );
+
+    console.log(authInputData);
   }
 
   let authCodeInputMessage;
@@ -84,7 +131,14 @@ export default function RegisterForm() {
         </div>
         <div className="text-gray-600 mt-10 flex flex-col gap-4">
           <div>
-            <input type="checkbox" id="subscribe" className="hidden peer" />
+            <input
+              type="checkbox"
+              id="subscribe"
+              name="subscribe"
+              value={authSubscribeInput.isChecked}
+              onChange={authSubscribeInput.handleCheckboxChange}
+              className="hidden peer"
+            />
             <label
               htmlFor="subscribe"
               className="account-unchecked peer-checked:account-checked cursor-pointer"
@@ -95,7 +149,14 @@ export default function RegisterForm() {
             </label>
           </div>
           <div>
-            <input type="checkbox" id="agree" className="hidden peer" />
+            <input
+              type="checkbox"
+              id="agree"
+              name="agree"
+              value={authAgreeInput.isChecked}
+              onChange={authAgreeInput.handleCheckboxChange}
+              className="hidden peer"
+            />
             <label
               htmlFor="agree"
               className="account-unchecked peer-checked:account-checked cursor-pointer"
@@ -109,7 +170,11 @@ export default function RegisterForm() {
           </div>
         </div>
         <div className="my-9 flex justify-end">
-          <FeatureButton bgColor="accountBlack" paddingStyle="py-3">
+          <FeatureButton
+            type="submit"
+            bgColor="accountBlack"
+            paddingStyle="py-3"
+          >
             建立帳號
           </FeatureButton>
         </div>
