@@ -6,7 +6,7 @@ import Input from "../UI/Input.jsx";
 import FeatureButton from "../UI/FeatureButton.jsx";
 import { useInput } from "../hooks/useInput.js";
 import { isEmail, isNotEmpty } from "../../util/validation.js";
-import { registerUser } from "../../util/http.js";
+import { authEmail } from "../../util/http.js";
 import ErrorBlock from "../UI/ErrorBlock.jsx";
 import LoadingIndicator from "../UI/LoadingIndicator.jsx";
 import { accountActions } from "../../store/account-slice.js";
@@ -23,7 +23,7 @@ export default function AuthEmail() {
   } = useInput(email, (value) => isEmail(value) && isNotEmpty(value));
 
   const { mutate, isPending, isError, error } = useMutation({
-    mutationFn: registerUser,
+    mutationFn: authEmail,
     onSuccess: (data) => {
       dispatch(accountActions.updatedEmail(data.email));
       navigate("register");

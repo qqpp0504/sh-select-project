@@ -1,3 +1,28 @@
 {
-  "users": []
+  "users": [
+    {
+      "authCode": "11111111",
+      "lastName": "韓",
+      "firstName": "惟晞",
+      "password": "$2a$12$mb6BcQduNMuI3DzYiccKjuRDYlAhntcFw3LPcmNAr518XhREPPJdW",
+      "birthdayYear": "2000",
+      "birthdayMonth": "5",
+      "birthdayDay": "4",
+      "agree": true,
+      "email": "qqpp0504@gmail.com",
+      "id": "c89df194-f831-4d72-aaad-125c0641e70c"
+    },
+    {
+      "authCode": "22222222",
+      "lastName": "蘇",
+      "firstName": "紫葳",
+      "password": "$2a$12$Ou.j94o8vmtv/HPNRbSU/.HHgsDuXSdbEubiumAFvPKUc6R4feSYy",
+      "birthdayYear": "2002",
+      "birthdayMonth": "10",
+      "birthdayDay": "6",
+      "agree": true,
+      "email": "doris2362983@gmail.com",
+      "id": "ad8ad51f-1dda-4216-a46e-b882b6dd3d08"
+    }
+  ]
 }

@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useMutation } from "@tanstack/react-query";
 
 import Input from "../UI/Input.jsx";
 import FeatureButton from "../UI/FeatureButton.jsx";
@@ -7,8 +8,12 @@ import PasswordInput from "./PasswordInput.jsx";
 import BirthdayInput from "./BirthdayInput.jsx";
 import { useAuthForm } from "../hooks/useAuthForm.js";
 import { isNumeric, hasExactLength } from "../../util/validation.js";
+import { registerUser } from "../../util/http.js";
+import LoadingIndicator from "../UI/LoadingIndicator.jsx";
+import ErrorBlock from "../UI/ErrorBlock.jsx";
 
 export default function RegisterForm() {
+  const navigate = useNavigate();
   const { email } = useSelector((state) => state.account);
   const {
     authCodeInput,
@@ -24,19 +29,29 @@ export default function RegisterForm() {
     allErrorsInput,
   } = useAuthForm();
 
+  const { mutate, isPending, isError, error } = useMutation({
+    mutationFn: registerUser,
+    onSuccess: (data) => {
+      console.log(data);
+      navigate("/");
+    },
+  });
+
   function handleSubmit(event) {
     event.preventDefault();
 
     const fd = new FormData(event.target);
-    const authInputData = Object.fromEntries(
-      Array.from(fd.entries()).map(([key, value]) => {
-        if (key === "subscribe" || key === "agree") {
-          return [key, value === "true"];
-        }
-
-        return [key, value]; // 其他欄位保持字串
-      })
-    );
+    const authInputData = {
+      ...Object.fromEntries(
+        Array.from(fd.entries()).map(([key, value]) => {
+          if (key === "subscribe" || key === "agree") {
+            return [key, value === "true"];
+          }
+          return [key, value]; // 其他欄位保持字串
+        })
+      ),
+      email: email,
+    };
 
     const authInputValueIsEmpty = Object.values(authInputData).some(
       (value) => !value
@@ -49,7 +64,7 @@ export default function RegisterForm() {
       return;
     }
 
-    console.log(authInputData);
+    mutate(authInputData);
   }
 
   let authCodeInputMessage;
@@ -92,7 +107,7 @@ export default function RegisterForm() {
             <Input
               type="text"
               id="lastName"
-              name="authLastName"
+              name="lastName"
               value={authLastNameInput.value}
               onBlur={authLastNameInput.handleInputBlur}
               onChange={authLastNameInput.handleInputChange}
@@ -102,7 +117,7 @@ export default function RegisterForm() {
             <Input
               type="text"
               id="firstName"
-              name="authFirstName"
+              name="firstName"
               value={authFirstNameInput.value}
               onBlur={authFirstNameInput.handleInputBlur}
               onChange={authFirstNameInput.handleInputChange}
@@ -181,13 +196,20 @@ export default function RegisterForm() {
         </div>
         <div className="my-9 flex justify-end">
           <FeatureButton
-            type="submit"
+            type={`${isPending ? "button" : "submit"}`}
             bgColor="accountBlack"
-            paddingStyle="py-3"
+            paddingStyle={`${isPending ? "py-3 px-8" : "py-3 px-6"}`}
           >
-            建立帳號
+            {isPending ? (
+              <LoadingIndicator color="white" margin="my-0" />
+            ) : (
+              "建立帳戶"
+            )}
           </FeatureButton>
         </div>
+        {isError && (
+          <ErrorBlock message={error.info?.message || "無法建立帳戶"} />
+        )}
       </form>
     </section>
   );

@@ -52,7 +52,7 @@ export default function PasswordInput({ authPasswordInput }) {
         type={`${showPassword ? "text" : "password"}`}
         paddingStyle="pl-4 pr-12"
         id="password"
-        name="authPassword"
+        name="password"
         value={authPasswordInput.value}
         onBlur={authPasswordInput.handleInputBlur}
         onChange={authPasswordInput.handleEditInputChange}

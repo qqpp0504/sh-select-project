@@ -4,7 +4,7 @@ import { createJSONToken } from "../util/auth.js";
 
 const router = express.Router();
 
-// 註冊處理邏輯
+// 確認信箱有無註冊
 router.post("/accounts", async (req, res, next) => {
   try {
     const data = req.body;
@@ -34,6 +34,31 @@ router.post("/accounts", async (req, res, next) => {
       });
     }
   } catch (error) {
+    return next(error);
+  }
+});
+
+// 註冊處理邏輯
+router.post("/accounts/register", async (req, res, next) => {
+  try {
+    const data = req.body;
+    let errors = {};
+
+    // 如果有驗證錯誤，立即返回
+    if (Object.keys(errors).length > 0) {
+      return res.status(400).json({
+        message: "Validation failed",
+        errors,
+      });
+    }
+
+    const createdUser = await add(data);
+    const authToken = createJSONToken(createdUser.email);
+    res
+      .status(201)
+      .json({ message: "User created.", user: createdUser, token: authToken });
+  } catch (error) {
+    // 如果發生錯誤，傳給錯誤處理中間件
     return next(error);
   }
 });

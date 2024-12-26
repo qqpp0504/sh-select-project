@@ -58,7 +58,7 @@ export async function fetchProductDetail({ slug, signal }) {
   return resData;
 }
 
-export async function registerUser(userInputEmail) {
+export async function authEmail(userInputEmail) {
   const response = await fetch("http://localhost:3000/accounts", {
     method: "POST",
     headers: {
@@ -69,6 +69,26 @@ export async function registerUser(userInputEmail) {
 
   if (!response.ok) {
     const error = new Error("無法驗證信箱");
+    error.code = response.status;
+    error.info = await response.json();
+    throw error;
+  }
+
+  const resdata = await response.json();
+  return resdata;
+}
+
+export async function registerUser(userData) {
+  const response = await fetch("http://localhost:3000/accounts/register", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(userData),
+  });
+
+  if (!response.ok) {
+    const error = new Error("無法註冊帳戶");
     error.code = response.status;
     error.info = await response.json();
     throw error;
