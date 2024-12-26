@@ -13,6 +13,7 @@ import MembershipPage from "./pages/Membership.jsx";
 import AccountsPage from "./pages/Accounts.jsx";
 import RegisterPage from "./pages/Register.jsx";
 import AccountsRoot from "./pages/AccountsRoot.jsx";
+import LoginPage from "./pages/Login.jsx";
 
 const HomePage = lazy(() => import("./pages/Home.jsx"));
 const MenPage = lazy(() => import("./pages/Men.jsx"));
@@ -71,6 +72,7 @@ const router = createBrowserRouter([
     element: <AccountsRoot />,
     children: [
       { index: true, element: <AccountsPage /> },
+      { path: "login", element: <LoginPage /> },
       { path: "register", element: <RegisterPage /> },
     ],
   },
