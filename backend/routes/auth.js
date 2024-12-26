@@ -1,42 +1,41 @@
-const express = require("express");
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
+import express from "express";
+import { add, get } from "../modules/user.js";
+import { createJSONToken } from "../util/auth.js";
 
 const router = express.Router();
 
-// 假設用戶數據儲存在這裡，實際應該從資料庫中讀取
-const users = [
-  {
-    id: 1,
-    username: "testuser",
-    password: "$2a$10$VJVGhd13D4HzXLoE8gdyw.c/nrZhxhtkzz4qZXeFJlOV0lB5lhAOG",
-  }, // 密碼是 "password123" 的哈希值
-];
+// 註冊處理邏輯
+router.post("/accounts", async (req, res, next) => {
+  try {
+    const data = req.body;
+    let errors = {};
 
-// 登入處理邏輯
-router.post("/login", async (req, res) => {
-  const { username, password } = req.body;
+    // 檢查是否已存在
+    try {
+      const existingUser = await get(data.email);
+      if (existingUser) {
+        errors.email = "Email exists already.";
+        return res.status(409).json({
+          message: "Email check failed",
+          errors,
+        });
+      }
 
-  // 檢查用戶是否存在
-  const user = users.find((u) => u.username === username);
-  if (!user) {
-    return res.status(401).json({ message: "Invalid credentials" });
+      // 如果到這裡表示信箱不存在
+      return res.status(200).json({
+        email: data.email,
+        isNotExist: true,
+      });
+    } catch (error) {
+      // 如果在 get 中捕獲錯誤，意味著用戶不存在
+      return res.status(200).json({
+        email: data.email,
+        isNotExist: true,
+      });
+    }
+  } catch (error) {
+    return next(error);
   }
-
-  // 比對密碼
-  const isMatch = await bcrypt.compare(password, user.password);
-  if (!isMatch) {
-    return res.status(401).json({ message: "Invalid credentials" });
-  }
-
-  // 如果認證成功，產生 JWT token
-  const token = jwt.sign(
-    { userId: user.id, username: user.username },
-    "your_jwt_secret_key", // 請確保這個密鑰不公開，並且保護好
-    { expiresIn: "1h" } // 設定過期時間為 1 小時
-  );
-
-  res.json({ message: "Login successful", token });
 });
 
-module.exports = router;
+export default router;

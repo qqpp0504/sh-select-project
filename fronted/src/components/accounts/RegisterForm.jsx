@@ -1,3 +1,6 @@
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+
 import Input from "../UI/Input.jsx";
 import FeatureButton from "../UI/FeatureButton.jsx";
 import PasswordInput from "./PasswordInput.jsx";
@@ -6,6 +9,7 @@ import { useAuthForm } from "../hooks/useAuthForm.js";
 import { isNumeric, hasExactLength } from "../../util/validation.js";
 
 export default function RegisterForm() {
+  const { email } = useSelector((state) => state.account);
   const {
     authCodeInput,
     authLastNameInput,
@@ -65,9 +69,13 @@ export default function RegisterForm() {
       <form onSubmit={handleSubmit}>
         {" "}
         <h1 className="text-3xl">馬上成為 SH SELECT 會員。</h1>
-        <span className="text-gray-600 my-3 inline-block">
-          代碼已寄送至 email
-        </span>
+        <p className="text-gray-600 my-3 inline-block">
+          代碼已寄送至 <br />
+          {email}{" "}
+          <Link to=".." className="text-gray underline">
+            編輯
+          </Link>
+        </p>
         <div className="py-4 flex flex-col gap-7">
           <Input
             type="text"

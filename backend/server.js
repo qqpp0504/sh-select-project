@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import bodyParser from "body-parser";
 import express from "express";
+import authRoutes from "./routes/auth.js";
 
 const app = express();
 
@@ -20,6 +21,8 @@ app.use((req, res, next) => {
 
   next();
 });
+
+app.use(authRoutes);
 
 app.get("/products", async (req, res) => {
   const { category, onSale, gender, newProduct, brands } = req.query;

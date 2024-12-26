@@ -10,7 +10,7 @@ export default function FeatureButton({
   link = null,
   ...props
 }) {
-  let classes = ` rounded-full ${paddingStyle} ${className}`;
+  let classes = `rounded-full ${paddingStyle} ${className}`;
 
   if (bgColor === "black") {
     classes +=
@@ -24,7 +24,7 @@ export default function FeatureButton({
     classes +=
       " text-black border-[1.5px] text-left px-6 py-6 rounded-xl flex items-center gap-4";
   } else if (bgColor === "accountBlack") {
-    classes += "bg-black text-white px-6";
+    classes += " bg-black text-white";
   }
 
   let content = (

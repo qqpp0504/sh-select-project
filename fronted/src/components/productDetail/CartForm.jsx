@@ -61,24 +61,24 @@ export default function CartForm({ product, onSelect }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="hidden" name="id" value={product.id} />
-      <input type="hidden" name="productName" value={product.name} />
-      <input type="hidden" name="brand" value={product.brand} />
-      <input type="hidden" name="alt" value={product.alt} />
-      <input type="hidden" name="category" value={product.categoryCh} />
+      <input type="hidden" name="id" defaultValue={product.id} />
+      <input type="hidden" name="productName" defaultValue={product.name} />
+      <input type="hidden" name="brand" defaultValue={product.brand} />
+      <input type="hidden" name="alt" defaultValue={product.alt} />
+      <input type="hidden" name="category" defaultValue={product.categoryCh} />
       <input
         type="hidden"
         name="allSizes"
-        value={JSON.stringify(product.size)}
+        defaultValue={JSON.stringify(product.size)}
       />
       <input
         name="originalPrice"
-        value={product.originalPrice}
+        defaultValue={product.originalPrice}
         className="hidden"
       />
       <input
         name="discountPrice"
-        value={product.discountPrice}
+        defaultValue={product.discountPrice}
         className="hidden"
       />
 
@@ -105,7 +105,7 @@ export default function CartForm({ product, onSelect }) {
           <input
             type="hidden"
             name="color"
-            value={JSON.stringify(product.color[0])}
+            defaultValue={JSON.stringify(product.color[0])}
           />
           <div className="mt-12"></div>
         </>

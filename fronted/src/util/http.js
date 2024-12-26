@@ -57,3 +57,23 @@ export async function fetchProductDetail({ slug, signal }) {
   const resData = await response.json();
   return resData;
 }
+
+export async function registerUser(userInputEmail) {
+  const response = await fetch("http://localhost:3000/accounts", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(userInputEmail),
+  });
+
+  if (!response.ok) {
+    const error = new Error("無法驗證信箱");
+    error.code = response.status;
+    error.info = await response.json();
+    throw error;
+  }
+
+  const resdata = await response.json();
+  return resdata;
+}

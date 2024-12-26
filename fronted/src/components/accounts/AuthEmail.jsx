@@ -1,30 +1,46 @@
 import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { useMutation } from "@tanstack/react-query";
 
 import Input from "../UI/Input.jsx";
 import FeatureButton from "../UI/FeatureButton.jsx";
 import { useInput } from "../hooks/useInput.js";
 import { isEmail, isNotEmpty } from "../../util/validation.js";
+import { registerUser } from "../../util/http.js";
+import ErrorBlock from "../UI/ErrorBlock.jsx";
+import LoadingIndicator from "../UI/LoadingIndicator.jsx";
+import { accountActions } from "../../store/account-slice.js";
 
 export default function AuthEmail() {
+  const { email } = useSelector((state) => state.account);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const {
     value: emailValue,
     handleInputChange: handleEmailChange,
     handleInputBlur: handleEmailBlur,
     hasError: emailHasError,
-  } = useInput("", (value) => isEmail(value) && isNotEmpty(value));
+  } = useInput(email, (value) => isEmail(value) && isNotEmpty(value));
+
+  const { mutate, isPending, isError, error } = useMutation({
+    mutationFn: registerUser,
+    onSuccess: (data) => {
+      dispatch(accountActions.updatedEmail(data.email));
+      navigate("register");
+    },
+  });
 
   function handleSubmit(event) {
     event.preventDefault();
     const fd = new FormData(event.target);
-    const { authEmail } = Object.fromEntries(fd.entries());
+    const formData = Object.fromEntries(fd.entries());
 
-    if (authEmail === "" || emailHasError) {
+    if (formData.email === "" || emailHasError) {
       handleEmailBlur();
       return;
     }
 
-    navigate("register");
+    mutate(formData);
   }
 
   return (
@@ -36,7 +52,7 @@ export default function AuthEmail() {
           <Input
             type="email"
             id="email"
-            name="authEmail"
+            name="email"
             value={emailValue}
             onBlur={handleEmailBlur}
             onChange={handleEmailChange}
@@ -50,15 +66,24 @@ export default function AuthEmail() {
           <span className="underline">隱私權政策</span>與
           <span className="underline">使用條款</span>。
         </p>
+
         <div className="my-9 flex justify-end">
           <FeatureButton
-            type="submit"
+            type={`${isPending ? "button" : "submit"}`}
             bgColor="accountBlack"
-            paddingStyle="py-3"
+            paddingStyle={`${isPending ? "py-3 px-8" : "py-3 px-6"}`}
           >
-            繼續
+            {isPending ? (
+              <LoadingIndicator color="white" margin="my-0" />
+            ) : (
+              "繼續"
+            )}
           </FeatureButton>
         </div>
+
+        {isError && (
+          <ErrorBlock message={error.info?.message || "無法驗證信箱"} />
+        )}
       </form>
     </section>
   );
