@@ -97,3 +97,27 @@ export async function registerUser(userData) {
   const resdata = await response.json();
   return resdata;
 }
+
+export async function loginUser(userData) {
+  const response = await fetch("http://localhost:3000/accounts/login", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(userData),
+  });
+
+  if (!response.ok) {
+    const error = new Error("無法登入帳戶");
+    error.code = response.status;
+    error.info = await response.json();
+    throw error;
+  }
+
+  const resdata = await response.json();
+  const token = resdata.token;
+
+  localStorage.setItem("token", token);
+
+  return null;
+}

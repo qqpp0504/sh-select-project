@@ -26,7 +26,12 @@ export default function AuthEmail() {
     mutationFn: authEmail,
     onSuccess: (data) => {
       dispatch(accountActions.updatedEmail(data.email));
-      navigate("register");
+
+      if (data.isNotExist) {
+        navigate("register");
+      } else {
+        navigate("login");
+      }
     },
   });
 
