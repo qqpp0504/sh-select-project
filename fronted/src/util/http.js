@@ -74,8 +74,8 @@ export async function authEmail(userInputEmail) {
     throw error;
   }
 
-  const resdata = await response.json();
-  return resdata;
+  const resData = await response.json();
+  return resData;
 }
 
 export async function registerUser(userData) {
@@ -94,8 +94,8 @@ export async function registerUser(userData) {
     throw error;
   }
 
-  const resdata = await response.json();
-  return resdata;
+  const resData = await response.json();
+  return resData;
 }
 
 export async function loginUser(userData) {
@@ -114,10 +114,11 @@ export async function loginUser(userData) {
     throw error;
   }
 
-  const resdata = await response.json();
-  const token = resdata.token;
+  const resData = await response.json();
+  const token = resData.token;
 
   localStorage.setItem("token", token);
+  localStorage.setItem("user", JSON.stringify(resData.user));
 
-  return null;
+  return resData;
 }

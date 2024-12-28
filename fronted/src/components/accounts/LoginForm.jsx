@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useMutation } from "@tanstack/react-query";
 
 import FeatureButton from "../UI/FeatureButton.jsx";
@@ -9,15 +9,18 @@ import { isNotEmpty } from "../../util/validation.js";
 import { loginUser } from "../../util/http.js";
 import LoadingIndicator from "../UI/LoadingIndicator.jsx";
 import AuthErrorBlock from "./AuthErrorBlock.jsx";
+import { accountActions } from "../../store/account-slice.js";
 
 export default function LoginForm() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { email } = useSelector((state) => state.account);
   const authPasswordInput = useInput("", (value) => isNotEmpty(value));
 
   const { mutate, isPending, isError, error } = useMutation({
     mutationFn: loginUser,
-    onSuccess: () => {
+    onSuccess: (data) => {
+      dispatch(accountActions.login({ token: data.token, user: data.user }));
       navigate("/");
     },
   });

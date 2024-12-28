@@ -5,6 +5,7 @@ import FeatureButton from "../UI/FeatureButton.jsx";
 import Tooltip from "../UI/ToolTip.jsx";
 
 export default function ShoppingSummary() {
+  const { userData } = useSelector((state) => state.account);
   const { totalAmount, totalPrice, shippingFee } = useSelector(
     (state) => state.cart
   );
@@ -34,12 +35,14 @@ export default function ShoppingSummary() {
       <Summary tag="總計" price={displayTotalPrice} />
       <hr />
       <div className="my-8 flex flex-col gap-3">
-        <FeatureButton
-          bgColor={`${totalPrice > 0 ? "black" : "gray"}`}
-          link="/checkout"
-        >
-          訪客結帳
-        </FeatureButton>
+        {!userData.token && (
+          <FeatureButton
+            bgColor={`${totalPrice > 0 ? "black" : "gray"}`}
+            link="/checkout"
+          >
+            訪客結帳
+          </FeatureButton>
+        )}
         <FeatureButton bgColor={`${totalPrice > 0 ? "black" : "gray"}`}>
           會員結帳
         </FeatureButton>

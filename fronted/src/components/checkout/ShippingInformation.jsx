@@ -33,7 +33,7 @@ export default function ShippingInformation() {
             加入會員
           </Button>
         </Link>
-        <Link className="w-fit">
+        <Link to="/accounts" className="w-fit">
           <Button bgColor="checkoutWhite" paddingStyle="py-2 px-6">
             登入
           </Button>
