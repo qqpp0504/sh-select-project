@@ -96,7 +96,7 @@ export default function AccountBar() {
       <nav>
         <ul className="flex flex-row items-center">
           <li className="border-solid border-r-1 border-black px-3 hover:text-gray">
-            <Link to="/" onClick={handlePreventDefault}>
+            <Link to="/help" onClick={handlePreventDefault}>
               協助
             </Link>
           </li>

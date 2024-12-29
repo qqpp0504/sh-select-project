@@ -32,7 +32,7 @@ export default function ShowPasswordButton({ authPasswordInput }) {
     <div>
       <Input
         type={`${showPassword ? "text" : "password"}`}
-        paddingStyle="pl-4 pr-12"
+        paddingStyle="pl-4 pr-12 px-4 py-[0.9rem]"
         id="password"
         name="password"
         value={authPasswordInput.value}

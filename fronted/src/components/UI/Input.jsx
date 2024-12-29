@@ -4,7 +4,7 @@ import { forwardRef } from "react";
 function Input(
   {
     children = null,
-    paddingStyle = "px-4",
+    paddingStyle = "px-4 py-[0.9rem]",
     placeholderText,
     error,
     errorText,
@@ -38,7 +38,7 @@ function Input(
       <input
         ref={ref}
         value={value}
-        className={`w-full py-[0.9rem] border-[1px] outline-none peer hover:border-black ${paddingStyle} ${inputClass} ${className} ${
+        className={`w-full border-[1px] outline-none peer hover:border-black ${paddingStyle} ${inputClass} ${className} ${
           error
             ? "border-red-600 rounded-lg hover:border-red-600"
             : "border-gray-500 rounded-lg"

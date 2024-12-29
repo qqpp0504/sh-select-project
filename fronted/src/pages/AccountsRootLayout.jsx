@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 
 import logo from "../assets/logo.png";
 
-export default function AccountsRoot() {
+export default function AccountsRootLayout() {
   return (
     <div className="max-w-[30rem] mx-auto">
       <header className="my-10">

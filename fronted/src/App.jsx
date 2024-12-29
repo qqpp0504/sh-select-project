@@ -12,8 +12,12 @@ import CheckoutPage from "./pages/Checkout.jsx";
 import MembershipPage from "./pages/Membership.jsx";
 import AccountsPage from "./pages/Accounts.jsx";
 import RegisterPage from "./pages/Register.jsx";
-import AccountsRoot from "./pages/AccountsRoot.jsx";
+import AccountsRootLayout from "./pages/AccountsRootLayout.jsx";
 import LoginPage from "./pages/Login.jsx";
+import HelpPage from "./pages/Help.jsx";
+import BannerBarLayout from "./pages/BannerBarLayout.jsx";
+import HelpLayout from "./pages/HelpLayout.jsx";
+import HelpQuestion from "./components/Help/HelpQuestion.jsx";
 
 const HomePage = lazy(() => import("./pages/Home.jsx"));
 const MenPage = lazy(() => import("./pages/Men.jsx"));
@@ -25,51 +29,66 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       {
-        index: true,
-        element: (
-          <Suspense fallback={null}>
-            <HomePage />
-          </Suspense>
-        ),
-      },
-      {
-        path: "men",
-        element: (
-          <Suspense fallback={null}>
-            <MenPage />
-          </Suspense>
-        ),
-      },
-      {
-        path: "female",
-        element: (
-          <Suspense fallback={null}>
-            <FemalePage />
-          </Suspense>
-        ),
-      },
-      {
-        path: "brands",
-        element: <BrandsPage />,
-      },
-      {
-        path: "products",
+        path: "help",
+        element: <HelpLayout />,
         children: [
-          { index: true, element: <ProductsPage /> },
-          {
-            path: ":slug",
-            element: <ProductDetail />,
-          },
+          { index: true, element: <HelpPage /> },
+          { path: ":questionId", element: <HelpQuestion /> },
         ],
       },
-      { path: "cart", element: <CartPage /> },
-      { path: "membership", element: <MembershipPage /> },
+
+      {
+        path: "/",
+        element: <BannerBarLayout />,
+        children: [
+          {
+            index: true,
+            element: (
+              <Suspense fallback={null}>
+                <HomePage />
+              </Suspense>
+            ),
+          },
+          {
+            path: "men",
+            element: (
+              <Suspense fallback={null}>
+                <MenPage />
+              </Suspense>
+            ),
+          },
+          {
+            path: "female",
+            element: (
+              <Suspense fallback={null}>
+                <FemalePage />
+              </Suspense>
+            ),
+          },
+          {
+            path: "brands",
+            element: <BrandsPage />,
+          },
+          {
+            path: "products",
+            children: [
+              { index: true, element: <ProductsPage /> },
+              {
+                path: ":slug",
+                element: <ProductDetail />,
+              },
+            ],
+          },
+          { path: "cart", element: <CartPage /> },
+          { path: "membership", element: <MembershipPage /> },
+        ],
+      },
     ],
   },
   { path: "checkout", element: <CheckoutPage /> },
   {
     path: "accounts",
-    element: <AccountsRoot />,
+    element: <AccountsRootLayout />,
     children: [
       { index: true, element: <AccountsPage /> },
       { path: "login", element: <LoginPage /> },

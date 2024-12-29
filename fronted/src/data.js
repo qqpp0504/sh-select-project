@@ -33,11 +33,11 @@ export const DISCOUNTS = [
 
 export const FOOTERDATA = {
   資源: [
-    { text: "加入會員", link: "/" },
+    { text: "加入會員", link: "/accounts" },
     { text: "傳送意見回饋", link: "/" },
   ],
   協助: [
-    { text: "取得協助", link: "/" },
+    { text: "取得協助", link: "/help" },
     { text: "訂單狀態", link: "/" },
     { text: "出貨與寄送", link: "/" },
     { text: "退貨", link: "/" },

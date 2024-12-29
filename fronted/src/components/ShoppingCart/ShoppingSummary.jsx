@@ -43,7 +43,10 @@ export default function ShoppingSummary() {
             訪客結帳
           </FeatureButton>
         )}
-        <FeatureButton bgColor={`${totalPrice > 0 ? "black" : "gray"}`}>
+        <FeatureButton
+          bgColor={`${totalPrice > 0 ? "black" : "gray"}`}
+          link={`${userData.token ? "/checkout" : "/accounts"}`}
+        >
           會員結帳
         </FeatureButton>
       </div>

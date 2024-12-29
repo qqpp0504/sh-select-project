@@ -3,8 +3,9 @@ export default function Button({
   children,
   bgColor = "black",
   paddingStyle = "px-4 py-[0.375rem]",
+  className,
 }) {
-  let classes = `inline-block rounded-3xl ${paddingStyle}`;
+  let classes = `inline-block rounded-3xl ${paddingStyle} ${className}`;
 
   if (bgColor === "white") {
     classes += " bg-white text-black hover:bg-white-hoverColor";
