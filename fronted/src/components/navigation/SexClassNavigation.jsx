@@ -12,13 +12,31 @@ export default function SexClassNavigation({ sex }) {
 
       <div className="flex-1 flex justify-center">
         <ul className="flex flex-row gap-8">
-          <Link to={sex == "men" ? "/men" : "/female"}>
+          <Link
+            to={
+              sex == "men"
+                ? "/products?gender=men&category=top"
+                : "/products?gender=women&category=top"
+            }
+          >
             <li className={listClasses}>服裝</li>
           </Link>
-          <Link to={sex == "men" ? "/men" : "/female"}>
+          <Link
+            to={
+              sex == "men"
+                ? "/products?gender=men&category=shoes"
+                : "/products?gender=women&category=shoes"
+            }
+          >
             <li className={listClasses}>鞋款</li>
           </Link>
-          <Link to={sex == "men" ? "/men" : "/female"}>
+          <Link
+            to={
+              sex == "men"
+                ? "/products?gender=men&category=other"
+                : "/products?gender=women&category=other"
+            }
+          >
             <li className={listClasses}>其他配件</li>
           </Link>
         </ul>
