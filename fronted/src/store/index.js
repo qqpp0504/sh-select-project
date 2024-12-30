@@ -6,6 +6,7 @@ import filterReducer from "./filter-slice.js";
 import modalReducer from "./modal-slice.js";
 import cartReducer from "./cart-slice.js";
 import accountReducer from "./account-slice.js";
+import searchReducer from "./searchFaq-slice.js";
 
 // 設定 persist 配置
 const persistConfig = {
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
   modal: modalReducer,
   cart: cartReducer,
   account: accountReducer,
+  searchFaq: searchReducer,
 });
 
 // 使用 persistReducer 包裝 rootReducer

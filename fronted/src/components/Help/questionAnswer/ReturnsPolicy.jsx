@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
-import Button from "../UI/Button.jsx";
-import QuestionTitle from "./questionAnswer/QuestionTitle.jsx";
+import Button from "../../UI/Button.jsx";
+import QuestionTitle from "./QuestionTitle.jsx";
 
 export default function ReturnsPolicy() {
   return (

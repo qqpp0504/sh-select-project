@@ -9,7 +9,7 @@ export default function ShippingDelivery() {
         <strong>標準運送</strong>
         <ul className="flex flex-col gap-3 list-disc list-inside marker:text-sm marker:text-gray pl-2">
           <li>訂單金額滿 NT$4,500 者免費</li>
-          <li>訂單金額未滿 NT$4,500 者，須加收 NT$300</li>
+          <li>訂單金額未滿 NT$4,500 者，須加收 NT$120</li>
           <li>通常會在 3-5 個工作天內送達</li>
         </ul>
       </div>

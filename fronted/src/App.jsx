@@ -17,7 +17,8 @@ import LoginPage from "./pages/Login.jsx";
 import HelpPage from "./pages/Help.jsx";
 import BannerBarLayout from "./pages/BannerBarLayout.jsx";
 import HelpLayout from "./pages/HelpLayout.jsx";
-import HelpQuestion from "./components/Help/HelpQuestion.jsx";
+import HelpQuestionPage from "./pages/HelpQuestion.jsx";
+import SearchQuestionsPage from "./pages/SearchQuestions.jsx";
 
 const HomePage = lazy(() => import("./pages/Home.jsx"));
 const MenPage = lazy(() => import("./pages/Men.jsx"));
@@ -33,7 +34,8 @@ const router = createBrowserRouter([
         element: <HelpLayout />,
         children: [
           { index: true, element: <HelpPage /> },
-          { path: ":questionId", element: <HelpQuestion /> },
+          { path: "search/:searchTerm", element: <SearchQuestionsPage /> },
+          { path: ":questionId", element: <HelpQuestionPage /> },
         ],
       },
 

@@ -27,8 +27,9 @@ const FAQDATA = [
     questions: [
       {
         id: "shipping-delivery",
-        question: "SH SELECT 提供哪些運送選項？",
+        question: "SH SELECT 提供哪些寄送選項？",
         keyword: [
+          "結帳時，我們會告知你預計送達日期。 我們提供以下運送選項：",
           "預計送達日期",
           "標準運送",
           "訂單處理時間",
