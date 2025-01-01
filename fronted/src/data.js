@@ -96,3 +96,74 @@ export const FILTERS = {
     { param: "theNorthFace", filterName: "The North Face" },
   ],
 };
+
+const commonNew = [
+  { item: "新品發售", link: "/products?newProduct=new" },
+  { item: "選購所有特惠商品", link: "/products?onSale=sale" },
+];
+const commonBrands = [
+  { item: "Adidas", link: "/products?brands=adidas" },
+  { item: "Asics", link: "/products?brands=asics" },
+  { item: "Carhartt", link: "/products?brands=carhartt" },
+  { item: "Converse", link: "/products?brands=converse" },
+  { item: "Mizuno", link: "/products?brands=mizuno" },
+  { item: "Nautica", link: "/products?brands=nautica" },
+  { item: "Nike", link: "/products?brands=nike" },
+  { item: "Ordinary", link: "/products?brands=ordinary" },
+  { item: "The North Face", link: "/products?brands=theNorthFace" },
+];
+
+export const NAVITEMS = [
+  {
+    label: "新品和精選",
+    items: {
+      精選: [
+        { item: "新品發售", link: "/products?newProduct=new" },
+        { item: "選購所有特惠商品", link: "/products?onSale=sale" },
+      ],
+      依品牌選購: commonBrands,
+    },
+    link: "/",
+  },
+  {
+    label: "男款",
+    items: {
+      精選: commonNew,
+      服飾與鞋款: [
+        { item: "上衣", link: "/products?category=top" },
+        { item: "外套及背心", link: "/products?category=jacket" },
+        { item: "下著", link: "/products?category=bottom" },
+        { item: "襪子", link: "/products?category=socks" },
+        { item: "鞋款", link: "/products?category=shoes" },
+        { item: "其他配件", link: "/products?category=other" },
+      ],
+      依品牌選購: commonBrands,
+    },
+    link: "men",
+  },
+  {
+    label: "女款",
+    items: {
+      精選: commonNew,
+      服飾與鞋款: [
+        { item: "上衣", link: "/products?category=top" },
+        { item: "外套及背心", link: "/products?category=jacket" },
+        { item: "下著", link: "/products?category=bottom" },
+        { item: "運動內衣", link: "/products?category=sportsbar" },
+        { item: "襪子", link: "/products?category=socks" },
+        { item: "鞋款", link: "/products?category=shoes" },
+        { item: "其他配件", link: "/products?category=other" },
+      ],
+      依品牌選購: commonBrands,
+    },
+    link: "female",
+  },
+  {
+    label: "品牌",
+    items: {
+      精選: commonNew,
+      依品牌選購: commonBrands,
+    },
+    link: "brands",
+  },
+];

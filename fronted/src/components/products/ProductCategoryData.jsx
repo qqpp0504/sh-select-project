@@ -11,6 +11,7 @@ import ProductsList from "./ProductsList.jsx";
 
 export default function ProductCategoryData() {
   const filters = useSelector((state) => state.filter.allFilters);
+  const search = useSelector((state) => state.filter.searchTerm);
   const location = useLocation(); // 監聽路由變化
   const queryClient = useQueryClient(); // 使用 queryClient 進行數據管理
 
@@ -25,7 +26,7 @@ export default function ProductCategoryData() {
     isError,
     error,
   } = useQuery({
-    queryKey: ["products", { filters: { ...filters } }],
+    queryKey: ["products", { filters: { ...filters, search } }],
     queryFn: ({ signal, queryKey }) =>
       fetchProducts({ signal, ...queryKey[1] }),
     staleTime: 0,

@@ -12,6 +12,7 @@ import { FILTERS } from "../../data.js";
 
 export default function SideBar({ children }) {
   const filters = useSelector((state) => state.filter.allFilters);
+  const search = useSelector((state) => state.filter.searchTerm);
   const productsQuantity = useSelector((state) => state.filter.quantity);
   const [isShowing, setIsShowing] = useState(true); // 可以改成不要用狀態管理
 
@@ -47,7 +48,7 @@ export default function SideBar({ children }) {
     onSale.length > 0 && "特惠商品",
   ].filter(Boolean);
 
-  // 如果有篩選條件，就將它們合併到 genderText
+  // 如果有篩選條件，就將它們合併到 filterText
   if (activeFilters.length > 0) {
     filterText = activeFilters.join(" "); // 用空格連接條件文字
   }
@@ -55,6 +56,10 @@ export default function SideBar({ children }) {
   if (brands.length === 1) {
     filterText = activeFilters.join(" ");
     filterText += " " + brands[0];
+  }
+
+  if (search) {
+    filterText = search;
   }
 
   function handleShowing() {
@@ -110,6 +115,10 @@ export default function SideBar({ children }) {
     );
   } else {
     moreFilters = <div className="py-3"></div>;
+  }
+
+  if (search) {
+    moreFilters = <div className="mt-3 mb-1">搜尋結果：</div>;
   }
 
   return (

@@ -8,6 +8,7 @@ const initialFilterState = {
     onSale: [],
     brands: [],
   },
+  searchTerm: "",
   quantity: null,
 };
 
@@ -55,6 +56,10 @@ const filterSlice = createSlice({
 
     updateQuantity(state, action) {
       state.quantity = action.payload;
+    },
+
+    updatedSearchTerm(state, action) {
+      state.searchTerm = action.payload;
     },
   },
 });

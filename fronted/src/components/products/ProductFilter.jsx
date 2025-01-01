@@ -6,6 +6,7 @@ import { filterActions } from "../../store/filter-slice.js";
 
 export default function ProductFilter() {
   const filters = useSelector((state) => state.filter.allFilters);
+  const search = useSelector((state) => state.filter.searchTerm);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
@@ -26,9 +27,10 @@ export default function ProductFilter() {
     if (newProduct.length > 0) queryParams.set("newProduct", "new");
     if (onSale.length > 0) queryParams.set("onSale", "sale");
     if (brands.length > 0) queryParams.set("brands", brands.join("-"));
+    if (search) queryParams.set("search", search);
 
     navigate({ pathname: "/products", search: queryParams.toString() });
-  }, [filters, navigate]);
+  }, [filters, search, navigate]);
 
   // 根據 URL 同步 Redux 狀態
   useEffect(() => {
@@ -37,6 +39,7 @@ export default function ProductFilter() {
     const newProduct = searchParams.get("newProduct") === "new";
     const onSale = searchParams.get("onSale") === "sale";
     const brands = searchParams.get("brands")?.split("-").sort() || [];
+    const search = searchParams.get("search") || "";
 
     if (genderParam === "unisex") {
       dispatch(filterActions.updateGenderFilter(["men", "women"]));
@@ -50,6 +53,7 @@ export default function ProductFilter() {
     dispatch(filterActions.updateNewProductFilter(newProduct ? ["new"] : []));
     dispatch(filterActions.updateSaleFilter(onSale ? ["sale"] : []));
     dispatch(filterActions.updateBrandFilter(brands));
+    dispatch(filterActions.updatedSearchTerm(search));
   }, [searchParams, dispatch]);
 
   return null;

@@ -14,6 +14,8 @@ export default function Button({
   } else if (bgColor === "checkoutWhite") {
     classes +=
       " bg-white text-black border-[1px] border-gray-300 hover:bg-gray-100";
+  } else if (bgColor === "gray") {
+    classes += " bg-gray-100 hover:bg-gray-200";
   }
 
   return <span className={classes}>{children}</span>;

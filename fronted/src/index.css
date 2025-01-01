@@ -33,10 +33,6 @@ img {
     color: #9e3501;
   }
 
-  .active {
-    @apply pb-1 border-b-2 border-black;
-  }
-
   .accordion-header {
     @apply py-4 block cursor-pointer;
   }

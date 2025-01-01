@@ -25,19 +25,27 @@ app.use((req, res, next) => {
 app.use(authRoutes);
 
 app.get("/products", async (req, res) => {
-  const { category, onSale, gender, newProduct, brands } = req.query;
+  const { category, onSale, gender, newProduct, brands, search } = req.query;
 
   try {
     const fileContent = await fs.readFile("./data/products.json");
     let products = JSON.parse(fileContent);
 
     // 如果沒有任何篩選條件，直接返回所有商品
-    if (!category && !onSale && !gender && !newProduct && !brands) {
+    if (!category && !onSale && !gender && !newProduct && !brands && !search) {
       return res.status(200).json(products);
     }
 
     // 篩選產品
     const filteredProducts = products.filter((product) => {
+      const detailsText = Object.values(product.summary.details).join(" ");
+
+      const matchesSearch =
+        !search || // 如果 search 為空，直接通過
+        `${product.brand} ${product.name} ${product.originalPrice} ${product.discountPrice} ${product.discountPercentage} ${product.category} ${product.categoryCh} ${product.gender} ${detailsText}`
+          .toLowerCase()
+          .includes(search.toLowerCase()); // 搜索這些字段
+
       const matchesGender =
         !gender || // 如果 gender 為空，直接通過
         (gender.includes("men") && product.gender.includes("men")) ||
@@ -66,6 +74,7 @@ app.get("/products", async (req, res) => {
 
       // 返回符合所有條件的產品
       return (
+        matchesSearch &&
         matchesGender &&
         matchesCategory &&
         matchesOnSale &&
