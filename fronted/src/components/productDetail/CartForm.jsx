@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useMutation } from "@tanstack/react-query";
 
 import SelectBlock from "../UI/SelectBlock.jsx";
 import { modalActions } from "../../store/modal-slice.js";
@@ -8,21 +9,26 @@ import rulerIcon from "../../assets/ruler-icon.png";
 import FeatureButton from "../UI/FeatureButton.jsx";
 import heartIcon from "../../assets/heart-icon.png";
 import { cartActions } from "../../store/cart-slice.js";
+import { addFavorites } from "../../util/http.js";
+import { accountActions } from "../../store/account-slice.js";
 
 export default function CartForm({ product, onSelect }) {
   const [sizeData, setSizeData] = useState(null);
   const [reminder, setReminder] = useState("");
   const dispatch = useDispatch();
 
+  const { mutate, isPending, isError, error } = useMutation({
+    mutationFn: addFavorites,
+    onSuccess: (resData) => {
+      dispatch(accountActions.addFavorite(resData));
+    },
+  });
+
   function handleSubmit(event) {
     event.preventDefault();
 
-    if (!sizeData) {
-      setReminder("請選擇尺寸");
-      return;
-    }
-
     const fd = new FormData(event.target);
+    const action = event.nativeEvent.submitter.value;
     const data = Object.fromEntries(
       Array.from(fd.entries()).map(([key, value]) => {
         // 如果是價格欄位，轉為數字型別
@@ -38,15 +44,24 @@ export default function CartForm({ product, onSelect }) {
       })
     );
 
-    dispatch(cartActions.addToCart(data));
-    dispatch(cartActions.checkItemStatus(data));
+    if (action === "addToCart") {
+      if (!sizeData) {
+        setReminder("請選擇尺寸");
+        return;
+      }
 
-    dispatch(cartActions.updatedScrollPosition(window.scrollY));
-    window.scrollTo({
-      top: 0,
-    });
+      dispatch(cartActions.addToCart(data));
+      dispatch(cartActions.checkItemStatus(data));
 
-    dispatch(cartActions.showNotification());
+      dispatch(cartActions.updatedScrollPosition(window.scrollY));
+      window.scrollTo({
+        top: 0,
+      });
+
+      dispatch(cartActions.showNotification());
+    } else if (action === "addToFavorites") {
+      mutate(data);
+    }
   }
 
   function handleSizeChange(event) {
@@ -147,8 +162,13 @@ export default function CartForm({ product, onSelect }) {
       >{`${reminder ? reminder : ""}`}</span>
 
       <div className="flex flex-col gap-3">
-        <FeatureButton type="submit">加入購物車</FeatureButton>
+        <FeatureButton type="submit" name="action" value="addToCart">
+          加入購物車
+        </FeatureButton>
         <FeatureButton
+          type="submit"
+          name="action"
+          value="addToFavorites"
           bgColor="white"
           className="flex justify-center items-center gap-[0.3rem]"
         >
@@ -156,6 +176,9 @@ export default function CartForm({ product, onSelect }) {
           <img src={heartIcon} alt="Heart icon" className="w-[22px]" />
         </FeatureButton>
       </div>
+
+      {isPending && <p>isPending</p>}
+      {isError && <p>{error}</p>}
     </form>
   );
 }

@@ -1,5 +1,5 @@
 import express from "express";
-import { add, get } from "../modules/user.js";
+import { add, addFavorite, getFavorite, get } from "../modules/user.js";
 import { createJSONToken } from "../util/auth.js";
 import bcrypt from "bcrypt";
 
@@ -125,6 +125,51 @@ router.post("/accounts/login", async (req, res, next) => {
     });
   } catch (error) {
     return next(error);
+  }
+});
+
+// 加入最愛
+router.post("/favorites", async (req, res, next) => {
+  try {
+    const { email, product } = req.body;
+
+    // 驗證請求參數
+    let errors = {};
+
+    // 如果有驗證錯誤，立即返回
+    if (Object.keys(errors).length > 0) {
+      return res.status(400).json({
+        message: "Validation failed",
+        errors,
+      });
+    }
+
+    // 加入最愛邏輯
+    const favorite = await addFavorite(email, product);
+
+    res.status(201).json({
+      message: "Favorite added successfully.",
+      favorite,
+    });
+  } catch (error) {
+    // 如果發生錯誤，傳給錯誤處理中間件
+    return next(error);
+  }
+});
+
+// 獲取使用者最愛商品
+router.get("/favorites/:userEmail", async (req, res) => {
+  const { userEmail } = req.params;
+
+  if (!userEmail) {
+    return res.status(400).json({ error: "找不到使用者" });
+  }
+
+  try {
+    const favorites = await getFavorite(userEmail);
+    res.json(favorites);
+  } catch (error) {
+    res.status(404).json({ error: error.message });
   }
 });
 

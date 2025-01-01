@@ -19,6 +19,7 @@ import BannerBarLayout from "./pages/BannerBarLayout.jsx";
 import HelpLayout from "./pages/HelpLayout.jsx";
 import HelpQuestionPage from "./pages/HelpQuestion.jsx";
 import SearchQuestionsPage from "./pages/SearchQuestions.jsx";
+import FavoritesPage from "./pages/Favorites.jsx";
 
 const HomePage = lazy(() => import("./pages/Home.jsx"));
 const MenPage = lazy(() => import("./pages/Men.jsx"));
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
           { path: "search/:searchTerm", element: <SearchQuestionsPage /> },
           { path: ":questionId", element: <HelpQuestionPage /> },
         ],
+      },
+      {
+        path: "favorites",
+        element: <FavoritesPage />,
       },
 
       {

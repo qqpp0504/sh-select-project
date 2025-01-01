@@ -11,6 +11,7 @@ export default function MainNav() {
   const { isShowingNotification, totalQuantity } = useSelector(
     (state) => state.cart
   );
+  const { token } = useSelector((state) => state.account.userData);
   const [activeDropdown, setActiveDropdown] = useState();
 
   function handlePreventDefault(event) {
@@ -84,7 +85,10 @@ export default function MainNav() {
 
       <div className="flex-1 flex justify-end items-center gap-4">
         <SearchInput />
-        <Link to="/" onClick={handlePreventDefault}>
+        <Link
+          to={`${token ? "/favorites" : "accounts"}`}
+          onClick={handlePreventDefault}
+        >
           <Icon type="heart" />
         </Link>
         <Link to="/cart" onClick={handlePreventDefault} className="relative">

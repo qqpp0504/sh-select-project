@@ -24,7 +24,7 @@ export async function fetchProducts({ filters, signal }) {
       ? `?${new URLSearchParams(filters).toString()}`
       : "";
 
-  const response = await fetch(`http://localhost:3000/products${query}`, {
+  const response = await fetch(`http://localhost:3000/products/${query}`, {
     signal,
   });
 
@@ -120,5 +120,47 @@ export async function loginUser(userData) {
   localStorage.setItem("token", token);
   localStorage.setItem("user", JSON.stringify(resData.user));
 
+  return resData;
+}
+
+export async function addFavorites(product) {
+  const user = localStorage.getItem("user");
+  if (!user) {
+    const error = new Error("您尚未登入，無法添加收藏");
+    throw error;
+  }
+
+  const response = await fetch("http://localhost:3000/favorites", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ email: JSON.parse(user).email, product: product }),
+  });
+
+  if (!response.ok) {
+    const error = new Error("無法註冊帳戶");
+    error.code = response.status;
+    error.info = await response.json();
+    throw error;
+  }
+
+  const resData = await response.json();
+  return resData;
+}
+
+export async function fetchUserFavorites({ userEmail, signal }) {
+  const response = await fetch(`http://localhost:3000/favorites/${userEmail}`, {
+    signal,
+  });
+
+  if (!response.ok) {
+    const error = new Error("發生錯誤，無法獲取商品資訊");
+    error.code = response.status;
+    error.info = await response.json();
+    throw error;
+  }
+
+  const resData = await response.json();
   return resData;
 }
