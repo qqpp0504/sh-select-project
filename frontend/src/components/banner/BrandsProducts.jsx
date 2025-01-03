@@ -1,6 +1,4 @@
 /* eslint-disable react/prop-types */
-import { Link } from "react-router-dom";
-
 import Button from "../UI/Button.jsx";
 import ScrollContainer from "../UI/ScrollContainer.jsx";
 
@@ -19,9 +17,9 @@ export default function BrandsProducts({ products }) {
           />
 
           <div className="absolute bottom-5 left-12">
-            <Link to={product.link}>
-              <Button bgColor="white">{product.title}</Button>
-            </Link>
+            <Button link={product.link} bgColor="white">
+              {product.title}
+            </Button>
           </div>
         </li>
       ))}

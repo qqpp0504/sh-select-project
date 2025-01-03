@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { currencyFormatter } from "../../util/formatting";
+import Button from "../UI/Button.jsx";
 
 export default function FavoritesProducts({ product }) {
   return (
@@ -40,9 +41,13 @@ export default function FavoritesProducts({ product }) {
             <span>{product.color.name}</span>
           </div>
 
-          <button className="bg-white w-fit px-6 py-2 rounded-[1.2rem] text-black border-[1px] border-gray-300 hover:border-gray-400 transition-all duration-150">
+          <Button
+            bgColor="favoriteWhite"
+            className="w-fit"
+            paddingStyle="px-6 py-2"
+          >
             加入購物車
-          </button>
+          </Button>
         </div>
       </div>
     </li>

@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import { Link } from "react-router-dom";
 
 import Button from "../UI/Button.jsx";
 
@@ -27,9 +26,10 @@ export default function Banner({
       <div className="my-8 flex flex-col justify-center items-center">
         <h3 className="text-[3rem] font-900">{title}</h3>
         <p>{description}</p>
-        <Link to={link} className="my-6">
-          <Button>{buttonText}</Button>
-        </Link>
+
+        <Button link={link} className="my-6">
+          {buttonText}
+        </Button>
       </div>
     </section>
   );

@@ -1,8 +1,11 @@
+import { Link } from "react-router-dom";
+
 /* eslint-disable react/prop-types */
 export default function Button({
   children,
   bgColor = "black",
   paddingStyle = "px-4 py-[0.375rem]",
+  link = null,
   className,
 }) {
   let classes = `inline-block rounded-3xl ${paddingStyle} ${className}`;
@@ -16,7 +19,18 @@ export default function Button({
       " bg-white text-black border-[1px] border-gray-300 hover:bg-gray-100";
   } else if (bgColor === "gray") {
     classes += " bg-gray-100 hover:bg-gray-200";
+  } else if (bgColor === "favoriteWhite") {
+    classes +=
+      " bg-white rounded-[1.2rem] text-black border-[1px] border-gray-300 hover:border-gray-400 transition-all duration-150";
   }
 
-  return <span className={classes}>{children}</span>;
+  if (link) {
+    return (
+      <Link to={link} className={classes}>
+        {children}
+      </Link>
+    );
+  }
+
+  return <button className={classes}>{children}</button>;
 }

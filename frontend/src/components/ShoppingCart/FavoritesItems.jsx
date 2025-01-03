@@ -12,7 +12,7 @@ export default function FavoritesItems() {
   const { token, user } = useSelector((state) => state.account.userData);
   const {
     data: favoritesProducts,
-    isPending,
+    isLoading,
     isError,
     error,
   } = useQuery({
@@ -23,6 +23,7 @@ export default function FavoritesItems() {
     retry: 1,
     retryDelay: 1000,
     timeout: 5000,
+    enabled: !!token,
   });
 
   function handleShowMoreProducts() {
@@ -30,14 +31,6 @@ export default function FavoritesItems() {
   }
 
   let favoritesItems;
-
-  if (isPending) {
-    return <LoadingIndicator />;
-  }
-
-  if (isError) {
-    return <ErrorBlock message={error.info?.message || "商品資料加載失敗"} />;
-  }
 
   if (!token) {
     favoritesItems = (
@@ -47,7 +40,7 @@ export default function FavoritesItems() {
         <span className="text-gray underline">登入</span>
       </p>
     );
-  } else if (token && favoritesProducts) {
+  } else if (token && favoritesProducts && favoritesProducts.length > 0) {
     favoritesItems = (
       <>
         <ul className="flex flex-col justify-between">
@@ -74,8 +67,16 @@ export default function FavoritesItems() {
         </button>
       </>
     );
-  } else {
+  } else if (token && favoritesProducts && favoritesProducts.length === 0) {
     favoritesItems = <p>你的最愛中未儲存任何品項</p>;
+  }
+
+  if (isLoading) {
+    return <LoadingIndicator />;
+  }
+
+  if (isError) {
+    return <ErrorBlock message={error.info?.message || "商品資料加載失敗"} />;
   }
 
   return <div className="w-full">{favoritesItems}</div>;

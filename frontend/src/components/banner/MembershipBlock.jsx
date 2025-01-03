@@ -1,6 +1,4 @@
 /* eslint-disable react/prop-types */
-import { Link } from "react-router-dom";
-
 import { DISCOUNTS } from "../../data.js";
 import Button from "../UI/Button.jsx";
 
@@ -32,9 +30,9 @@ export default function MembershipBlock({
           </table>
         </div>
         <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2">
-          <Link to="/accounts">
-            <Button bgColor="white">加入會員</Button>
-          </Link>
+          <Button link="/accounts" bgColor="white">
+            加入會員
+          </Button>
         </div>
       </div>
     </section>

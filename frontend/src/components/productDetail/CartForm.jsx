@@ -80,6 +80,7 @@ export default function CartForm({ product, onSelect }) {
       <input type="hidden" name="productName" defaultValue={product.name} />
       <input type="hidden" name="brand" defaultValue={product.brand} />
       <input type="hidden" name="alt" defaultValue={product.alt} />
+      <input type="hidden" name="slug" defaultValue={product.slug} />
       <input type="hidden" name="category" defaultValue={product.categoryCh} />
       <input
         type="hidden"

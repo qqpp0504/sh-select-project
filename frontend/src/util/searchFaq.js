@@ -33,8 +33,3 @@ export function searchFAQ(keyword) {
 
   return results;
 }
-
-const userSearch = "出貨與寄送";
-const searchResults = searchFAQ(userSearch);
-
-console.log(searchResults);

@@ -10,6 +10,7 @@ import { useEffect } from "react";
 
 export default function ProductsList({ products }) {
   const dispatch = useDispatch();
+
   let noProductsContent;
 
   const productsQuantity = products.length;
@@ -18,7 +19,7 @@ export default function ProductsList({ products }) {
     dispatch(filterActions.updateQuantity(productsQuantity));
   }, [productsQuantity, dispatch]);
 
-  if (productsQuantity == 0) {
+  if (productsQuantity === 0) {
     noProductsContent = (
       <div className="flex flex-col justify-center items-center mt-20">
         <div className="flex flex-row rounded-lg w-96 pt-5 justify-center text-4xl mb-10 gap-4">
