@@ -1,5 +1,11 @@
 import express from "express";
-import { add, addFavorite, getFavorite, get } from "../modules/user.js";
+import {
+  add,
+  addFavorite,
+  getFavorite,
+  deleteFavorite,
+  get,
+} from "../modules/user.js";
 import { createJSONToken } from "../util/auth.js";
 import bcrypt from "bcrypt";
 
@@ -129,7 +135,7 @@ router.post("/accounts/login", async (req, res, next) => {
 });
 
 // 加入最愛
-router.post("/favorites", async (req, res, next) => {
+router.post("/favorites/add", async (req, res, next) => {
   try {
     const { email, product } = req.body;
 
@@ -157,8 +163,25 @@ router.post("/favorites", async (req, res, next) => {
   }
 });
 
-// 獲取使用者最愛商品
-router.get("/favorites/:userEmail", async (req, res) => {
+// 刪除最愛商品
+router.delete("/favorites/delete", async (req, res) => {
+  const { email, favoriteId } = req.body;
+
+  try {
+    const updatedFavorites = await deleteFavorite(email, favoriteId);
+
+    res.status(201).json({
+      message: "Favorite deleted successfully.",
+      updatedFavorites,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
+// 用來獲取使用者最愛商品
+router.get("/favorites/user/:userEmail", async (req, res) => {
   const { userEmail } = req.params;
 
   if (!userEmail) {

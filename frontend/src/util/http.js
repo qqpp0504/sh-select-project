@@ -130,7 +130,7 @@ export async function addFavorites(product) {
     throw error;
   }
 
-  const response = await fetch("http://localhost:3000/favorites", {
+  const response = await fetch("http://localhost:3000/favorites/add", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -149,10 +149,38 @@ export async function addFavorites(product) {
   return resData;
 }
 
-export async function fetchUserFavorites({ userEmail, signal }) {
-  const response = await fetch(`http://localhost:3000/favorites/${userEmail}`, {
-    signal,
+export async function deleteFavoriteProduct(favoriteId) {
+  const user = localStorage.getItem("user");
+
+  const response = await fetch("http://localhost:3000/favorites/delete", {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      email: JSON.parse(user).email,
+      favoriteId: favoriteId,
+    }),
   });
+
+  if (!response.ok) {
+    const error = new Error("發生錯誤，無法刪除商品");
+    error.code = response.status;
+    error.info = await response.json();
+    throw error;
+  }
+
+  const resData = await response.json();
+  return resData;
+}
+
+export async function fetchUserFavorites({ userEmail, signal }) {
+  const response = await fetch(
+    `http://localhost:3000/favorites/user/${userEmail}`,
+    {
+      signal,
+    }
+  );
 
   if (!response.ok) {
     const error = new Error("發生錯誤，無法獲取商品資訊");

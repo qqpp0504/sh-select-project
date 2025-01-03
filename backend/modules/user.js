@@ -53,6 +53,26 @@ async function addFavorite(userEmail, product) {
   return { product };
 }
 
+async function deleteFavorite(userEmail, favoriteId) {
+  const storedData = await readData();
+
+  // 找到對應的使用者
+  const user = storedData.users.find((user) => user.email === userEmail);
+
+  if (!user) {
+    throw new Error("使用者未找到");
+  }
+
+  // 在 favorites 中找到並刪除指定的商品
+  user.favorites = user.favorites.filter(
+    (product) => product.favoriteId !== favoriteId
+  );
+
+  await writeData(storedData);
+
+  return user.favorites;
+}
+
 async function getFavorite(userEmail) {
   const storedData = await readData();
 
@@ -85,4 +105,4 @@ async function get(email) {
   return user;
 }
 
-export { add, addFavorite, getFavorite, get };
+export { add, addFavorite, getFavorite, deleteFavorite, get };
