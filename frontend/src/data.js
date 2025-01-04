@@ -6,9 +6,8 @@ export const FOOTERDATA = {
   協助: [
     { text: "取得協助", link: "/help" },
     { text: "訂單狀態", link: "/" },
-    { text: "出貨與寄送", link: "/" },
-    { text: "退貨", link: "/" },
-    { text: "付款選項", link: "/" },
+    { text: "出貨與寄送", link: "/help/shipping-delivery" },
+    { text: "退貨", link: "/help/refund-policy" },
   ],
   品牌: [
     {
