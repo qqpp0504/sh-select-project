@@ -1,15 +1,15 @@
 import { useParams } from "react-router-dom";
 
-import ReturnsPolicy from "../components/Help/questionAnswer/ReturnsPolicy.jsx";
-import HowToReturn from "../components/Help/questionAnswer/HowToReturn.jsx";
-import RefundInfo from "../components/Help/questionAnswer/RefundInfo.jsx";
-import ShippingDelivery from "../components/Help/questionAnswer/ShippingDelivery.jsx";
-import FreeShipping from "../components/Help/questionAnswer/FreeShipping.jsx";
-import InternationalShipping from "../components/Help/questionAnswer/InternationalShipping.jsx";
-import OrderTracking from "../components/Help/questionAnswer/OrderTracking.jsx";
-import ChangeCancelOrder from "../components/Help/questionAnswer/ChangeCancelOrder.jsx";
+import ReturnsPolicy from "./questionAnswer/ReturnsPolicy.jsx";
+import HowToReturn from "./questionAnswer/HowToReturn.jsx";
+import RefundInfo from "./questionAnswer/RefundInfo.jsx";
+import ShippingDelivery from "./questionAnswer/ShippingDelivery.jsx";
+import FreeShipping from "./questionAnswer/FreeShipping.jsx";
+import InternationalShipping from "./questionAnswer/InternationalShipping.jsx";
+import OrderTracking from "./questionAnswer/OrderTracking.jsx";
+import ChangeCancelOrder from "./questionAnswer/ChangeCancelOrder.jsx";
 
-export default function HelpQuestionPage() {
+export default function HelpQuestion() {
   const { questionId } = useParams();
 
   let content;

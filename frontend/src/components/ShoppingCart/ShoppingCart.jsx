@@ -4,6 +4,7 @@ import { currencyFormatter } from "../../util/formatting.js";
 import { cartActions } from "../../store/cart-slice.js";
 import trashCanIcon from "../../assets/trash-icon.png";
 import addIcon from "../../assets/add-icon.png";
+import subtractIcon from "../../assets/subtract-icon.png";
 import heartIcon from "../../assets/heart-icon.png";
 import { modalActions } from "../../store/modal-slice.js";
 
@@ -59,7 +60,9 @@ export default function ShoppingCart() {
                       className="p-[0.625rem] hover:bg-gray-200 rounded-full"
                     >
                       <img
-                        src={trashCanIcon}
+                        src={`${
+                          productItem.quantity > 1 ? subtractIcon : trashCanIcon
+                        }`}
                         alt="Trash can icon"
                         className="w-5"
                       />
@@ -74,7 +77,7 @@ export default function ShoppingCart() {
                   </div>
 
                   <button className="p-[0.6rem] hover:bg-gray-200 rounded-full border-[1px] border-gray-200">
-                    <img src={heartIcon} alt="Heart icon" className="w-4" />
+                    <img src={heartIcon} alt="Heart icon" className="w-5" />
                   </button>
                 </div>
               </div>

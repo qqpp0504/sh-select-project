@@ -1,5 +1,26 @@
 import { useEffect, useRef, useState } from "react";
-import { BANNER_MESSAGES } from "../../data.js";
+import { Link } from "react-router-dom";
+
+const BANNER_MESSAGES = [
+  {
+    text: "最高可享7折優惠",
+    noLinkText: "",
+    linkText: "選購我們所有最新優惠商品",
+    link: "/products?onSale=sale",
+  },
+  {
+    text: "加入我們的會員，享受更多優惠！",
+    noLinkText: "",
+    linkText: "加入",
+    link: "/accounts",
+  },
+  {
+    text: "免費寄送",
+    noLinkText: "適用於 NT$4,500 以上的訂單。",
+    linkText: "查看詳細資訊",
+    link: "/help/shipping-delivery",
+  },
+];
 
 export default function BannerBar() {
   const interval = useRef();
@@ -30,7 +51,9 @@ export default function BannerBar() {
             <p className="pb-1">{message.text}</p>
             <div className="flex justify-center text-[0.8rem]">
               <p>{message.noLinkText}</p>
-              <p className="underline font-500">{message.linkText}</p>
+              <Link to={message.link} className="underline font-500">
+                {message.linkText}
+              </Link>
             </div>
           </div>
         ))}

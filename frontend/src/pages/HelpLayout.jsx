@@ -40,7 +40,7 @@ export default function HelpLayout() {
       <div className="max-w-[78rem] w-full flex flex-col items-center mt-10">
         <div className="flex flex-col w-[29rem] gap-4 mb-24">
           <h1 className="text-[2.1rem] font-500 text-center">取得協助</h1>
-          <div className="relative">
+          <form className="relative">
             <Input
               placeholderText="我們能提供你什麼協助？"
               paddingStyle="p-[0.9rem]"
@@ -53,7 +53,7 @@ export default function HelpLayout() {
             >
               <img src={searchIcon} alt="Search icon" className="w-6" />
             </button>
-          </div>
+          </form>
         </div>
 
         <Outlet />

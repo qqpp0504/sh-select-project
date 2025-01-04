@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import ShoppingCart from "./ShoppingCart.jsx";
 import ShoppingSummary from "./ShoppingSummary.jsx";
 import ResizableModal from "./ResizableModal.jsx";
-import FavoritesItems from "./FavoritesItems.jsx";
+import FavoritesBlock from "./FavoritesBlock.jsx";
 
 export default function CartOverview() {
   const activeItem = useSelector((state) => state.cart.activeItem);
@@ -19,7 +19,7 @@ export default function CartOverview() {
           </div>
           <div className="mt-7">
             <h2 className="text-2xl font-500 mb-7">最愛</h2>
-            <FavoritesItems />
+            <FavoritesBlock />
           </div>
         </div>
       </div>

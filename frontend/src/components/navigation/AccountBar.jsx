@@ -4,6 +4,7 @@ import { useEffect } from "react";
 
 import { accountActions } from "../../store/account-slice.js";
 import accountIcon from "../../assets/account-icon.png";
+import DropdownMenu from "./DropdownMenu.jsx";
 
 export default function AccountBar() {
   const navigate = useNavigate();
@@ -52,39 +53,36 @@ export default function AccountBar() {
   if (userData.token) {
     userMenu = (
       <>
-        <li className="group border-solid border-r-1 border-black px-3 hover:text-gray">
-          <div className="flex items-center gap-2 cursor-pointer">
+        <li className="group border-solid border-r-1 border-black px-3 hover:text-gray py-2 -my-2">
+          <Link to="/" className="flex items-center gap-2">
             <span>{`${userData.user.lastName}${userData.user.firstName}，你好`}</span>
             <img src={accountIcon} alt="Account icon" className="w-5" />
-          </div>
+          </Link>
 
-          <div className="absolute right-14 top-full hidden w-[15rem] pt-5 -mt-5 z-10 text-black hover:block group-hover:block">
-            <div className="bg-white rounded-b-lg px-6 py-4">
-              <span className="text-lg mb-2 inline-block">帳號</span>
-              <ul className="text-gray flex flex-col gap-2">
-                <li>
-                  <Link to="/" className="hover:text-black">
-                    個人檔案
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="hover:text-black">
-                    訂單
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="hover:text-black">
-                    最愛
-                  </Link>
-                </li>
-                <li>
-                  <button onClick={handleLogout} className="hover:text-black">
-                    登出
-                  </button>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <DropdownMenu title="帳號">
+            <ul className="text-gray flex flex-col gap-2">
+              <li>
+                <Link to="/" className="hover:text-black">
+                  個人檔案
+                </Link>
+              </li>
+              <li>
+                <Link to="/" className="hover:text-black">
+                  訂單
+                </Link>
+              </li>
+              <li>
+                <Link to="/favorites" className="hover:text-black">
+                  最愛
+                </Link>
+              </li>
+              <li>
+                <button onClick={handleLogout} className="hover:text-black">
+                  登出
+                </button>
+              </li>
+            </ul>
+          </DropdownMenu>
         </li>
       </>
     );
@@ -94,11 +92,34 @@ export default function AccountBar() {
     <div className="relative flex justify-between text-[0.8rem] bg-gray-100 px-12 py-2">
       <h2 className="uppercase">SH Select</h2>
       <nav>
-        <ul className="flex flex-row items-center">
-          <li className="border-solid border-r-1 border-black px-3 hover:text-gray">
+        <ul className="flex flex-row items-center list-none">
+          <li className="group border-solid border-r-1 border-black px-3 hover:text-gray py-2 -my-2">
             <Link to="/help" onClick={handlePreventDefault}>
               協助
             </Link>
+
+            <DropdownMenu title="協助">
+              <ul className="text-gray flex flex-col gap-2">
+                <li>
+                  <Link to="/help/refund-policy" className="hover:text-black">
+                    退貨
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/help/shipping-delivery"
+                    className="hover:text-black"
+                  >
+                    出貨與寄送
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/help/order-tracking" className="hover:text-black">
+                    訂單與付款
+                  </Link>
+                </li>
+              </ul>
+            </DropdownMenu>
           </li>
           <div>|</div>
           {userMenu}

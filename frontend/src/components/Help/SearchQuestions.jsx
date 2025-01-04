@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 
-export default function SearchQuestionsPage() {
+export default function SearchQuestions() {
   const { searchResult } = useSelector((state) => state.searchFaq);
   const [displayText, setDisplayText] = useState("");
   const { searchTerm } = useParams();
@@ -28,7 +28,7 @@ export default function SearchQuestionsPage() {
                 <h3 className="text-2xl font-500 mb-1">{result.question}</h3>
               </Link>
 
-              <p className="font-light text-sm">{`${
+              <p className="text-sm">{`${
                 Array.isArray(result.keywords)
                   ? result.keywords[0]
                   : result.keywords
@@ -43,7 +43,7 @@ export default function SearchQuestionsPage() {
     allSearchResult = (
       <div className="text-center mt-9">
         <p className="text-xl mb-2">找不到結果</p>
-        <span className="text-sm font-light">聯絡我們</span>
+        <span className="text-sm">聯絡我們</span>
       </div>
     );
   }

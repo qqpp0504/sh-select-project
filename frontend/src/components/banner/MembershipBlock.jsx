@@ -1,6 +1,20 @@
 /* eslint-disable react/prop-types */
-import { DISCOUNTS } from "../../data.js";
 import Button from "../UI/Button.jsx";
+
+const DISCOUNTS = [
+  {
+    description: "首次購物折扣",
+    details: "新會員註冊後，首次購物可享有100元折扣。",
+  },
+  {
+    description: "購物金回饋",
+    details: "消費每滿500元即可累積5元購物金，下次購物可折抵。",
+  },
+  {
+    description: "生日優惠",
+    details: "會員生日當月可享有一次免費運費的專屬優惠。",
+  },
+];
 
 export default function MembershipBlock({
   image,

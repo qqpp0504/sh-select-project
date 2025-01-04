@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useQuery } from "@tanstack/react-query";
 
@@ -7,7 +8,8 @@ import LoadingIndicator from "../UI/LoadingIndicator.jsx";
 import ErrorBlock from "../UI/ErrorBlock.jsx";
 import FavoritesProducts from "./FavoritesProducts.jsx";
 
-export default function FavoritesItems() {
+export default function FavoritesBlock() {
+  const navigate = useNavigate();
   const [isShowMore, setIsShowMore] = useState(false);
   const { token, user } = useSelector((state) => state.account.userData);
   const {
@@ -27,6 +29,11 @@ export default function FavoritesItems() {
   });
 
   function handleShowMoreProducts() {
+    if (isShowMore === true || favoritesProducts.length <= 2) {
+      navigate("/favorites");
+      return;
+    }
+
     setIsShowMore(true);
   }
 
@@ -36,8 +43,13 @@ export default function FavoritesItems() {
     favoritesItems = (
       <p>
         想要檢視你的最愛嗎？{" "}
-        <span className="text-gray underline">加入我們</span> 或{" "}
-        <span className="text-gray underline">登入</span>
+        <Link to="/accounts">
+          <span className="text-gray underline">加入我們</span>
+        </Link>{" "}
+        或{" "}
+        <Link to="/accounts">
+          <span className="text-gray underline">登入</span>
+        </Link>
       </p>
     );
   } else if (token && favoritesProducts && favoritesProducts.length > 0) {
@@ -63,7 +75,11 @@ export default function FavoritesItems() {
           onClick={handleShowMoreProducts}
           className="mt-5 text-gray text-sm border-b-[1px] border-gray-500 w-fit"
         >
-          {`${isShowMore ? "前往最愛" : "檢視更多最愛"}`}
+          {`${
+            isShowMore || favoritesProducts.length <= 2
+              ? "前往最愛"
+              : "檢視更多最愛"
+          }`}
         </button>
       </>
     );

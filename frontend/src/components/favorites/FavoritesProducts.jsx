@@ -22,7 +22,7 @@ export default function FavoritesProducts({ products, refetch }) {
   });
 
   function handleStartDeleteFavorite(favoritesProductId) {
-    if (isPending) {
+    if (favoriteProductId.includes(favoritesProductId)) {
       return;
     }
 
@@ -85,7 +85,9 @@ export default function FavoritesProducts({ products, refetch }) {
             </Link>
 
             <button
-              onClick={() => handleStartDeleteFavorite(product.favoriteId)}
+              onClick={() =>
+                !isPending && handleStartDeleteFavorite(product.favoriteId)
+              }
               className="absolute top-4 right-4 bg-white p-2 rounded-full"
             >
               {favoriteProductId.includes(product.favoriteId) ? (
