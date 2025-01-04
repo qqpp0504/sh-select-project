@@ -4,7 +4,32 @@ import { FOOTERDATA } from "../data.js";
 import facebookLogo from "../assets/facebook-logo.png";
 import instagramLogo from "../assets/instagram-logo.png";
 import lineLogo from "../assets/line-logo.png";
-import mapLogo from "../assets/map-logo.png";
+import pinLogo from "../assets/pin-icon.png";
+
+const COMMUNITYLOGO = [
+  {
+    logo: facebookLogo,
+    alt: "Facebook Logo",
+    href: "https://www.facebook.com/",
+  },
+  {
+    logo: instagramLogo,
+    alt: "Instagram Logo",
+    href: "https://www.instagram.com/",
+  },
+  {
+    logo: lineLogo,
+    alt: "Line Logo",
+    href: "https://line.me/tw/",
+  },
+  {
+    logo: pinLogo,
+    alt: "Map pin Logo",
+    href: "https://www.google.com/maps/",
+  },
+];
+
+const currentYear = new Date().getFullYear();
 
 export default function Footer() {
   return (
@@ -30,46 +55,17 @@ export default function Footer() {
         </div>
       </div>
       <div className="bg-gray-100 pt-8 flex flex-col items-center">
-        <ul className="flex flex-row items-center w-[15%]">
-          <li>
-            <a
-              href="https://www.facebook.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={facebookLogo} alt="Facebook Logo" />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.instagram.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={instagramLogo} alt="Instagram Logo" />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://line.me/tw/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={lineLogo} alt="Line Logo" />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.google.com/maps/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={mapLogo} alt="Google Map Logo" className="w-64" />
-            </a>
-          </li>
+        <ul className="flex flex-row items-center w-[14%] gap-3 mb-1">
+          {COMMUNITYLOGO.map((logoItem) => (
+            <li key={logoItem.logo}>
+              <a href={logoItem.href} target="_blank" rel="noopener noreferrer">
+                <img src={logoItem.logo} alt={logoItem.alt} />
+              </a>
+            </li>
+          ))}
         </ul>
         <span className="py-2 text-gray uppercase text-sm">
-          2024 &copy; SH Select
+          {`${currentYear}`} &copy; SH Select
         </span>
       </div>
     </>
