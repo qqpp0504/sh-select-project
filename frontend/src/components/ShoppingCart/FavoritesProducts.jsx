@@ -1,4 +1,6 @@
 /* eslint-disable react/prop-types */
+import { Link } from "react-router-dom";
+
 import { currencyFormatter } from "../../util/formatting";
 import Button from "../UI/Button.jsx";
 
@@ -6,20 +8,23 @@ export default function FavoritesProducts({ product }) {
   return (
     <li className="flex items-start gap-5 pb-8 w-1/2">
       <div>
-        <div className="min-w-40 h-40 w-40 bg-gray-100 flex justify-center items-center">
+        <Link
+          to={`/products/${product.slug}`}
+          className="min-w-40 h-40 w-40 bg-gray-100 flex justify-center items-center"
+        >
           <img
             src={`http://localhost:3000/${product.color.image}`}
             alt={product.alt}
             className="w-[90%]"
           />
-        </div>
+        </Link>
       </div>
 
       <div className="flex flex-col gap-1 w-full h-full">
         <div className="flex justify-between">
-          <span className="font-500">
+          <Link to={`/products/${product.slug}`} className="font-500">
             {product.brand} - {product.productName}
-          </span>
+          </Link>
 
           <div className="font-500">
             {product.discountPrice !== product.originalPrice && (

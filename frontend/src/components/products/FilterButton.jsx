@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useDispatch, useSelector } from "react-redux";
 
+import "./FilterButton.css";
 import { filterActions } from "../../store/filter-slice.js";
 
 export default function FilterButton({

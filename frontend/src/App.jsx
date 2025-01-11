@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { QueryClientProvider } from "@tanstack/react-query";
 
+import "./App.css";
 import { queryClient } from "./util/http.js";
 import RootLayout from "./pages/RootLayout.jsx";
 import BrandsPage from "./pages/Brands.jsx";

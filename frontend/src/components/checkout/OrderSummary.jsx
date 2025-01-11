@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 
+import "./OrderSummary.css";
 import Summary from "../ShoppingCart/Summary.jsx";
 import Tooltip from "../UI/ToolTip.jsx";
 import { currencyFormatter } from "../../util/formatting.js";

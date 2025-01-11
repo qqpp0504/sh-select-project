@@ -1,0 +1,28 @@
+.unchecked,
+.checked {
+  @apply flex items-center pr-10;
+}
+
+.unchecked::before {
+  content: "";
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  background-image: url("../../assets/checkbox-unchecked-icon.png");
+  background-position: center;
+  background-size: contain;
+  vertical-align: middle;
+  margin-right: 3px;
+}
+
+.checked::before {
+  content: "";
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  background-image: url("../../assets/checkbox-checked-icon.png");
+  background-position: center;
+  background-size: contain;
+  vertical-align: middle;
+  margin-right: 3px;
+}

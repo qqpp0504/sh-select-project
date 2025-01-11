@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 import { currencyFormatter } from "../../util/formatting.js";
@@ -39,13 +40,16 @@ export default function ShoppingCart() {
               className="flex items-start gap-5 w-full border-b-[1px] border-gray-200 pb-14"
             >
               <div>
-                <div className="min-w-40 h-40 w-40 bg-gray-100 flex justify-center items-center">
+                <Link
+                  to={`/products/${productItem.slug}`}
+                  className="min-w-40 h-40 w-40 bg-gray-100 flex justify-center items-center"
+                >
                   <img
                     src={`http://localhost:3000/${productItem.color.image}`}
                     alt={productItem.alt}
                     className="w-[90%]"
                   />
-                </div>
+                </Link>
                 <div className="flex items-center justify-between mt-3">
                   <div className="flex items-center justify-between border-[1px] border-gray-200 rounded-full w-[70%]">
                     <button
@@ -84,9 +88,12 @@ export default function ShoppingCart() {
 
               <div className="flex flex-col gap-1">
                 <div className="flex justify-between w-[35rem]">
-                  <span className="font-500">
+                  <Link
+                    to={`/products/${productItem.slug}`}
+                    className="font-500"
+                  >
                     {productItem.brand} - {productItem.productName}
-                  </span>
+                  </Link>
 
                   <div className="font-500">
                     {productItem.discountPrice !==

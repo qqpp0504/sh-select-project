@@ -2,20 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-img {
-  -webkit-user-drag: none;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-}
-
 @layer utilities {
   .padding-large {
     @apply px-12;
@@ -31,67 +17,6 @@ img {
 
   .text-new {
     color: #9e3501;
-  }
-
-  .accordion-header {
-    @apply py-4 block cursor-pointer;
-  }
-
-  .accordion-header img {
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .accordion-toggle {
-    display: none;
-  }
-
-  .accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .accordion-content button:hover {
-    @apply text-gray-600;
-  }
-
-  .accordion-toggle:checked ~ .accordion-content {
-    max-height: 20rem;
-  }
-
-  .accordion-toggle:checked + .accordion-header img {
-    transform: rotate(180deg);
-  }
-
-  .unchecked,
-  .checked {
-    @apply flex items-center pr-10;
-  }
-
-  .unchecked::before {
-    content: "";
-    display: inline-block;
-    width: 26px;
-    height: 26px;
-    background-image: url("./assets/checkbox-unchecked-icon.png");
-    background-position: center;
-    background-size: contain;
-    vertical-align: middle;
-    margin-right: 3px;
-  }
-
-  .checked::before {
-    content: "";
-    display: inline-block;
-    width: 26px;
-    height: 26px;
-    background-image: url("./assets/checkbox-checked-icon.png");
-    background-position: center;
-    background-size: contain;
-    vertical-align: middle;
-    margin-right: 3px;
   }
 
   .account-checked,
@@ -122,48 +47,4 @@ img {
     vertical-align: middle;
     margin-right: 14px;
   }
-
-  .dropdown-toggle:checked ~ .dropdown-form {
-    max-height: fit-content;
-  }
-
-  .dropdown-form {
-    max-height: 0;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-  }
-
-  progress::-webkit-progress-bar {
-    background-color: #e5e7eb;
-    border-radius: 10px;
-  }
-  progress::-webkit-progress-value {
-    border-radius: 10px;
-  }
-}
-
-.more-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-in-out;
-}
-
-.show-more-checkbox:checked + .filter-content .more-content {
-  max-height: 10rem;
-}
-
-.show-more-label {
-  display: block;
-  margin-top: 0.5rem;
-  cursor: pointer;
-  user-select: none;
-}
-
-.show-more-checkbox:checked ~ .filter-content .show-more-label::before {
-  content: "- 精簡";
-}
-
-.show-more-checkbox:not(:checked) ~ .filter-content .show-more-label::before {
-  content: "+ 更多";
 }

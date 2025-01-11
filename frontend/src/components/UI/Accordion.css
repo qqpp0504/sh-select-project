@@ -1,0 +1,31 @@
+.accordion-header {
+  @apply py-4 block cursor-pointer;
+}
+
+.accordion-header img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.accordion-toggle {
+  display: none;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion-content button:hover {
+  @apply text-gray-600;
+}
+
+.accordion-toggle:checked ~ .accordion-content {
+  max-height: 20rem;
+}
+
+.accordion-toggle:checked + .accordion-header img {
+  transform: rotate(180deg);
+}

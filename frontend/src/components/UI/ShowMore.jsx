@@ -1,4 +1,6 @@
 /* eslint-disable react/prop-types */
+import "./ShowMore.css";
+
 export default function ShowMore({ content, more }) {
   return (
     <>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
+import "./ShippingInformation.css";
 import Button from "../UI/Button.jsx";
 import Input from "../UI/Input.jsx";
 import CustomerForm from "./CustomerForm.jsx";
