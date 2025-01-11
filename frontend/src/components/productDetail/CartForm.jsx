@@ -11,6 +11,8 @@ import heartIcon from "../../assets/heart-icon.png";
 import { cartActions } from "../../store/cart-slice.js";
 import { addFavorites } from "../../util/http.js";
 import { accountActions } from "../../store/account-slice.js";
+import ErrorModal from "../UI/ErrorModal.jsx";
+import LoadingIndicator from "../UI/LoadingIndicator.jsx";
 
 export default function CartForm({ product, onSelect }) {
   const [sizeData, setSizeData] = useState(null);
@@ -21,6 +23,7 @@ export default function CartForm({ product, onSelect }) {
     mutationFn: addFavorites,
     onSuccess: (resData) => {
       dispatch(accountActions.addFavorite(resData));
+      addNotification(resData.favorite.product, "addToFavorites");
     },
   });
 
@@ -54,7 +57,6 @@ export default function CartForm({ product, onSelect }) {
       addNotification(data, "addToCart");
     } else if (action === "addToFavorites") {
       mutate(data);
-      addNotification(data, "addToFavorites");
     }
   }
 
@@ -172,19 +174,26 @@ export default function CartForm({ product, onSelect }) {
           加入購物車
         </FeatureButton>
         <FeatureButton
-          type="submit"
+          type={isPending ? "button" : "submit"}
           name="action"
           value="addToFavorites"
           bgColor="white"
           className="flex justify-center items-center gap-[0.3rem]"
         >
-          最愛
-          <img src={heartIcon} alt="Heart icon" className="w-[22px]" />
+          {isPending ? (
+            <LoadingIndicator margin="my-0" size="w-6 h-6" />
+          ) : (
+            <>
+              <span>最愛</span>
+              <img src={heartIcon} alt="Heart icon" className="w-[22px]" />
+            </>
+          )}
         </FeatureButton>
       </div>
 
-      {isPending && <p>isPending</p>}
-      {isError && <p>{error}</p>}
+      {isError && (
+        <ErrorModal message={error.info?.message || "產品已加入願望清單。"} />
+      )}
     </form>
   );
 }

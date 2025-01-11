@@ -2,11 +2,12 @@
 export default function LoadingIndicator({
   color = "black",
   margin = "my-20",
+  size = "w-10 h-10",
 }) {
   let borderStyle;
 
   if (color === "black") {
-    borderStyle = "border-black w-10 h-10";
+    borderStyle = `border-black ${size}`;
   } else if (color === "white") {
     borderStyle = "border-white w-6 h-6";
   }

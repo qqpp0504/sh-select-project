@@ -68,7 +68,11 @@ export default function CartNotification() {
       <div className="flex flex-col justify-between h-full">
         <div className="flex gap-2">
           <img src={successIcon} alt="Success icon" className="w-7" />
-          <span className="font-500">已加入購物車</span>
+          <span className="font-500">{`${
+            showingNotification.type === "addToCart"
+              ? "已加入購物車"
+              : "已加入最愛"
+          } `}</span>
         </div>
         <button
           onClick={handleCloseNotification}

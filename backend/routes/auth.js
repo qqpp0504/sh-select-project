@@ -154,7 +154,6 @@ router.post("/favorites/add", async (req, res, next) => {
     const favorite = await addFavorite(email, product);
 
     res.status(201).json({
-      message: "Favorite added successfully.",
       favorite,
     });
   } catch (error) {
