@@ -66,6 +66,7 @@ export default function Footer() {
         </ul>
         <span className="py-2 text-gray uppercase text-sm">
           {`${currentYear}`} &copy; SH Select
+          此網站僅作為作品集展示用途，故請勿下單
         </span>
       </div>
     </>

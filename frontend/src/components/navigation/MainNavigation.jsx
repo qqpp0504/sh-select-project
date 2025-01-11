@@ -8,10 +8,10 @@ import { cartActions } from "../../store/cart-slice.js";
 
 export default function MainNavigation() {
   const dispatch = useDispatch();
-  const { isShowingNotification } = useSelector((state) => state.cart);
+  const { showingNotification } = useSelector((state) => state.cart);
 
   useEffect(() => {
-    if (isShowingNotification) {
+    if (showingNotification.isOpen) {
       document.body.style.overflow = "hidden"; // 禁止滾動
     } else {
       document.body.style.overflow = ""; // 恢復滾動
@@ -20,7 +20,7 @@ export default function MainNavigation() {
     return () => {
       document.body.style.overflow = "";
     };
-  }, [isShowingNotification]);
+  }, [showingNotification.isOpen]);
 
   function handleCloseNotification() {
     dispatch(cartActions.closeNotification());
@@ -30,12 +30,12 @@ export default function MainNavigation() {
     <header className="relative">
       <AccountBar />
       <MainNav />
-      {isShowingNotification && (
+      {showingNotification.isOpen && (
         <>
-          <CartNotification open={isShowingNotification} />
+          <CartNotification open={showingNotification.isOpen} />
           <div
             onClick={handleCloseNotification}
-            className="bg-gray-900 bg-opacity-20 z-5 absolute top-full left-0 bottom-0 w-full h-screen"
+            className="bg-gray-900 bg-opacity-20 z-10 absolute top-full left-0 bottom-0 w-full h-screen"
           ></div>
         </>
       )}

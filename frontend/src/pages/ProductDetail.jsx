@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchProductDetail } from "../util/http.js";
 import LoadingIndicator from "../components/UI/LoadingIndicator.jsx";
 import ErrorBlock from "../components/UI/ErrorBlock.jsx";
-import ProductItem from "../components/productDetail/productItem.jsx";
+import ProductItem from "../components/productDetail/ProductItem.jsx";
 import DetailInformationModal from "../components/productDetail/DetailInformationModal.jsx";
 import SizeDetailModal from "../components/productDetail/SizeDetailModal.jsx";
 

@@ -7,7 +7,7 @@ const initialCartState = {
   totalAmount: 0,
   totalPrice: 0,
   shippingFee: 0,
-  isShowingNotification: false,
+  showingNotification: { isOpen: false, type: "" },
   scrollPosition: 0,
 };
 
@@ -84,15 +84,7 @@ const cartSlice = createSlice({
       }
     },
     checkItemStatus(state, action) {
-      const currentItem = action.payload;
-      const existingItem = state.items.find(
-        (item) =>
-          item.id === currentItem.id &&
-          item.color.name === currentItem.color.name &&
-          item.size === currentItem.size
-      );
-
-      state.activeItem = existingItem;
+      state.activeItem = action.payload;
     },
     updatedSize(state, action) {
       const { id, color, size, idNumber } = action.payload;
@@ -105,11 +97,12 @@ const cartSlice = createSlice({
 
       existingItem.size = size;
     },
-    showNotification(state) {
-      state.isShowingNotification = true;
+    showNotification(state, action) {
+      state.showingNotification.isOpen = true;
+      state.showingNotification.type = action.payload;
     },
     closeNotification(state) {
-      state.isShowingNotification = false;
+      state.showingNotification.isOpen = false;
     },
     updatedScrollPosition(state, action) {
       state.scrollPosition = action.payload;

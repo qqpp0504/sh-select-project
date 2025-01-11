@@ -51,17 +51,22 @@ export default function CartForm({ product, onSelect }) {
       }
 
       dispatch(cartActions.addToCart(data));
-      dispatch(cartActions.checkItemStatus(data));
-
-      dispatch(cartActions.updatedScrollPosition(window.scrollY));
-      window.scrollTo({
-        top: 0,
-      });
-
-      dispatch(cartActions.showNotification());
+      addNotification(data, "addToCart");
     } else if (action === "addToFavorites") {
       mutate(data);
+      addNotification(data, "addToFavorites");
     }
+  }
+
+  function addNotification(data, type) {
+    dispatch(cartActions.checkItemStatus(data));
+
+    dispatch(cartActions.updatedScrollPosition(window.scrollY));
+    window.scrollTo({
+      top: 0,
+    });
+
+    dispatch(cartActions.showNotification(type));
   }
 
   function handleSizeChange(event) {
