@@ -1,10 +1,21 @@
 /* eslint-disable react/prop-types */
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
 import "./BrandDetail.css";
 import Button from "../UI/Button.jsx";
 
-export default function BrandDetail({ brand }) {
+export default function BrandDetail({ brand, index }) {
+  useEffect(() => {
+    AOS.init({ duration: 1500 });
+  }, []);
+
   return (
-    <li className="brand w-full">
+    <li
+      data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+      className="brand w-full"
+    >
       <div className="flex gap-8">
         <div className="w-[30%] h-[20rem] rounded-2xl overflow-hidden">
           <img

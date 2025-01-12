@@ -20,8 +20,8 @@ export default function BrandsPage() {
 
       <div className="padding-large">
         <ul className="flex flex-col gap-10">
-          {BRANDS.map((brand) => (
-            <BrandDetail key={brand.title} brand={brand} />
+          {BRANDS.map((brand, index) => (
+            <BrandDetail key={brand.title} index={index} brand={brand} />
           ))}
         </ul>
       </div>

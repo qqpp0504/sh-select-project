@@ -48,6 +48,12 @@ export default function SideBar({ children }) {
     onSale.length > 0 && "特惠商品",
   ].filter(Boolean);
 
+  function formatBrandName(brand) {
+    const spacedBrand = brand.replace(/([A-Z])/g, " $1").trim();
+
+    return spacedBrand.charAt(0).toUpperCase() + spacedBrand.slice(1);
+  }
+
   // 如果有篩選條件，就將它們合併到 filterText
   if (activeFilters.length > 0) {
     filterText = activeFilters.join(" "); // 用空格連接條件文字
@@ -55,7 +61,7 @@ export default function SideBar({ children }) {
 
   if (brands.length === 1) {
     filterText = activeFilters.join(" ");
-    filterText += " " + brands[0];
+    filterText += " " + formatBrandName(brands[0]);
   }
 
   if (search) {
@@ -106,7 +112,7 @@ export default function SideBar({ children }) {
         <ol className="flex flex-row">
           {brands.map((brand, index) => (
             <>
-              <li key={brand}>{brand}</li>
+              <li key={brand}>{formatBrandName(brand)}</li>
               {index < brands.length - 1 && <span className="px-2">/</span>}
             </>
           ))}
