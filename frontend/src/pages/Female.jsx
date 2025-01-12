@@ -40,7 +40,7 @@ export default function FemalePage() {
       <Banner {...bannerData.banner} />
       <NewSelectedProducts products={bannerData.selectedProducts} />
       <RecommendationProducts products={bannerData.recommendationProducts} />
-      <BrandsProducts products={bannerData.brandsProducts} />
+      <BrandsProducts />
       <MembershipBlock image={membershipBannerImage} alt="Membership image" />
     </>
   );

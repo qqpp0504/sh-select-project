@@ -10,6 +10,7 @@ export default function Banner({
   description,
   buttonText,
   link,
+  type = "backend",
 }) {
   return (
     <section className="padding-large">
@@ -18,7 +19,7 @@ export default function Banner({
       )}
       <div className="h-[85vh] flex justify-center">
         <img
-          src={`http://localhost:3000/${image}`}
+          src={type === "backend" ? `http://localhost:3000/${image}` : image}
           alt={alt}
           className="w-full h-full object-cover"
         />

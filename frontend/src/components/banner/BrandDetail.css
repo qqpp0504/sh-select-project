@@ -1,0 +1,7 @@
+.brand:nth-child(odd) {
+  direction: ltr;
+}
+
+.brand:nth-child(even) {
+  direction: rtl;
+}

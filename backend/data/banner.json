@@ -16,14 +16,6 @@
       "buttonText": "立即查看新品",
       "link": "/products?newProduct=new"
     },
-    "thirdBanner": {
-      "image": "brands-banner.jpg",
-      "alt": "各種品牌圖片",
-      "title": "探索頂尖品牌，展現非凡選擇",
-      "description": "匯聚全球知名品牌，為你帶來更豐富的生活選擇。",
-      "buttonText": "探索各種品牌",
-      "link": "/products"
-    },
     "selectedProducts": [
       {
         "image": "nike-air-jordan.jpg",
@@ -74,56 +66,6 @@
         "alt": "Nike Logo 長襪圖片",
         "title": "Nike - Logo 運動長襪",
         "slug": "p4-nike-LogoSocks運動長襪"
-      }
-    ],
-    "brandsProducts": [
-      {
-        "image": "nike-logo.jpg",
-        "alt": "Nike Logo圖片",
-        "title": "Nike",
-        "link": "/products?brands=nike"
-      },
-      {
-        "image": "asics-logo.jpg",
-        "alt": "Asics Logo圖片",
-        "title": "Asics",
-        "link": "/products?brands=asics"
-      },
-      {
-        "image": "the-north-face-logo.jpg",
-        "alt": "The North Face Logo圖片",
-        "title": "The North Face",
-        "link": "/products?brands=theNorthFace"
-      },
-      {
-        "image": "mizuno-logo.jpg",
-        "alt": "Mizuno Logo圖片",
-        "title": "Mizuno",
-        "link": "/products?brands=mizuno"
-      },
-      {
-        "image": "adidas-logo.jpg",
-        "alt": "Adidas Logo圖片",
-        "title": "Adidas",
-        "link": "/products?brands=adidas"
-      },
-      {
-        "image": "nautica-logo.jpg",
-        "alt": "Nautica Logo圖片",
-        "title": "Nautica",
-        "link": "/products?brands=nautica"
-      },
-      {
-        "image": "converse-logo.jpg",
-        "alt": "Converse Logo圖片",
-        "title": "Converse",
-        "link": "/products?brands=converse"
-      },
-      {
-        "image": "ordinary-logo.jpg",
-        "alt": "Oridnary Logo圖片",
-        "title": "Ordinary",
-        "link": "/products?brands=ordinary"
       }
     ]
   },
@@ -195,48 +137,6 @@
         "price": "550",
         "slug": "p22-carhartt-WIP經典方標針織毛帽"
       }
-    ],
-    "brandsProducts": [
-      {
-        "image": "nike-logo.jpg",
-        "alt": "Nike Logo圖片",
-        "title": "Nike"
-      },
-      {
-        "image": "asics-logo.jpg",
-        "alt": "Asics Logo圖片",
-        "title": "Asics"
-      },
-      {
-        "image": "the-north-face-logo.jpg",
-        "alt": "The North Face Logo圖片",
-        "title": "The North Face"
-      },
-      {
-        "image": "mizuno-logo.jpg",
-        "alt": "Mizuno Logo圖片",
-        "title": "Mizuno"
-      },
-      {
-        "image": "adidas-logo.jpg",
-        "alt": "Adidas Logo圖片",
-        "title": "Adidas"
-      },
-      {
-        "image": "nautica-logo.jpg",
-        "alt": "Nautica Logo圖片",
-        "title": "Nautica"
-      },
-      {
-        "image": "converse-logo.jpg",
-        "alt": "Converse Logo圖片",
-        "title": "Converse"
-      },
-      {
-        "image": "ordinary-logo.jpg",
-        "alt": "Oridnary Logo圖片",
-        "title": "Ordinary"
-      }
     ]
   },
   "femalePage": {
@@ -306,48 +206,6 @@
         "name": "Gazelle Bold W",
         "price": "4950",
         "slug": "p19-adidas-GazelleBoldW"
-      }
-    ],
-    "brandsProducts": [
-      {
-        "image": "nike-logo.jpg",
-        "alt": "Nike Logo圖片",
-        "title": "Nike"
-      },
-      {
-        "image": "asics-logo.jpg",
-        "alt": "Asics Logo圖片",
-        "title": "Asics"
-      },
-      {
-        "image": "the-north-face-logo.jpg",
-        "alt": "The North Face Logo圖片",
-        "title": "The North Face"
-      },
-      {
-        "image": "mizuno-logo.jpg",
-        "alt": "Mizuno Logo圖片",
-        "title": "Mizuno"
-      },
-      {
-        "image": "adidas-logo.jpg",
-        "alt": "Adidas Logo圖片",
-        "title": "Adidas"
-      },
-      {
-        "image": "nautica-logo.jpg",
-        "alt": "Nautica Logo圖片",
-        "title": "Nautica"
-      },
-      {
-        "image": "converse-logo.jpg",
-        "alt": "Converse Logo圖片",
-        "title": "Converse"
-      },
-      {
-        "image": "ordinary-logo.jpg",
-        "alt": "Oridnary Logo圖片",
-        "title": "Ordinary"
       }
     ]
   }

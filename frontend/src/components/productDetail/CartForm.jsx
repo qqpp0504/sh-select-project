@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useMutation } from "@tanstack/react-query";
+import { useNavigate } from "react-router-dom";
 
 import SelectBlock from "../UI/SelectBlock.jsx";
 import { modalActions } from "../../store/modal-slice.js";
@@ -15,9 +16,11 @@ import ErrorModal from "../UI/ErrorModal.jsx";
 import LoadingIndicator from "../UI/LoadingIndicator.jsx";
 
 export default function CartForm({ product, onSelect }) {
+  const { token } = useSelector((state) => state.account.userData);
   const [sizeData, setSizeData] = useState(null);
   const [reminder, setReminder] = useState("");
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const { mutate, isPending, isError, error } = useMutation({
     mutationFn: addFavorites,
@@ -56,7 +59,11 @@ export default function CartForm({ product, onSelect }) {
       dispatch(cartActions.addToCart(data));
       addNotification(data, "addToCart");
     } else if (action === "addToFavorites") {
-      mutate(data);
+      if (token) {
+        mutate(data);
+      } else {
+        navigate("/accounts");
+      }
     }
   }
 
