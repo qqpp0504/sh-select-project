@@ -122,7 +122,7 @@ export default function CartForm({ product, onSelect }) {
                 id={`${option.name}`}
                 value={JSON.stringify(option)}
                 name="color"
-                onSelect={() => onSelect(option.image)}
+                onSelect={() => onSelect(option.image, index)}
                 defaultChecked={index === 0}
               >
                 {option.name}
