@@ -16,7 +16,6 @@ function Input(
   ref
 ) {
   let defaultTextClassName = "absolute text-xs text-gray left-4 bottom-[-19px]";
-  let inputClass = "border-gray-300 rounded-[0.3rem]";
   let defaultErrorTextClass = "absolute left-4 bottom-[-21px]";
 
   if (className === "greenPoint") {
@@ -38,9 +37,9 @@ function Input(
       <input
         ref={ref}
         value={value}
-        className={`w-full border-[1px] outline-none peer hover:border-black ${paddingStyle} ${inputClass} ${className} ${
+        className={`w-full border-[1px] outline-none peer hover:border-black border-gray-300 rounded-lg ${paddingStyle} ${className} ${
           error
-            ? "border-red-600 rounded-lg hover:border-red-600"
+            ? "border-red-600 hover:border-red-600 rounded-lg"
             : "border-gray-500 rounded-lg"
         }`}
         placeholder=" "
@@ -50,21 +49,17 @@ function Input(
         value={value}
         className={`${error ? "text-red-600" : "text-gray"} ${
           value ? "top-[-10px] px-1" : undefined
-        } absolute left-4 transition-all duration-200 text-red-60 bg-white pointer-events-none peer-placeholder-shown:top-4 peer-focus:top-[-10px] peer-focus:px-1`}
+        } absolute left-4 transition-all duration-200 text-red-60 bg-white pointer-events-none peer-placeholder-shown:top-4 peer-focus:top-[-8px] peer-focus:px-1 peer-focus:text-xs`}
       >
         {placeholderText}
       </label>
       {error && !value && errorTextStyle && (
-        <p
-          className={`text-red-600 text-xs font-light ${defaultErrorTextClass}`}
-        >
+        <p className={`text-red-600 text-xs ${defaultErrorTextClass}`}>
           {defaultErrorText}
         </p>
       )}
       {error && !errorTextStyle && (
-        <p
-          className={`text-red-600 text-xs font-light ${defaultErrorTextClass}`}
-        >
+        <p className={`text-red-600 text-xs ${defaultErrorTextClass}`}>
           {defaultErrorText}
         </p>
       )}

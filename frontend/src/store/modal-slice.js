@@ -4,6 +4,7 @@ const initialModalState = {
   isProductShowing: false,
   isSizeShowing: false,
   isChangeSizeShowing: false,
+  shippingNotification: { isShowing: false, link: "" },
 };
 
 const modalSlice = createSlice({
@@ -27,6 +28,13 @@ const modalSlice = createSlice({
     },
     closeChangeSizeModal(state) {
       state.isChangeSizeShowing = false;
+    },
+    showShippingModal(state, action) {
+      state.shippingNotification.isShowing = true;
+      state.shippingNotification.link = action.payload;
+    },
+    closeShippingModal(state) {
+      state.shippingNotification.isShowing = false;
     },
   },
 });

@@ -22,6 +22,10 @@ export function isNumeric(value) {
   return /^\d+$/.test(value);
 }
 
+export function isChinese(value) {
+  return /^[\u4e00-\u9fff]+$/.test(value);
+}
+
 export function isGreaterThanZero(value) {
   return value > 0;
 }
@@ -37,4 +41,19 @@ export function hasMinLength(value, minLength) {
 
 export function hasExactLength(value, length) {
   return value.length === length;
+}
+
+export function validateInput(
+  input,
+  validationFn,
+  emptyMessage,
+  invalidMessage
+) {
+  if (!input.value) {
+    return emptyMessage;
+  }
+  if (!validationFn(input.value)) {
+    return invalidMessage;
+  }
+  return "";
 }

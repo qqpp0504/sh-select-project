@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import "./ShippingInformation.css";
 import Button from "../UI/Button.jsx";
 import Input from "../UI/Input.jsx";
-import CustomerForm from "./CustomerForm.jsx";
+import ShippingForm from "./ShippingForm.jsx";
 import Information from "./Information.jsx";
 import { currencyFormatter } from "../../util/formatting.js";
 import FeatureButton from "../UI/FeatureButton.jsx";
@@ -46,52 +46,7 @@ export default function ShippingInformation() {
         <div className="py-6"></div>
       )}
       <form>
-        <div>
-          <h2 className="font-500 text-xl">輸入你的姓名和地址：</h2>
-          <p className="text-gray">
-            你將能夠在填完聯絡詳細資料輸入促銷代碼 (如有)。
-          </p>
-          <CustomerForm />
-        </div>
-
-        <div className="my-12">
-          <h2 className="font-500 text-xl mb-3">你的聯絡資訊為何？</h2>
-          <div className="py-4 flex flex-col gap-7">
-            <Input type="email" id="email" placeholderText="電子郵件">
-              結帳後會寄發確認電子郵件
-            </Input>
-            <Input type="tel" id="phone" placeholderText="電話號碼">
-              請輸入你的電話號碼，以利辦理清關手續
-            </Input>
-          </div>
-        </div>
-
-        <hr />
-
-        <Information title="帳單">
-          <h2 className="font-500 text-xl mb-3">你的帳單地址為何？</h2>
-          <div className="mt-6">
-            <input
-              id="text"
-              type="checkbox"
-              className="hidden dropdown-toggle peer"
-            />
-            <label
-              htmlFor="text"
-              className="checked peer-checked:unchecked cursor-pointer"
-            >
-              帳單地址同送貨地址
-            </label>
-            <div className="dropdown-form">
-              <CustomerForm bill="bill" />
-              <div className="my-2"></div>
-              <Input type="tel" id="bill-phone" placeholderText="電話號碼">
-                請輸入你的電話號碼，以利辦理清關手續
-              </Input>
-              <div className="my-3"></div>
-            </div>
-          </div>
-        </Information>
+        <ShippingForm />
 
         <hr />
 
