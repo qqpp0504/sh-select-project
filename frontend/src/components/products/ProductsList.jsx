@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 import { currencyFormatter } from "../../util/formatting.js";
@@ -9,7 +9,22 @@ import { filterActions } from "../../store/filter-slice.js";
 import { useEffect } from "react";
 
 export default function ProductsList({ products }) {
+  const [searchParams] = useSearchParams();
   const dispatch = useDispatch();
+
+  const sortedProducts = [...products].sort((a, b) => {
+    const sortBy = searchParams.get("sortby");
+
+    if (sortBy === "price-asc") {
+      return a.discountPrice - b.discountPrice;
+    } else if (sortBy === "price-desc") {
+      return b.discountPrice - a.discountPrice;
+    } else if (sortBy === "newest") {
+      return b.isNew - a.isNew;
+    }
+
+    return 0; // 默認不進行排序
+  });
 
   let noProductsContent;
 
@@ -38,7 +53,7 @@ export default function ProductsList({ products }) {
     <div>
       {noProductsContent}
       <ul className="grid grid-cols-2 gap-4 lg:grid-cols-3">
-        {products.map((product) => (
+        {sortedProducts.map((product) => (
           <li key={product.id} className="mb-14">
             <Link to={`/products/${product.slug}`}>
               <div className="bg-gray-100 mb-4 flex justify-center items-center">

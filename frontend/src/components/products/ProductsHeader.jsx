@@ -18,6 +18,7 @@ export default function ProductsHeader({ isShowing, setIsShowing }) {
   const newProduct = searchParams.get("newProduct");
   const onSale = searchParams.get("onSale");
   const search = searchParams.get("search");
+  const sortby = searchParams.get("sortby");
   let brands = searchParams.get("brands");
 
   if (brands?.includes("-")) {
@@ -112,7 +113,20 @@ export default function ProductsHeader({ isShowing, setIsShowing }) {
   }
 
   function handleToggleSort(sortType) {
-    setSearchParams({ sortby: sortType });
+    const newParams = new URLSearchParams(searchParams);
+    newParams.set("sortby", sortType);
+    setSearchParams(newParams);
+
+    setIsShowingSortBlock(false);
+  }
+
+  let sortedFilterText = "";
+  if (sortby === "newest") {
+    sortedFilterText += "：最新";
+  } else if (sortby === "price-desc") {
+    sortedFilterText += "：價格：由高到低";
+  } else if (sortby === "price-asc") {
+    sortedFilterText += "：價格：由低到高";
   }
 
   return (
@@ -138,7 +152,9 @@ export default function ProductsHeader({ isShowing, setIsShowing }) {
                 onClick={handleOpenSortBlock}
                 className="flex flex-row items-center gap-[0.625rem]"
               >
-                排序依據
+                <div>
+                  排序依據<span className="text-gray">{sortedFilterText}</span>
+                </div>
                 <img
                   src={showIcon}
                   alt="Show more icon"
@@ -152,18 +168,19 @@ export default function ProductsHeader({ isShowing, setIsShowing }) {
                 <div className="absolute right-0 top-full w-[10rem] h-[8rem] bg-white rounded-2xl px-5 py-4">
                   <ul className="flex flex-col justify-between w-full h-full items-end">
                     <li className="hover:text-gray">
-                      <button onClick={() => handleToggleSort("priceAsc")}>
-                        精選
+                      <button onClick={() => handleToggleSort("newest")}>
+                        最新
                       </button>
                     </li>
                     <li className="hover:text-gray">
-                      <button>最新</button>
+                      <button onClick={() => handleToggleSort("price-desc")}>
+                        價格：由高到低
+                      </button>
                     </li>
                     <li className="hover:text-gray">
-                      <button>價格：由高到低</button>
-                    </li>
-                    <li className="hover:text-gray">
-                      <button>價格：由低到高</button>
+                      <button onClick={() => handleToggleSort("price-asc")}>
+                        價格：由低到高
+                      </button>
                     </li>
                   </ul>
                 </div>
