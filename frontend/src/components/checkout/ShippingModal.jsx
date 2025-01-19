@@ -8,16 +8,14 @@ import FeatureButton from "../UI/FeatureButton.jsx";
 export default function ShippingModal() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { isShowing, link } = useSelector(
-    (state) => state.modal.shippingNotification
-  );
+  const { isShowing, link } = useSelector((state) => state.modal.shippingModal);
 
   function handleCloseShippingModal() {
-    dispatch(modalActions.closeShippingModal());
+    dispatch(modalActions.closeModal({ modalType: "shippingModal" }));
   }
 
   function handleNavigateOtherPage() {
-    dispatch(modalActions.closeShippingModal());
+    dispatch(modalActions.closeModal({ modalType: "shippingModal" }));
     navigate(link);
   }
 

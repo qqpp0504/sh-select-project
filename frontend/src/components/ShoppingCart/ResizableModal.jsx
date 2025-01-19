@@ -8,12 +8,12 @@ import FeatureButton from "../UI/FeatureButton.jsx";
 import { cartActions } from "../../store/cart-slice.js";
 
 export default function ResizableModal() {
-  const isShowing = useSelector((state) => state.modal.isChangeSizeShowing);
+  const { isShowing } = useSelector((state) => state.modal.changeSizeModal);
   const { activeItem } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
   function handleCloseModal() {
-    dispatch(modalActions.closeChangeSizeModal());
+    dispatch(modalActions.closeModal({ modalType: "changeSizeModal" }));
   }
 
   function handleSubmit(event) {
@@ -21,7 +21,6 @@ export default function ResizableModal() {
     const fd = new FormData(event.target);
     const size = Object.fromEntries(fd.entries());
 
-    dispatch(modalActions.closeChangeSizeModal());
     dispatch(
       cartActions.updatedSize({
         id: activeItem.id,
@@ -30,6 +29,8 @@ export default function ResizableModal() {
         idNumber: activeItem.idNumber,
       })
     );
+
+    dispatch(modalActions.closeModal({ modalType: "changeSizeModal" }));
   }
 
   return (

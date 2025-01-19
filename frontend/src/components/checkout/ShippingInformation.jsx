@@ -14,8 +14,9 @@ import DeliveryTime from "./DeliveryTime.jsx";
 
 export default function ShippingInformation() {
   const [isShowingPayInfo, setIsShowingPayInfo] = useState(false);
-  const { userData } = useSelector((state) => state.account);
   const { shippingFee } = useSelector((state) => state.cart);
+
+  const token = localStorage.getItem("token");
 
   let displayShippingFee =
     shippingFee > 0
@@ -29,7 +30,7 @@ export default function ShippingInformation() {
   return (
     <section className="w-[28rem]">
       <h1 className="text-[1.7rem] font-500">寄送資訊</h1>
-      {!userData.token ? (
+      {!token ? (
         <div className="font-500 flex flex-col gap-2 my-10">
           <Link to="/accounts" className="w-fit">
             <Button bgColor="checkoutWhite" paddingStyle="py-2 px-6">

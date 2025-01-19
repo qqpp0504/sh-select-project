@@ -20,11 +20,11 @@ export default function ProductInformation({
   }
 
   function handleShowProductDetail() {
-    dispatch(modalActions.showProductModal());
+    dispatch(modalActions.showModal({ modalType: "productModal" }));
   }
 
   function handleShowSizeDetail() {
-    dispatch(modalActions.showSizeModal());
+    dispatch(modalActions.showModal({ modalType: "sizeModal" }));
   }
 
   return (

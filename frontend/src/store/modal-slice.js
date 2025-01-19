@@ -1,40 +1,26 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialModalState = {
-  isProductShowing: false,
-  isSizeShowing: false,
-  isChangeSizeShowing: false,
-  shippingNotification: { isShowing: false, link: "" },
+  productModal: { isShowing: false, link: null },
+  sizeModal: { isShowing: false, link: null },
+  changeSizeModal: { isShowing: false, link: null },
+  shippingModal: { isShowing: false, link: null },
 };
 
 const modalSlice = createSlice({
   name: "modal",
   initialState: initialModalState,
   reducers: {
-    showProductModal(state) {
-      state.isProductShowing = true;
+    showModal(state, action) {
+      const { modalType, link } = action.payload;
+
+      state[modalType].isShowing = true;
+      state[modalType].link = link || null;
     },
-    closeProductModal(state) {
-      state.isProductShowing = false;
-    },
-    showSizeModal(state) {
-      state.isSizeShowing = true;
-    },
-    closeSizeModal(state) {
-      state.isSizeShowing = false;
-    },
-    showChangeSizeModal(state) {
-      state.isChangeSizeShowing = true;
-    },
-    closeChangeSizeModal(state) {
-      state.isChangeSizeShowing = false;
-    },
-    showShippingModal(state, action) {
-      state.shippingNotification.isShowing = true;
-      state.shippingNotification.link = action.payload;
-    },
-    closeShippingModal(state) {
-      state.shippingNotification.isShowing = false;
+    closeModal(state, action) {
+      const { modalType } = action.payload;
+
+      state[modalType].isShowing = false;
     },
   },
 });

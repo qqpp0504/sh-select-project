@@ -6,11 +6,11 @@ import { modalActions } from "../../store/modal-slice.js";
 import closeIcon from "../../assets/close-icon.png";
 
 export default function SizeDetailModal({ productSizeInfo }) {
-  const isShowing = useSelector((state) => state.modal.isSizeShowing);
+  const { isShowing } = useSelector((state) => state.modal.sizeModal);
   const dispatch = useDispatch();
 
   function handleCloseSizeDetail() {
-    dispatch(modalActions.closeSizeModal());
+    dispatch(modalActions.closeModal({ modalType: "sizeModal" }));
   }
 
   return (

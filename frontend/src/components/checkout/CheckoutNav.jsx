@@ -1,4 +1,4 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import logo from "../../assets/logo.png";
 import accountIcon from "../../assets/account-icon.png";
@@ -8,10 +8,13 @@ import { modalActions } from "../../store/modal-slice.js";
 
 export default function CheckoutNav() {
   const dispatch = useDispatch();
-  const { userData } = useSelector((state) => state.account);
+
+  const token = localStorage.getItem("token");
 
   function handleOpenShippingModal(link) {
-    dispatch(modalActions.showShippingModal(link));
+    dispatch(
+      modalActions.showModal({ modalType: "shippingModal", link: link })
+    );
   }
 
   return (
@@ -22,14 +25,19 @@ export default function CheckoutNav() {
 
       <div className="flex gap-9">
         <span>0961-542-566</span>
-        <img src={messageIcon} alt="Message icon" className="w-6 h-6" />
+
+        <a href="/help" target="_blank" className="w-6 h-6">
+          <img src={messageIcon} alt="Message icon" />
+        </a>
+
         <button
           onClick={() => handleOpenShippingModal("/cart")}
           className="w-6 h-6"
         >
           <img src={shoppingBagIcon} alt="ShoppingBag icon" />
         </button>
-        {!userData.token && (
+
+        {!token && (
           <button
             onClick={() => handleOpenShippingModal("/accounts")}
             className="w-6 h-6"

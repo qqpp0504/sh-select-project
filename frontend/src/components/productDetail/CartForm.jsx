@@ -85,7 +85,7 @@ export default function CartForm({ product, onSelect }) {
   }
 
   function handleShowSizeDetail() {
-    dispatch(modalActions.showSizeModal());
+    dispatch(modalActions.showModal({ modalType: "sizeModal" }));
   }
 
   return (

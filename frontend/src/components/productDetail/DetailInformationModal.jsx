@@ -7,11 +7,11 @@ import { currencyFormatter } from "../../util/formatting.js";
 import closeIcon from "../../assets/close-icon.png";
 
 export default function DetailInformationModal({ product }) {
-  const isShowing = useSelector((state) => state.modal.isProductShowing);
+  const { isShowing } = useSelector((state) => state.modal.productModal);
   const dispatch = useDispatch();
 
   function handleCloseDetail() {
-    dispatch(modalActions.closeProductModal());
+    dispatch(modalActions.closeModal({ modalType: "productModal" }));
   }
 
   return (
