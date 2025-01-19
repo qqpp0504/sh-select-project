@@ -1,16 +1,15 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 import logo from "../../assets/logo.png";
 import searchIcon from "../../assets/search-icon.png";
-import { filterActions } from "../../store/filter-slice.js";
 import Button from "./Button.jsx";
 
 export default function SearchBlock({ onClose }) {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [searchTerm, setSearchTerm] = useState("");
 
   const HOTSEARCH = ["dunk", "襪子", "黑色", "運動", "背包"];
@@ -24,13 +23,13 @@ export default function SearchBlock({ onClose }) {
       return;
     }
 
-    dispatch(filterActions.updatedSearchTerm(search));
+    setSearchParams({ search });
     navigate(`products?search=${search}`);
     onClose();
   }
 
   function handleSearch(search) {
-    dispatch(filterActions.updatedSearchTerm(search));
+    setSearchParams({ search });
     navigate(`products?search=${search}`);
     onClose();
   }

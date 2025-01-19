@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSearchParams } from "react-router-dom";
 
 import { PRODUCTSNAV, PRODUCTSNAVMEN } from "../../data.js";
 
@@ -11,45 +11,15 @@ import { FILTERS } from "../../data.js";
 import ProductsHeader from "./ProductsHeader.jsx";
 
 export default function SideBar({ children }) {
-  const { category, gender } = useSelector((state) => state.filter.allFilters);
-
-  const [isShowing, setIsShowing] = useState(true); // 可以改成不要用狀態管理
+  const [isShowing, setIsShowing] = useState(true);
+  const [searchParams] = useSearchParams();
 
   let navItems = PRODUCTSNAV;
 
-  if (gender.length === 1 && gender[0] === "men") {
+  const gender = searchParams.get("gender");
+
+  if (gender === "men") {
     navItems = PRODUCTSNAVMEN;
-  }
-
-  // 若用戶先點選運動內衣，那就不能出現男子之篩選條件
-  let genderFilters = (
-    <div>
-      {FILTERS.gender.map((option) => (
-        <FilterButton
-          key={option.param}
-          filterType="gender"
-          filterName={option.param}
-        >
-          {option.filterName}
-        </FilterButton>
-      ))}
-    </div>
-  );
-
-  if (category === "sportsbar") {
-    genderFilters = (
-      <div>
-        {FILTERS.genderWomen.map((option) => (
-          <FilterButton
-            key={option.param}
-            filterType="gender"
-            filterName={option.param}
-          >
-            {option.filterName}
-          </FilterButton>
-        ))}
-      </div>
-    );
   }
 
   return (
@@ -71,9 +41,9 @@ export default function SideBar({ children }) {
                   {navItems.map((option) => (
                     <li key={option.param} className="py-1 font-500">
                       <FilterButton
+                        type="category"
                         filterType="category"
-                        filterName={option.param}
-                        disableStyle={true}
+                        param={option.param}
                       >
                         {option.filterName}
                       </FilterButton>
@@ -83,16 +53,26 @@ export default function SideBar({ children }) {
               </nav>
 
               <Accordion tag="性別" id="gender">
-                {genderFilters}
+                <div className="flex flex-col items-start">
+                  {FILTERS.gender.map((option) => (
+                    <FilterButton
+                      key={option.filterName}
+                      filterType="gender"
+                      param={option.param}
+                    >
+                      {option.filterName}
+                    </FilterButton>
+                  ))}
+                </div>
               </Accordion>
 
               <Accordion tag="新上架" id="newProduct">
                 <div>
                   {FILTERS.new.map((option) => (
                     <FilterButton
-                      key={option.param}
+                      key={option.filterName}
                       filterType="newProduct"
-                      filterName={option.param}
+                      param={option.param}
                     >
                       {option.filterName}
                     </FilterButton>
@@ -104,9 +84,9 @@ export default function SideBar({ children }) {
                 <div>
                   {FILTERS.onSale.map((option) => (
                     <FilterButton
-                      key={option.param}
+                      key={option.filterName}
                       filterType="onSale"
-                      filterName={option.param}
+                      param={option.param}
                     >
                       {option.filterName}
                     </FilterButton>
@@ -117,12 +97,12 @@ export default function SideBar({ children }) {
               <Accordion tag="品牌" id="brands">
                 <ShowMore
                   content={
-                    <div>
+                    <div className="flex flex-col items-start">
                       {FILTERS.brandsTop.map((option) => (
                         <FilterButton
-                          key={option.param}
+                          key={option.filterName}
                           filterType="brands"
-                          filterName={option.param}
+                          param={option.param}
                         >
                           {option.filterName}
                         </FilterButton>
@@ -130,12 +110,12 @@ export default function SideBar({ children }) {
                     </div>
                   }
                   more={
-                    <div>
+                    <div className="flex flex-col items-start">
                       {FILTERS.brandsBottom.map((option) => (
                         <FilterButton
-                          key={option.param}
+                          key={option.filterName}
                           filterType="brands"
-                          filterName={option.param}
+                          param={option.param}
                         >
                           {option.filterName}
                         </FilterButton>

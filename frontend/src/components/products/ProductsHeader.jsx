@@ -10,17 +10,24 @@ import showIcon from "../../assets/show-icon.png";
 export default function ProductsHeader({ isShowing, setIsShowing }) {
   const [isShowingSortBlock, setIsShowingSortBlock] = useState(false);
   const sortBlock = useRef();
-  const { category, gender, newProduct, onSale, brands } = useSelector(
-    (state) => state.filter.allFilters
-  );
   const productsQuantity = useSelector((state) => state.filter.quantity);
-  const search = useSelector((state) => state.filter.searchTerm);
   const [searchParams, setSearchParams] = useSearchParams();
+
+  const category = searchParams.get("category");
+  const gender = searchParams.get("gender");
+  const newProduct = searchParams.get("newProduct");
+  const onSale = searchParams.get("onSale");
+  const search = searchParams.get("search");
+  let brands = searchParams.get("brands");
+
+  if (brands?.includes("-")) {
+    brands = brands.split("-");
+  }
 
   let filterText = "所有產品";
 
   const activeFilters = [
-    category.length > 0 &&
+    category &&
       (category === "top"
         ? "上衣"
         : category === "jacket"
@@ -36,10 +43,10 @@ export default function ProductsHeader({ isShowing, setIsShowing }) {
         : category === "other"
         ? "其他配件"
         : ""),
-    gender.length === 1 &&
-      (gender[0] === "men" ? "男子" : gender[0] === "women" ? "女子" : ""),
-    newProduct.length > 0 && "新品",
-    onSale.length > 0 && "特惠商品",
+    gender && (gender === "men" ? "男子" : gender === "women" ? "女子" : ""),
+    newProduct && "新品",
+    onSale && "特惠商品",
+    brands && !Array.isArray(brands) && formatBrandName(brands),
   ].filter(Boolean);
 
   function formatBrandName(brand) {
@@ -53,11 +60,6 @@ export default function ProductsHeader({ isShowing, setIsShowing }) {
     filterText = activeFilters.join(" "); // 用空格連接條件文字
   }
 
-  if (brands.length === 1) {
-    filterText = activeFilters.join(" ");
-    filterText += " " + formatBrandName(brands[0]);
-  }
-
   if (search) {
     filterText = search;
   }
@@ -69,7 +71,7 @@ export default function ProductsHeader({ isShowing, setIsShowing }) {
   // 更多品牌篩選條件（最上面）
   let moreFilters;
 
-  if (brands.length > 1) {
+  if (Array.isArray(brands) && brands.length > 1) {
     moreFilters = (
       <div className="mt-3 mb-1">
         <ol className="flex flex-row">
@@ -112,11 +114,6 @@ export default function ProductsHeader({ isShowing, setIsShowing }) {
   function handleToggleSort(sortType) {
     setSearchParams({ sortby: sortType });
   }
-
-  useEffect(() => {
-    // 當 searchParams 改變時，打印最新的 sortby 參數
-    console.log(searchParams.get("sortby"));
-  }, [searchParams]); // 每當 searchParams 改變時執行
 
   return (
     <>

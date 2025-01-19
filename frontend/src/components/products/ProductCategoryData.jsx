@@ -1,7 +1,5 @@
-import { useEffect } from "react";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { useLocation } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSearchParams } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
 
 import { fetchProducts } from "../../util/http.js";
 
@@ -10,15 +8,14 @@ import ErrorBlock from "../UI/ErrorBlock.jsx";
 import ProductsList from "./ProductsList.jsx";
 
 export default function ProductCategoryData() {
-  const filters = useSelector((state) => state.filter.allFilters);
-  const search = useSelector((state) => state.filter.searchTerm);
-  const location = useLocation(); // 監聽路由變化
-  const queryClient = useQueryClient(); // 使用 queryClient 進行數據管理
+  const [searchParams] = useSearchParams();
 
-  // 清除緩存，確保重新加載
-  useEffect(() => {
-    queryClient.removeQueries(["products", filters]);
-  }, [location, queryClient, filters]); // 當路由變化時清除緩存
+  const gender = searchParams.get("gender") || "";
+  const newProduct = searchParams.get("newProduct") || "";
+  const onSale = searchParams.get("onSale") || "";
+  const brands = searchParams.get("brands") || "";
+  const category = searchParams.get("category") || "";
+  const search = searchParams.get("search") || "";
 
   const {
     data: products,
@@ -26,7 +23,10 @@ export default function ProductCategoryData() {
     isError,
     error,
   } = useQuery({
-    queryKey: ["products", { filters: { ...filters, search } }],
+    queryKey: [
+      "products",
+      { filters: { gender, newProduct, onSale, brands, category, search } },
+    ],
     queryFn: ({ signal, queryKey }) =>
       fetchProducts({ signal, ...queryKey[1] }),
     staleTime: 0,

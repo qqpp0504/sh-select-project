@@ -1,19 +1,18 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 
 import searchIcon from "../../assets/search-icon.png";
 import SearchBlock from "./SearchBlock.jsx";
 
 export default function SearchInput() {
   const location = useLocation();
-  const { searchTerm } = useSelector((state) => state.filter);
   const [isOpen, setIsOpen] = useState(false);
+  const [searchParams] = useSearchParams();
 
   let searchValue = "";
 
   if (location.pathname.includes("products")) {
-    searchValue = searchTerm;
+    searchValue = searchParams.get("search");
   }
 
   function handleOpenSearchBlock() {

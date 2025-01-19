@@ -1,36 +1,69 @@
 /* eslint-disable react/prop-types */
-import { useDispatch, useSelector } from "react-redux";
+import { useSearchParams } from "react-router-dom";
 
 import "./FilterButton.css";
-import { filterActions } from "../../store/filter-slice.js";
 
 export default function FilterButton({
   filterType,
-  filterName,
+  param,
+  type = "filter",
   children,
-  disableStyle = false,
 }) {
-  const filters = useSelector((state) => state.filter.allFilters);
-  const dispatch = useDispatch();
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  function handleToggleFilter(filterType, value) {
-    dispatch(filterActions.toggleFilter({ filterType, value }));
+  // 獲取當前的性別過濾器值（可能是多個）
+  const getGenderFilters = () => {
+    const genderParam = searchParams.get(filterType);
+    return genderParam ? genderParam.split("-") : [];
+  };
+
+  function handleClickFilter() {
+    const currentFilters = getGenderFilters();
+    const newParams = new URLSearchParams(searchParams);
+
+    if (currentFilters.includes(param)) {
+      // 如果已經選中，則移除
+      const updatedFilters = currentFilters.filter(
+        (filter) => filter !== param
+      );
+      if (updatedFilters.length === 0) {
+        newParams.delete(filterType);
+      } else {
+        newParams.set(filterType, updatedFilters.sort().join("-"));
+      }
+    } else {
+      // 如果未選中，則添加
+      const updatedFilters = [...currentFilters, param];
+
+      newParams.set(filterType, updatedFilters.sort().join("-"));
+    }
+
+    setSearchParams(newParams);
   }
+
+  function handleClickCategory() {
+    const newParams = new URLSearchParams(searchParams);
+
+    newParams.set(filterType, param);
+
+    setSearchParams(newParams);
+  }
+
+  const isChecked = getGenderFilters().includes(param);
 
   return (
     <>
-      <button
-        onClick={() => handleToggleFilter(filterType, filterName)}
-        className={
-          disableStyle
-            ? undefined
-            : filters[filterType].includes(filterName)
-            ? "checked"
-            : "unchecked"
-        }
-      >
-        {children}
-      </button>
+      {type === "filter" && (
+        <button
+          onClick={handleClickFilter}
+          className={`${isChecked ? "checked" : "unchecked"}`}
+        >
+          {children}
+        </button>
+      )}
+      {type === "category" && (
+        <button onClick={handleClickCategory}>{children}</button>
+      )}
     </>
   );
 }
