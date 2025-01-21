@@ -7,6 +7,7 @@ const initialModalState = {
     isShowing: false,
     link: null,
     type: "",
+    page: "",
   },
   shippingModal: { isShowing: false, link: null },
 };
@@ -22,9 +23,10 @@ const modalSlice = createSlice({
       state[modalType].link = link || null;
 
       if (modalType === "changeSizeModal") {
-        const { type } = action.payload;
+        const { type, page } = action.payload;
 
         state[modalType].type = type;
+        state[modalType].page = page || null;
       }
     },
     closeModal(state, action) {

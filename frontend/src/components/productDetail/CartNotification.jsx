@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import successIcon from "../../assets/success-icon.png";
 import { currencyFormatter } from "../../util/formatting.js";
 import FeatureButton from "../UI/FeatureButton.jsx";
-import closeIcom from "../../assets/close-icon.png";
+import closeIcon from "../../assets/close-icon.png";
 import { cartActions } from "../../store/cart-slice.js";
 
 export default function CartNotification() {
@@ -78,7 +78,7 @@ export default function CartNotification() {
           onClick={handleCloseNotification}
           className="bg-gray-100 rounded-full p-1 absolute right-7 hover:bg-gray-200"
         >
-          <img src={closeIcom} alt="Close Icon" className="w-7" />
+          <img src={closeIcon} alt="Close Icon" className="w-7" />
         </button>
 
         <div className="h-28 flex items-center gap-3">

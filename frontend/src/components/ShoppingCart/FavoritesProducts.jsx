@@ -1,18 +1,14 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { currencyFormatter } from "../../util/formatting.js";
-import Button from "../UI/Button.jsx";
 import { cartActions } from "../../store/cart-slice.js";
 import { modalActions } from "../../store/modal-slice.js";
-import successIcon from "../../assets/success-icon.png";
 import { favoritesActions } from "../../store/favorites-slice.js";
+import FavoritesAddToCartButton from "../UI/FavoritesAddToCartButton.jsx";
 
 export default function FavoritesProducts({ product }) {
-  const { successItems, isSuccessAddToCart } = useSelector(
-    (state) => state.favorites
-  );
   const dispatch = useDispatch();
 
   function handleOpenResizableModal() {
@@ -28,8 +24,6 @@ export default function FavoritesProducts({ product }) {
   function handleProductAddToCart() {
     if (!product.size) {
       handleOpenResizableModal();
-      dispatch(cartActions.checkItemStatus(product));
-      dispatch(favoritesActions.updatedIsSuccess(false));
     } else {
       dispatch(cartActions.addToCart(product));
       dispatch(favoritesActions.favoriteAddSuccess(product));
@@ -95,27 +89,10 @@ export default function FavoritesProducts({ product }) {
             )}
           </div>
 
-          {isSuccessAddToCart && successItems.includes(product) ? (
-            <Button
-              bgColor="favoriteWhite"
-              className="w-fit"
-              paddingStyle="px-6 py-2"
-            >
-              <div className="flex gap-1 items-center">
-                <img src={successIcon} alt="Success icon" className="w-6" />
-                <span>已加入</span>
-              </div>
-            </Button>
-          ) : (
-            <Button
-              onClick={handleProductAddToCart}
-              bgColor="favoriteWhite"
-              className="w-fit"
-              paddingStyle="px-6 py-2"
-            >
-              <div>加入購物車</div>
-            </Button>
-          )}
+          <FavoritesAddToCartButton
+            addToCartFn={handleProductAddToCart}
+            product={product}
+          />
         </div>
       </div>
     </li>

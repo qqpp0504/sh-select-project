@@ -22,6 +22,9 @@ const favoritesSlice = createSlice({
     updatedIsSuccess(state, action) {
       state.isSuccessAddToCart = action.payload;
     },
+    resetState() {
+      return initialFilterState;
+    },
   },
 });
 

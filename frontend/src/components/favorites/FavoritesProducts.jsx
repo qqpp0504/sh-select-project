@@ -2,17 +2,24 @@
 import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
+import { useDispatch } from "react-redux";
 
 import heartIcon from "../../assets/heart-icon.png";
 import blackHeartIcon from "../../assets/heart-black-icon.png";
 import { currencyFormatter } from "../../util/formatting.js";
-import Button from "../UI/Button.jsx";
 import { deleteFavoriteProduct } from "../../util/http.js";
 import ErrorBlock from "../UI/ErrorBlock.jsx";
+import { cartActions } from "../../store/cart-slice.js";
+import { modalActions } from "../../store/modal-slice.js";
+import { useAddNotification } from "../hooks/useAddNotification.js";
+import FavoritesAddToCartButton from "../UI/FavoritesAddToCartButton.jsx";
+import { favoritesActions } from "../../store/favorites-slice.js";
 
 export default function FavoritesProducts({ products, refetch }) {
+  const dispatch = useDispatch();
   const timer = useRef();
   const [favoriteProductId, setFavoriteProductId] = useState([]);
+  const addNotification = useAddNotification();
 
   const { mutate, isPending, isError, error } = useMutation({
     mutationFn: deleteFavoriteProduct,
@@ -44,6 +51,28 @@ export default function FavoritesProducts({ products, refetch }) {
       );
 
       delete timer.current;
+    }
+  }
+
+  function handleOpenResizableModal(product) {
+    dispatch(
+      modalActions.showModal({
+        modalType: "changeSizeModal",
+        type: "favorite",
+        page: "favorites",
+      })
+    );
+    dispatch(cartActions.checkItemStatus(product));
+  }
+
+  function handleAddToCart(product) {
+    if (!product.size) {
+      handleOpenResizableModal(product);
+    } else {
+      dispatch(cartActions.addToCart(product));
+      addNotification(product, "addToCart");
+      dispatch(favoritesActions.favoriteAddSuccess(product));
+      dispatch(favoritesActions.updatedIsSuccess(true));
     }
   }
 
@@ -102,7 +131,7 @@ export default function FavoritesProducts({ products, refetch }) {
             </button>
           </div>
 
-          <div className="flex justify-between">
+          <div className="flex justify-between mb-5">
             <div>
               <Link to={`/products/${product.slug}`}>
                 <h3 className="font-500">
@@ -130,13 +159,10 @@ export default function FavoritesProducts({ products, refetch }) {
             )}
           </div>
 
-          <Button
-            bgColor="favoriteWhite"
-            className="mt-5"
-            paddingStyle="py-2 px-6"
-          >
-            選取尺寸
-          </Button>
+          <FavoritesAddToCartButton
+            addToCartFn={() => handleAddToCart(product)}
+            product={product}
+          />
         </li>
       ))}
     </ul>

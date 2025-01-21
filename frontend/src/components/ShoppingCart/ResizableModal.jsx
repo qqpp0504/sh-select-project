@@ -8,15 +8,17 @@ import SelectBlock from "../UI/SelectBlock.jsx";
 import FeatureButton from "../UI/FeatureButton.jsx";
 import { cartActions } from "../../store/cart-slice.js";
 import { favoritesActions } from "../../store/favorites-slice.js";
+import { useAddNotification } from "../hooks/useAddNotification.js";
 
 export default function ResizableModal() {
   const [sizeData, setSizeData] = useState(null);
   const [reminder, setReminder] = useState("");
-  const { isShowing, type } = useSelector(
+  const { isShowing, type, page } = useSelector(
     (state) => state.modal.changeSizeModal
   );
   const { activeItem } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+  const addNotification = useAddNotification();
 
   function handleCloseModal() {
     dispatch(modalActions.closeModal({ modalType: "changeSizeModal" }));
@@ -50,6 +52,11 @@ export default function ResizableModal() {
       dispatch(cartActions.addToCart(updatedItem));
       dispatch(favoritesActions.favoriteAddSuccess(activeItem));
       handleCloseModal();
+
+      if (page === "favorites") {
+        addNotification(updatedItem, "addToCart");
+      }
+
       dispatch(favoritesActions.updatedIsSuccess(true));
     }
   }

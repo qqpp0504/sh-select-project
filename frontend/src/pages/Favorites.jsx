@@ -5,8 +5,10 @@ import { fetchUserFavorites } from "../util/http.js";
 import LoadingIndicator from "../components/UI/LoadingIndicator.jsx";
 import ErrorBlock from "../components/UI/ErrorBlock.jsx";
 import FavoritesProducts from "../components/favorites/FavoritesProducts.jsx";
+import ResizableModal from "../components/ShoppingCart/ResizableModal.jsx";
 
 export default function FavoritesPage() {
+  const activeItem = useSelector((state) => state.cart.activeItem);
   const { token, user } = useSelector((state) => state.account.userData);
 
   const {
@@ -50,6 +52,7 @@ export default function FavoritesPage() {
 
   return (
     <section className="padding-large py-10">
+      {activeItem && <ResizableModal />}
       <h2 className="text-2xl font-500">最愛</h2>
       <div className="w-full">{favoritesItems}</div>
     </section>

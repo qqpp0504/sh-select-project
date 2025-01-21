@@ -14,6 +14,7 @@ import { addFavorites } from "../../util/http.js";
 import { accountActions } from "../../store/account-slice.js";
 import ErrorModal from "../UI/ErrorModal.jsx";
 import LoadingIndicator from "../UI/LoadingIndicator.jsx";
+import { useAddNotification } from "../hooks/useAddNotification.js";
 
 export default function CartForm({ product, onSelect }) {
   const { token } = useSelector((state) => state.account.userData);
@@ -21,6 +22,7 @@ export default function CartForm({ product, onSelect }) {
   const [reminder, setReminder] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const addNotification = useAddNotification();
 
   const { mutate, isPending, isError, error } = useMutation({
     mutationFn: addFavorites,
@@ -65,17 +67,6 @@ export default function CartForm({ product, onSelect }) {
         navigate("/accounts");
       }
     }
-  }
-
-  function addNotification(data, type) {
-    dispatch(cartActions.checkItemStatus(data));
-
-    dispatch(cartActions.updatedScrollPosition(window.scrollY));
-    window.scrollTo({
-      top: 0,
-    });
-
-    dispatch(cartActions.showNotification(type));
   }
 
   function handleSizeChange(event) {
