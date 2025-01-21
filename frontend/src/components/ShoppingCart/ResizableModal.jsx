@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import Modal from "../UI/Modal.jsx";
@@ -8,29 +9,53 @@ import FeatureButton from "../UI/FeatureButton.jsx";
 import { cartActions } from "../../store/cart-slice.js";
 
 export default function ResizableModal() {
-  const { isShowing } = useSelector((state) => state.modal.changeSizeModal);
+  const [sizeData, setSizeData] = useState(null);
+  const [reminder, setReminder] = useState("");
+  const { isShowing, type } = useSelector(
+    (state) => state.modal.changeSizeModal
+  );
   const { activeItem } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
   function handleCloseModal() {
     dispatch(modalActions.closeModal({ modalType: "changeSizeModal" }));
+    setReminder("");
   }
 
   function handleSubmit(event) {
     event.preventDefault();
+
+    if (!sizeData) {
+      setReminder("請選擇尺寸");
+      return;
+    }
+
     const fd = new FormData(event.target);
     const size = Object.fromEntries(fd.entries());
 
-    dispatch(
-      cartActions.updatedSize({
-        id: activeItem.id,
-        color: activeItem.color.name,
-        size: size.size,
-        idNumber: activeItem.idNumber,
-      })
-    );
+    if (type === "default") {
+      dispatch(
+        cartActions.updatedSize({
+          id: activeItem.id,
+          color: activeItem.color.name,
+          size: size.size,
+          idNumber: activeItem.idNumber,
+        })
+      );
+    } else if (type === "favorite") {
+      if (size.size) {
+        const updatedItem = { ...activeItem, size: size.size };
+        dispatch(cartActions.addToCart(updatedItem));
+      }
+    }
 
-    dispatch(modalActions.closeModal({ modalType: "changeSizeModal" }));
+    handleCloseModal();
+  }
+
+  function handleSizeChange(event) {
+    const { value } = event.target;
+    setSizeData(value);
+    setReminder("");
   }
 
   return (
@@ -57,8 +82,16 @@ export default function ResizableModal() {
             </div>
 
             <form onSubmit={handleSubmit}>
-              <span className="mb-2 block font-500">選取尺寸</span>
-              <div className="grid grid-cols-5 gap-[0.45rem] text-center mb-5">
+              <span
+                className={`mb-2 block font-500 ${reminder && "text-red-500"}`}
+              >
+                {reminder ? reminder : "選取尺寸"}
+              </span>
+              <div
+                className={`grid grid-cols-5 gap-[0.45rem] text-center mb-5 ${
+                  reminder && "border-[1px] border-red-500"
+                }`}
+              >
                 {activeItem.allSizes.map((size) => (
                   <SelectBlock
                     key={size}
@@ -67,13 +100,15 @@ export default function ResizableModal() {
                     value={size}
                     roundedStyle="rounded-lg"
                     defaultChecked={size == activeItem.size}
+                    onChange={handleSizeChange}
                   >
                     {size.replace(/CM\s*/, "")}
                   </SelectBlock>
                 ))}
               </div>
               <FeatureButton paddingStyle="py-4" type="submit">
-                更新尺寸
+                {type === "default" && "更新尺寸"}
+                {type === "favorite" && "加入購物車"}
               </FeatureButton>
             </form>
           </div>

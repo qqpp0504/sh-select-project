@@ -1,10 +1,33 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
-import { currencyFormatter } from "../../util/formatting";
+import { currencyFormatter } from "../../util/formatting.js";
 import Button from "../UI/Button.jsx";
+import { cartActions } from "../../store/cart-slice.js";
+import { modalActions } from "../../store/modal-slice.js";
 
 export default function FavoritesProducts({ product }) {
+  const dispatch = useDispatch();
+
+  function handleOpenResizableModal() {
+    dispatch(
+      modalActions.showModal({
+        modalType: "changeSizeModal",
+        type: "favorite",
+      })
+    );
+    dispatch(cartActions.checkItemStatus(product));
+  }
+
+  function handleProductAddToCart() {
+    if (!product.size) {
+      handleOpenResizableModal();
+    } else {
+      dispatch(cartActions.addToCart(product));
+    }
+  }
+
   return (
     <li className="flex items-start gap-5 pb-8 w-1/2">
       <div>
@@ -40,13 +63,31 @@ export default function FavoritesProducts({ product }) {
           </div>
         </div>
 
-        <div className="text-gray flex flex-col justify-between gap-1 h-full">
-          <div className="flex flex-col">
+        <div className="text-gray flex flex-col justify-between h-full">
+          <div className="flex flex-col gap-1">
             <span>{product.category}</span>
             <span>{product.color.name}</span>
+            {(product.size || product.allSizes.length === 1) && (
+              <span>
+                尺寸
+                {product.allSizes.length > 1 ? (
+                  <button
+                    onClick={() => handleOpenResizableModal(product)}
+                    className="ml-2 w-fit"
+                  >
+                    <span className="border-b-[1px] border-gray-500">
+                      {product.size}
+                    </span>
+                  </button>
+                ) : (
+                  <span className="ml-2 border-gray-500">{product.size}</span>
+                )}
+              </span>
+            )}
           </div>
 
           <Button
+            onClick={handleProductAddToCart}
             bgColor="favoriteWhite"
             className="w-fit"
             paddingStyle="px-6 py-2"

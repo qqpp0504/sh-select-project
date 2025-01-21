@@ -1,4 +1,4 @@
-import CartOverview from "../components/ShoppingCart/CartOverview.jsx";
+import CartOverview from "../components/shoppingCart/CartOverview.jsx";
 
 export default function CartPage() {
   return <CartOverview />;

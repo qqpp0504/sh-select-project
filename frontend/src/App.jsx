@@ -18,8 +18,8 @@ import LoginPage from "./pages/Login.jsx";
 import HelpPage from "./pages/Help.jsx";
 import BannerBarLayout from "./pages/BannerBarLayout.jsx";
 import HelpLayout from "./pages/HelpLayout.jsx";
-import HelpQuestionPage from "./components/Help/HelpQuestion.jsx";
-import SearchQuestions from "./components/Help/SearchQuestions.jsx";
+import HelpQuestionPage from "./components/help/HelpQuestion.jsx";
+import SearchQuestions from "./components/help/SearchQuestions.jsx";
 import FavoritesPage from "./pages/Favorites.jsx";
 import ProtectedRoute from "./components/util/ProtectedRoute.jsx";
 

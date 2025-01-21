@@ -7,6 +7,7 @@ export default function Button({
   paddingStyle = "px-4 py-[0.375rem]",
   link = null,
   className,
+  ...props
 }) {
   let classes = `inline-block rounded-3xl ${paddingStyle} ${className}`;
 
@@ -32,5 +33,9 @@ export default function Button({
     );
   }
 
-  return <button className={classes}>{children}</button>;
+  return (
+    <button className={classes} {...props}>
+      {children}
+    </button>
+  );
 }

@@ -22,7 +22,9 @@ export default function ShoppingCart() {
   }
 
   function handleOpenResizableModal(productItem) {
-    dispatch(modalActions.showModal({ modalType: "changeSizeModal" }));
+    dispatch(
+      modalActions.showModal({ modalType: "changeSizeModal", type: "default" })
+    );
     dispatch(cartActions.checkItemStatus(productItem));
   }
 
