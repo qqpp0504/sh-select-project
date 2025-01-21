@@ -25,7 +25,7 @@ export default function ScrollContainer({ title, children }) {
   }
 
   useEffect(() => {
-    const handleScroll = () => {
+    function handleScroll() {
       const scrollContainer = scrollContainerRef.current;
       // 檢查是否已經滾動到最右端
       const isAtEnd =
@@ -36,7 +36,7 @@ export default function ScrollContainer({ title, children }) {
       // 檢查是否已經滾動到最左端
       const isAtStart = scrollContainer.scrollLeft <= 0;
       setIsStart(isAtStart);
-    };
+    }
 
     // 綁定滾動事件
     const scrollContainer = scrollContainerRef.current;
@@ -58,6 +58,7 @@ export default function ScrollContainer({ title, children }) {
             className={`bg-gray-200 p-2 rounded-[50%] mr-[0.625rem] ${
               isStart && "opacity-40"
             }`}
+            disabled={isStart}
           >
             <Icon type="left-arrow" />
           </button>
