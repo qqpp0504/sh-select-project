@@ -7,6 +7,7 @@ import { currencyFormatter } from "../../util/formatting.js";
 import SelectBlock from "../UI/SelectBlock.jsx";
 import FeatureButton from "../UI/FeatureButton.jsx";
 import { cartActions } from "../../store/cart-slice.js";
+import { favoritesActions } from "../../store/favorites-slice.js";
 
 export default function ResizableModal() {
   const [sizeData, setSizeData] = useState(null);
@@ -42,14 +43,15 @@ export default function ResizableModal() {
           idNumber: activeItem.idNumber,
         })
       );
-    } else if (type === "favorite") {
-      if (size.size) {
-        const updatedItem = { ...activeItem, size: size.size };
-        dispatch(cartActions.addToCart(updatedItem));
-      }
-    }
 
-    handleCloseModal();
+      handleCloseModal();
+    } else if (type === "favorite") {
+      const updatedItem = { ...activeItem, size: size.size };
+      dispatch(cartActions.addToCart(updatedItem));
+      dispatch(favoritesActions.favoriteAddSuccess(activeItem));
+      handleCloseModal();
+      dispatch(favoritesActions.updatedIsSuccess(true));
+    }
   }
 
   function handleSizeChange(event) {

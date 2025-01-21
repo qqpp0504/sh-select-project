@@ -7,12 +7,13 @@ import modalReducer from "./modal-slice.js";
 import cartReducer from "./cart-slice.js";
 import accountReducer from "./account-slice.js";
 import searchReducer from "./searchFaq-slice.js";
+import favoritesReducer from "./favorites-slice.js";
 
 // 設定 persist 配置
 const persistConfig = {
   key: "root",
   storage,
-  blacklist: ["filter", "modal", "account"], // 不持久化的 slice
+  blacklist: ["filter", "modal", "account", "favorites"], // 不持久化的 slice
 };
 
 // 使用 combineReducers 合併所有 reducers
@@ -22,6 +23,7 @@ const rootReducer = combineReducers({
   cart: cartReducer,
   account: accountReducer,
   searchFaq: searchReducer,
+  favorites: favoritesReducer,
 });
 
 // 使用 persistReducer 包裝 rootReducer

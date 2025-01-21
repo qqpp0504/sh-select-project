@@ -12,6 +12,7 @@ export default function FavoritesBlock() {
   const navigate = useNavigate();
   const [isShowMore, setIsShowMore] = useState(false);
   const { token, user } = useSelector((state) => state.account.userData);
+
   const {
     data: favoritesProducts,
     isLoading,

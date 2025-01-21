@@ -3,7 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialModalState = {
   productModal: { isShowing: false, link: null },
   sizeModal: { isShowing: false, link: null },
-  changeSizeModal: { isShowing: false, link: null, type: "" },
+  changeSizeModal: {
+    isShowing: false,
+    link: null,
+    type: "",
+  },
   shippingModal: { isShowing: false, link: null },
 };
 
