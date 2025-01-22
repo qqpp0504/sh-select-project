@@ -1,13 +1,19 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import Modal from "./Modal.jsx";
 import Button from "./Button.jsx";
 
-export default function ErrorModal({ message }) {
+export default function ErrorModal({ message, buttonText, link }) {
   const [isOpen, setIsOpen] = useState(true);
+  const navigate = useNavigate();
 
-  function handleClose() {
+  function handleClose(link) {
     setIsOpen(false);
+
+    if (link) {
+      navigate(link);
+    }
   }
 
   return (
@@ -20,11 +26,11 @@ export default function ErrorModal({ message }) {
 
         <div className="flex justify-center">
           <Button
-            link="/cart"
+            onClick={() => handleClose(link)}
             className="w-fit rounded-[1.25rem]"
             paddingStyle="px-6 py-[0.6rem]"
           >
-            檢視購物車
+            {buttonText}
           </Button>
         </div>
       </div>

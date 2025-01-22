@@ -188,7 +188,11 @@ export default function CartForm({ product, onSelect }) {
       </div>
 
       {isError && (
-        <ErrorModal message={error.info?.message || "產品已加入願望清單。"} />
+        <ErrorModal
+          message={error.info?.message || "產品已加入願望清單。"}
+          buttonText="檢視購物車"
+          link="/cart"
+        />
       )}
     </form>
   );

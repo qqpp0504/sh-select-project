@@ -20,7 +20,7 @@ export default function ShoppingCart() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { mutate, isPending, isError, error } = useMutation({
+  const { mutate, isError, error } = useMutation({
     mutationFn: addFavorites,
     onSuccess: () => {
       queryClient.invalidateQueries(["userFavorites"]);
@@ -172,9 +172,11 @@ export default function ShoppingCart() {
       <h1 className="text-2xl font-500 mb-6">購物車</h1>
       {cartContent}
 
-      {isPending && <p>isPending</p>}
       {isError && (
-        <ErrorModal message={error.info?.message || "產品已加入願望清單。"} />
+        <ErrorModal
+          message={error.info?.message || "產品已加入願望清單。"}
+          buttonText="我知道了"
+        />
       )}
     </section>
   );
