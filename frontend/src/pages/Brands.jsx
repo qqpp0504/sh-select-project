@@ -1,7 +1,7 @@
-import Banner from "../components/banner/Banner.jsx";
-import brandsBannerImg from "../assets/brands-banner.jpg";
-import { BRANDS } from "../data.js";
-import BrandDetail from "../components/banner/BrandDetail.jsx";
+import Banner from "@/components/banner/Banner.jsx";
+import brandsBannerImg from "@/assets/brands-banner.jpg";
+import { BRANDS } from "@/data.js";
+import BrandDetail from "@/components/banner/BrandDetail.jsx";
 
 const BRANDSBANNER = {
   image: brandsBannerImg,

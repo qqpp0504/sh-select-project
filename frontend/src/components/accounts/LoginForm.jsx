@@ -5,11 +5,11 @@ import { useMutation } from "@tanstack/react-query";
 import FeatureButton from "../UI/FeatureButton.jsx";
 import ShowPasswordButton from "./ShowPasswordButton.jsx";
 import { useInput } from "../hooks/useInput.js";
-import { isNotEmpty } from "../../util/validation.js";
-import { loginUser } from "../../util/http.js";
+import { isNotEmpty } from "@/util/validation.js";
+import { loginUser } from "@/util/http.js";
 import LoadingIndicator from "../UI/LoadingIndicator.jsx";
 import AuthErrorBlock from "./AuthErrorBlock.jsx";
-import { accountActions } from "../../store/account-slice.js";
+import { accountActions } from "@/store/account-slice.js";
 
 export default function LoginForm() {
   const navigate = useNavigate();

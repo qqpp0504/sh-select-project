@@ -2,11 +2,11 @@ import { useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import successIcon from "../../assets/success-icon.png";
-import { currencyFormatter } from "../../util/formatting.js";
+import successIcon from "@/assets/success-icon.png";
+import { currencyFormatter } from "@/util/formatting.js";
 import FeatureButton from "../UI/FeatureButton.jsx";
-import closeIcon from "../../assets/close-icon.png";
-import { cartActions } from "../../store/cart-slice.js";
+import closeIcon from "@/assets/close-icon.png";
+import { cartActions } from "@/store/cart-slice.js";
 
 export default function CartNotification() {
   const { activeItem, totalQuantity, scrollPosition, showingNotification } =

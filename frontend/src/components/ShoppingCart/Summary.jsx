@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { currencyFormatter } from "../../util/formatting.js";
+import { currencyFormatter } from "@/util/formatting.js";
 
 export default function Summary({ tag, price, className }) {
   let value = price;

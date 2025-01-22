@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import AccountBar from "./AccountBar.jsx";
 import MainNav from "./MainNav.jsx";
 import CartNotification from "../productDetail/CartNotification.jsx";
-import { cartActions } from "../../store/cart-slice.js";
+import { cartActions } from "@/store/cart-slice.js";
 
 export default function MainNavigation() {
   const dispatch = useDispatch();

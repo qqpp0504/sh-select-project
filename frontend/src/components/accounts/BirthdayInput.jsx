@@ -3,7 +3,7 @@ import { useRef } from "react";
 
 import Input from "../UI/Input.jsx";
 
-import { hasMinLength } from "../../util/validation.js";
+import { hasMinLength } from "@/util/validation.js";
 
 export default function BirthdayInput({
   authYearInput,

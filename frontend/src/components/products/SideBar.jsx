@@ -7,7 +7,7 @@ import { PRODUCTSNAV, PRODUCTSNAVMEN } from "../../data.js";
 import Accordion from "../UI/Accordion.jsx";
 import ShowMore from "../UI/ShowMore.jsx";
 import FilterButton from "./FilterButton.jsx";
-import { FILTERS } from "../../data.js";
+import { FILTERS } from "@/data.js";
 import ProductsHeader from "./ProductsHeader.jsx";
 
 export default function SideBar({ children }) {

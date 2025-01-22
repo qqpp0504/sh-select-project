@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import FAQDATA from "../../faqData.js";
+import FAQDATA from "@/faqData";
 
 export default function QuickHelp() {
   return (

@@ -1,7 +1,7 @@
-import heartIcon from "../../assets/heart-icon.png";
-import shoppingBagIcon from "../../assets/shoppingBag-icon.png";
-import leftArrowIcon from "../../assets/left-arrow-icon.png";
-import rightArrowIcon from "../../assets/right-arrow-icon.png";
+import heartIcon from "@/assets/heart-icon.png";
+import shoppingBagIcon from "@/assets/shoppingBag-icon.png";
+import leftArrowIcon from "@/assets/left-arrow-icon.png";
+import rightArrowIcon from "@/assets/right-arrow-icon.png";
 
 // eslint-disable-next-line react/prop-types
 export default function Icon({ type }) {

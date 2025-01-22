@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import "./Accordion.css";
-import showIcon from "../../assets/show-icon.png";
+import showIcon from "@/assets/show-icon.png";
 
 export default function Accordion({
   tag,

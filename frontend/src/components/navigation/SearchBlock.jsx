@@ -3,10 +3,10 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import logo from "../../assets/logo.png";
-import searchIcon from "../../assets/search-icon.png";
-import { filterActions } from "../../store/filter-slice.js";
-import Button from "./Button.jsx";
+import logo from "@/assets/logo.png";
+import searchIcon from "@/assets/search-icon.png";
+import { filterActions } from "@/store/filter-slice.js";
+import Button from "../UI/Button";
 
 export default function SearchBlock({ onClose }) {
   const dispatch = useDispatch();

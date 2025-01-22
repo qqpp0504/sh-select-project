@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import { useDispatch } from "react-redux";
 
-import { currencyFormatter } from "../../util/formatting.js";
+import { currencyFormatter } from "@/util/formatting.js";
 import CartForm from "./CartForm.jsx";
-import { modalActions } from "../../store/modal-slice.js";
+import { modalActions } from "@/store/modal-slice.js";
 import Accordion from "../UI/Accordion.jsx";
 import DeliveryInformation from "./DeliveryInformation";
 

@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import { Outlet, useNavigate, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
-import Input from "../components/UI/Input.jsx";
-import searchIcon from "../assets/search-icon-gray.png";
-import { searchFAQ } from "../util/searchFaq.js";
-import { searchActions } from "../store/searchFaq-slice.js";
+import Input from "@/components/UI/Input.jsx";
+import searchIcon from "@/assets/search-icon-gray.png";
+import { searchFAQ } from "@/util/searchFaq.js";
+import { searchActions } from "@/store/searchFaq-slice.js";
 
 export default function HelpLayout() {
   const { searchTerm } = useSelector((state) => state.searchFaq);

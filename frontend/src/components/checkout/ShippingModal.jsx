@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import Modal from "../UI/Modal.jsx";
-import { modalActions } from "../../store/modal-slice.js";
+import { modalActions } from "@/store/modal-slice.js";
 import FeatureButton from "../UI/FeatureButton.jsx";
 
 export default function ShippingModal() {

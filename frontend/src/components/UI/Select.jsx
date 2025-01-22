@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import "./Select.css";
-import showIcon from "../../assets/show-icon.png";
+import showIcon from "@/assets/show-icon.png";
 
 const CITIES = [
   "臺北市",

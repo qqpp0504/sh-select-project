@@ -1,10 +1,10 @@
 import { useDispatch } from "react-redux";
 
-import logo from "../../assets/logo.png";
-import accountIcon from "../../assets/account-icon.png";
-import messageIcon from "../../assets/message-icon.png";
-import shoppingBagIcon from "../../assets/shoppingBag2-icon.png";
-import { modalActions } from "../../store/modal-slice.js";
+import logo from "@/assets/logo.png";
+import accountIcon from "@/assets/account-icon.png";
+import messageIcon from "@/assets/message-icon.png";
+import shoppingBagIcon from "@/assets/shoppingBag2-icon.png";
+import { modalActions } from "@/store/modal-slice.js";
 
 export default function CheckoutNav() {
   const dispatch = useDispatch();

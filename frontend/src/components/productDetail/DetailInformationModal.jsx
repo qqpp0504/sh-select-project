@@ -2,9 +2,9 @@
 import { useSelector, useDispatch } from "react-redux";
 
 import Modal from "../UI/Modal.jsx";
-import { modalActions } from "../../store/modal-slice.js";
-import { currencyFormatter } from "../../util/formatting.js";
-import closeIcon from "../../assets/close-icon.png";
+import { modalActions } from "@/store/modal-slice.js";
+import { currencyFormatter } from "@/util/formatting.js";
+import closeIcon from "@/assets/close-icon.png";
 
 export default function DetailInformationModal({ product }) {
   const { isShowing } = useSelector((state) => state.modal.productModal);

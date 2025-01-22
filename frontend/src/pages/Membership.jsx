@@ -1,5 +1,5 @@
-import MembershipBlock from "../components/banner/MembershipBlock.jsx";
-import membershipImage from "../assets/membership-banner.jpg";
+import MembershipBlock from "@/components/banner/MembershipBlock.jsx";
+import membershipImage from "@/assets/membership-banner.jpg";
 
 export default function MembershipPage() {
   return (

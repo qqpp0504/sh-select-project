@@ -2,12 +2,12 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import Modal from "../UI/Modal.jsx";
-import { modalActions } from "../../store/modal-slice.js";
-import { currencyFormatter } from "../../util/formatting.js";
+import { modalActions } from "@/store/modal-slice.js";
+import { currencyFormatter } from "@/util/formatting.js";
 import SelectBlock from "../UI/SelectBlock.jsx";
 import FeatureButton from "../UI/FeatureButton.jsx";
-import { cartActions } from "../../store/cart-slice.js";
-import { favoritesActions } from "../../store/favorites-slice.js";
+import { cartActions } from "@/store/cart-slice.js";
+import { favoritesActions } from "@/store/favorites-slice.js";
 import { useAddNotification } from "../hooks/useAddNotification.js";
 
 export default function ResizableModal() {

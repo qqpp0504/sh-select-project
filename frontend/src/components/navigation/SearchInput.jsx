@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 
-import searchIcon from "../../assets/search-icon.png";
+import searchIcon from "@/assets/search-icon.png";
 import SearchBlock from "../UI/SearchBlock.jsx";
 
 export default function SearchInput() {

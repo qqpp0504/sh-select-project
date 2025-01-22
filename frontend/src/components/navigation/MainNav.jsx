@@ -2,10 +2,10 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import logo from "../../assets/logo.png";
+import logo from "@/assets/logo.png";
 import Icon from "../UI/Icon.jsx";
 import SearchInput from "../UI/SearchInput.jsx";
-import { NAVITEMS } from "../../data.js";
+import { NAVITEMS } from "@/data.js";
 
 export default function MainNav() {
   const { isShowingNotification, totalQuantity } = useSelector(

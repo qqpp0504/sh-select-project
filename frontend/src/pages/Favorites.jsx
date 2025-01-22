@@ -1,11 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import { useSelector } from "react-redux";
 
-import { fetchUserFavorites } from "../util/http.js";
-import LoadingIndicator from "../components/UI/LoadingIndicator.jsx";
-import ErrorBlock from "../components/UI/ErrorBlock.jsx";
-import FavoritesProducts from "../components/favorites/FavoritesProducts.jsx";
-import ResizableModal from "../components/ShoppingCart/ResizableModal.jsx";
+import { fetchUserFavorites } from "@/util/http.js";
+import LoadingIndicator from "@/components/UI/LoadingIndicator.jsx";
+import ErrorBlock from "@/components/UI/ErrorBlock.jsx";
+import FavoritesProducts from "@/components/favorites/FavoritesProducts.jsx";
+import ResizableModal from "@/components/ShoppingCart/ResizableModal.jsx";
 
 export default function FavoritesPage() {
   const activeItem = useSelector((state) => state.cart.activeItem);

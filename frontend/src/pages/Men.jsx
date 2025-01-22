@@ -1,15 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
 
-import { fetchBanner } from "../util/http.js";
-import Banner from "../components/banner/Banner.jsx";
-import LoadingIndicator from "../components/UI/LoadingIndicator.jsx";
-import ErrorBlock from "../components/UI/ErrorBlock.jsx";
-import NewSelectedProducts from "../components/banner/NewSelectProducts.jsx";
-import RecommendationProducts from "../components/banner/RecommendationProducts.jsx";
-import BrandsProducts from "../components/banner/BrandsProducts.jsx";
-import MembershipBlock from "../components/banner/MembershipBlock.jsx";
-import SexClassNavigation from "../components/navigation/SexClassNavigation.jsx";
-import membershipBannerImage from "../assets/membership-men.jpg";
+import { fetchBanner } from "@/util/http.js";
+import Banner from "@/components/banner/Banner.jsx";
+import LoadingIndicator from "@/components/UI/LoadingIndicator.jsx";
+import ErrorBlock from "@/components/UI/ErrorBlock.jsx";
+import NewSelectedProducts from "@/components/banner/NewSelectProducts.jsx";
+import RecommendationProducts from "@/components/banner/RecommendationProducts.jsx";
+import BrandsProducts from "@/components/banner/BrandsProducts.jsx";
+import MembershipBlock from "@/components/banner/MembershipBlock.jsx";
+import SexClassNavigation from "@/components/navigation/SexClassNavigation.jsx";
+import membershipBannerImage from "@/assets/membership-men.jpg";
 
 export default function MenPage() {
   const {

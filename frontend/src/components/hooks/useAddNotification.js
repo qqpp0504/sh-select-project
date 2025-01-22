@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 
-import { cartActions } from "../../store/cart-slice.js";
+import { cartActions } from "@/store/cart-slice.js";
 
 export function scrollToTop() {
   window.scrollTo({

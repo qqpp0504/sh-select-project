@@ -2,8 +2,8 @@
 import { useState } from "react";
 
 import Input from "../UI/Input.jsx";
-import showPasswordIcon from "../../assets/show-password-icon.png";
-import hidePasswordIcon from "../../assets/hide-password-icon.png";
+import showPasswordIcon from "@/assets/show-password-icon.png";
+import hidePasswordIcon from "@/assets/hide-password-icon.png";
 
 export default function ShowPasswordButton({ authPasswordInput }) {
   const [showPassword, setShowPassword] = useState(false);

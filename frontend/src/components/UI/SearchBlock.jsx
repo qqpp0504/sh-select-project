@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 
-import logo from "../../assets/logo.png";
-import searchIcon from "../../assets/search-icon.png";
+import logo from "@/assets/logo.png";
+import searchIcon from "@/assets/search-icon.png";
 import Button from "./Button.jsx";
 
 export default function SearchBlock({ onClose }) {

@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
-import { FOOTERDATA } from "../data.js";
-import facebookLogo from "../assets/facebook-logo.png";
-import instagramLogo from "../assets/instagram-logo.png";
-import lineLogo from "../assets/line-logo.png";
-import pinLogo from "../assets/pin-icon.png";
+import { FOOTERDATA } from "@/data.js";
+import facebookLogo from "@/assets/facebook-logo.png";
+import instagramLogo from "@/assets/instagram-logo.png";
+import lineLogo from "@/assets/line-logo.png";
+import pinLogo from "@/assets/pin-icon.png";
 
 const COMMUNITYLOGO = [
   {

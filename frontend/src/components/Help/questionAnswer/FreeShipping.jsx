@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import QuestionTitle from "./QuestionTitle.jsx";
-import groupImg from "../../../assets/group.jpg";
+import groupImg from "@/assets/group.jpg";
 
 export default function FreeShipping() {
   return (

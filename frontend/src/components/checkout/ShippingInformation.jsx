@@ -7,9 +7,9 @@ import Button from "../UI/Button.jsx";
 import Input from "../UI/Input.jsx";
 import ShippingForm from "./ShippingForm.jsx";
 import Information from "./Information.jsx";
-import { currencyFormatter } from "../../util/formatting.js";
+import { currencyFormatter } from "@/util/formatting.js";
 import FeatureButton from "../UI/FeatureButton.jsx";
-import cardIcon from "../../assets/card-icon.png";
+import cardIcon from "@/assets/card-icon.png";
 import DeliveryTime from "./DeliveryTime.jsx";
 
 export default function ShippingInformation() {

@@ -1,15 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
 
-import Banner from "../components/banner/Banner.jsx";
-import { fetchBanner } from "../util/http.js";
-import ErrorBlock from "../components/UI/ErrorBlock.jsx";
-import LoadingIndicator from "../components/UI/LoadingIndicator.jsx";
-import SelectedProducts from "../components/banner/SelectProducts.jsx";
-import NewProducts from "../components/banner/NewProducts.jsx";
-import BrandsProducts from "../components/banner/BrandsProducts.jsx";
-import MembershipBlock from "../components/banner/MembershipBlock.jsx";
-import membershipBannerImage from "../assets/membership-banner.jpg";
-import brandsBannerImg from "../assets/brands-banner.jpg";
+import Banner from "@/components/banner/Banner.jsx";
+import { fetchBanner } from "@/util/http.js";
+import ErrorBlock from "@/components/UI/ErrorBlock.jsx";
+import LoadingIndicator from "@/components/UI/LoadingIndicator.jsx";
+import SelectedProducts from "@/components/banner/SelectProducts.jsx";
+import NewProducts from "@/components/banner/NewProducts.jsx";
+import BrandsProducts from "@/components/banner/BrandsProducts.jsx";
+import MembershipBlock from "@/components/banner/MembershipBlock.jsx";
+import membershipBannerImage from "@/assets/membership-banner.jpg";
+import brandsBannerImg from "@/assets/brands-banner.jpg";
 
 export default function HomePage() {
   const {

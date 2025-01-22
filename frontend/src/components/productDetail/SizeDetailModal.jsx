@@ -2,8 +2,8 @@
 import { useSelector, useDispatch } from "react-redux";
 
 import Modal from "../UI/Modal.jsx";
-import { modalActions } from "../../store/modal-slice.js";
-import closeIcon from "../../assets/close-icon.png";
+import { modalActions } from "@/store/modal-slice.js";
+import closeIcon from "@/assets/close-icon.png";
 
 export default function SizeDetailModal({ productSizeInfo }) {
   const { isShowing } = useSelector((state) => state.modal.sizeModal);

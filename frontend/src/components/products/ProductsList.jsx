@@ -2,10 +2,10 @@
 import { Link, useSearchParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-import { currencyFormatter } from "../../util/formatting.js";
+import { currencyFormatter } from "@/util/formatting.js";
 import Button from "../UI/Button.jsx";
-import emptyIconImg from "../../assets/empty-icon.png";
-import { filterActions } from "../../store/filter-slice.js";
+import emptyIconImg from "@/assets/empty-icon.png";
+import { filterActions } from "@/store/filter-slice.js";
 import { useEffect } from "react";
 
 export default function ProductsList({ products }) {

@@ -2,8 +2,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 
-import { accountActions } from "../../store/account-slice.js";
-import accountIcon from "../../assets/account-icon.png";
+import { accountActions } from "@/store/account-slice.js";
+import accountIcon from "@/assets/account-icon.png";
 import DropdownMenu from "./DropdownMenu.jsx";
 
 export default function AccountBar() {

@@ -2,10 +2,10 @@
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-import { currencyFormatter } from "../../util/formatting.js";
-import { cartActions } from "../../store/cart-slice.js";
-import { modalActions } from "../../store/modal-slice.js";
-import { favoritesActions } from "../../store/favorites-slice.js";
+import { currencyFormatter } from "@/util/formatting.js";
+import { cartActions } from "@/store/cart-slice.js";
+import { modalActions } from "@/store/modal-slice.js";
+import { favoritesActions } from "@/store/favorites-slice.js";
 import FavoritesAddToCartButton from "../UI/FavoritesAddToCartButton.jsx";
 
 export default function FavoritesProducts({ product }) {

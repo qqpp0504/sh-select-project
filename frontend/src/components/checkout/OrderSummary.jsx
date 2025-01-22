@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import "./OrderSummary.css";
 import Summary from "../shoppingCart/Summary.jsx";
 import Tooltip from "../UI/ToolTip.jsx";
-import { currencyFormatter } from "../../util/formatting.js";
+import { currencyFormatter } from "@/util/formatting.js";
 import DeliveryTime from "./DeliveryTime.jsx";
 
 export default function OrderSummary() {

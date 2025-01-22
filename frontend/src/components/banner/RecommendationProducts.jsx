@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 
 import ScrollContainer from "../UI/ScrollContainer.jsx";
-import { currencyFormatter } from "../../util/formatting.js";
+import { currencyFormatter } from "@/util/formatting.js";
 
 export default function RecommendationProducts({ products }) {
   return (

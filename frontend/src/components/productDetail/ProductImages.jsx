@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useEffect } from "react";
 
-import leftArrowIcon from "../../assets/left-arrow-icon.png";
-import rightArrowIcon from "../../assets/right-arrow-icon.png";
+import leftArrowIcon from "@/assets/left-arrow-icon.png";
+import rightArrowIcon from "@/assets/right-arrow-icon.png";
 
 export default function ProductImages({
   product,

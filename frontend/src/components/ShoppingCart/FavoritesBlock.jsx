@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useQuery } from "@tanstack/react-query";
 
-import { fetchUserFavorites } from "../../util/http.js";
+import { fetchUserFavorites } from "@/util/http.js";
 import LoadingIndicator from "../UI/LoadingIndicator.jsx";
 import ErrorBlock from "../UI/ErrorBlock.jsx";
 import FavoritesProducts from "./FavoritesProducts.jsx";

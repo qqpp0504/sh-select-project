@@ -7,8 +7,8 @@ import FeatureButton from "../UI/FeatureButton.jsx";
 import PasswordInput from "./PasswordInput.jsx";
 import BirthdayInput from "./BirthdayInput.jsx";
 import { useAuthForm } from "../hooks/useAuthForm.js";
-import { isNumeric, hasExactLength } from "../../util/validation.js";
-import { registerUser } from "../../util/http.js";
+import { isNumeric, hasExactLength } from "@/util/validation.js";
+import { registerUser } from "@/util/http.js";
 import LoadingIndicator from "../UI/LoadingIndicator.jsx";
 import ErrorBlock from "../UI/ErrorBlock.jsx";
 

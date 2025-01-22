@@ -2,7 +2,7 @@
 import { useSelector } from "react-redux";
 
 import Button from "./Button.jsx";
-import successIcon from "../../assets/success-icon.png";
+import successIcon from "@/assets/success-icon.png";
 
 export default function FavoritesAddToCartButton({ addToCartFn, product }) {
   const { successItems, isSuccessAddToCart } = useSelector(

@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 
-import { fetchProductDetail } from "../util/http.js";
-import LoadingIndicator from "../components/UI/LoadingIndicator.jsx";
-import ErrorBlock from "../components/UI/ErrorBlock.jsx";
-import ProductItem from "../components/productDetail/ProductItem.jsx";
-import DetailInformationModal from "../components/productDetail/DetailInformationModal.jsx";
-import SizeDetailModal from "../components/productDetail/SizeDetailModal.jsx";
+import { fetchProductDetail } from "@/util/http.js";
+import LoadingIndicator from "@/components/UI/LoadingIndicator.jsx";
+import ErrorBlock from "@/components/UI/ErrorBlock.jsx";
+import ProductItem from "@/components/productDetail/ProductItem.jsx";
+import DetailInformationModal from "@/components/productDetail/DetailInformationModal.jsx";
+import SizeDetailModal from "@/components/productDetail/SizeDetailModal.jsx";
 
 export default function ProductDetailPage() {
   const { slug } = useParams();

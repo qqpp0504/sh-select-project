@@ -1,5 +1,5 @@
 import QuestionTitle from "./QuestionTitle.jsx";
-import groupImg from "../../../assets/group2.jpg";
+import groupImg from "@/assets/group2.jpg";
 
 export default function InternationalShipping() {
   return (

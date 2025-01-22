@@ -4,16 +4,16 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import { useDispatch } from "react-redux";
 
-import heartIcon from "../../assets/heart-icon.png";
-import blackHeartIcon from "../../assets/heart-black-icon.png";
-import { currencyFormatter } from "../../util/formatting.js";
-import { deleteFavoriteProduct } from "../../util/http.js";
+import heartIcon from "@/assets/heart-icon.png";
+import blackHeartIcon from "@/assets/heart-black-icon.png";
+import { currencyFormatter } from "@/util/formatting.js";
+import { deleteFavoriteProduct } from "@/util/http.js";
 import ErrorBlock from "../UI/ErrorBlock.jsx";
-import { cartActions } from "../../store/cart-slice.js";
-import { modalActions } from "../../store/modal-slice.js";
+import { cartActions } from "@/store/cart-slice.js";
+import { modalActions } from "@/store/modal-slice.js";
 import { useAddNotification } from "../hooks/useAddNotification.js";
 import FavoritesAddToCartButton from "../UI/FavoritesAddToCartButton.jsx";
-import { favoritesActions } from "../../store/favorites-slice.js";
+import { favoritesActions } from "@/store/favorites-slice.js";
 
 export default function FavoritesProducts({ products, refetch }) {
   const dispatch = useDispatch();

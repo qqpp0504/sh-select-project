@@ -2,14 +2,14 @@ import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useMutation } from "@tanstack/react-query";
 
-import Input from "../UI/Input.jsx";
+import Input from "../UI/Input";
 import FeatureButton from "../UI/FeatureButton.jsx";
 import { useInput } from "../hooks/useInput.js";
-import { isEmail, isNotEmpty } from "../../util/validation.js";
-import { authEmail } from "../../util/http.js";
+import { isEmail, isNotEmpty } from "@/util/validation.js";
+import { authEmail } from "@/util/http.js";
 import ErrorBlock from "../UI/ErrorBlock.jsx";
 import LoadingIndicator from "../UI/LoadingIndicator.jsx";
-import { accountActions } from "../../store/account-slice.js";
+import { accountActions } from "@/store/account-slice.js";
 
 export default function AuthEmail() {
   const { email } = useSelector((state) => state.account);

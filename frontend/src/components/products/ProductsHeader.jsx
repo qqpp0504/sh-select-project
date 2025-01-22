@@ -4,8 +4,8 @@ import { useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 
 import "./ProductsHeader.css";
-import filterIcon from "../../assets/filter-icon.png";
-import showIcon from "../../assets/show-icon.png";
+import filterIcon from "@/assets/filter-icon.png";
+import showIcon from "@/assets/show-icon.png";
 
 export default function ProductsHeader({ isShowing, setIsShowing }) {
   const [isShowingSortBlock, setIsShowingSortBlock] = useState(false);

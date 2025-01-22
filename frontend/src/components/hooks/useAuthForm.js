@@ -8,7 +8,7 @@ import {
   hasMinLength,
   isValidPassword,
   isGreaterThanZero,
-} from "../../util/validation.js";
+} from "@/util/validation.js";
 
 export function useAuthForm() {
   const authInput = {
