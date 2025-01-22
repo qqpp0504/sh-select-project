@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useSelector, useDispatch } from "react-redux";
 
 import Modal from "../UI/Modal.jsx";

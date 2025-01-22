@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { isValidPassword, hasMinLength } from "@/util/validation.js";
 import ShowPasswordButton from "./ShowPasswordButton.jsx";
 

@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { Link, useSearchParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 

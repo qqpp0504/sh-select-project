@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
 import { useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 
@@ -9,6 +7,7 @@ import Button from "./Button.jsx";
 
 export default function SearchBlock({ onClose }) {
   const navigate = useNavigate();
+  // eslint-disable-next-line no-unused-vars
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchTerm, setSearchTerm] = useState("");
 

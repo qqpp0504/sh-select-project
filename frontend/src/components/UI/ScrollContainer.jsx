@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useRef, useState, useEffect } from "react";
 
 import Icon from "../UI/Icon.jsx";

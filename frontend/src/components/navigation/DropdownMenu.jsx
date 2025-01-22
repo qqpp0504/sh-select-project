@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 export default function DropdownMenu({ title, children }) {
   return (
     <div className="absolute right-14 top-full hidden w-[15rem] z-10 text-black hover:block group-hover:block">
