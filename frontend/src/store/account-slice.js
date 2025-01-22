@@ -20,23 +20,6 @@ const accountSlice = createSlice({
       state.userData.token = "";
       state.userData.user = {};
     },
-    addFavorite(state, action) {
-      const newFavorite = action.payload;
-
-      if (!state.userData.user.favorites) {
-        state.userData.user.favorites = [];
-      }
-
-      const existingFavorite = state.userData.user.favorites.find(
-        (favorite) => favorite.id === newFavorite.id
-      );
-
-      if (!existingFavorite) {
-        state.userData.user.favorites.push(newFavorite);
-      } else {
-        console.log("這個商品已經在最愛清單中");
-      }
-    },
   },
 });
 

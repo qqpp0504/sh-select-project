@@ -139,7 +139,7 @@ export async function addFavorites(product) {
   });
 
   if (!response.ok) {
-    const error = new Error("無法註冊帳戶");
+    const error = new Error("無法加入收藏");
     error.code = response.status;
     error.info = await response.json();
     throw error;

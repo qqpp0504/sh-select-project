@@ -10,7 +10,7 @@ import FeatureButton from "../UI/FeatureButton.jsx";
 import heartIcon from "@/assets/heart-icon.png";
 import { cartActions } from "@/store/cart-slice.js";
 import { addFavorites } from "@/util/http.js";
-import { accountActions } from "@/store/account-slice.js";
+
 import ErrorModal from "../UI/ErrorModal.jsx";
 import LoadingIndicator from "../UI/LoadingIndicator.jsx";
 import { useAddNotification } from "../hooks/useAddNotification.js";
@@ -26,7 +26,6 @@ export default function CartForm({ product, onSelect }) {
   const { mutate, isPending, isError, error } = useMutation({
     mutationFn: addFavorites,
     onSuccess: (resData) => {
-      dispatch(accountActions.addFavorite(resData));
       addNotification(resData.favorite.product, "addToFavorites");
     },
   });

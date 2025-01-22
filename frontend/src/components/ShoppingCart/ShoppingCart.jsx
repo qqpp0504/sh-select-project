@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import { useMutation } from "@tanstack/react-query";
 
 import { currencyFormatter } from "@/util/formatting.js";
 import { cartActions } from "@/store/cart-slice.js";
@@ -8,10 +9,22 @@ import addIcon from "@/assets/add-icon.png";
 import subtractIcon from "@/assets/subtract-icon.png";
 import heartIcon from "@/assets/heart-icon.png";
 import { modalActions } from "@/store/modal-slice.js";
+import { addFavorites } from "@/util/http.js";
+import ErrorModal from "../UI/ErrorModal.jsx";
 
 export default function ShoppingCart() {
+  const { token } = useSelector((state) => state.account.userData);
+  const { refetch } = useSelector((state) => state.favorites);
   const productItems = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const { mutate, isPending, isError, error } = useMutation({
+    mutationFn: addFavorites,
+    onSuccess: () => {
+      refetch();
+    },
+  });
 
   function handleRemoveFromCart({ id, color, size, idNumber }) {
     dispatch(cartActions.removeFromCart({ id, color, size, idNumber }));
@@ -26,6 +39,14 @@ export default function ShoppingCart() {
       modalActions.showModal({ modalType: "changeSizeModal", type: "default" })
     );
     dispatch(cartActions.checkItemStatus(productItem));
+  }
+
+  function handleAddToFavorites(product) {
+    if (token) {
+      mutate(product);
+    } else {
+      navigate("/accounts");
+    }
   }
 
   let cartContent;
@@ -82,7 +103,10 @@ export default function ShoppingCart() {
                     </button>
                   </div>
 
-                  <button className="p-[0.6rem] hover:bg-gray-200 rounded-full border-[1px] border-gray-200">
+                  <button
+                    onClick={() => handleAddToFavorites(productItem)}
+                    className="p-[0.6rem] hover:bg-gray-200 rounded-full border-[1px] border-gray-200"
+                  >
                     <img src={heartIcon} alt="Heart icon" className="w-5" />
                   </button>
                 </div>
@@ -145,6 +169,11 @@ export default function ShoppingCart() {
     <section className="w-[70%]">
       <h1 className="text-2xl font-500 mb-6">購物車</h1>
       {cartContent}
+
+      {isPending && <p>isPending</p>}
+      {isError && (
+        <ErrorModal message={error.info?.message || "產品已加入願望清單。"} />
+      )}
     </section>
   );
 }
