@@ -35,6 +35,9 @@ const modalSlice = createSlice({
 
       state[modalType].isShowing = false;
     },
+    resetModal() {
+      return initialModalState;
+    },
   },
 });
 

@@ -107,6 +107,9 @@ const cartSlice = createSlice({
     updatedScrollPosition(state, action) {
       state.scrollPosition = action.payload;
     },
+    resetShowingNotification(state) {
+      state.showingNotification = { isOpen: false, type: "" };
+    },
   },
 });
 
