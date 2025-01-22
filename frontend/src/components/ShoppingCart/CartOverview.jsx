@@ -4,6 +4,7 @@ import ShoppingCart from "./ShoppingCart.jsx";
 import ShoppingSummary from "./ShoppingSummary.jsx";
 import ResizableModal from "./ResizableModal.jsx";
 import FavoritesBlock from "./FavoritesBlock.jsx";
+import FavoriteAddedModal from "./FavoriteAddedModal.jsx";
 
 export default function CartOverview() {
   const activeItem = useSelector((state) => state.cart.activeItem);
@@ -11,6 +12,7 @@ export default function CartOverview() {
   return (
     <section className="padding-large mt-6">
       {activeItem && <ResizableModal />}
+      <FavoriteAddedModal />
       <div className="flex justify-center">
         <div className="max-w-[67rem] w-full">
           <div className="flex gap-6">

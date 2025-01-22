@@ -1,4 +1,3 @@
-// eslint-disable-next-line react/prop-types
 export default function ErrorBlock({ message }) {
   return (
     <div className="my-20 w-[50%] mx-auto p-8 rounded-lg bg-gray-200">

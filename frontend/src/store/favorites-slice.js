@@ -3,7 +3,6 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialFilterState = {
   successItems: [],
   isSuccessAddToCart: false,
-  refetch: null,
 };
 
 const favoritesSlice = createSlice({
@@ -22,9 +21,6 @@ const favoritesSlice = createSlice({
     },
     updatedIsSuccess(state, action) {
       state.isSuccessAddToCart = action.payload;
-    },
-    setRefetch: (state, action) => {
-      state.refetch = action.payload;
     },
     resetState() {
       return initialFilterState;

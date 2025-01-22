@@ -1,16 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { useQuery } from "@tanstack/react-query";
 
 import { fetchUserFavorites } from "@/util/http.js";
 import LoadingIndicator from "../UI/LoadingIndicator.jsx";
 import ErrorBlock from "../UI/ErrorBlock.jsx";
 import FavoritesProducts from "./FavoritesProducts.jsx";
-import { favoritesActions } from "@/store/favorites-slice.js";
 
 export default function FavoritesBlock() {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [isShowMore, setIsShowMore] = useState(false);
   const { token, user } = useSelector((state) => state.account.userData);
@@ -20,7 +18,6 @@ export default function FavoritesBlock() {
     isLoading,
     isError,
     error,
-    refetch,
   } = useQuery({
     queryKey: ["userFavorites", { userEmail: user.email }],
     queryFn: ({ queryKey, signal }) =>
@@ -31,10 +28,6 @@ export default function FavoritesBlock() {
     timeout: 5000,
     enabled: !!token,
   });
-
-  useEffect(() => {
-    dispatch(favoritesActions.setRefetch(refetch));
-  }, [dispatch, refetch]);
 
   function handleShowMoreProducts() {
     if (isShowMore === true || favoritesProducts.length <= 2) {

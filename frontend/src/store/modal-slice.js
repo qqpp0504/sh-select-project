@@ -10,6 +10,7 @@ const initialModalState = {
     page: "",
   },
   shippingModal: { isShowing: false, link: null },
+  favoriteAddedModal: { isShowing: false, link: null },
 };
 
 const modalSlice = createSlice({

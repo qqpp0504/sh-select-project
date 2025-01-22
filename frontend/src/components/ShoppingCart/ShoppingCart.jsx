@@ -1,3 +1,4 @@
+import { useQueryClient } from "@tanstack/react-query";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useMutation } from "@tanstack/react-query";
@@ -13,8 +14,8 @@ import { addFavorites } from "@/util/http.js";
 import ErrorModal from "../UI/ErrorModal.jsx";
 
 export default function ShoppingCart() {
+  const queryClient = useQueryClient();
   const { token } = useSelector((state) => state.account.userData);
-  const { refetch } = useSelector((state) => state.favorites);
   const productItems = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -22,7 +23,8 @@ export default function ShoppingCart() {
   const { mutate, isPending, isError, error } = useMutation({
     mutationFn: addFavorites,
     onSuccess: () => {
-      refetch();
+      queryClient.invalidateQueries(["userFavorites"]);
+      dispatch(modalActions.showModal({ modalType: "favoriteAddedModal" }));
     },
   });
 
