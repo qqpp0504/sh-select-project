@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import "./Select.css";
 import showIcon from "@/assets/show-icon.png";
 
@@ -28,20 +26,21 @@ const CITIES = [
   "連江縣",
 ];
 
-export default function Select() {
-  const [optionValue, setOptionValue] = useState("");
-
-  function handleOptionChange(event) {
-    setOptionValue(event.target.value);
-  }
-
+export default function Select({ userSelect }) {
   return (
     <div className="relative">
       <select
-        value={optionValue}
-        onChange={handleOptionChange}
-        className={`select w-full px-4 py-[0.9rem] rounded-lg outline-none hover:border-black ${
-          optionValue ? "text-black" : "text-gray"
+        value={userSelect.value}
+        id="city"
+        name="city"
+        onChange={userSelect.handleInputChange}
+        onBlur={userSelect.handleInputBlur}
+        className={`select w-full px-4 py-[0.9rem] rounded-lg outline-none border-[1px] ${
+          userSelect.value ? "text-black" : "text-gray"
+        } ${
+          userSelect.hasError
+            ? "border-red-600 hover:border-red-600"
+            : "border-gray-500 hover:border-black"
         }`}
       >
         <option value="" disabled>
@@ -58,7 +57,7 @@ export default function Select() {
       </div>
       <div
         className={`absolute top-[-7px] text-xs left-4 px-1 text-gray bg-white ${
-          optionValue ? "block" : "hidden"
+          userSelect.value ? "block" : "hidden"
         }`}
       >
         縣市

@@ -1,4 +1,3 @@
-// src/hooks/useAuthForm.js
 import { useInput } from "./useInput.js";
 import { useCheckboxInput } from "../hooks/useCheckboxInput.js";
 import {

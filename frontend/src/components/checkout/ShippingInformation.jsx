@@ -10,8 +10,10 @@ import { currencyFormatter } from "@/util/formatting.js";
 import FeatureButton from "../UI/FeatureButton.jsx";
 import cardIcon from "@/assets/card-icon.png";
 import DeliveryTime from "./DeliveryTime.jsx";
+import { useShippingForm } from "../hooks/useShippingForm.js";
 
 export default function ShippingInformation() {
+  const { shippingInput, hasError, allErrorsInput } = useShippingForm();
   const { shippingFee } = useSelector((state) => state.cart);
 
   const token = localStorage.getItem("token");
@@ -20,6 +22,23 @@ export default function ShippingInformation() {
     shippingFee > 0
       ? `NT${currencyFormatter.format(shippingFee)} 運費`
       : "免運費";
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    const fd = new FormData(event.target);
+    const formData = Object.fromEntries(fd.entries());
+
+    const inputValueIsEmpty = Object.values(formData).some((value) => !value);
+
+    if (hasError || inputValueIsEmpty || !formData.city) {
+      allErrorsInput.forEach((errorInput) => {
+        errorInput.handleInputBlur();
+      });
+      return;
+    }
+
+    console.log(formData);
+  }
 
   return (
     <section className="w-[28rem]">
@@ -40,8 +59,8 @@ export default function ShippingInformation() {
       ) : (
         <div className="py-6"></div>
       )}
-      <form>
-        <ShippingForm />
+      <form onSubmit={handleSubmit}>
+        <ShippingForm {...shippingInput} />
 
         <hr />
 
@@ -112,7 +131,9 @@ export default function ShippingInformation() {
                   />
                 </div>
               </div>
-              <FeatureButton className="my-5">下訂單</FeatureButton>
+              <FeatureButton type="submit" className="my-5">
+                下訂單
+              </FeatureButton>
             </div>
           </div>
         </Information>

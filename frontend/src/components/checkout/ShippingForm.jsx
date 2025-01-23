@@ -1,36 +1,22 @@
 import Input from "../UI/Input.jsx";
-import Select from "../UI/Select.jsx";
-import { useInput } from "../hooks/useInput.js";
+import Select from "./Select.jsx";
 import {
   isEmail,
-  isNotEmpty,
   hasExactLength,
   isChinese,
   validateInput,
 } from "../../util/validation.js";
 
-export default function CustomerForm() {
-  const lastNameInput = useInput("", (value) => isNotEmpty(value));
-  const firstNameInput = useInput("", (value) => isNotEmpty(value));
-  const postalInput = useInput(
-    "",
-    (value) => isNotEmpty(value) && hasExactLength(value, 3),
-    "number"
-  );
-  const districtsInput = useInput(
-    "",
-    (value) => isNotEmpty(value) && isChinese(value)
-  );
-  const addressInput = useInput(
-    "",
-    (value) => isNotEmpty(value) && isChinese(value)
-  );
-  const emailInput = useInput(
-    "",
-    (value) => isEmail(value) && isNotEmpty(value)
-  );
-  const phoneInput = useInput("", (value) => hasExactLength(value, 10));
-
+export default function ShippingForm({
+  lastNameInput,
+  firstNameInput,
+  postalInput,
+  citySelect,
+  districtsInput,
+  addressInput,
+  emailInput,
+  phoneInput,
+}) {
   const postalInputMessage = validateInput(
     postalInput,
     (value) => hasExactLength(value, 3),
@@ -77,6 +63,7 @@ export default function CustomerForm() {
           <Input
             type="text"
             id="lastName"
+            name="lastName"
             placeholderText="姓氏"
             value={lastNameInput.value}
             onBlur={lastNameInput.handleInputBlur}
@@ -89,6 +76,7 @@ export default function CustomerForm() {
           <Input
             type="text"
             id="firstName"
+            name="firstName"
             placeholderText="名字"
             value={firstNameInput.value}
             onBlur={firstNameInput.handleInputBlur}
@@ -101,6 +89,7 @@ export default function CustomerForm() {
           <Input
             type="text"
             id="country"
+            name="country"
             value="台灣"
             className="greenPoint"
             readOnly
@@ -110,6 +99,7 @@ export default function CustomerForm() {
           <Input
             type="number"
             id="postal"
+            name="postal"
             placeholderText="郵遞區號"
             min="0"
             value={postalInput.value}
@@ -118,11 +108,12 @@ export default function CustomerForm() {
             error={postalInput.hasError}
             errorText={postalInputMessage}
           />
-          <Select id="city" />
+          <Select userSelect={citySelect} />
           <div className="relative">
             <Input
               type="text"
               id="districts"
+              name="districts"
               placeholderText="鄉鎮市區"
               value={districtsInput.value}
               onBlur={districtsInput.handleInputBlur}
@@ -140,6 +131,7 @@ export default function CustomerForm() {
             <Input
               type="text"
               id="address"
+              name="address"
               placeholderText="地址"
               value={addressInput.value}
               onBlur={addressInput.handleInputBlur}
@@ -162,6 +154,7 @@ export default function CustomerForm() {
           <Input
             type="email"
             id="email"
+            name="email"
             placeholderText="電子郵件"
             value={emailInput.value}
             onBlur={emailInput.handleInputBlur}
@@ -174,6 +167,7 @@ export default function CustomerForm() {
           <Input
             type="tel"
             id="phone"
+            name="phone"
             placeholderText="電話號碼"
             value={phoneInput.value}
             onBlur={phoneInput.handleInputBlur}
