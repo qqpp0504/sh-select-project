@@ -131,7 +131,15 @@ export default function ShippingInformation() {
                   />
                 </div>
               </div>
-              <FeatureButton type="submit" className="my-5">
+              <FeatureButton
+                type="submit"
+                bgColor={`${
+                  Object.values(shippingInput).some((input) => !input.value)
+                    ? "gray"
+                    : "black"
+                }`}
+                className="my-5"
+              >
                 下訂單
               </FeatureButton>
             </div>
