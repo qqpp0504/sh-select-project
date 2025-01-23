@@ -31,8 +31,7 @@ export default function RegisterForm() {
 
   const { mutate, isPending, isError, error } = useMutation({
     mutationFn: registerUser,
-    onSuccess: (data) => {
-      console.log(data);
+    onSuccess: () => {
       navigate("/");
     },
   });
@@ -64,6 +63,8 @@ export default function RegisterForm() {
       return;
     }
 
+    console.log("Yes!");
+
     mutate(authInputData);
   }
 
@@ -82,7 +83,6 @@ export default function RegisterForm() {
   return (
     <section>
       <form onSubmit={handleSubmit}>
-        {" "}
         <h1 className="text-3xl">馬上成為 SH SELECT 會員。</h1>
         <p className="text-gray-600 my-3 inline-block">
           代碼已寄送至 <br />
@@ -166,13 +166,15 @@ export default function RegisterForm() {
             >
               <p
                 className={`w-full ${
-                  authAgreeInput.hasCheckedError && "text-red-600"
+                  authAgreeInput.hasCheckedError &&
+                  authAgreeInput.didEdit &&
+                  "text-red-600"
                 }`}
               >
                 我同意 SH SELECT 的{" "}
                 <span
                   className={`underline ${
-                    authAgreeInput.hasCheckedError
+                    authAgreeInput.hasCheckedError && authAgreeInput.didEdit
                       ? "text-red-600"
                       : "text-black"
                   }`}
@@ -182,7 +184,7 @@ export default function RegisterForm() {
                 與
                 <span
                   className={`underline ${
-                    authAgreeInput.hasCheckedError
+                    authAgreeInput.hasCheckedError && authAgreeInput.didEdit
                       ? "text-red-600"
                       : "text-black"
                   }`}

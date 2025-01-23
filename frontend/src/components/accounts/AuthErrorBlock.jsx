@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 export default function AuthErrorBlock({ message }) {
   return (
     <div className="bg-gray-100 py-[0.6rem] px-4 flex gap-4 items-center mt-3">

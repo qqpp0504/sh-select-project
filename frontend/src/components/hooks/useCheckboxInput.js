@@ -17,13 +17,14 @@ export function useCheckboxInput(validateError) {
     setDidEdit(true);
   }
 
-  const hasCheckedError = validateError && didEdit && isChecked !== true;
+  const hasCheckedError = validateError === true && !isChecked;
 
   return {
     handleInputChange,
     handleCheckboxChange,
     handleInputBlur,
     isChecked,
+    didEdit,
     hasCheckedError,
   };
 }

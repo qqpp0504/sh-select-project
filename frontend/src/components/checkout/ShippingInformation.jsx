@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -13,7 +12,6 @@ import cardIcon from "@/assets/card-icon.png";
 import DeliveryTime from "./DeliveryTime.jsx";
 
 export default function ShippingInformation() {
-  const [isShowingPayInfo, setIsShowingPayInfo] = useState(false);
   const { shippingFee } = useSelector((state) => state.cart);
 
   const token = localStorage.getItem("token");
@@ -22,10 +20,6 @@ export default function ShippingInformation() {
     shippingFee > 0
       ? `NT${currencyFormatter.format(shippingFee)} 運費`
       : "免運費";
-
-  function handleShowPayInfo() {
-    setIsShowingPayInfo((isShowing) => !isShowing);
-  }
 
   return (
     <section className="w-[28rem]">
@@ -77,55 +71,49 @@ export default function ShippingInformation() {
             <div>
               <h2 className="font-500 text-xl mb-5">你想要如何付款？</h2>
               <FeatureButton
+                type="button"
                 bgColor="checkoutWhite"
-                className={`${
-                  isShowingPayInfo ? "border-black" : "border-gray-300"
-                }`}
-                onClick={handleShowPayInfo}
+                className="border-black"
               >
                 <img src={cardIcon} alt="Card icon" className="w-5" />
                 信用卡或金融簽帳卡
               </FeatureButton>
             </div>
 
-            {isShowingPayInfo && (
-              <div>
-                <h2 className="font-500 text-xl mb-5">
-                  請輸入你的詳細付款資訊：
-                </h2>
-                <div className="py-4 flex flex-col gap-7">
+            <div>
+              <h2 className="font-500 text-xl mb-5">
+                請輸入你的詳細付款資訊：
+              </h2>
+              <div className="py-4 flex flex-col gap-7">
+                <Input
+                  type="text"
+                  id="cardName"
+                  placeholder="信用卡持有人姓名"
+                  readOnly
+                />
+                <Input
+                  type="number"
+                  id="cardNumber"
+                  placeholder="卡號"
+                  readOnly
+                />
+                <div className="grid grid-cols-2 gap-5">
                   <Input
-                    type="text"
-                    id="cardName"
-                    placeholder="信用卡持有人姓名"
+                    type="number"
+                    id="cardMD"
+                    placeholder="月份/年份末兩碼"
                     readOnly
                   />
                   <Input
                     type="number"
-                    id="cardNumber"
-                    placeholder="卡號"
+                    id="cardSecurityCode"
+                    placeholder="安全碼"
                     readOnly
                   />
-                  <div className="grid grid-cols-2 gap-5">
-                    <Input
-                      type="number"
-                      id="cardMD"
-                      placeholder="月份/年份末兩碼"
-                      readOnly
-                    />
-                    <Input
-                      type="number"
-                      id="cardSecurityCode"
-                      placeholder="安全碼"
-                      readOnly
-                    />
-                  </div>
                 </div>
-                <FeatureButton className="my-5" bgColor="gray">
-                  下訂單
-                </FeatureButton>
               </div>
-            )}
+              <FeatureButton className="my-5">下訂單</FeatureButton>
+            </div>
           </div>
         </Information>
       </form>

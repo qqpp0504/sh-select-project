@@ -1,1 +1,96 @@
-{"users":[{"authCode":"11111111","lastName":"韓","firstName":"惟晞","password":"$2a$12$mb6BcQduNMuI3DzYiccKjuRDYlAhntcFw3LPcmNAr518XhREPPJdW","birthdayYear":"2000","birthdayMonth":"5","birthdayDay":"4","agree":true,"email":"qqpp0504@gmail.com","id":"c89df194-f831-4d72-aaad-125c0641e70c","favorites":[{"id":"p24","productName":"D89 後背包","brand":"Carhartt","alt":"Carhartt D89 後背包圖片","slug":"p24-carhartt-D89後背包","category":"其他配件","allSizes":["F"],"originalPrice":1980,"discountPrice":1980,"color":{"name":"黑色","image":"carhartt-d89.jpg"},"size":"F","quantity":1,"itemTotalPrice":1980,"idNumber":1737568689591,"favoriteId":"eb329e39-6242-4975-b1f9-9d33af40f927"},{"id":"p21","productName":"Dri-Fit 中度支撐運動內衣","brand":"Nike","alt":"Nike Dri-Fit 中度支撐運動內衣圖片","slug":"p21-nike-Dri-Fit中度支撐運動內衣","category":"運動內衣","allSizes":["S","M","L"],"originalPrice":990,"discountPrice":990,"color":{"name":"黑色","image":"nike-sports-bra.jpg"},"size":"L","quantity":1,"itemTotalPrice":990,"idNumber":1737572999536,"favoriteId":"c2de466c-219c-4e5d-bed0-ad677358845d"}]},{"authCode":"22222222","lastName":"蘇","firstName":"紫葳","password":"$2a$12$Ou.j94o8vmtv/HPNRbSU/.HHgsDuXSdbEubiumAFvPKUc6R4feSYy","birthdayYear":"2002","birthdayMonth":"10","birthdayDay":"6","agree":true,"email":"doris2362983@gmail.com","id":"ad8ad51f-1dda-4216-a46e-b882b6dd3d08","favorites":[{"id":"p24","productName":"D89 後背包","brand":"Carhartt","alt":"Carhartt D89 後背包圖片","slug":"p24-carhartt-D89後背包","category":"其他配件","allSizes":["F"],"originalPrice":1980,"discountPrice":1980,"color":{"name":"黑色","image":"carhartt-d89.jpg"},"size":"F","quantity":1,"itemTotalPrice":1980,"idNumber":1737568689591,"favoriteId":"c9ccd1e4-e782-455a-aedf-374db5e6e835"},{"id":"p2","productName":"大Logo帽Tee","brand":"Nautica","alt":"Nautica 大Logo帽Tee圖片","slug":"p2-nautica-大Logo帽Tee","category":"上衣","allSizes":["S","M","L","XL"],"originalPrice":2500,"discountPrice":2500,"color":{"name":"綠色","image":"nautica-hoodie.jpg"},"favoriteId":"7c48c882-825b-4f0f-9f49-4834d7a585f8"}]},{"authCode":"33333333","lastName":"蘇","firstName":"貝貝","password":"$2a$12$Y37hYyc1a41D2.rRCAcYeO8f415SXRDIVvGvLms8WaDv/h5Oua4Qe","birthdayYear":"2022","birthdayMonth":"8","birthdayDay":"18","agree":true,"email":"qqpp0818@gmail.com","id":"f82be90e-37a3-40d3-91b1-3d17916d701e"}]}
+{
+  "users": [
+    {
+      "authCode": "11111111",
+      "lastName": "韓",
+      "firstName": "惟晞",
+      "password": "$2a$12$mb6BcQduNMuI3DzYiccKjuRDYlAhntcFw3LPcmNAr518XhREPPJdW",
+      "birthdayYear": "2000",
+      "birthdayMonth": "5",
+      "birthdayDay": "4",
+      "agree": true,
+      "email": "qqpp0504@gmail.com",
+      "id": "c89df194-f831-4d72-aaad-125c0641e70c",
+      "favorites": [
+        {
+          "id": "p24",
+          "productName": "D89 後背包",
+          "brand": "Carhartt",
+          "alt": "Carhartt D89 後背包圖片",
+          "slug": "p24-carhartt-D89後背包",
+          "category": "其他配件",
+          "allSizes": ["F"],
+          "originalPrice": 1980,
+          "discountPrice": 1980,
+          "color": { "name": "黑色", "image": "carhartt-d89.jpg" },
+          "size": "F",
+          "quantity": 1,
+          "itemTotalPrice": 1980,
+          "idNumber": 1737568689591,
+          "favoriteId": "eb329e39-6242-4975-b1f9-9d33af40f927"
+        },
+        {
+          "id": "p21",
+          "productName": "Dri-Fit 中度支撐運動內衣",
+          "brand": "Nike",
+          "alt": "Nike Dri-Fit 中度支撐運動內衣圖片",
+          "slug": "p21-nike-Dri-Fit中度支撐運動內衣",
+          "category": "運動內衣",
+          "allSizes": ["S", "M", "L"],
+          "originalPrice": 990,
+          "discountPrice": 990,
+          "color": { "name": "黑色", "image": "nike-sports-bra.jpg" },
+          "size": "L",
+          "quantity": 1,
+          "itemTotalPrice": 990,
+          "idNumber": 1737654326359,
+          "favoriteId": "a71bc28b-149f-4ed3-aa6f-e129ad213160"
+        }
+      ]
+    },
+    {
+      "authCode": "22222222",
+      "lastName": "蘇",
+      "firstName": "紫葳",
+      "password": "$2a$12$Ou.j94o8vmtv/HPNRbSU/.HHgsDuXSdbEubiumAFvPKUc6R4feSYy",
+      "birthdayYear": "2002",
+      "birthdayMonth": "10",
+      "birthdayDay": "6",
+      "agree": true,
+      "email": "doris2362983@gmail.com",
+      "id": "ad8ad51f-1dda-4216-a46e-b882b6dd3d08",
+      "favorites": [
+        {
+          "id": "p24",
+          "productName": "D89 後背包",
+          "brand": "Carhartt",
+          "alt": "Carhartt D89 後背包圖片",
+          "slug": "p24-carhartt-D89後背包",
+          "category": "其他配件",
+          "allSizes": ["F"],
+          "originalPrice": 1980,
+          "discountPrice": 1980,
+          "color": { "name": "黑色", "image": "carhartt-d89.jpg" },
+          "size": "F",
+          "quantity": 1,
+          "itemTotalPrice": 1980,
+          "idNumber": 1737568689591,
+          "favoriteId": "c9ccd1e4-e782-455a-aedf-374db5e6e835"
+        },
+        {
+          "id": "p2",
+          "productName": "大Logo帽Tee",
+          "brand": "Nautica",
+          "alt": "Nautica 大Logo帽Tee圖片",
+          "slug": "p2-nautica-大Logo帽Tee",
+          "category": "上衣",
+          "allSizes": ["S", "M", "L", "XL"],
+          "originalPrice": 2500,
+          "discountPrice": 2500,
+          "color": { "name": "綠色", "image": "nautica-hoodie.jpg" },
+          "favoriteId": "7c48c882-825b-4f0f-9f49-4834d7a585f8"
+        }
+      ]
+    }
+  ]
+}
