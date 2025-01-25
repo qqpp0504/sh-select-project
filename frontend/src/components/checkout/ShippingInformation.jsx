@@ -36,22 +36,20 @@ export default function ShippingInformation() {
       });
       return;
     }
-
-    console.log(formData);
   }
 
   return (
     <section className="w-[28rem]">
       <h1 className="text-[1.7rem] font-500">寄送資訊</h1>
       {!token ? (
-        <div className="font-500 flex flex-col gap-2 my-10">
-          <Link to="/accounts" className="w-fit">
-            <Button bgColor="checkoutWhite" paddingStyle="py-2 px-6">
+        <div className="font-500 flex flex-col gap-3 my-10">
+          <Link to="/accounts">
+            <Button variant="checkoutWhite" size="lg">
               加入會員
             </Button>
           </Link>
-          <Link to="/accounts" className="w-fit">
-            <Button bgColor="checkoutWhite" paddingStyle="py-2 px-6">
+          <Link to="/accounts">
+            <Button variant="checkoutWhite" size="lg">
               登入
             </Button>
           </Link>

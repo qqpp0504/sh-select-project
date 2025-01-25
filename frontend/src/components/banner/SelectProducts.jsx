@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import Button from "../UI/Button.jsx";
 import ScrollContainer from "../UI/ScrollContainer.jsx";
 
@@ -21,7 +20,7 @@ export default function SelectedProducts({ products, sectionTitle }) {
               {product.title}
             </h2>
 
-            <Button link={`/products/${product.slug}`} bgColor="white">
+            <Button link={`/products/${product.slug}`} variant="white">
               立即選購
             </Button>
           </div>

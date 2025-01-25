@@ -79,7 +79,7 @@ export default function SearchBlock({ onClose }) {
                   onClick={() => handleSearch(item)}
                   key={item}
                 >
-                  <Button bgColor="gray" paddingStyle="px-6 py-2">
+                  <Button variant="gray" paddingStyle="px-6 py-2">
                     {item}
                   </Button>
                 </button>

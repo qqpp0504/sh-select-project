@@ -17,7 +17,7 @@ export default function BrandsProducts() {
           />
 
           <div className="absolute bottom-5 left-12">
-            <Button link={brand.link} bgColor="white">
+            <Button link={brand.link} variant="white">
               {brand.title}
             </Button>
           </div>

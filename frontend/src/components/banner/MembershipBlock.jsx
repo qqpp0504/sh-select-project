@@ -43,7 +43,7 @@ export default function MembershipBlock({
           </table>
         </div>
         <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2">
-          <Button link="/accounts" bgColor="white">
+          <Button link="/accounts" variant="white">
             加入會員
           </Button>
         </div>

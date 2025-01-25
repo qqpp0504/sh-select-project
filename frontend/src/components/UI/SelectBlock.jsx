@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 export default function SelectBlock({
   onSelect = null,
   id,
