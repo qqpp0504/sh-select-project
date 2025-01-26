@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useMutation } from "@tanstack/react-query";
 
-import FeatureButton from "../UI/FeatureButton.jsx";
+import Button from "../UI/Button.jsx";
 import ShowPasswordButton from "./ShowPasswordButton.jsx";
 import { useInput } from "../hooks/useInput.js";
 import { isNotEmpty } from "@/util/validation.js";
@@ -58,17 +58,17 @@ export default function LoginForm() {
         </div>
 
         <div className="my-9 flex justify-end">
-          <FeatureButton
+          <Button
             type={`${isPending ? "button" : "submit"}`}
-            bgColor="accountBlack"
-            paddingStyle={`${isPending ? "py-3 px-8" : "py-3 px-6"}`}
+            size="custom"
+            className={`${isPending ? "py-3 px-8" : "py-3 px-6"}`}
           >
             {isPending ? (
               <LoadingIndicator color="white" margin="my-0" />
             ) : (
               "登入"
             )}
-          </FeatureButton>
+          </Button>
         </div>
       </form>
     </section>

@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 
 import Input from "../UI/Input.jsx";
-import FeatureButton from "../UI/FeatureButton.jsx";
+import Button from "../UI/Button.jsx";
 import PasswordInput from "./PasswordInput.jsx";
 import BirthdayInput from "./BirthdayInput.jsx";
 import { useAuthForm } from "../hooks/useAuthForm.js";
@@ -195,17 +195,17 @@ export default function RegisterForm() {
           </div>
         </div>
         <div className="my-9 flex justify-end">
-          <FeatureButton
+          <Button
             type={`${isPending ? "button" : "submit"}`}
-            bgColor="accountBlack"
-            paddingStyle={`${isPending ? "py-3 px-8" : "py-3 px-6"}`}
+            size="custom"
+            className={`${isPending ? "py-3 px-8" : "py-3 px-6"}`}
           >
             {isPending ? (
               <LoadingIndicator color="white" margin="my-0" />
             ) : (
               "建立帳戶"
             )}
-          </FeatureButton>
+          </Button>
         </div>
         {isError && (
           <ErrorBlock message={error.info?.message || "無法建立帳戶"} />

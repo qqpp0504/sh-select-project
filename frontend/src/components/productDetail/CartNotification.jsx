@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import successIcon from "@/assets/success-icon.png";
 import { currencyFormatter } from "@/util/formatting.js";
-import FeatureButton from "../UI/FeatureButton.jsx";
+import Button from "../UI/Button.jsx";
 import closeIcon from "@/assets/close-icon.png";
 import { cartActions } from "@/store/cart-slice.js";
 
@@ -110,28 +110,34 @@ export default function CartNotification() {
           </div>
         </div>
 
-        <div className="flex gap-1">
+        <div className="flex gap-2 text-center">
           {showingNotification.type === "addToCart" && (
             <>
-              <FeatureButton
-                bgColor="white"
-                paddingStyle="py-4"
+              <Button
+                variant="bordered"
                 onClick={handleNavigateToCart}
+                size="custom"
+                className="w-full py-4 rounded-full"
               >
                 查看購物車 ({totalQuantity})
-              </FeatureButton>
-              <FeatureButton paddingStyle="py-4" link="/checkout">
+              </Button>
+              <Button
+                link="/checkout"
+                size="custom"
+                className="w-full py-4 rounded-full"
+              >
                 結帳
-              </FeatureButton>
+              </Button>
             </>
           )}
           {showingNotification.type === "addToFavorites" && (
-            <FeatureButton
-              paddingStyle="py-4"
+            <Button
               onClick={handleNavigateToFavorites}
+              size="custom"
+              className="w-full py-4 rounded-full"
             >
               檢視最愛
-            </FeatureButton>
+            </Button>
           )}
         </div>
       </div>

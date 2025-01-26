@@ -7,7 +7,6 @@ import Input from "../UI/Input.jsx";
 import ShippingForm from "./ShippingForm.jsx";
 import Information from "./Information.jsx";
 import { currencyFormatter } from "@/util/formatting.js";
-import FeatureButton from "../UI/FeatureButton.jsx";
 import cardIcon from "@/assets/card-icon.png";
 import DeliveryTime from "./DeliveryTime.jsx";
 import { useShippingForm } from "../hooks/useShippingForm.js";
@@ -44,12 +43,20 @@ export default function ShippingInformation() {
       {!token ? (
         <div className="font-500 flex flex-col gap-3 my-10">
           <Link to="/accounts">
-            <Button variant="checkoutWhite" size="lg">
+            <Button
+              variant="white"
+              size="lg"
+              className="border border-gray-300"
+            >
               加入會員
             </Button>
           </Link>
           <Link to="/accounts">
-            <Button variant="checkoutWhite" size="lg">
+            <Button
+              variant="white"
+              size="lg"
+              className="border border-gray-300"
+            >
               登入
             </Button>
           </Link>
@@ -87,14 +94,15 @@ export default function ShippingInformation() {
 
             <div>
               <h2 className="font-500 text-xl mb-5">你想要如何付款？</h2>
-              <FeatureButton
+              <Button
                 type="button"
-                bgColor="checkoutWhite"
-                className="border-black"
+                variant="checkout"
+                size="custom"
+                className="flex items-center gap-3 px-6 py-6 rounded-xl"
               >
                 <img src={cardIcon} alt="Card icon" className="w-5" />
                 信用卡或金融簽帳卡
-              </FeatureButton>
+              </Button>
             </div>
 
             <div>
@@ -129,17 +137,18 @@ export default function ShippingInformation() {
                   />
                 </div>
               </div>
-              <FeatureButton
+              <Button
                 type="submit"
-                bgColor={`${
+                variant={`${
                   Object.values(shippingInput).some((input) => !input.value)
-                    ? "gray"
+                    ? "disable"
                     : "black"
                 }`}
-                className="my-5"
+                size="xl"
+                className="my-5 w-full"
               >
                 下訂單
-              </FeatureButton>
+              </Button>
             </div>
           </div>
         </Information>

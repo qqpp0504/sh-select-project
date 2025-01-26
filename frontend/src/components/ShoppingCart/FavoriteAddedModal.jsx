@@ -63,16 +63,16 @@ export default function FavoriteAddedModal() {
         <div className="flex justify-center gap-6">
           <Button
             onClick={handleCloseModal}
-            bgColor="checkoutWhite"
-            className="w-fit rounded-[1.25rem]"
-            paddingStyle="px-6 py-[0.6rem]"
+            variant="bordered"
+            size="custom"
+            className="w-fit rounded-[1.25rem] px-6 py-[0.6rem]"
           >
             回到購物車
           </Button>
           <Button
             onClick={() => handleCloseModal("/favorites")}
-            className="w-fit rounded-[1.25rem]"
-            paddingStyle="px-6 py-[0.6rem]"
+            size="custom"
+            className="w-fit rounded-[1.25rem] px-6 py-[0.6rem]"
           >
             查看我的最愛
           </Button>

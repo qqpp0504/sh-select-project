@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import Modal from "../UI/Modal.jsx";
 import { modalActions } from "@/store/modal-slice.js";
-import FeatureButton from "../UI/FeatureButton.jsx";
+import Button from "../UI/Button.jsx";
 
 export default function ShippingModal() {
   const navigate = useNavigate();
@@ -28,19 +28,21 @@ export default function ShippingModal() {
         </div>
 
         <div className="flex flex-col gap-2">
-          <FeatureButton
+          <Button
             onClick={handleNavigateOtherPage}
+            size="xl"
             className="focus:outline-none"
           >
             離開結帳頁面
-          </FeatureButton>
-          <FeatureButton
-            className="focus:outline-none"
-            bgColor="white"
+          </Button>
+          <Button
+            className="focus:outline-none border border-gray-300"
+            variant="white"
+            size="xl"
             onClick={handleCloseShippingModal}
           >
             繼續結帳
-          </FeatureButton>
+          </Button>
         </div>
       </div>
     </Modal>

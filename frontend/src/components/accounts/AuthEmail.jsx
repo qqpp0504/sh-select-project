@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useMutation } from "@tanstack/react-query";
 
 import Input from "../UI/Input";
-import FeatureButton from "../UI/FeatureButton.jsx";
+import Button from "../UI/Button.jsx";
 import { useInput } from "../hooks/useInput.js";
 import { isEmail, isNotEmpty } from "@/util/validation.js";
 import { authEmail } from "@/util/http.js";
@@ -73,17 +73,17 @@ export default function AuthEmail() {
         </p>
 
         <div className="my-9 flex justify-end">
-          <FeatureButton
+          <Button
             type={`${isPending ? "button" : "submit"}`}
-            bgColor="accountBlack"
-            paddingStyle={`${isPending ? "py-3 px-8" : "py-3 px-6"}`}
+            size="custom"
+            className={`${isPending ? "py-3 px-8" : "py-3 px-6"}`}
           >
             {isPending ? (
               <LoadingIndicator color="white" margin="my-0" />
             ) : (
               "繼續"
             )}
-          </FeatureButton>
+          </Button>
         </div>
 
         {isError && (

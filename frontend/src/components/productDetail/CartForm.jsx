@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import SelectBlock from "../UI/SelectBlock.jsx";
 import { modalActions } from "@/store/modal-slice.js";
 import rulerIcon from "@/assets/ruler-icon.png";
-import FeatureButton from "../UI/FeatureButton.jsx";
+import Button from "../UI/Button.jsx";
 import heartIcon from "@/assets/heart-icon.png";
 import { cartActions } from "@/store/cart-slice.js";
 import { addFavorites } from "@/util/http.js";
@@ -166,14 +166,15 @@ export default function CartForm({ product, onSelect }) {
       >{`${reminder ? reminder : ""}`}</span>
 
       <div className="flex flex-col gap-3">
-        <FeatureButton type="submit" name="action" value="addToCart">
+        <Button type="submit" name="action" value="addToCart" size="xl">
           加入購物車
-        </FeatureButton>
-        <FeatureButton
+        </Button>
+        <Button
           type={isPending ? "button" : "submit"}
           name="action"
           value="addToFavorites"
-          bgColor="white"
+          variant="bordered"
+          size="xl"
           className="flex justify-center items-center gap-[0.3rem]"
         >
           {isPending ? (
@@ -184,7 +185,7 @@ export default function CartForm({ product, onSelect }) {
               <img src={heartIcon} alt="Heart icon" className="w-[22px]" />
             </>
           )}
-        </FeatureButton>
+        </Button>
       </div>
 
       {isError && (

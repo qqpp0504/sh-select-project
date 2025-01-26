@@ -27,8 +27,8 @@ export default function ErrorModal({ message, buttonText, link }) {
         <div className="flex justify-center">
           <Button
             onClick={() => handleClose(link)}
-            className="w-fit rounded-[1.25rem]"
-            paddingStyle="px-6 py-[0.6rem]"
+            size="custom"
+            className="w-fit rounded-[1.25rem] px-6 py-[0.6rem]"
           >
             {buttonText}
           </Button>

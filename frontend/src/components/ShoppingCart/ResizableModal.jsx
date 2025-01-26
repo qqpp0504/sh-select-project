@@ -5,7 +5,7 @@ import Modal from "../UI/Modal.jsx";
 import { modalActions } from "@/store/modal-slice.js";
 import { currencyFormatter } from "@/util/formatting.js";
 import SelectBlock from "../UI/SelectBlock.jsx";
-import FeatureButton from "../UI/FeatureButton.jsx";
+import Button from "../UI/Button.jsx";
 import { cartActions } from "@/store/cart-slice.js";
 import { favoritesActions } from "@/store/favorites-slice.js";
 import { useAddNotification } from "../hooks/useAddNotification.js";
@@ -115,10 +115,14 @@ export default function ResizableModal() {
                   </SelectBlock>
                 ))}
               </div>
-              <FeatureButton paddingStyle="py-4" type="submit">
+              <Button
+                size="custom"
+                className="py-4 w-full rounded-full"
+                type="submit"
+              >
                 {type === "default" && "更新尺寸"}
                 {type === "favorite" && "加入購物車"}
-              </FeatureButton>
+              </Button>
             </form>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 
 import Summary from "./Summary.jsx";
-import FeatureButton from "../UI/FeatureButton.jsx";
+import Button from "../UI/Button.jsx";
 import Tooltip from "../UI/ToolTip.jsx";
 
 export default function ShoppingSummary() {
@@ -34,21 +34,23 @@ export default function ShoppingSummary() {
       <hr />
       <Summary tag="總計" price={displayTotalPrice} />
       <hr />
-      <div className="my-8 flex flex-col gap-3">
+      <div className="my-8 flex flex-col gap-3 text-center">
         {!userData.token && (
-          <FeatureButton
-            bgColor={`${totalPrice > 0 ? "black" : "gray"}`}
+          <Button
+            variant={`${totalPrice > 0 ? "black" : "disable"}`}
+            size="xl"
             link="/checkout"
           >
             訪客結帳
-          </FeatureButton>
+          </Button>
         )}
-        <FeatureButton
-          bgColor={`${totalPrice > 0 ? "black" : "gray"}`}
+        <Button
+          variant={`${totalPrice > 0 ? "black" : "disable"}`}
+          size="xl"
           link={`${userData.token ? "/checkout" : "/accounts"}`}
         >
           會員結帳
-        </FeatureButton>
+        </Button>
       </div>
     </aside>
   );
