@@ -192,3 +192,28 @@ export async function fetchUserFavorites({ userEmail, signal }) {
   const resData = await response.json();
   return resData;
 }
+
+export async function addOrder(newOrder) {
+  const user = localStorage.getItem("user");
+
+  const response = await fetch("http://localhost:3000/checkout/add-order", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      userEmail: JSON.parse(user).email,
+      newOrder,
+    }),
+  });
+
+  if (!response.ok) {
+    const error = new Error("無法新增訂單");
+    error.code = response.status;
+    error.info = await response.json();
+    throw error;
+  }
+
+  const resData = await response.json();
+  return resData;
+}

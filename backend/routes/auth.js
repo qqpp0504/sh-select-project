@@ -5,6 +5,7 @@ import {
   getFavorite,
   deleteFavorite,
   get,
+  addOrder,
 } from "../modules/user.js";
 import { createJSONToken } from "../util/auth.js";
 import bcrypt from "bcrypt";
@@ -192,6 +193,21 @@ router.get("/favorites/user/:userEmail", async (req, res) => {
     res.json(favorites);
   } catch (error) {
     res.status(404).json({ error: error.message });
+  }
+});
+
+// 新增訂單
+router.post("/checkout/add-order", async (req, res) => {
+  const { userEmail, newOrder } = req.body;
+
+  try {
+    const result = await addOrder(userEmail, newOrder);
+    res.status(201).json(result.newOrder);
+  } catch (error) {
+    res.status(500).json({
+      message: "新增訂單時發生錯誤",
+      error: error.message,
+    });
   }
 });
 

@@ -2,7 +2,12 @@ import pkg from "bcryptjs";
 import { v4 as generateId } from "uuid";
 
 import { NotFoundError } from "../util/errors.js";
-import { readData, writeData } from "./util.js";
+import {
+  readData,
+  writeData,
+  readOrdersData,
+  writeOrdersData,
+} from "./util.js";
 
 const { hash } = pkg;
 
@@ -105,4 +110,47 @@ async function get(email) {
   return user;
 }
 
-export { add, addFavorite, getFavorite, deleteFavorite, get };
+// 新增訂單
+async function addOrder(userEmail, newOrder) {
+  const storedUserData = await readData();
+  const storedOrdersData = await readOrdersData();
+
+  if (newOrder.orderType === "guest") {
+    storedOrdersData.orders.push({
+      ...newOrder,
+      orderId: generateId(), // 生成訂單 ID
+    });
+
+    // 寫回資料
+    await writeOrdersData(storedOrdersData);
+    return { newOrder };
+  }
+
+  if (newOrder.orderType === "member") {
+    // 尋找對應的會員
+    const user = storedUserData.users.find((user) => user.email === userEmail);
+
+    if (!user) {
+      throw new Error("使用者未找到");
+    }
+
+    if (!user.orders) {
+      user.orders = [];
+    }
+
+    // 新增訂單到該會員的訂單列表
+    const orderWithId = {
+      ...newOrder,
+      orderId: generateId(), // 生成訂單 ID
+    };
+
+    user.orders.push(orderWithId);
+    await writeData(storedUserData);
+
+    storedOrdersData.orders.push(orderWithId);
+    await writeOrdersData(storedOrdersData);
+    return { newOrder };
+  }
+}
+
+export { add, addFavorite, getFavorite, deleteFavorite, get, addOrder };

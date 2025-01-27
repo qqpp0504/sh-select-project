@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useMutation } from "@tanstack/react-query";
 
 import "./ShippingInformation.css";
 import Button from "../UI/Button.jsx";
@@ -10,10 +10,20 @@ import { currencyFormatter } from "@/util/formatting.js";
 import cardIcon from "@/assets/card-icon.png";
 import DeliveryTime from "./DeliveryTime.jsx";
 import { useShippingForm } from "../hooks/useShippingForm.js";
+import { addOrder } from "@/util/http.js";
 
 export default function ShippingInformation() {
   const { shippingInput, hasError, allErrorsInput } = useShippingForm();
-  const { shippingFee } = useSelector((state) => state.cart);
+  const { items, totalAmount, totalPrice, shippingFee } = useSelector(
+    (state) => state.cart
+  );
+
+  const { mutate, isPending, isError, error } = useMutation({
+    mutationFn: addOrder,
+    onSuccess: (data) => {
+      console.log(data);
+    },
+  });
 
   const token = localStorage.getItem("token");
 
@@ -35,6 +45,22 @@ export default function ShippingInformation() {
       });
       return;
     }
+
+    let orderData = {
+      ...formData,
+      products: items,
+      totalAmount,
+      totalPrice,
+      shippingFee,
+    };
+
+    if (token) {
+      orderData = { ...orderData, orderType: "member" };
+      mutate(orderData);
+    } else {
+      orderData = { ...orderData, orderType: "guest" };
+      mutate(orderData);
+    }
   }
 
   return (
@@ -42,24 +68,22 @@ export default function ShippingInformation() {
       <h1 className="text-[1.7rem] font-500">寄送資訊</h1>
       {!token ? (
         <div className="font-500 flex flex-col gap-3 my-10">
-          <Link to="/accounts">
-            <Button
-              variant="white"
-              size="lg"
-              className="border border-gray-300"
-            >
-              加入會員
-            </Button>
-          </Link>
-          <Link to="/accounts">
-            <Button
-              variant="white"
-              size="lg"
-              className="border border-gray-300"
-            >
-              登入
-            </Button>
-          </Link>
+          <Button
+            variant="white"
+            size="lg"
+            link="/accounts"
+            className="border border-gray-300 w-fit"
+          >
+            加入會員
+          </Button>
+          <Button
+            variant="white"
+            size="lg"
+            link="/accounts"
+            className="border border-gray-300 w-fit"
+          >
+            登入
+          </Button>
         </div>
       ) : (
         <div className="py-6"></div>
@@ -153,6 +177,9 @@ export default function ShippingInformation() {
           </div>
         </Information>
       </form>
+
+      {isPending && <p>isPending</p>}
+      {isError && <p>{error.message}</p>}
     </section>
   );
 }

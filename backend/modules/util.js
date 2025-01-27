@@ -9,4 +9,13 @@ async function writeData(data) {
   await fs.writeFile("./data/users.json", JSON.stringify(data));
 }
 
-export { readData, writeData };
+async function readOrdersData() {
+  const data = await fs.readFile("./data/orders.json", "utf8");
+  return JSON.parse(data);
+}
+
+async function writeOrdersData(data) {
+  await fs.writeFile("./data/orders.json", JSON.stringify(data));
+}
+
+export { readData, writeData, readOrdersData, writeOrdersData };
