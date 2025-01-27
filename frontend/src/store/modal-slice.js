@@ -11,6 +11,7 @@ const initialModalState = {
   },
   shippingModal: { isShowing: false, link: null },
   favoriteAddedModal: { isShowing: false, link: null },
+  successSendOrdersModal: { isShowing: false, link: null },
 };
 
 const modalSlice = createSlice({

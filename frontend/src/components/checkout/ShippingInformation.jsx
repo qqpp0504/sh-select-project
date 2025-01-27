@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useMutation } from "@tanstack/react-query";
 
 import "./ShippingInformation.css";
@@ -11,18 +11,19 @@ import cardIcon from "@/assets/card-icon.png";
 import DeliveryTime from "./DeliveryTime.jsx";
 import { useShippingForm } from "../hooks/useShippingForm.js";
 import { addOrder } from "@/util/http.js";
+import LoadingIndicator from "../UI/LoadingIndicator.jsx";
+import { modalActions } from "@/store/modal-slice.js";
 
 export default function ShippingInformation() {
   const { shippingInput, hasError, allErrorsInput } = useShippingForm();
   const { items, totalAmount, totalPrice, shippingFee } = useSelector(
     (state) => state.cart
   );
+  const dispatch = useDispatch();
 
   const { mutate, isPending, isError, error } = useMutation({
     mutationFn: addOrder,
-    onSuccess: (data) => {
-      console.log(data);
-    },
+    onSuccess: () => {},
   });
 
   const token = localStorage.getItem("token");
@@ -56,11 +57,13 @@ export default function ShippingInformation() {
 
     if (token) {
       orderData = { ...orderData, orderType: "member" };
-      mutate(orderData);
+      // mutate(orderData);
     } else {
       orderData = { ...orderData, orderType: "guest" };
-      mutate(orderData);
+      // mutate(orderData);
     }
+
+    dispatch(modalActions.showModal({ modalType: "successSendOrdersModal" }));
   }
 
   return (
@@ -171,14 +174,17 @@ export default function ShippingInformation() {
                 size="xl"
                 className="my-5 w-full"
               >
-                下訂單
+                {isPending ? (
+                  <LoadingIndicator color="white" margin="" />
+                ) : (
+                  "下訂單"
+                )}
               </Button>
             </div>
           </div>
         </Information>
       </form>
 
-      {isPending && <p>isPending</p>}
       {isError && <p>{error.message}</p>}
     </section>
   );

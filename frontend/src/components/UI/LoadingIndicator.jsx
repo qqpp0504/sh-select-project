@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 export default function LoadingIndicator({
   color = "black",
   margin = "my-20",

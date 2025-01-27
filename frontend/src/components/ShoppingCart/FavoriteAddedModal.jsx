@@ -1,12 +1,12 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { Progress } from "@/components/ui/progress";
 
 import Modal from "../UI/Modal.jsx";
 import { modalActions } from "@/store/modal-slice.js";
 import Button from "../UI/Button.jsx";
 import successIcon from "@/assets/success-icon.png";
+import TimingProgress from "../UI/TimingProgress.jsx";
 
 export default function FavoriteAddedModal() {
   const timer = useRef();
@@ -14,30 +14,6 @@ export default function FavoriteAddedModal() {
   const navigate = useNavigate();
   const { isShowing } = useSelector((state) => state.modal.favoriteAddedModal);
   const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    if (isShowing) {
-      const totalDuration = 3000;
-      const updateInterval = 100;
-      const step = (100 / totalDuration) * updateInterval; // 每次更新的進度
-
-      timer.current = setInterval(() => {
-        setProgress((prev) => {
-          const newProgress = prev + step;
-          if (newProgress >= 100) {
-            clearInterval(timer.current); // 如果進度條滿了，停止計時器
-            handleCloseModal();
-            return 100;
-          }
-
-          return newProgress;
-        });
-      }, updateInterval);
-
-      return () => clearInterval(timer);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isShowing]);
 
   function handleCloseModal(link) {
     dispatch(modalActions.closeModal({ modalType: "favoriteAddedModal" }));
@@ -51,7 +27,15 @@ export default function FavoriteAddedModal() {
 
   return (
     <Modal open={isShowing} onClose={handleCloseModal}>
-      <Progress value={progress} className="w-full h-[0.35rem]" />
+      <TimingProgress
+        isShowing={isShowing}
+        timer={timer}
+        time={3000}
+        onClose={handleCloseModal}
+        className="w-full h-[0.35rem]"
+        progress={progress}
+        setProgress={setProgress}
+      />
       <div className="w-[30rem] h-[16rem] p-11 flex flex-col justify-between">
         <div></div>
 
