@@ -67,7 +67,7 @@ export default function AccountBar() {
                 </Link>
               </li>
               <li>
-                <Link to="/" className="hover:text-black">
+                <Link to="/orders" className="hover:text-black">
                   訂單
                 </Link>
               </li>

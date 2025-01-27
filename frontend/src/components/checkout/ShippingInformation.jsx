@@ -23,7 +23,9 @@ export default function ShippingInformation() {
 
   const { mutate, isPending, isError, error } = useMutation({
     mutationFn: addOrder,
-    onSuccess: () => {},
+    onSuccess: () => {
+      dispatch(modalActions.showModal({ modalType: "successSendOrdersModal" }));
+    },
   });
 
   const token = localStorage.getItem("token");
@@ -57,13 +59,11 @@ export default function ShippingInformation() {
 
     if (token) {
       orderData = { ...orderData, orderType: "member" };
-      // mutate(orderData);
+      mutate(orderData);
     } else {
       orderData = { ...orderData, orderType: "guest" };
-      // mutate(orderData);
+      mutate(orderData);
     }
-
-    dispatch(modalActions.showModal({ modalType: "successSendOrdersModal" }));
   }
 
   return (

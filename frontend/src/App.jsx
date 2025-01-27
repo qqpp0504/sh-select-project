@@ -22,6 +22,7 @@ import HelpQuestionPage from "./components/help/HelpQuestion.jsx";
 import SearchQuestions from "./components/help/SearchQuestions.jsx";
 import FavoritesPage from "./pages/Favorites.jsx";
 import ProtectedRoute from "./components/util/ProtectedRoute.jsx";
+import MemberPage from "./pages/Member.jsx";
 
 const HomePage = lazy(() => import("./pages/Home.jsx"));
 const MenPage = lazy(() => import("./pages/Men.jsx"));
@@ -46,6 +47,14 @@ const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <FavoritesPage />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "orders",
+        element: (
+          <ProtectedRoute>
+            <MemberPage />
           </ProtectedRoute>
         ),
       },

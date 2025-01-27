@@ -115,9 +115,31 @@ async function addOrder(userEmail, newOrder) {
   const storedUserData = await readData();
   const storedOrdersData = await readOrdersData();
 
+  function generateOrderDateTime() {
+    const now = new Date();
+
+    const year = now.getFullYear(); // 取得年份
+    const month = String(now.getMonth() + 1).padStart(2, "0"); // 取得月份（補0）
+    const day = String(now.getDate()).padStart(2, "0"); // 取得日期（補0）
+
+    const hours = String(now.getHours()).padStart(2, "0"); // 小時（補0）
+    const minutes = String(now.getMinutes()).padStart(2, "0"); // 分鐘（補0）
+    const seconds = String(now.getSeconds()).padStart(2, "0"); // 秒數（補0）
+
+    // 將日期與時間格式化
+    const date = `${year}年${month}月${day}日`; // 年-月-日
+    const time = `${hours}:${minutes}:${seconds}`; // 時:分:秒
+
+    return { date, time };
+  }
+
+  const { date, time } = generateOrderDateTime(); // 取得當前日期與時間
+
   if (newOrder.orderType === "guest") {
     storedOrdersData.orders.push({
       ...newOrder,
+      date,
+      time,
       orderId: generateId(), // 生成訂單 ID
     });
 
@@ -141,6 +163,8 @@ async function addOrder(userEmail, newOrder) {
     // 新增訂單到該會員的訂單列表
     const orderWithId = {
       ...newOrder,
+      date,
+      time,
       orderId: generateId(), // 生成訂單 ID
     };
 
