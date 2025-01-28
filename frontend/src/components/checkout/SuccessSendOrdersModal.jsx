@@ -58,7 +58,7 @@ export default function SuccessSendOrdersModal() {
               回到首頁
             </Button>
             {token && (
-              <Button size="lg" className="w-fit">
+              <Button link="/orders" size="lg" className="w-fit">
                 查看訂單
               </Button>
             )}

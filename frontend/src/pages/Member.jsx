@@ -52,7 +52,7 @@ export default function MemberPage() {
                     <td className="py-7">{order.orderId}</td>
                     <td className="py-7">{order.date}</td>
                     <td className="py-7">
-                      {currencyFormatter.format(order.totalPrice)}
+                      NT{currencyFormatter.format(order.totalPrice)}
                     </td>
                     <td className="py-7">出貨中</td>
                     <td className="py-7">

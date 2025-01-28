@@ -136,7 +136,7 @@ async function addOrder(userEmail, newOrder) {
   const { date, time } = generateOrderDateTime(); // 取得當前日期與時間
 
   if (newOrder.orderType === "guest") {
-    storedOrdersData.orders.push({
+    storedOrdersData.orders.unshift({
       ...newOrder,
       date,
       time,
@@ -168,10 +168,10 @@ async function addOrder(userEmail, newOrder) {
       orderId: generateId(), // 生成訂單 ID
     };
 
-    user.orders.push(orderWithId);
+    user.orders.unshift(orderWithId);
     await writeData(storedUserData);
 
-    storedOrdersData.orders.push(orderWithId);
+    storedOrdersData.orders.unshift(orderWithId);
     await writeOrdersData(storedOrdersData);
     return { newOrder };
   }
