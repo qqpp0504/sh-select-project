@@ -1,1 +1,89 @@
-{"orders":[{"lastName":"韓","firstName":"惟晞","country":"台灣","postal":"360","city":"苗栗縣","districts":"苗栗市","address":"建功里莊敬街","email":"qqpp0504@gmail.com","phone":"0961542566","products":[{"id":"p21","productName":"Dri-Fit 中度支撐運動內衣","brand":"Nike","alt":"Nike Dri-Fit 中度支撐運動內衣圖片","slug":"p21-nike-Dri-Fit中度支撐運動內衣","category":"運動內衣","allSizes":["S","M","L"],"originalPrice":990,"discountPrice":990,"color":{"name":"黑色","image":"nike-sports-bra.jpg"},"size":"M","quantity":2,"itemTotalPrice":1980,"idNumber":1737851722889,"favoriteId":"a71bc28b-149f-4ed3-aa6f-e129ad213160"},{"id":"p2","productName":"大Logo帽Tee","brand":"Nautica","alt":"Nautica 大Logo帽Tee圖片","slug":"p2-nautica-大Logo帽Tee","category":"上衣","allSizes":["S","M","L","XL"],"originalPrice":2500,"discountPrice":2500,"color":{"name":"綠色","image":"nautica-hoodie.jpg"},"size":"M","quantity":1,"itemTotalPrice":2500,"idNumber":1738012147127},{"id":"p17","productName":"Air Jordan 1 Mid Light Smoke Grey","brand":"Nike","alt":"Nike Air Jordan 1 Mid Light Smoke Grey圖片","slug":"p17-nike-air-Jordan1-MidLightSmokeGrey","category":"鞋款","allSizes":["CM 23","CM 23.5","CM 24","CM 24.5","CM 25","CM 25.5","CM 26","CM 26.5","CM 27","CM 27.5","CM 28","CM 28.5","CM 29","CM 29.5","CM 30"],"originalPrice":4500,"discountPrice":4500,"color":{"name":"黑灰色","image":"nike-air-jordan-mid.jpg"},"size":"CM 29.5","quantity":1,"itemTotalPrice":4500,"idNumber":1738012365985}],"totalAmount":8980,"totalPrice":8980,"shippingFee":0,"orderType":"member","date":"2025年01月28日","time":"06:30:08","orderId":"771034bb-a58e-4cd6-86be-76abb370fde9"}]}
+{
+  "orders": [
+    {
+      "lastName": "韓",
+      "firstName": "惟晞",
+      "country": "台灣",
+      "postal": "360",
+      "city": "苗栗縣",
+      "districts": "苗栗市",
+      "address": "建功里莊敬街",
+      "email": "qqpp0504@gmail.com",
+      "phone": "0961542566",
+      "products": [
+        {
+          "id": "p21",
+          "productName": "Dri-Fit 中度支撐運動內衣",
+          "brand": "Nike",
+          "alt": "Nike Dri-Fit 中度支撐運動內衣圖片",
+          "slug": "p21-nike-Dri-Fit中度支撐運動內衣",
+          "category": "運動內衣",
+          "allSizes": ["S", "M", "L"],
+          "originalPrice": 990,
+          "discountPrice": 990,
+          "color": { "name": "黑色", "image": "nike-sports-bra.jpg" },
+          "size": "M",
+          "quantity": 2,
+          "itemTotalPrice": 1980,
+          "idNumber": 1737851722889,
+          "favoriteId": "a71bc28b-149f-4ed3-aa6f-e129ad213160"
+        },
+        {
+          "id": "p2",
+          "productName": "大Logo帽Tee",
+          "brand": "Nautica",
+          "alt": "Nautica 大Logo帽Tee圖片",
+          "slug": "p2-nautica-大Logo帽Tee",
+          "category": "上衣",
+          "allSizes": ["S", "M", "L", "XL"],
+          "originalPrice": 2500,
+          "discountPrice": 2500,
+          "color": { "name": "綠色", "image": "nautica-hoodie.jpg" },
+          "size": "M",
+          "quantity": 1,
+          "itemTotalPrice": 2500,
+          "idNumber": 1738012147127
+        },
+        {
+          "id": "p17",
+          "productName": "Air Jordan 1 Mid Light Smoke Grey",
+          "brand": "Nike",
+          "alt": "Nike Air Jordan 1 Mid Light Smoke Grey圖片",
+          "slug": "p17-nike-air-Jordan1-MidLightSmokeGrey",
+          "category": "鞋款",
+          "allSizes": [
+            "CM 23",
+            "CM 23.5",
+            "CM 24",
+            "CM 24.5",
+            "CM 25",
+            "CM 25.5",
+            "CM 26",
+            "CM 26.5",
+            "CM 27",
+            "CM 27.5",
+            "CM 28",
+            "CM 28.5",
+            "CM 29",
+            "CM 29.5",
+            "CM 30"
+          ],
+          "originalPrice": 4500,
+          "discountPrice": 4500,
+          "color": { "name": "黑灰色", "image": "nike-air-jordan-mid.jpg" },
+          "size": "CM 29.5",
+          "quantity": 1,
+          "itemTotalPrice": 4500,
+          "idNumber": 1738012365985
+        }
+      ],
+      "totalAmount": 8980,
+      "totalPrice": 8980,
+      "shippingFee": 0,
+      "orderType": "member",
+      "date": "2025年01月28日",
+      "time": "06:30:08",
+      "orderId": "771034bb-a58e-4cd6-86be-76abb370fde9"
+    }
+  ]
+}

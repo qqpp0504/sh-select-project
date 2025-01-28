@@ -177,4 +177,54 @@ async function addOrder(userEmail, newOrder) {
   }
 }
 
-export { add, addFavorite, getFavorite, deleteFavorite, get, addOrder };
+async function getOrders(userEmail) {
+  const storedData = await readData();
+
+  // 找到對應的使用者
+  const user = storedData.users.find((user) => user.email === userEmail);
+
+  if (!user) {
+    throw new Error("使用者未找到");
+  }
+
+  if (!user.orders) {
+    user.orders = [];
+  }
+
+  return user.orders;
+}
+
+async function getOrderById(userEmail, orderId) {
+  const storedData = await readData();
+
+  // 找到對應的使用者
+  const user = storedData.users.find((user) => user.email === userEmail);
+
+  if (!user) {
+    throw new Error("使用者未找到");
+  }
+
+  if (!user.orders) {
+    user.orders = [];
+  }
+
+  // 查找指定的訂單
+  const order = user.orders.find((order) => order.orderId === orderId);
+
+  if (!order) {
+    throw new Error("訂單未找到");
+  }
+
+  return order;
+}
+
+export {
+  add,
+  addFavorite,
+  getFavorite,
+  deleteFavorite,
+  get,
+  addOrder,
+  getOrders,
+  getOrderById,
+};

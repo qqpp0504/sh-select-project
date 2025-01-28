@@ -6,6 +6,8 @@ import {
   deleteFavorite,
   get,
   addOrder,
+  getOrders,
+  getOrderById,
 } from "../modules/user.js";
 import { createJSONToken } from "../util/auth.js";
 import bcrypt from "bcrypt";
@@ -208,6 +210,37 @@ router.post("/checkout/add-order", async (req, res) => {
       message: "新增訂單時發生錯誤",
       error: error.message,
     });
+  }
+});
+
+// 獲取使用者訂單
+router.get("/checkout/orders/:userEmail", async (req, res) => {
+  const { userEmail } = req.params;
+
+  if (!userEmail) {
+    return res.status(400).json({ error: "找不到使用者" });
+  }
+
+  try {
+    const orders = await getOrders(userEmail);
+    res.json(orders);
+  } catch (error) {
+    res.status(404).json({ error: error.message });
+  }
+});
+
+router.get("/checkout/orders/:userEmail/:orderId", async (req, res) => {
+  const { userEmail, orderId } = req.params;
+
+  if (!userEmail || !orderId) {
+    return res.status(400).json({ error: "找不到使用者" });
+  }
+
+  try {
+    const order = await getOrderById(userEmail, orderId);
+    res.json(order);
+  } catch (error) {
+    res.status(404).json({ error: error.message });
   }
 });
 

@@ -23,6 +23,8 @@ import SearchQuestions from "./components/help/SearchQuestions.jsx";
 import FavoritesPage from "./pages/Favorites.jsx";
 import ProtectedRoute from "./components/util/ProtectedRoute.jsx";
 import MemberPage from "./pages/Member.jsx";
+import OrderDetailPage from "./pages/OrderDetail.jsx";
+import MemberRootLayout from "./pages/MemberRootLayout.jsx";
 
 const HomePage = lazy(() => import("./pages/Home.jsx"));
 const MenPage = lazy(() => import("./pages/Men.jsx"));
@@ -54,9 +56,13 @@ const router = createBrowserRouter([
         path: "orders",
         element: (
           <ProtectedRoute>
-            <MemberPage />
+            <MemberRootLayout />
           </ProtectedRoute>
         ),
+        children: [
+          { index: true, element: <MemberPage /> },
+          { path: ":orderId", element: <OrderDetailPage /> },
+        ],
       },
 
       {

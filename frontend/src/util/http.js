@@ -217,3 +217,41 @@ export async function addOrder(newOrder) {
   const resData = await response.json();
   return resData;
 }
+
+export async function fetchUserOrders({ userEmail, signal }) {
+  const response = await fetch(
+    `http://localhost:3000/checkout/orders/${userEmail}`,
+    {
+      signal,
+    }
+  );
+
+  if (!response.ok) {
+    const error = new Error("發生錯誤，無法獲取商品資訊");
+    error.code = response.status;
+    error.info = await response.json();
+    throw error;
+  }
+
+  const resData = await response.json();
+  return resData;
+}
+
+export async function fetchUserOrderDetail({ userEmail, orderId, signal }) {
+  const response = await fetch(
+    `http://localhost:3000/checkout/orders/${userEmail}/${orderId}`,
+    {
+      signal,
+    }
+  );
+
+  if (!response.ok) {
+    const error = new Error("發生錯誤，無法獲取訂單資訊");
+    error.code = response.status;
+    error.info = await response.json();
+    throw error;
+  }
+
+  const resData = await response.json();
+  return resData;
+}
