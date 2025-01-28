@@ -84,6 +84,71 @@
       "date": "2025年01月28日",
       "time": "06:30:08",
       "orderId": "771034bb-a58e-4cd6-86be-76abb370fde9"
+    },
+    {
+      "lastName": "蘇",
+      "firstName": "紫葳",
+      "country": "台灣",
+      "postal": "333",
+      "city": "高雄市",
+      "districts": "高高",
+      "address": "小小",
+      "email": "doris2362983@gmail.com",
+      "phone": "0905818296",
+      "products": [
+        {
+          "id": "p20",
+          "productName": "1970 Chuck Taylor All Star '70",
+          "brand": "Converse",
+          "alt": "Converse 1970 Chuck Taylor All Star '70 圖片",
+          "slug": "p20-converse-1970ChuckTaylorAllStar",
+          "category": "鞋款",
+          "allSizes": [
+            "CM 23",
+            "CM 23.5",
+            "CM 24",
+            "CM 24.5",
+            "CM 25",
+            "CM 25.5",
+            "CM 26",
+            "CM 26.5",
+            "CM 27",
+            "CM 27.5",
+            "CM 28",
+            "CM 28.5"
+          ],
+          "originalPrice": 2000,
+          "discountPrice": 1600,
+          "color": { "name": "黑色", "image": "converse-black-1.jpg" },
+          "size": "CM 23",
+          "quantity": 1,
+          "itemTotalPrice": 1600,
+          "idNumber": 1738101527206
+        },
+        {
+          "id": "p22",
+          "productName": "WIP 經典方標針織毛帽",
+          "brand": "Carhartt",
+          "alt": "Carhartt WIP 經典方標針織毛帽圖片",
+          "slug": "p22-carhartt-WIP經典方標針織毛帽",
+          "category": "其他配件",
+          "allSizes": ["F"],
+          "originalPrice": 880,
+          "discountPrice": 880,
+          "color": { "name": "灰色", "image": "carhartt-beanie-3.jpg" },
+          "size": "F",
+          "quantity": 1,
+          "itemTotalPrice": 880,
+          "idNumber": 1738101532839
+        }
+      ],
+      "totalAmount": 2480,
+      "totalPrice": 2600,
+      "shippingFee": 120,
+      "orderType": "member",
+      "date": "2025年01月29日",
+      "time": "05:59:37",
+      "orderId": "96c47456-f0d7-40ea-952b-daa4a681fd47"
     }
   ]
 }
