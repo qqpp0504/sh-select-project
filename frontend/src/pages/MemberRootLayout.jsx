@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
 
 export default function MemberRootLayout() {
   return (
@@ -8,10 +8,46 @@ export default function MemberRootLayout() {
 
         <nav>
           <ul className="flex flex-1 gap-8">
-            <li>個人檔案</li>
-            <li>訂單</li>
-            <li>最愛</li>
-            <li>設定</li>
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? "text-gray" : undefined
+                }
+              >
+                個人檔案
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/orders"
+                className={({ isActive }) =>
+                  isActive ? "text-gray" : undefined
+                }
+              >
+                訂單
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/favorites"
+                className={({ isActive }) =>
+                  isActive ? "text-gray" : undefined
+                }
+              >
+                最愛
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? "text-gray" : undefined
+                }
+              >
+                設定
+              </NavLink>
+            </li>
           </ul>
         </nav>
 
