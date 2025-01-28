@@ -1,9 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 
 import { fetchUserOrders } from "@/util/http.js";
 import { currencyFormatter } from "@/util/formatting.js";
+import Button from "@/components/UI/Button.jsx";
 
 export default function MemberPage() {
   const { token, user } = useSelector((state) => state.account.userData);
@@ -56,7 +56,13 @@ export default function MemberPage() {
                     </td>
                     <td className="py-7">出貨中</td>
                     <td className="py-7">
-                      <Link to={order.orderId}>查閱</Link>
+                      <Button
+                        link={order.orderId}
+                        size="lg"
+                        className="rounded-md"
+                      >
+                        查閱
+                      </Button>
                     </td>
                   </tr>
                 ))}
