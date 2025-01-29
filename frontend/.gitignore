@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 
 needToFix.txt
+orders.json
+users.json
