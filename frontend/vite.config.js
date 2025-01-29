@@ -13,7 +13,9 @@ export default defineConfig({
       "@": resolve(__dirname, "src"),
     },
   },
+  base: "/your-repo-name/", // 更新成你的 GitHub Repo 名稱
   build: {
+    outDir: "dist",
     terserOptions: {
       compress: {
         drop_console: true,
@@ -21,5 +23,4 @@ export default defineConfig({
       },
     },
   },
-  base: "/sh-select-project/",
 });
