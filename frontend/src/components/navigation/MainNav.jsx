@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -13,6 +13,31 @@ export default function MainNav() {
   );
   const { token } = useSelector((state) => state.account.userData);
   const [activeDropdown, setActiveDropdown] = useState();
+  const [isSticky, setIsSticky] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0); // 儲存上一次的滾動位置
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY && window.scrollY > 100) {
+        // 當往下滑動並且滾動超過100px時隱藏nav
+        setIsSticky(false);
+      } else if (window.scrollY < lastScrollY && window.scrollY > 100) {
+        // 當往上滑動時顯示nav
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+
+      // 更新上一次滾動的位置
+      setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]); // 依賴於 lastScrollY，當滾動位置改變時重新執行
 
   function handlePreventDefault(event) {
     if (isShowingNotification) {
@@ -21,7 +46,11 @@ export default function MainNav() {
   }
 
   return (
-    <nav className="relative padding-large py-2 flex flex-row items-center text-base">
+    <nav
+      className={`padding-large py-2 flex flex-row items-center text-base transition-transform duration-300 ${
+        isSticky ? "fixed top-0 w-full bg-white z-50" : "relative"
+      }`}
+    >
       <div className="flex-1 flex justify-start">
         <Link to="/" onClick={handlePreventDefault}>
           <img src={logo} alt="SH-Select Logo" className="w-14" />
