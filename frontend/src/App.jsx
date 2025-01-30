@@ -30,100 +30,105 @@ const HomePage = lazy(() => import("./pages/Home.jsx"));
 const MenPage = lazy(() => import("./pages/Men.jsx"));
 const FemalePage = lazy(() => import("./pages/Female.jsx"));
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <RootLayout />,
-    children: [
-      {
-        path: "help",
-        element: <HelpLayout />,
-        children: [
-          { index: true, element: <HelpPage /> },
-          { path: "search/:searchTerm", element: <SearchQuestions /> },
-          { path: ":questionId", element: <HelpQuestionPage /> },
-        ],
-      },
-      {
-        path: "favorites",
-        element: (
-          <ProtectedRoute>
-            <FavoritesPage />
-          </ProtectedRoute>
-        ),
-      },
-      {
-        path: "orders",
-        element: (
-          <ProtectedRoute>
-            <MemberRootLayout />
-          </ProtectedRoute>
-        ),
-        children: [
-          { index: true, element: <MemberPage /> },
-          { path: ":orderId", element: <OrderDetailPage /> },
-        ],
-      },
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <RootLayout />,
+      children: [
+        {
+          path: "help",
+          element: <HelpLayout />,
+          children: [
+            { index: true, element: <HelpPage /> },
+            { path: "search/:searchTerm", element: <SearchQuestions /> },
+            { path: ":questionId", element: <HelpQuestionPage /> },
+          ],
+        },
+        {
+          path: "favorites",
+          element: (
+            <ProtectedRoute>
+              <FavoritesPage />
+            </ProtectedRoute>
+          ),
+        },
+        {
+          path: "orders",
+          element: (
+            <ProtectedRoute>
+              <MemberRootLayout />
+            </ProtectedRoute>
+          ),
+          children: [
+            { index: true, element: <MemberPage /> },
+            { path: ":orderId", element: <OrderDetailPage /> },
+          ],
+        },
 
-      {
-        path: "/",
-        element: <BannerBarLayout />,
-        children: [
-          {
-            index: true,
-            element: (
-              <Suspense fallback={null}>
-                <HomePage />
-              </Suspense>
-            ),
-          },
-          {
-            path: "men",
-            element: (
-              <Suspense fallback={null}>
-                <MenPage />
-              </Suspense>
-            ),
-          },
-          {
-            path: "female",
-            element: (
-              <Suspense fallback={null}>
-                <FemalePage />
-              </Suspense>
-            ),
-          },
-          {
-            path: "brands",
-            element: <BrandsPage />,
-          },
-          {
-            path: "products",
-            children: [
-              { index: true, element: <ProductsPage /> },
-              {
-                path: ":slug",
-                element: <ProductDetail />,
-              },
-            ],
-          },
-          { path: "cart", element: <CartPage /> },
-          { path: "membership", element: <MembershipPage /> },
-        ],
-      },
-    ],
-  },
-  { path: "checkout", element: <CheckoutPage /> },
+        {
+          path: "/",
+          element: <BannerBarLayout />,
+          children: [
+            {
+              index: true,
+              element: (
+                <Suspense fallback={null}>
+                  <HomePage />
+                </Suspense>
+              ),
+            },
+            {
+              path: "men",
+              element: (
+                <Suspense fallback={null}>
+                  <MenPage />
+                </Suspense>
+              ),
+            },
+            {
+              path: "female",
+              element: (
+                <Suspense fallback={null}>
+                  <FemalePage />
+                </Suspense>
+              ),
+            },
+            {
+              path: "brands",
+              element: <BrandsPage />,
+            },
+            {
+              path: "products",
+              children: [
+                { index: true, element: <ProductsPage /> },
+                {
+                  path: ":slug",
+                  element: <ProductDetail />,
+                },
+              ],
+            },
+            { path: "cart", element: <CartPage /> },
+            { path: "membership", element: <MembershipPage /> },
+          ],
+        },
+      ],
+    },
+    { path: "checkout", element: <CheckoutPage /> },
+    {
+      path: "accounts",
+      element: <AccountsRootLayout />,
+      children: [
+        { index: true, element: <AccountsPage /> },
+        { path: "login", element: <LoginPage /> },
+        { path: "register", element: <RegisterPage /> },
+      ],
+    },
+  ],
   {
-    path: "accounts",
-    element: <AccountsRootLayout />,
-    children: [
-      { index: true, element: <AccountsPage /> },
-      { path: "login", element: <LoginPage /> },
-      { path: "register", element: <RegisterPage /> },
-    ],
-  },
-]);
+    basename: "/sh-select-project",
+  }
+);
 
 function App() {
   return (
