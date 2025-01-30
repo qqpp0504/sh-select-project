@@ -13,7 +13,7 @@ export default defineConfig({
       "@": resolve(__dirname, "src"),
     },
   },
-  base: "/your-repo-name/", // 更新成你的 GitHub Repo 名稱
+  base: "/sh-select-project/",
   build: {
     outDir: "dist",
     terserOptions: {
