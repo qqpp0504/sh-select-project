@@ -13,6 +13,7 @@ export default defineConfig({
       "@": resolve(__dirname, "src"),
     },
   },
+  base: "/sh-select-project/",
   build: {
     outDir: "dist",
     terserOptions: {
