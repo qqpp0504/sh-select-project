@@ -68,6 +68,7 @@ export default function MainNav() {
             >
               <NavLink
                 to={navItem.link}
+                onClick={() => setActiveDropdown(null)}
                 className={({ isActive }) =>
                   `pb-1 hover:border-b-2 hover:border-black ${
                     isActive ? "pb-1 border-b-2 border-black" : undefined
@@ -91,6 +92,7 @@ export default function MainNav() {
                           <Link
                             key={item}
                             to={link}
+                            onClick={() => setActiveDropdown(null)}
                             className="text-[0.8rem] text-gray hover:text-black"
                           >
                             {item}
@@ -115,7 +117,7 @@ export default function MainNav() {
       <div className="flex-1 flex justify-end items-center gap-4">
         <SearchInput />
         <Link
-          to={`${token ? "/favorites" : "accounts"}`}
+          to={`${token ? "/favorites" : "/accounts"}`}
           onClick={handlePreventDefault}
         >
           <Icon type="heart" />

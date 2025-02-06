@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import { accountActions } from "@/store/account-slice.js";
 import accountIcon from "@/assets/account-icon.png";
@@ -11,6 +11,7 @@ export default function AccountBar() {
   const dispatch = useDispatch();
   const { isShowingNotification } = useSelector((state) => state.cart);
   const { userData } = useSelector((state) => state.account);
+  const [activeDropdown, setActiveDropdown] = useState();
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -25,6 +26,7 @@ export default function AccountBar() {
     if (isShowingNotification) {
       event.preventDefault();
     }
+    setActiveDropdown(null);
   }
 
   function handleLogout() {
@@ -32,6 +34,7 @@ export default function AccountBar() {
     localStorage.removeItem("user");
     dispatch(accountActions.logout());
     navigate("/");
+    setActiveDropdown(null);
   }
 
   let userMenu = (
@@ -53,36 +56,58 @@ export default function AccountBar() {
   if (userData.token) {
     userMenu = (
       <>
-        <li className="group border-solid border-r-1 border-black px-3 hover:text-gray py-2 -my-2">
-          <Link to="/" className="flex items-center gap-2">
+        <li
+          onMouseEnter={() => setActiveDropdown("user")}
+          onMouseLeave={() => setActiveDropdown(null)}
+          className="border-solid border-r-1 border-black px-3 hover:text-gray py-2 -my-2"
+        >
+          <Link
+            to="/"
+            onClick={() => setActiveDropdown(null)}
+            className="flex items-center gap-2"
+          >
             <span>{`${userData.user.lastName}${userData.user.firstName}，你好`}</span>
             <img src={accountIcon} alt="Account icon" className="w-5" />
           </Link>
 
-          <DropdownMenu title="帳號">
-            <ul className="text-gray flex flex-col gap-2">
-              <li>
-                <Link to="/" className="hover:text-black">
-                  個人檔案
-                </Link>
-              </li>
-              <li>
-                <Link to="/orders" className="hover:text-black">
-                  訂單
-                </Link>
-              </li>
-              <li>
-                <Link to="/favorites" className="hover:text-black">
-                  最愛
-                </Link>
-              </li>
-              <li>
-                <button onClick={handleLogout} className="hover:text-black">
-                  登出
-                </button>
-              </li>
-            </ul>
-          </DropdownMenu>
+          {activeDropdown === "user" && (
+            <DropdownMenu title="帳號">
+              <ul className="text-gray flex flex-col gap-2">
+                <li>
+                  <Link
+                    to="/"
+                    onClick={() => setActiveDropdown(null)}
+                    className="hover:text-black"
+                  >
+                    個人檔案
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/orders"
+                    onClick={() => setActiveDropdown(null)}
+                    className="hover:text-black"
+                  >
+                    訂單
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/favorites"
+                    onClick={() => setActiveDropdown(null)}
+                    className="hover:text-black"
+                  >
+                    最愛
+                  </Link>
+                </li>
+                <li>
+                  <button onClick={handleLogout} className="hover:text-black">
+                    登出
+                  </button>
+                </li>
+              </ul>
+            </DropdownMenu>
+          )}
         </li>
       </>
     );
@@ -93,33 +118,48 @@ export default function AccountBar() {
       <h2 className="uppercase">SH Select</h2>
       <nav>
         <ul className="flex flex-row items-center list-none">
-          <li className="group border-solid border-r-1 border-black px-3 hover:text-gray py-2 -my-2">
+          <li
+            onMouseEnter={() => setActiveDropdown("help")}
+            onMouseLeave={() => setActiveDropdown(null)}
+            className="group border-solid border-r-1 border-black px-3 hover:text-gray py-2 -my-2"
+          >
             <Link to="/help" onClick={handlePreventDefault}>
               協助
             </Link>
 
-            <DropdownMenu title="協助">
-              <ul className="text-gray flex flex-col gap-2">
-                <li>
-                  <Link to="/help/refund-policy" className="hover:text-black">
-                    退貨
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/help/shipping-delivery"
-                    className="hover:text-black"
-                  >
-                    出貨與寄送
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/help/order-tracking" className="hover:text-black">
-                    訂單與付款
-                  </Link>
-                </li>
-              </ul>
-            </DropdownMenu>
+            {activeDropdown === "help" && (
+              <DropdownMenu title="協助">
+                <ul className="text-gray flex flex-col gap-2">
+                  <li>
+                    <Link
+                      to="/help/refund-policy"
+                      onClick={() => setActiveDropdown(null)}
+                      className="hover:text-black"
+                    >
+                      退貨
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/help/shipping-delivery"
+                      onClick={() => setActiveDropdown(null)}
+                      className="hover:text-black"
+                    >
+                      出貨與寄送
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/help/order-tracking"
+                      onClick={() => setActiveDropdown(null)}
+                      className="hover:text-black"
+                    >
+                      訂單與付款
+                    </Link>
+                  </li>
+                </ul>
+              </DropdownMenu>
+            )}
           </li>
           <div>|</div>
           {userMenu}
