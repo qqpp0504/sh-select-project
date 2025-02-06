@@ -47,17 +47,17 @@ export default function MainNav() {
 
   return (
     <nav
-      className={`padding-large py-2 flex flex-row items-center text-base transition-transform duration-300 ${
+      className={`padding-small lg:padding-large py-2 flex flex-row items-center text-base transition-transform duration-300 ${
         isSticky ? "fixed top-0 w-full bg-white z-50" : "relative"
       }`}
     >
       <div className="flex-1 flex justify-start">
         <Link to="/" onClick={handlePreventDefault}>
-          <img src={logo} alt="SH-Select Logo" className="w-14" />
+          <img src={logo} alt="SH-Select Logo" className="w-14 min-w-14" />
         </Link>
       </div>
 
-      <div>
+      <div className="hidden lg:block">
         <ul className="flex-1 flex justify-center gap-6 font-400">
           {NAVITEMS.map((navItem) => (
             <li
@@ -114,7 +114,7 @@ export default function MainNav() {
         </ul>
       </div>
 
-      <div className="flex-1 flex justify-end items-center gap-4">
+      <div className="flex-1 flex justify-end items-center gap-1 lg:gap-2">
         <SearchInput />
         <Link
           to={`${token ? "/favorites" : "/accounts"}`}
@@ -133,6 +133,9 @@ export default function MainNav() {
               {`${totalQuantity > 9 ? "9+" : totalQuantity}`}
             </span>
           )}
+        </Link>
+        <Link to="/">
+          <Icon type="hamburger" />
         </Link>
       </div>
     </nav>

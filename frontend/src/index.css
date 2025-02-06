@@ -7,6 +7,10 @@
     @apply px-12;
   }
 
+  .padding-small {
+    @apply px-6;
+  }
+
   .custom-dialog::backdrop {
     @apply opacity-0;
   }
