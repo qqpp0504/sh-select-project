@@ -6,6 +6,7 @@ import logo from "@/assets/logo.png";
 import Icon from "../UI/Icon.jsx";
 import SearchInput from "../UI/SearchInput.jsx";
 import { NAVITEMS } from "@/data.js";
+import DropdownNav from "./DropdownNav.jsx";
 
 export default function MainNav() {
   const { isShowingNotification, totalQuantity } = useSelector(
@@ -15,6 +16,7 @@ export default function MainNav() {
   const [activeDropdown, setActiveDropdown] = useState();
   const [isSticky, setIsSticky] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0); // 儲存上一次的滾動位置
+  const [isOpenNav, setIsOpenNav] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,6 +59,7 @@ export default function MainNav() {
         </Link>
       </div>
 
+      <DropdownNav isOpenNav={isOpenNav} setIsOpenNav={setIsOpenNav} />
       <div className="hidden lg:block">
         <ul className="flex-1 flex justify-center gap-6 font-400">
           {NAVITEMS.map((navItem) => (
@@ -134,9 +137,9 @@ export default function MainNav() {
             </span>
           )}
         </Link>
-        <Link to="/">
+        <button onClick={() => setIsOpenNav(true)} className="lg:hidden">
           <Icon type="hamburger" />
-        </Link>
+        </button>
       </div>
     </nav>
   );
