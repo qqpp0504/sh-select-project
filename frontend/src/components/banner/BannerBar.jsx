@@ -39,9 +39,9 @@ export default function BannerBar() {
   }, []);
 
   return (
-    <div className="padding-large py-5 bg-gray-100 text-center overflow-hidden">
+    <div className="py-5 bg-gray-100 text-center overflow-hidden">
       <div
-        className={`flex transition-transform duration-500 ease-in-out`}
+        className={`flex items-center transition-transform duration-500 ease-in-out`}
         style={{
           transform: `translateX(-${messageIndex * 100}%)`,
         }}
@@ -49,7 +49,7 @@ export default function BannerBar() {
         {BANNER_MESSAGES.map((message, index) => (
           <div key={index} className="w-full flex-shrink-0">
             <p className="pb-1">{message.text}</p>
-            <div className="flex justify-center text-[0.8rem]">
+            <div className="flex flex-col justify-center text-[0.8rem]">
               <p>{message.noLinkText}</p>
               <Link to={message.link} className="underline font-500">
                 {message.linkText}

@@ -1,5 +1,5 @@
 import Button from "../UI/Button.jsx";
-import ScrollContainer from "../UI/ScrollContainer.jsx";
+import ScrollContainer from "./ScrollContainer.jsx";
 
 export default function SelectedProducts({ products, sectionTitle }) {
   return (
@@ -7,7 +7,7 @@ export default function SelectedProducts({ products, sectionTitle }) {
       {products.map((product) => (
         <li
           key={product.title}
-          className="w-[27rem] h-[34rem] relative flex-shrink-0"
+          className="w-full max-w-[27rem] min-w-[20rem] aspect-[4/5] relative flex-shrink-0"
         >
           <img
             src={`http://localhost:3000/${product.image}`}

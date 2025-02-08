@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import ScrollContainer from "../UI/ScrollContainer.jsx";
+import ScrollContainer from "./ScrollContainer.jsx";
 
 export default function NewSelectedProducts({
   products,

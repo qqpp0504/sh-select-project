@@ -1,5 +1,5 @@
 import Button from "../UI/Button.jsx";
-import ScrollContainer from "../UI/ScrollContainer.jsx";
+import ScrollContainer from "./ScrollContainer.jsx";
 import { BRANDS } from "@/data.js";
 
 export default function BrandsProducts() {

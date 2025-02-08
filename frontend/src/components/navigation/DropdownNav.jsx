@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import { NAVITEMS } from "@/data.js";
@@ -18,10 +18,22 @@ export default function DropdownNav({ isOpenNav, setIsOpenNav }) {
     setSelectedOption(item);
   }
 
+  useEffect(() => {
+    if (isOpenNav) {
+      document.body.style.overflow = "hidden"; // 禁止滾動
+    } else {
+      document.body.style.overflow = ""; // 恢復滾動
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpenNav]);
+
   return (
     <>
       <div
-        className={`absolute bg-white right-0 top-0 w-[20rem] h-screen z-50 overflow-hidden overflow-y-auto transition-all duration-300 ${
+        className={`fixed bg-white right-0 top-0 w-[20rem] h-screen z-50 overflow-hidden overflow-y-auto transition-all duration-300 ${
           isOpenNav ? "translate-x-0" : "translate-x-full"
         }`}
       >

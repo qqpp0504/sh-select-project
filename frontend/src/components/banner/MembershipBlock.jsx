@@ -22,14 +22,14 @@ export default function MembershipBlock({
   className,
 }) {
   return (
-    <section className={`padding-large ${className}`}>
+    <section className={`padding-small lg:padding-large ${className}`}>
       <h2 className={`text-2xl font-500 ${paddingStyle}`}>會員福利</h2>
       <div className="relative">
         <div className="h-[60vh] flex justify-center">
           <img src={image} alt={alt} className="w-full h-full object-cover" />
         </div>
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <table className="text-white text-left text-lg">
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-start sm:justify-center overflow-x-auto">
+          <table className="text-white text-left text-lg min-w-[25rem]">
             <tbody>
               {DISCOUNTS.map((discount) => (
                 <tr key={discount.description}>

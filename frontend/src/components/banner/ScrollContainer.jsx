@@ -48,10 +48,10 @@ export default function ScrollContainer({ title, children }) {
   }, []);
 
   return (
-    <section className="mb-20">
-      <div className="padding-large flex items-center justify-between">
+    <section className="mb-20 w-full h-full">
+      <div className="padding-small lg:padding-large flex items-center justify-between">
         <h2 className="text-2xl font-500">{title}</h2>
-        <div>
+        <div className="hidden sm:block">
           <button
             onClick={handleScrollLeft}
             className={`bg-gray-200 p-2 rounded-[50%] mr-[0.625rem] ${
@@ -74,8 +74,8 @@ export default function ScrollContainer({ title, children }) {
       <article className="mx-2 my-3">
         <ul
           ref={scrollContainerRef}
-          className={`flex flex-row gap-3 overflow-x-auto scrollbar-thin px-10 ${
-            title == "新品和精選" ? "pb-24" : "pb-8"
+          className={`flex flex-row gap-3 overflow-x-auto scrollbar-thin px-4 lg:px-10 ${
+            title === "新品和精選" ? "pb-24" : "pb-8"
           }`}
         >
           {children}
