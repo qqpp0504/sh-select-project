@@ -1,5 +1,4 @@
-/* eslint-disable react/prop-types */
-import "./ShowMore.css";
+import classes from "./ShowMore.module.css";
 
 export default function ShowMore({ content, more }) {
   return (
@@ -7,14 +6,14 @@ export default function ShowMore({ content, more }) {
       <input
         type="checkbox"
         id="show-more"
-        className="show-more-checkbox hidden"
+        className={`${classes["show-more-checkbox"]} hidden`}
       />
-      <div className="filter-content flex flex-col">
+      <div className={`${classes["filter-content"]} flex flex-col`}>
         {content}
 
-        <div className="more-content flex flex-col">{more}</div>
+        <div className={`${classes["more-content"]} flex flex-col`}>{more}</div>
 
-        <label htmlFor="show-more" className="show-more-label" />
+        <label htmlFor="show-more" className={classes["show-more-label"]} />
       </div>
     </>
   );

@@ -1,7 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useMutation } from "@tanstack/react-query";
 
-import "./ShippingInformation.css";
 import Button from "../UI/Button.jsx";
 import Input from "../UI/Input.jsx";
 import ShippingForm from "./ShippingForm.jsx";

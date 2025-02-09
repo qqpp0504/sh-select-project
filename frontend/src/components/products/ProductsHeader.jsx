@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 
-import "./ProductsHeader.css";
+import classes from "./ProductsHeader.module.css";
 import filterIcon from "@/assets/filter-icon.png";
 import showIcon from "@/assets/show-icon.png";
 
@@ -157,8 +157,8 @@ export default function ProductsHeader({ isShowing, setIsShowing }) {
                 <img
                   src={showIcon}
                   alt="Show more icon"
-                  className={`w-5 icon ${
-                    isShowingSortBlock ? "toggle-icon" : undefined
+                  className={`w-5 ${classes.icon} ${
+                    isShowingSortBlock ? classes["toggle-icon"] : undefined
                   }`}
                 />
               </button>

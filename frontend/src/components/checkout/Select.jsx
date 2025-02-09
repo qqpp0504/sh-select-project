@@ -1,4 +1,4 @@
-import "./Select.css";
+import classes from "./Select.module.css";
 import showIcon from "@/assets/show-icon.png";
 
 const CITIES = [
@@ -35,7 +35,9 @@ export default function Select({ userSelect }) {
         name="city"
         onChange={userSelect.handleInputChange}
         onBlur={userSelect.handleInputBlur}
-        className={`select w-full px-4 py-[0.9rem] rounded-lg outline-none border-[1px] ${
+        className={`${
+          classes.select
+        } w-full px-4 py-[0.9rem] rounded-lg outline-none border-[1px] ${
           userSelect.value ? "text-black" : "text-gray"
         } ${
           userSelect.hasError

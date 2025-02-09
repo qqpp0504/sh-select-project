@@ -72,6 +72,7 @@ export default function ProductInformation({
             id="size"
             fontSize="text-xl"
             margin="my-3"
+            topHr={false}
           >
             {product.sizeDetail ? (
               <ul
@@ -99,11 +100,18 @@ export default function ProductInformation({
             id="deliveryInformation"
             fontSize="text-xl"
             margin="my-3"
+            topHr={false}
           >
             <DeliveryInformation />
           </Accordion>
 
-          <Accordion tag="評價" id="feedback" fontSize="text-xl" margin="my-3">
+          <Accordion
+            tag="評價"
+            id="feedback"
+            fontSize="text-xl"
+            margin="my-3"
+            topHr={false}
+          >
             這裡還很空
           </Accordion>
         </div>

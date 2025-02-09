@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-import "./OrderSummary.css";
+import classes from "./OrderSummary.module.css";
 import Summary from "../shoppingCart/Summary.jsx";
 import Tooltip from "../UI/ToolTip.jsx";
 import { currencyFormatter } from "@/util/formatting.js";
@@ -23,7 +23,7 @@ export default function OrderSummary() {
         <progress
           value={totalAmount}
           max="4500"
-          className="w-full h-2"
+          className={`${classes.progress} w-full h-2`}
         ></progress>
       </div>
     );
@@ -36,7 +36,7 @@ export default function OrderSummary() {
           <progress
             value={totalAmount}
             max="4500"
-            className="w-[76%] h-2"
+            className={`${classes.progress} w-[76%] h-2`}
           ></progress>
           <span className="text-sm inline-block">{`NT${currencyFormatter.format(
             4500

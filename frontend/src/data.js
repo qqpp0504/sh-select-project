@@ -83,29 +83,6 @@ export const BRANDS = [
   },
 ];
 
-export const FOOTERDATA = {
-  資源: [
-    { text: "加入會員", link: "/accounts" },
-    { text: "傳送意見回饋", link: "/" },
-  ],
-  協助: [
-    { text: "取得協助", link: "/help" },
-    { text: "訂單狀態", link: "/" },
-    { text: "出貨與寄送", link: "/help/shipping-delivery" },
-    { text: "退貨", link: "/help/refund-policy" },
-  ],
-  品牌: [
-    {
-      text: "關於 SH SELECT",
-      link: "/",
-    },
-    {
-      text: "最新消息",
-      link: "/",
-    },
-  ],
-};
-
 export const PRODUCTSNAV = [
   { param: "top", filterName: "上衣" },
   { param: "jacket", filterName: "外套及背心" },

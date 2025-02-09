@@ -1,7 +1,6 @@
-/* eslint-disable react/prop-types */
 import { useSearchParams } from "react-router-dom";
 
-import "./FilterButton.css";
+import classes from "./FilterButton.module.css";
 
 export default function FilterButton({
   filterType,
@@ -56,7 +55,7 @@ export default function FilterButton({
       {type === "filter" && (
         <button
           onClick={handleClickFilter}
-          className={`${isChecked ? "checked" : "unchecked"}`}
+          className={`${isChecked ? classes.checked : classes.unchecked}`}
         >
           {children}
         </button>
