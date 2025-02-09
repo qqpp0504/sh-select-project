@@ -102,9 +102,12 @@ export default function DropdownNav({ isOpenNav, setIsOpenNav }) {
           <div className="px-3">
             {selectedOption && (
               <>
-                <h2 className="text-2xl font-500 mb-5">
-                  {selectedOption.label}
-                </h2>
+                <Link to={selectedOption.link} onClick={handleCloseNav}>
+                  <h2 className="text-2xl font-500 mb-5">
+                    {selectedOption.label}
+                  </h2>
+                </Link>
+
                 <ul>
                   {Object.entries(selectedOption.items).map(([key, value]) => (
                     <li key={key} className="flex flex-col gap-3">
@@ -131,7 +134,7 @@ export default function DropdownNav({ isOpenNav, setIsOpenNav }) {
       {isOpenNav && (
         <div
           onClick={handleCloseNav}
-          className="absolute top-0 left-0 bg-black opacity-30 w-full h-screen z-10"
+          className="absolute top-0 left-0 bg-black opacity-30 w-full h-screen z-20"
         ></div>
       )}
     </>

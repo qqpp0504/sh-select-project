@@ -18,8 +18,8 @@ export default function BrandsPage() {
     <section>
       <Banner {...BRANDSBANNER} />
 
-      <div className="padding-large">
-        <ul className="flex flex-col gap-10">
+      <div className="padding-small lg:padding-large">
+        <ul className="flex flex-col gap-10 overflow-hidden">
           {BRANDS.map((brand, index) => (
             <BrandDetail key={brand.title} index={index} brand={brand} />
           ))}

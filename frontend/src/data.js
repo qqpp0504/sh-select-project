@@ -23,7 +23,7 @@ export const BRANDS = [
     title: "Asics",
     link: "/products?brands=asics",
     description:
-      "Asics 的創立宗旨源自拉丁語名言「Anima Sana in Corpore Sano」，意為「健全的心靈寓於健全的體魄」。這反映了 Asics 致力於透過運動促進身心健康的理念。此外，Asics 的品牌故事中提到，創辦人鬼塚喜八郎秉持「健全的精神源自健康的體魄」，以為所有運動選手「生產真正的運動鞋」為目標。 Asics這些理念彰顯了 Asics 對運動員身心健康的承諾。",
+      "Asics 源自拉丁語「Anima Sana in Corpore Sano」，意為「健全的心靈寓於健全的體魄」，體現品牌透過運動促進身心健康的理念。創辦人鬼塚喜八郎以「健全的精神源自健康的體魄」為信念，致力於為運動員打造真正的運動鞋，展現 Asics 對運動員身心健康的承諾。",
   },
   {
     image: theNorthFaceImg,
@@ -39,7 +39,7 @@ export const BRANDS = [
     title: "Mizuno",
     link: "/products?brands=mizuno",
     description:
-      "美津濃（Mizuno）的創立宗旨是「以優良的運動用品及振興體育來貢獻社會」。創辦人水野利八先生在美國棒球文化的影響下，開始在日本生產棒球服系列，推廣棒球產品，並以「方便運動且穿著舒適」為設計理念。美津浓這些理念體現了美津濃致力於提供高品質運動用品，並促進體育發展的承諾。",
+      "美津濃（Mizuno）以「優良運動用品與振興體育貢獻社會」為宗旨。受美國棒球文化影響，創辦人水野利八推廣棒球產品，強調「方便運動、穿著舒適」，展現品牌對高品質運動用品與體育發展的承諾。",
   },
   {
     image: adidasImg,
@@ -55,7 +55,7 @@ export const BRANDS = [
     title: "Nautica",
     link: "/products?brands=nautica",
     description:
-      "Nautica 是一個美國服裝品牌，成立於1983年，由服裝設計師朱欽騏（David Chu）創立。品牌名稱源自拉丁文「Nauticus」，意為「船隻」，體現了其以海洋為靈感的設計理念。Nautica 的創立宗旨是將海洋元素融入日常生活和時尚中，強調自然與平衡的生活哲學。品牌的服裝設計崇尚海洋生活，富含自然色彩，既充滿活力又無拘無束。",
+      "Nautica 於 1983 年創立，品牌名源自拉丁文「Nauticus」，意為「船隻」，展現海洋靈感設計。其宗旨為將海洋元素融入日常時尚，強調自然與平衡，服裝風格充滿活力且自在。",
   },
   {
     image: converseImg,
@@ -63,7 +63,7 @@ export const BRANDS = [
     title: "Converse",
     link: "/products?brands=converse",
     description:
-      "Converse 於1908年由 Marquis Mills Converse 在美國麻薩諸塞州創立，最初名為 Converse Rubber Shoe Company，專注於生產橡膠鞋墊。隨著時間的推移，Converse 逐漸轉型為一家知名的運動鞋和休閒服飾品牌。其創立宗旨是「為街頭而生」，旨在為不斷變化的街頭文化世界設計產品，不僅代表穿著者的風格，也象徵著他們前進的方向。Converse 的產品線涵蓋滑板、籃球、藝術家合作等多個領域，體現了品牌對創新和多元文化的承諾。",
+      "Converse 於 1908 年創立，最初專注橡膠鞋墊，後轉型為運動鞋與休閒服飾品牌。秉持「為街頭而生」的宗旨，設計展現個人風格與文化趨勢，並涉足滑板、籃球及藝術合作，體現對創新與多元文化的承諾。",
   },
   {
     image: ordinaryImg,
@@ -79,7 +79,7 @@ export const BRANDS = [
     title: "Carhartt",
     link: "/products?brands=carhartt",
     description:
-      "Carhartt 於1889年由 Hamilton Carhartt 在美國底特律創立，最初的宗旨是為體力勞動者提供耐用且舒適的工作服。品牌的核心理念強調「品質、舒適和耐用性」，致力於為勞動者提供高標準的產品。隨著時間的推移，Carhartt 將其工裝設計引入時尚界，成立了 Carhartt Work In Progress（Carhartt WIP），以滿足現代消費者對品質和風格的雙重需求。",
+      "Carhartt 於 1889 年創立，原為勞動者打造耐用舒適的工作服，強調「品質、舒適、耐用性」。後來推出 Carhartt WIP，將工裝設計融入時尚，兼顧品質與風格。",
   },
 ];
 
