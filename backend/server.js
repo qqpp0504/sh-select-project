@@ -114,7 +114,7 @@ app.get("/products/:slug", async (req, res) => {
   }
 });
 
-app.get("/:page(homePage|menPage|femalePage)", async (req, res) => {
+app.get("/:page(homePage|menPage|womenPage)", async (req, res) => {
   const page = req.params.page; // 獲取頁面分類 (homePage, menPage, womenPage, ...)
 
   if (!page || typeof page !== "string") {

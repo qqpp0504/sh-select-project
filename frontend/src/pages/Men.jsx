@@ -8,7 +8,7 @@ import NewSelectedProducts from "@/components/banner/NewSelectProducts.jsx";
 import RecommendationProducts from "@/components/banner/RecommendationProducts.jsx";
 import BrandsProducts from "@/components/banner/BrandsProducts.jsx";
 import MembershipBlock from "@/components/banner/MembershipBlock.jsx";
-import SexClassNavigation from "@/components/navigation/SexClassNavigation.jsx";
+import GenderClassNavigation from "@/components/banner/GenderClassNavigation.jsx";
 import membershipBannerImage from "@/assets/membership-men.jpg";
 
 export default function MenPage() {
@@ -36,7 +36,7 @@ export default function MenPage() {
 
   return (
     <>
-      <SexClassNavigation sex="men" />
+      <GenderClassNavigation gender="men" />
       <Banner {...bannerData.banner} />
       <NewSelectedProducts products={bannerData.selectedProducts} />
       <RecommendationProducts products={bannerData.recommendationProducts} />

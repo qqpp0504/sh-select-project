@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import logo from "@/assets/logo.png";
@@ -17,6 +17,7 @@ export default function MainNav() {
   const [isSticky, setIsSticky] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0); // 儲存上一次的滾動位置
   const [isOpenNav, setIsOpenNav] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,12 +35,14 @@ export default function MainNav() {
       setLastScrollY(window.scrollY);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    if (location.pathname === "/" || location.pathname === "/brands") {
+      window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [lastScrollY]); // 依賴於 lastScrollY，當滾動位置改變時重新執行
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }
+  }, [lastScrollY, location.pathname]);
 
   function handlePreventDefault(event) {
     if (isShowingNotification) {

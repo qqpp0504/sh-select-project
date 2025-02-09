@@ -1,19 +1,38 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function SexClassNavigation({ sex }) {
+export default function GenderClassNavigation({ gender }) {
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      setIsSticky(offset > 250);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const listClasses = "hover:text-gray transition-all duration-200 ease-in-out";
 
   return (
-    <div className="padding-large my-8 flex flex-row items-center">
+    <div className="sticky top-0 padding-small lg:padding-large py-4 mt-4 bg-white z-10 flex flex-col items-start gap-4 lg:flex-row lg:items-center lg:my-4">
       <div className="flex-1 flex justify-start">
-        <h2 className="text-2xl font-500">{sex == "men" ? "男款" : "女款"}</h2>
+        <h2
+          className={`font-500 transition-all duration-200 ${
+            isSticky ? "text-base" : "text-2xl"
+          }`}
+        >
+          {gender == "men" ? "男款" : "女款"}
+        </h2>
       </div>
 
       <div className="flex-1 flex justify-center">
-        <ul className="flex flex-row gap-8">
+        <ul className="flex flex-row gap-8 font-500">
           <Link
             to={
-              sex == "men"
+              gender == "men"
                 ? "/products?gender=men&category=top"
                 : "/products?gender=women&category=top"
             }
@@ -22,7 +41,7 @@ export default function SexClassNavigation({ sex }) {
           </Link>
           <Link
             to={
-              sex == "men"
+              gender == "men"
                 ? "/products?gender=men&category=shoes"
                 : "/products?gender=women&category=shoes"
             }
@@ -31,7 +50,7 @@ export default function SexClassNavigation({ sex }) {
           </Link>
           <Link
             to={
-              sex == "men"
+              gender == "men"
                 ? "/products?gender=men&category=other"
                 : "/products?gender=women&category=other"
             }

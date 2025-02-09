@@ -29,7 +29,7 @@ export default function MembershipBlock({
           <img src={image} alt={alt} className="w-full h-full object-cover" />
         </div>
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-start sm:justify-center overflow-x-auto">
-          <table className="text-white text-left text-lg min-w-[25rem]">
+          <table className="text-white text-left text-lg min-w-[23rem]">
             <tbody>
               {DISCOUNTS.map((discount) => (
                 <tr key={discount.description}>

@@ -28,7 +28,7 @@ import MemberRootLayout from "./pages/MemberRootLayout.jsx";
 
 const HomePage = lazy(() => import("./pages/Home.jsx"));
 const MenPage = lazy(() => import("./pages/Men.jsx"));
-const FemalePage = lazy(() => import("./pages/Female.jsx"));
+const WomenPage = lazy(() => import("./pages/Women.jsx"));
 
 const router = createBrowserRouter(
   [
@@ -90,7 +90,7 @@ const router = createBrowserRouter(
               path: "female",
               element: (
                 <Suspense fallback={null}>
-                  <FemalePage />
+                  <WomenPage />
                 </Suspense>
               ),
             },
