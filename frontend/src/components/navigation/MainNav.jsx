@@ -109,12 +109,12 @@ export default function MainNav() {
                       </li>
                     ))}
                   </ul>
-                  {activeDropdown && (
-                    <div
-                      className="fixed top-[8rem] left-0 right-0 bottom-0 bg-black bg-opacity-30 z-10"
-                      onClick={() => setActiveDropdown(null)}
-                    ></div>
-                  )}
+
+                  {/* 背景遮罩 */}
+                  <div
+                    className="fixed top-[8rem] left-0 right-0 bottom-0 bg-black bg-opacity-30 z-10"
+                    onClick={() => setActiveDropdown(null)}
+                  ></div>
                 </div>
               )}
             </li>

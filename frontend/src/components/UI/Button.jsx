@@ -22,7 +22,7 @@ export default function Button({
   };
 
   const sizeStyles = {
-    sm: "px-3 py-1 text-sm",
+    sm: "px-4 py-1",
     md: "px-4 py-[0.375rem] text-base",
     lg: "px-6 py-2",
     xl: "py-[1.2rem] rounded-full",

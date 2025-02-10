@@ -9,6 +9,7 @@ export default function ProductsHeader({ isShowing, setIsShowing }) {
   const sortBlock = useRef();
   const productsQuantity = useSelector((state) => state.filter.quantity);
   const [searchParams, setSearchParams] = useSearchParams();
+  const [isSticky, setIsSticky] = useState(false);
 
   const category = searchParams.get("category");
   const gender = searchParams.get("gender");
@@ -17,6 +18,16 @@ export default function ProductsHeader({ isShowing, setIsShowing }) {
   const search = searchParams.get("search");
   const sortby = searchParams.get("sortby");
   let brands = searchParams.get("brands");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      setIsSticky(offset > 250);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   if (brands?.includes("-")) {
     brands = brands.split("-");
@@ -82,8 +93,6 @@ export default function ProductsHeader({ isShowing, setIsShowing }) {
         </ol>
       </div>
     );
-  } else {
-    moreFilters = <div className="py-3"></div>;
   }
 
   if (search) {
@@ -129,11 +138,16 @@ export default function ProductsHeader({ isShowing, setIsShowing }) {
   return (
     <>
       {moreFilters}
-      <div className="flex flex-row items-center justify-between pb-6">
-        <h1 className="text-2xl font-500">
-          {filterText} ({productsQuantity})
+      <div className="sticky top-0 z-10 bg-white p-3 lg:flex lg:flex-row lg:items-center lg:justify-between lg:py-4 lg:my-3 padding-small lg:padding-large">
+        <h1
+          className={`font-500 flex gap-2 ${
+            isSticky ? "text-base" : "text-xl lg:text-2xl"
+          }`}
+        >
+          {filterText}
+          <span className="hidden lg:block">({productsQuantity})</span>
         </h1>
-        <nav>
+        <nav className="hidden lg:block">
           <ul className="flex flex-row gap-8">
             <li>
               <button

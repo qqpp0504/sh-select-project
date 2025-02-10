@@ -51,7 +51,7 @@ export default function BannerBar() {
             <p className="pb-1">{message.text}</p>
             <div className="flex flex-col justify-center text-[0.8rem]">
               <p>{message.noLinkText}</p>
-              <Link to={message.link} className="underline font-500">
+              <Link to={message.link} className="underline font-500 mx-auto">
                 {message.linkText}
               </Link>
             </div>
