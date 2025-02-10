@@ -2,15 +2,14 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useMutation } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
+import { LiaHeart } from "react-icons/lia";
+import { CgRuler } from "react-icons/cg";
 
 import SelectBlock from "../UI/SelectBlock.jsx";
 import { modalActions } from "@/store/modal-slice.js";
-import rulerIcon from "@/assets/ruler-icon.png";
 import Button from "../UI/Button.jsx";
-import heartIcon from "@/assets/heart-icon.png";
 import { cartActions } from "@/store/cart-slice.js";
 import { addFavorites } from "@/util/http.js";
-
 import ErrorModal from "../UI/ErrorModal.jsx";
 import LoadingIndicator from "../UI/LoadingIndicator.jsx";
 import { useAddNotification } from "../hooks/useAddNotification.js";
@@ -138,7 +137,7 @@ export default function CartForm({ product, onSelect }) {
           type="button"
           className="text-sm flex items-center gap-1"
         >
-          <img src={rulerIcon} alt="Ruler Icon" className="w-6" />
+          <CgRuler size="1.3rem" />
           尺寸指南
         </button>
       </div>
@@ -182,7 +181,7 @@ export default function CartForm({ product, onSelect }) {
           ) : (
             <>
               <span>最愛</span>
-              <img src={heartIcon} alt="Heart icon" className="w-[22px]" />
+              <LiaHeart />
             </>
           )}
         </Button>

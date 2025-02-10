@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { FiMenu } from "react-icons/fi";
+import { LiaShoppingBagSolid, LiaHeart } from "react-icons/lia";
+import { RiAccountCircleLine } from "react-icons/ri";
 
 import logo from "@/assets/logo.png";
-import Icon from "../UI/Icon.jsx";
-import SearchInput from "../UI/SearchInput.jsx";
+import SearchInput from "./SearchInput.jsx";
 import { NAVITEMS } from "@/data.js";
 import DropdownNav from "./DropdownNav.jsx";
 
@@ -120,28 +122,41 @@ export default function MainNav() {
         </ul>
       </div>
 
-      <div className="flex-1 flex justify-end items-center gap-1 lg:gap-2">
+      <div className="flex-1 flex justify-end items-center lg:gap-1">
         <SearchInput />
         <Link
           to={`${token ? "/favorites" : "/accounts"}`}
           onClick={handlePreventDefault}
         >
-          <Icon type="heart" />
+          <div className="p-[0.375rem] rounded-full hover:bg-gray-200 hidden lg:block">
+            <LiaHeart />
+          </div>
         </Link>
-        <Link to="/cart" onClick={handlePreventDefault} className="relative">
-          <Icon type="shopping-cart" />
-          {totalQuantity > 0 && (
-            <span
-              className={`absolute bottom-[2.5px] text-[0.5rem] ${
-                totalQuantity > 9 ? "left-[13px]" : "left-[15.5px]"
-              }`}
-            >
-              {`${totalQuantity > 9 ? "9+" : totalQuantity}`}
-            </span>
-          )}
+
+        <Link
+          to={`${token ? "/" : "/accounts"}`}
+          onClick={handlePreventDefault}
+        >
+          <div className="p-[0.375rem] rounded-full hover:bg-gray-200 block lg:hidden">
+            <RiAccountCircleLine />
+          </div>
         </Link>
-        <button onClick={() => setIsOpenNav(true)} className="lg:hidden">
-          <Icon type="hamburger" />
+
+        <Link to="/cart" onClick={handlePreventDefault}>
+          <div className="relative p-[0.375rem] rounded-full hover:bg-gray-200">
+            <LiaShoppingBagSolid />
+            {totalQuantity > 0 && (
+              <span className="absolute bottom-[3px] text-[0.5rem] left-1/2 -translate-x-1/2">
+                {`${totalQuantity > 9 ? "9+" : totalQuantity}`}
+              </span>
+            )}
+          </div>
+        </Link>
+        <button
+          onClick={() => setIsOpenNav(true)}
+          className="lg:hidden p-[0.375rem] rounded-full hover:bg-gray-200"
+        >
+          <FiMenu />
         </button>
       </div>
     </nav>

@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { GoChevronLeft, GoChevronRight } from "react-icons/go";
+import { IoCloseOutline } from "react-icons/io5";
 
 import { NAVITEMS } from "@/data.js";
-import closeIcon from "@/assets/close-icon.png";
-import rightArrowIcon from "@/assets/right-arrow-icon.png";
-import leftArrowIcon from "@/assets/left-arrow-icon.png";
 
 export default function DropdownNav({ isOpenNav, setIsOpenNav }) {
   const [selectedOption, setSelectedOption] = useState();
@@ -50,7 +49,7 @@ export default function DropdownNav({ isOpenNav, setIsOpenNav }) {
               onClick={handleCloseNav}
               className="hover:bg-gray-200 p-1 rounded-full"
             >
-              <img src={closeIcon} alt="Close icon" className="w-7" />
+              <IoCloseOutline size="1.7rem" />
             </button>
           </div>
 
@@ -63,13 +62,7 @@ export default function DropdownNav({ isOpenNav, setIsOpenNav }) {
                     className="w-full flex justify-between items-center"
                   >
                     <div>{item.label}</div>
-                    <div>
-                      <img
-                        src={rightArrowIcon}
-                        alt="Right arrow icon"
-                        className="w-5 min-w-5"
-                      />
-                    </div>
+                    <GoChevronRight />
                   </button>
                 </li>
               ))}
@@ -88,14 +81,14 @@ export default function DropdownNav({ isOpenNav, setIsOpenNav }) {
               onClick={() => setSelectedOption(null)}
               className="flex items-center gap-3"
             >
-              <img src={leftArrowIcon} alt="Left arrow icon" className="w-5" />
+              <GoChevronLeft />
               <div>全部</div>
             </button>
             <button
               onClick={handleCloseNav}
               className="hover:bg-gray-200 p-1 rounded-full"
             >
-              <img src={closeIcon} alt="Close icon" className="w-7" />
+              <IoCloseOutline size="1.7rem" />
             </button>
           </div>
 

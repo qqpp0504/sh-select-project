@@ -1,7 +1,0 @@
-.toggle-icon {
-  transform: rotate(180deg);
-}
-
-.icon {
-  transition: transform 0.3s ease-in-out;
-}

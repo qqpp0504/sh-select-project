@@ -1,11 +1,11 @@
 import { useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { FaCircleCheck } from "react-icons/fa6";
+import { IoCloseOutline } from "react-icons/io5";
 
-import successIcon from "@/assets/success-icon.png";
 import { currencyFormatter } from "@/util/formatting.js";
 import Button from "../UI/Button.jsx";
-import closeIcon from "@/assets/close-icon.png";
 import { cartActions } from "@/store/cart-slice.js";
 
 export default function CartNotification() {
@@ -66,8 +66,8 @@ export default function CartNotification() {
   return (
     <div className="absolute right-12 top-full bg-white w-[25rem] h-[17rem] rounded-b-3xl z-20 p-5 text-[0.95rem]">
       <div className="flex flex-col justify-between h-full">
-        <div className="flex gap-2">
-          <img src={successIcon} alt="Success icon" className="w-7" />
+        <div className="flex items-center gap-2">
+          <FaCircleCheck size="1.2rem" color="green" />
           <span className="font-500">{`${
             showingNotification.type === "addToCart"
               ? "已加入購物車"
@@ -78,7 +78,7 @@ export default function CartNotification() {
           onClick={handleCloseNotification}
           className="bg-gray-100 rounded-full p-1 absolute right-7 hover:bg-gray-200"
         >
-          <img src={closeIcon} alt="Close Icon" className="w-7" />
+          <IoCloseOutline size="1.7rem" />
         </button>
 
         <div className="h-28 flex items-center gap-3">

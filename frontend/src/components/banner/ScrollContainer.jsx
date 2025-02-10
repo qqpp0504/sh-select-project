@@ -1,6 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-
-import Icon from "../UI/Icon.jsx";
+import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 
 export default function ScrollContainer({ title, children }) {
   const scrollContainerRef = useRef(); // 使用 useRef 引用滾動容器
@@ -54,19 +53,19 @@ export default function ScrollContainer({ title, children }) {
         <div className="hidden sm:block">
           <button
             onClick={handleScrollLeft}
-            className={`bg-gray-200 p-2 rounded-[50%] mr-[0.625rem] ${
+            className={`bg-gray-200 p-3 rounded-[50%] mr-[0.625rem] ${
               isStart && "opacity-40"
             }`}
             disabled={isStart}
           >
-            <Icon type="left-arrow" />
+            <GoChevronLeft />
           </button>
           <button
             onClick={handleScrollRight}
-            className={`bg-gray-200 p-2 rounded-[50%] ${isEnd && "opacity-40"}`}
+            className={`bg-gray-200 p-3 rounded-[50%] ${isEnd && "opacity-40"}`}
             disabled={isEnd}
           >
-            <Icon type="right-arrow" />
+            <GoChevronRight />
           </button>
         </div>
       </div>

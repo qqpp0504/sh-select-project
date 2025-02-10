@@ -1,9 +1,9 @@
 import { Link, useSearchParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { PiSmileySad } from "react-icons/pi";
 
 import { currencyFormatter } from "@/util/formatting.js";
 import Button from "../UI/Button.jsx";
-import emptyIconImg from "@/assets/empty-icon.png";
 import { filterActions } from "@/store/filter-slice.js";
 import { useEffect } from "react";
 
@@ -36,8 +36,8 @@ export default function ProductsList({ products }) {
   if (productsQuantity === 0) {
     noProductsContent = (
       <div className="flex flex-col justify-center items-center mt-20">
-        <div className="flex flex-row rounded-lg w-96 pt-5 justify-center text-4xl mb-10 gap-4">
-          <img src={emptyIconImg} alt="Empty Icon" className="w-10 h-10" />
+        <div className="flex flex-row items-center rounded-lg w-96 pt-5 justify-center text-4xl mb-10 gap-4">
+          <PiSmileySad size="2.5rem" />
           <span>Nothing!</span>
         </div>
         <p>找不到符合條件的商品，試試修改篩選條件或探索其他分類吧！</p>

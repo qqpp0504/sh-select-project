@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { Outlet, useNavigate, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import { IoSearch } from "react-icons/io5";
 
 import Input from "@/components/UI/Input.jsx";
-import searchIcon from "@/assets/search-icon-gray.png";
 import { searchFAQ } from "@/util/searchFaq.js";
 import { searchActions } from "@/store/searchFaq-slice.js";
 
@@ -51,7 +51,7 @@ export default function HelpLayout() {
               onClick={handleSearch}
               className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-2 before:absolute before:inset-0 before:rounded-full before:hover:bg-gray-100 before:scale-0 hover:before:scale-100 before:transition-transform before:duration-300 before:-z-10"
             >
-              <img src={searchIcon} alt="Search icon" className="w-6" />
+              <IoSearch size="1.3rem" color="gray" />
             </button>
           </form>
         </div>

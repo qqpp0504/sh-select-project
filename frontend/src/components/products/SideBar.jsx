@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
 import { PRODUCTSNAV, PRODUCTSNAVMEN } from "../../data.js";
-
 import Accordion from "../UI/Accordion.jsx";
 import ShowMore from "../UI/ShowMore.jsx";
 import FilterButton from "./FilterButton.jsx";

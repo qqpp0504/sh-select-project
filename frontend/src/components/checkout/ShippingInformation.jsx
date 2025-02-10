@@ -1,12 +1,12 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useMutation } from "@tanstack/react-query";
+import { FaRegCreditCard } from "react-icons/fa6";
 
 import Button from "../UI/Button.jsx";
 import Input from "../UI/Input.jsx";
 import ShippingForm from "./ShippingForm.jsx";
 import Information from "./Information.jsx";
 import { currencyFormatter } from "@/util/formatting.js";
-import cardIcon from "@/assets/card-icon.png";
 import DeliveryTime from "./DeliveryTime.jsx";
 import { useShippingForm } from "../hooks/useShippingForm.js";
 import { addOrder } from "@/util/http.js";
@@ -126,7 +126,7 @@ export default function ShippingInformation() {
                 size="custom"
                 className="flex items-center gap-3 px-6 py-6 rounded-xl"
               >
-                <img src={cardIcon} alt="Card icon" className="w-5" />
+                <FaRegCreditCard size="1.3rem" />
                 信用卡或金融簽帳卡
               </Button>
             </div>

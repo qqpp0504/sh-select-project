@@ -2,9 +2,8 @@ import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import { useDispatch } from "react-redux";
+import { FaHeart, FaRegHeart } from "react-icons/fa6";
 
-import heartIcon from "@/assets/heart-icon.png";
-import blackHeartIcon from "@/assets/heart-black-icon.png";
 import { currencyFormatter } from "@/util/formatting.js";
 import { deleteFavoriteProduct } from "@/util/http.js";
 import ErrorBlock from "../UI/ErrorBlock.jsx";
@@ -116,16 +115,12 @@ export default function FavoritesProducts({ products, refetch }) {
               onClick={() =>
                 !isPending && handleStartDeleteFavorite(product.favoriteId)
               }
-              className="absolute top-4 right-4 bg-white p-2 rounded-full"
+              className="absolute top-4 right-4 bg-white p-[0.6rem] rounded-full"
             >
               {favoriteProductId.includes(product.favoriteId) ? (
-                <img src={heartIcon} alt="Heart icon" className="w-6" />
+                <FaRegHeart size="1.3rem" />
               ) : (
-                <img
-                  src={blackHeartIcon}
-                  alt="Black heart icon"
-                  className="w-6"
-                />
+                <FaHeart size="1.3rem" />
               )}
             </button>
           </div>

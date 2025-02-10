@@ -1,7 +1,5 @@
 import { useEffect } from "react";
-
-import leftArrowIcon from "@/assets/left-arrow-icon.png";
-import rightArrowIcon from "@/assets/right-arrow-icon.png";
+import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 
 export default function ProductImages({
   product,
@@ -64,13 +62,13 @@ export default function ProductImages({
             onClick={handleEnterPreviousImage}
             className="w-9 bg-white p-2 rounded-full active:bg-gray-300"
           >
-            <img src={leftArrowIcon} alt="Left arrow icon" />
+            <GoChevronLeft />
           </button>
           <button
             onClick={handleEnterNextImage}
             className="w-9 bg-white p-2 rounded-full active:bg-gray-300"
           >
-            <img src={rightArrowIcon} alt="Right arrow icon" />
+            <GoChevronRight />
           </button>
         </div>
       </div>

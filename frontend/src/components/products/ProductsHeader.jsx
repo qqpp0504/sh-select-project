@@ -1,10 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
-
-import classes from "./ProductsHeader.module.css";
-import filterIcon from "@/assets/filter-icon.png";
-import showIcon from "@/assets/show-icon.png";
+import { IoIosArrowDown } from "react-icons/io";
+import { PiSlidersHorizontal } from "react-icons/pi";
 
 export default function ProductsHeader({ isShowing, setIsShowing }) {
   const [isShowingSortBlock, setIsShowingSortBlock] = useState(false);
@@ -140,25 +138,25 @@ export default function ProductsHeader({ isShowing, setIsShowing }) {
             <li>
               <button
                 onClick={handleShowing}
-                className="flex flex-row items-center gap-[0.625rem]"
+                className="flex flex-row items-center gap-2"
               >
                 {isShowing ? "隱藏篩選條件" : "顯示篩選條件"}
-                <img src={filterIcon} alt="Filter icon" className="w-5" />
+                <PiSlidersHorizontal />
               </button>
             </li>
             <li ref={sortBlock} className="relative">
               <button
                 onClick={handleOpenSortBlock}
-                className="flex flex-row items-center gap-[0.625rem]"
+                className="flex flex-row items-center gap-2"
               >
                 <div>
                   排序依據<span className="text-gray">{sortedFilterText}</span>
                 </div>
-                <img
-                  src={showIcon}
-                  alt="Show more icon"
-                  className={`w-5 ${classes.icon} ${
-                    isShowingSortBlock ? classes["toggle-icon"] : undefined
+
+                <IoIosArrowDown
+                  size="1.3rem"
+                  className={`transition-transform duration-300 ${
+                    isShowingSortBlock ? "rotate-180" : undefined
                   }`}
                 />
               </button>

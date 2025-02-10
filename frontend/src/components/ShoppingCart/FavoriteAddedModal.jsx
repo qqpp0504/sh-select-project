@@ -1,11 +1,11 @@
 import { useState, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { FaCircleCheck } from "react-icons/fa6";
 
 import Modal from "../UI/Modal.jsx";
 import { modalActions } from "@/store/modal-slice.js";
 import Button from "../UI/Button.jsx";
-import successIcon from "@/assets/success-icon.png";
 import TimingProgress from "../UI/TimingProgress.jsx";
 
 export default function FavoriteAddedModal() {
@@ -39,8 +39,8 @@ export default function FavoriteAddedModal() {
       <div className="w-[30rem] h-[16rem] p-11 flex flex-col justify-between">
         <div></div>
 
-        <div className="flex justify-center items-center gap-1">
-          <img src={successIcon} alt="Success icon" className="w-7" />
+        <div className="flex justify-center items-center gap-2">
+          <FaCircleCheck size="1.2rem" color="green" />
           <p className="text-lg font-500">已成功加入最愛！</p>
         </div>
 

@@ -1,5 +1,5 @@
 import classes from "./Select.module.css";
-import showIcon from "@/assets/show-icon.png";
+import { IoIosArrowDown } from "react-icons/io";
 
 const CITIES = [
   "臺北市",
@@ -54,9 +54,9 @@ export default function Select({ userSelect }) {
           </option>
         ))}
       </select>
-      <div className="absolute top-1/2 -translate-y-1/2 right-3 w-5">
-        <img src={showIcon} alt="Show icon" />
-      </div>
+
+      <IoIosArrowDown className="absolute top-1/2 -translate-y-1/2 right-3 w-5" />
+
       <div
         className={`absolute top-[-7px] text-xs left-4 px-1 text-gray bg-white ${
           userSelect.value ? "block" : "hidden"

@@ -17,11 +17,11 @@ export default function GenderClassNavigation({ gender }) {
   const listClasses = "hover:text-gray transition-all duration-200 ease-in-out";
 
   return (
-    <div className="sticky top-0 padding-small lg:padding-large py-4 mt-4 bg-white z-10 flex flex-col items-start gap-4 lg:flex-row lg:items-center lg:my-4">
+    <div className="sticky top-0 padding-small lg:padding-large pt-8 pb-4 bg-white z-10 flex flex-col items-start gap-4 lg:flex-row lg:items-center lg:my-4 lg:pt-4">
       <div className="flex-1 flex justify-start">
         <h2
           className={`font-500 transition-all duration-200 ${
-            isSticky ? "text-base" : "text-2xl"
+            isSticky ? "text-2xl lg:text-base" : "text-2xl"
           }`}
         >
           {gender == "men" ? "男款" : "女款"}

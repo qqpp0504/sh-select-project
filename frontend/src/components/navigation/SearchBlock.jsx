@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { IoIosSearch } from "react-icons/io";
 
 import logo from "@/assets/logo.png";
-import searchIcon from "@/assets/search-icon.png";
 import { filterActions } from "@/store/filter-slice.js";
 import Button from "../UI/Button";
 
@@ -50,9 +50,9 @@ export default function SearchBlock({ onClose }) {
           <div className="w-[60%] relative group">
             <button
               type="submit"
-              className="absolute rounded-3xl p-[0.5rem] bg-gray-100 hover:bg-white-hoverColor"
+              className="absolute top-1/2 -translate-y-1/2 rounded-3xl p-[0.35rem] bg-gray-100 hover:bg-white-hoverColor"
             >
-              <img src={searchIcon} alt="Search icon" className="w-5" />
+              <IoIosSearch />
             </button>
             <input
               type="text"
@@ -80,7 +80,7 @@ export default function SearchBlock({ onClose }) {
                   onClick={() => handleSearch(item)}
                   key={item}
                 >
-                  <Button bgColor="gray" paddingStyle="px-6 py-2">
+                  <Button variant="gray" size="lg" className="font-500">
                     {item}
                   </Button>
                 </button>

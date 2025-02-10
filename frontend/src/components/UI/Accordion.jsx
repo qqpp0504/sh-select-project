@@ -1,5 +1,5 @@
 import classes from "./Accordion.module.css";
-import showIcon from "@/assets/show-icon.png";
+import { IoIosArrowDown } from "react-icons/io";
 
 export default function Accordion({
   tag,
@@ -19,7 +19,7 @@ export default function Accordion({
       >
         <div className="flex flex-row justify-between items-center">
           <span className={`font-500 ${fontSize}`}>{tag}</span>
-          <img src={showIcon} alt="Show more icon" className="w-4 h-4" />
+          <IoIosArrowDown size="1.2rem" />
         </div>
       </label>
 

@@ -1,9 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
+import { MdAccountCircle } from "react-icons/md";
 
 import { accountActions } from "@/store/account-slice.js";
-import accountIcon from "@/assets/account-icon.png";
 import DropdownMenu from "./DropdownMenu.jsx";
 
 export default function AccountBar() {
@@ -67,7 +67,7 @@ export default function AccountBar() {
             className="flex items-center gap-2"
           >
             <span>{`${userData.user.lastName}${userData.user.firstName}，你好`}</span>
-            <img src={accountIcon} alt="Account icon" className="w-5" />
+            <MdAccountCircle />
           </Link>
 
           {activeDropdown === "user" && (

@@ -1,30 +1,13 @@
 import { useState } from "react";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 
 import Input from "../UI/Input.jsx";
-import showPasswordIcon from "@/assets/show-password-icon.png";
-import hidePasswordIcon from "@/assets/hide-password-icon.png";
 
 export default function ShowPasswordButton({ authPasswordInput }) {
   const [showPassword, setShowPassword] = useState(false);
 
   function handleShowPassword() {
     setShowPassword((prevState) => !prevState);
-  }
-
-  let visiblePasswordImage;
-
-  if (showPassword) {
-    visiblePasswordImage = (
-      <img src={hidePasswordIcon} alt="Hide password Icon" className="w-6" />
-    );
-  } else {
-    visiblePasswordImage = (
-      <img
-        src={showPasswordIcon}
-        alt="Show password Icon"
-        className="w-[1.4rem]"
-      />
-    );
   }
 
   return (
@@ -46,7 +29,7 @@ export default function ShowPasswordButton({ authPasswordInput }) {
         type="button"
         className="absolute right-4 top-4"
       >
-        {visiblePasswordImage}
+        {showPassword ? <FiEyeOff size="1.4rem" /> : <FiEye size="1.4rem" />}
       </button>
     </div>
   );

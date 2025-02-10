@@ -1,9 +1,9 @@
 import { useDispatch } from "react-redux";
+import { PiShoppingBagBold } from "react-icons/pi";
+import { RiAccountCircleLine } from "react-icons/ri";
+import { TbMessage } from "react-icons/tb";
 
 import logo from "@/assets/logo.png";
-import accountIcon from "@/assets/account-icon.png";
-import messageIcon from "@/assets/message-icon.png";
-import shoppingBagIcon from "@/assets/shoppingBag2-icon.png";
 import { modalActions } from "@/store/modal-slice.js";
 
 export default function CheckoutNav() {
@@ -27,14 +27,14 @@ export default function CheckoutNav() {
         <span>0961-542-566</span>
 
         <a href="/help" target="_blank" className="w-6 h-6">
-          <img src={messageIcon} alt="Message icon" />
+          <TbMessage />
         </a>
 
         <button
           onClick={() => handleOpenShippingModal("/cart")}
           className="w-6 h-6"
         >
-          <img src={shoppingBagIcon} alt="ShoppingBag icon" />
+          <PiShoppingBagBold />
         </button>
 
         {!token && (
@@ -42,7 +42,7 @@ export default function CheckoutNav() {
             onClick={() => handleOpenShippingModal("/accounts")}
             className="w-6 h-6"
           >
-            <img src={accountIcon} alt="Account icon" />
+            <RiAccountCircleLine />
           </button>
         )}
       </div>

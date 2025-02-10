@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
+import { ImFacebook2 } from "react-icons/im";
+import { FaInstagram } from "react-icons/fa";
+import { FaLine } from "react-icons/fa6";
+import { FiMapPin } from "react-icons/fi";
 
-import facebookLogo from "@/assets/facebook-logo.png";
-import instagramLogo from "@/assets/instagram-logo.png";
-import lineLogo from "@/assets/line-logo.png";
-import pinLogo from "@/assets/pin-icon.png";
 import ResponsiveFooter from "./ResponsiveFooter.jsx";
 
 const FOOTERDATA = {
@@ -30,22 +30,22 @@ const FOOTERDATA = {
 
 const COMMUNITYLOGO = [
   {
-    logo: facebookLogo,
+    logo: ImFacebook2,
     alt: "Facebook Logo",
     href: "https://www.facebook.com/",
   },
   {
-    logo: instagramLogo,
+    logo: FaInstagram,
     alt: "Instagram Logo",
     href: "https://www.instagram.com/",
   },
   {
-    logo: lineLogo,
+    logo: FaLine,
     alt: "Line Logo",
     href: "https://line.me/tw/",
   },
   {
-    logo: pinLogo,
+    logo: FiMapPin,
     alt: "Map pin Logo",
     href: "https://www.google.com/maps/",
   },
@@ -80,15 +80,11 @@ export default function Footer() {
       <ResponsiveFooter footerData={FOOTERDATA} />
 
       <div className="bg-gray-100 pt-8 flex flex-col items-center">
-        <ul className="flex flex-row items-center gap-3 mb-1">
-          {COMMUNITYLOGO.map((logoItem) => (
-            <li key={logoItem.logo}>
-              <a href={logoItem.href} target="_blank" rel="noopener noreferrer">
-                <img
-                  src={logoItem.logo}
-                  alt={logoItem.alt}
-                  className="w-8 min-w-8 md:w-10 md:min-w-10"
-                />
+        <ul className="flex flex-row items-center gap-3 md:gap-4 mb-1">
+          {COMMUNITYLOGO.map(({ logo: Icon, href }) => (
+            <li key={href}>
+              <a href={href} target="_blank" rel="noopener noreferrer">
+                <Icon className="w-8 h-8 md:w-10 md:h-10" />
               </a>
             </li>
           ))}

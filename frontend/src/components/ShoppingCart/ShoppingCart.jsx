@@ -2,13 +2,12 @@ import { useQueryClient } from "@tanstack/react-query";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useMutation } from "@tanstack/react-query";
+import { FaRegHeart } from "react-icons/fa6";
+import { FiTrash2 } from "react-icons/fi";
+import { HiPlus, HiMinus } from "react-icons/hi";
 
 import { currencyFormatter } from "@/util/formatting.js";
 import { cartActions } from "@/store/cart-slice.js";
-import trashCanIcon from "@/assets/trash-icon.png";
-import addIcon from "@/assets/add-icon.png";
-import subtractIcon from "@/assets/subtract-icon.png";
-import heartIcon from "@/assets/heart-icon.png";
 import { modalActions } from "@/store/modal-slice.js";
 import { addFavorites } from "@/util/http.js";
 import ErrorModal from "../UI/ErrorModal.jsx";
@@ -76,7 +75,7 @@ export default function ShoppingCart() {
                   />
                 </Link>
                 <div className="flex items-center justify-between mt-3">
-                  <div className="flex items-center justify-between border-[1px] border-gray-200 rounded-full w-[70%]">
+                  <div className="flex items-center justify-between border-[1px] border-gray-200 rounded-full w-[65%]">
                     <button
                       onClick={() =>
                         handleRemoveFromCart({
@@ -86,30 +85,28 @@ export default function ShoppingCart() {
                           idNumber: productItem.idNumber,
                         })
                       }
-                      className="p-[0.625rem] hover:bg-gray-200 rounded-full"
+                      className="p-3 hover:bg-gray-200 rounded-full"
                     >
-                      <img
-                        src={`${
-                          productItem.quantity > 1 ? subtractIcon : trashCanIcon
-                        }`}
-                        alt="Trash can icon"
-                        className="w-5"
-                      />
+                      {productItem.quantity > 1 ? (
+                        <HiMinus size="1.1rem" />
+                      ) : (
+                        <FiTrash2 size="1.1rem" />
+                      )}
                     </button>
                     <span>{productItem.quantity}</span>
                     <button
                       onClick={() => handleAddToCart(productItem)}
-                      className="p-2 hover:bg-gray-200 rounded-full"
+                      className="p-3 hover:bg-gray-200 rounded-full"
                     >
-                      <img src={addIcon} alt="Add icon" className="w-6" />
+                      <HiPlus size="1.1rem" />
                     </button>
                   </div>
 
                   <button
                     onClick={() => handleAddToFavorites(productItem)}
-                    className="p-[0.6rem] hover:bg-gray-200 rounded-full border-[1px] border-gray-200"
+                    className="p-3 hover:bg-gray-200 rounded-full border-[1px] border-gray-200"
                   >
-                    <img src={heartIcon} alt="Heart icon" className="w-5" />
+                    <FaRegHeart size="1.1rem" />
                   </button>
                 </div>
               </div>

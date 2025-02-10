@@ -1,9 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
+import { IoCloseOutline } from "react-icons/io5";
 
 import Modal from "../UI/Modal.jsx";
 import { modalActions } from "@/store/modal-slice.js";
 import { currencyFormatter } from "@/util/formatting.js";
-import closeIcon from "@/assets/close-icon.png";
 
 export default function DetailInformationModal({ product }) {
   const { isShowing } = useSelector((state) => state.modal.productModal);
@@ -45,9 +45,9 @@ export default function DetailInformationModal({ product }) {
           <div>
             <button
               onClick={handleCloseDetail}
-              className="p-[0.3rem] bg-gray-100 rounded-full hover:bg-gray-300 w-9 h-9"
+              className="p-[0.3rem] bg-gray-100 rounded-full hover:bg-gray-300"
             >
-              <img src={closeIcon} alt="Close icon" className="w-full h-full" />
+              <IoCloseOutline size="1.7rem" />
             </button>
           </div>
         </div>
