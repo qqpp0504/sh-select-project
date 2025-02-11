@@ -5,8 +5,12 @@ import classes from "./SideBar.module.css";
 import FilterButton from "./FilterButton.jsx";
 import Button from "../UI/Button.jsx";
 
-export default function ResponsiveSideBar({ navItems }) {
+export default function ResponsiveSideBar({ navItems, setIsOpenFilterModal }) {
   const { quantity } = useSelector((state) => state.filter);
+
+  function handleOpenFilterModal() {
+    setIsOpenFilterModal(true);
+  }
 
   return (
     <nav className="mt-2 block lg:hidden">
@@ -32,6 +36,7 @@ export default function ResponsiveSideBar({ navItems }) {
       <div className="padding-small flex items-center justify-between py-3">
         <div className="text-gray">{`${quantity} 項結果`}</div>
         <Button
+          onClick={handleOpenFilterModal}
           variant="bordered"
           size="sm"
           className="flex gap-2 border border-gray-200 items-center"

@@ -1,11 +1,11 @@
 import classes from "./ShowMore.module.css";
 
-export default function ShowMore({ content, more }) {
+export default function ShowMore({ id, content, more }) {
   return (
     <>
       <input
         type="checkbox"
-        id="show-more"
+        id={id}
         className={`${classes["show-more-checkbox"]} hidden`}
       />
       <div className={`${classes["filter-content"]} flex flex-col`}>
@@ -13,7 +13,7 @@ export default function ShowMore({ content, more }) {
 
         <div className={`${classes["more-content"]} flex flex-col`}>{more}</div>
 
-        <label htmlFor="show-more" className={classes["show-more-label"]} />
+        <label htmlFor={id} className={classes["show-more-label"]} />
       </div>
     </>
   );

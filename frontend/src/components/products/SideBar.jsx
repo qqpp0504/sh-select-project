@@ -3,13 +3,15 @@ import { useSearchParams } from "react-router-dom";
 
 import { PRODUCTSNAV, PRODUCTSNAVMEN } from "../../data.js";
 import Accordion from "../UI/Accordion.jsx";
-import ShowMore from "../UI/ShowMore.jsx";
+import ShowMore from "./ShowMore.jsx";
 import FilterButton from "./FilterButton.jsx";
 import { FILTERS } from "@/data.js";
 import ProductsHeader from "./ProductsHeader.jsx";
 import ResponsiveSideBar from "./ResponsiveSideBar.jsx";
+import FilterModal from "./FilterModal.jsx";
 
 export default function SideBar({ children }) {
+  const [isOpenFilterModal, setIsOpenFilterModal] = useState(false);
   const [isShowing, setIsShowing] = useState(true);
   const [searchParams] = useSearchParams();
 
@@ -24,7 +26,14 @@ export default function SideBar({ children }) {
   return (
     <div>
       <ProductsHeader isShowing={isShowing} setIsShowing={setIsShowing} />
-      <ResponsiveSideBar navItems={navItems} />
+      <ResponsiveSideBar
+        navItems={navItems}
+        setIsOpenFilterModal={setIsOpenFilterModal}
+      />
+      <FilterModal
+        isOpenFilterModal={isOpenFilterModal}
+        setIsOpenFilterModal={setIsOpenFilterModal}
+      />
 
       <div className="flex lg:padding-large">
         <aside
@@ -95,6 +104,7 @@ export default function SideBar({ children }) {
 
             <Accordion tag="品牌" id="brands">
               <ShowMore
+                id="lg-show-more"
                 content={
                   <div className="flex flex-col items-start">
                     {FILTERS.brandsTop.map((option) => (

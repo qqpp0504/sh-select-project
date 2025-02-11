@@ -138,7 +138,7 @@ export default function ProductsHeader({ isShowing, setIsShowing }) {
   return (
     <>
       {moreFilters}
-      <div className="sticky top-0 z-10 bg-white p-3 lg:flex lg:flex-row lg:items-center lg:justify-between lg:py-4 lg:my-3 padding-small lg:padding-large">
+      <div className="sticky top-0 z-10 bg-white py-3 mt-3 lg:flex lg:flex-row lg:items-center lg:justify-between lg:py-4 lg:my-3 padding-small lg:padding-large">
         <h1
           className={`font-500 flex gap-2 ${
             isSticky ? "text-base" : "text-xl lg:text-2xl"

@@ -5,7 +5,7 @@
 }
 
 .show-more-checkbox:checked + .filter-content .more-content {
-  max-height: 10rem;
+  max-height: 15rem;
 }
 
 .show-more-label {

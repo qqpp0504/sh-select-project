@@ -35,7 +35,7 @@ export default function ProductsList({ products }) {
 
   if (productsQuantity === 0) {
     noProductsContent = (
-      <div className="flex flex-col justify-center items-center mt-20">
+      <div className="flex flex-col justify-center items-center mt-20 padding-small md:px-0">
         <div className="flex flex-row items-center rounded-lg w-96 pt-5 justify-center text-4xl mb-10 gap-4">
           <PiSmileySad size="2.5rem" />
           <span>Nothing!</span>
