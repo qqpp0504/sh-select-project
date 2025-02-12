@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import ProductImages from "./ProductImages.jsx";
 import ProductInformation from "./ProductInformation.jsx";
+import ProductHeader from "./ProductHeader.jsx";
 
 export default function ProductItem({ product }) {
   const [previewImage, setPreviewImage] = useState("");
@@ -15,8 +16,12 @@ export default function ProductItem({ product }) {
 
   return (
     <section>
-      <div className="padding-large my-12">
-        <div className="flex flex-row justify-center px-28">
+      <div className="lg:padding-large my-5 lg:my-12">
+        <div className="block padding-small lg:hidden pb-3">
+          <ProductHeader product={product} />
+        </div>
+
+        <div className="flex flex-col lg:flex-row lg:justify-center lg:px-28">
           <ProductImages
             product={product}
             previewImage={previewImage}

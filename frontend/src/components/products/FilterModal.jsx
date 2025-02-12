@@ -63,7 +63,7 @@ export default function FilterModal({
       <div
         className={`
       fixed bottom-0 w-full h-screen z-50 bg-white flex flex-col
-      transition-transform duration-300 ease-in-out
+      transition-transform duration-300 ease-in-out lg:hidden
       ${isOpenFilterModal ? "translate-y-0" : "translate-y-full"}
     `}
       >
@@ -209,7 +209,7 @@ export default function FilterModal({
       </div>
 
       <div
-        className={`fixed bottom-0 w-full h-screen z-20 bg-black duration-100 transition-all ease-in-out ${
+        className={`fixed bottom-0 w-full h-screen z-20 bg-black lg:hidden duration-100 transition-all ease-in-out ${
           isOpenFilterModal
             ? "opacity-30 translate-y-0"
             : "opacity-0 translate-y-full"

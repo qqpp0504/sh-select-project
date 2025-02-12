@@ -1,5 +1,13 @@
 import { useEffect } from "react";
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import classes from "./ProductImages.module.css";
+import "swiper/css";
+import "swiper/css/pagination";
+
+import { Pagination } from "swiper/modules";
 
 export default function ProductImages({
   product,
@@ -28,13 +36,13 @@ export default function ProductImages({
   }
 
   return (
-    <div className="flex flex-row w-[40rem] h-[43rem]">
-      <div>
-        <div className="w-26 h-full flex flex-col items-end mr-4">
+    <div className="lg:flex lg:flex-row w-full lg:w-[40rem] lg:h-[43rem]">
+      <div className="hidden lg:block w-16 min-w-16 mr-4">
+        <div className="w-full h-full flex flex-col items-end">
           {allImages.map((image, index) => (
             <div
               key={image}
-              className="w-[5rem] h-[5rem] mb-2 rounded-md overflow-hidden"
+              className="w-full h-16 mb-2 rounded-md overflow-hidden"
               onMouseEnter={() => handleMouseEnter(image, index)}
             >
               <img
@@ -46,31 +54,53 @@ export default function ProductImages({
           ))}
         </div>
       </div>
-      <div className="relative flex justify-center items-center bg-gray-100 rounded-lg mr-8 overflow-hidden">
-        <img
-          src={`http://localhost:3000/${previewImage}`}
-          alt={product.alt}
-          className={`w-full object-cover ${
-            product.images.noBg && product.images.noBg.includes(previewImage)
-              ? undefined
-              : "h-full"
-          }`}
-        />
 
-        <div className="absolute flex gap-2 right-5 bottom-5">
-          <button
-            onClick={handleEnterPreviousImage}
-            className="w-9 bg-white p-2 rounded-full active:bg-gray-300"
-          >
-            <GoChevronLeft />
-          </button>
-          <button
-            onClick={handleEnterNextImage}
-            className="w-9 bg-white p-2 rounded-full active:bg-gray-300"
-          >
-            <GoChevronRight />
-          </button>
+      <div className="w-full h-full hidden lg:block lg:mr-3">
+        <div className="relative flex justify-center items-center bg-gray-100 rounded-lg overflow-hidden aspect-[3/4]">
+          <img
+            src={`http://localhost:3000/${previewImage}`}
+            alt={product.alt}
+            className={`w-full object-cover ${
+              product.images.noBg && product.images.noBg.includes(previewImage)
+                ? undefined
+                : "h-full"
+            }`}
+          />
+
+          <div className="absolute flex gap-2 right-5 bottom-5">
+            <button
+              onClick={handleEnterPreviousImage}
+              className="bg-white p-2 rounded-full active:bg-gray-300"
+            >
+              <GoChevronLeft />
+            </button>
+            <button
+              onClick={handleEnterNextImage}
+              className="bg-white p-2 rounded-full active:bg-gray-300"
+            >
+              <GoChevronRight />
+            </button>
+          </div>
         </div>
+      </div>
+
+      <div className={`block lg:hidden w-full ${classes.swiper}`}>
+        <Swiper
+          loop
+          pagination={true}
+          modules={[Pagination]}
+          className="mySwiper w-full aspect-[3/4] bg-gray-100"
+        >
+          {allImages.map((image) => (
+            <SwiperSlide key={image} className="w-full mb-2 overflow-hidden">
+              <img
+                src={`http://localhost:3000/${image}`}
+                alt={product.alt}
+                className="w-full h-full object-cover"
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </div>
   );

@@ -125,7 +125,7 @@ export default function CartForm({ product, onSelect }) {
             name="color"
             defaultValue={JSON.stringify(product.color[0])}
           />
-          <div className="mt-12"></div>
+          <div className="mt-10 lg:mt-12"></div>
         </>
       )}
       <div className="mb-3 font-500 flex justify-between items-center">
