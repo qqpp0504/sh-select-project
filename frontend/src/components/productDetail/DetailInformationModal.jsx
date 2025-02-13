@@ -15,13 +15,13 @@ export default function DetailInformationModal({ product }) {
 
   return (
     <Modal open={isShowing} onClose={handleCloseDetail}>
-      <section className="p-12 max-w-full w-[44rem] lg:w-[40rem]">
+      <section className="px-6 py-8 lg:p-12 max-w-full w-[44rem] lg:w-[40rem]">
         <div className="flex items-center justify-between">
-          <div className="flex items-center flex-wrap">
+          <div className="flex items-center mr-2">
             <img
               src={`http://localhost:3000/${product.image}`}
               alt={product.alt}
-              className="w-[4.5rem] mr-2"
+              className="w-[4rem] mr-2"
             />
             <div>
               <h1>
@@ -52,8 +52,8 @@ export default function DetailInformationModal({ product }) {
           </div>
         </div>
 
-        <div>
-          <div className="mt-6 flex flex-col gap-4">
+        <div className="mt-8">
+          <div className="flex flex-col gap-4">
             <p>{product.summary.productDescription}</p>
             {product.summary.features.map((feature) => (
               <div key={feature.title}>

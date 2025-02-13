@@ -14,7 +14,7 @@ export default function SizeDetailModal({ productSizeInfo }) {
 
   return (
     <Modal open={isShowing} onClose={handleCloseSizeDetail}>
-      <section className="p-12">
+      <section className="px-6 py-8 lg:p-12">
         <div className="flex items-center justify-between mb-6">
           <h3 className="text-xl font-500">尺寸資訊</h3>
           <button
@@ -26,44 +26,45 @@ export default function SizeDetailModal({ productSizeInfo }) {
         </div>
 
         {productSizeInfo.sizes && (
-          <div className="flex flex-col overflow-x-auto">
-            <table className="min-w-[25rem] text-center table-fixed">
-              <thead>
-                <tr>
-                  {productSizeInfo.sizes.name.map((header) => (
-                    <th
-                      key={header}
-                      className="border-[1px] border-gray-200 px-6 py-3 font-400 bg-gray-100"
-                      style={{
-                        width: `calc(100% / ${productSizeInfo.sizes.name.length})`,
-                        minWidth: "120px",
-                        whiteSpace: "nowrap",
-                      }}
-                    >
-                      {header}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {productSizeInfo.sizes.info.map((size, index) => (
-                  <tr key={index}>
-                    {size.map((data, index) => (
-                      <td
-                        key={`${data}-${index}`}
-                        className="border-[1px] border-gray-200 px-8 py-3"
+          <>
+            <div className="overflow-x-auto">
+              <table className="min-w-[25rem] text-center table-fixed">
+                <thead>
+                  <tr>
+                    {productSizeInfo.sizes.name.map((header) => (
+                      <th
+                        key={header}
+                        className="border-[1px] border-gray-200 px-6 py-3 font-400 bg-gray-100 lg:min-w-[120px]"
+                        style={{
+                          whiteSpace: "nowrap",
+                          width: `calc(100% / ${productSizeInfo.sizes.name.length})`,
+                        }}
                       >
-                        {data}
-                      </td>
+                        {header}
+                      </th>
                     ))}
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {productSizeInfo.sizes.info.map((size, index) => (
+                    <tr key={index}>
+                      {size.map((data, index) => (
+                        <td
+                          key={`${data}-${index}`}
+                          className="border-[1px] border-gray-200 px-8 py-3"
+                        >
+                          {data}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
             <span className="text-xs flex justify-end mt-1">
               &#8251; 單位：公分 (CM)
             </span>
-          </div>
+          </>
         )}
 
         <div className="mt-5">

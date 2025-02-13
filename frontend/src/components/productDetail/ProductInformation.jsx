@@ -27,7 +27,7 @@ export default function ProductInformation({
   }
 
   return (
-    <div className="padding-small w-full lg:w-[24rem] lg:min-w-[24rem]">
+    <div className="padding-small w-full lg:w-[24rem] lg:min-w-[24rem] lg:pt-10">
       <div className="hidden lg:block">
         <ProductHeader product={product} />
       </div>

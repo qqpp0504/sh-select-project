@@ -16,7 +16,7 @@ export default function ProductItem({ product }) {
 
   return (
     <section>
-      <div className="lg:padding-large my-5 lg:my-12">
+      <div className="lg:padding-large my-5 lg:my-0">
         <div className="block padding-small lg:hidden pb-3">
           <ProductHeader product={product} />
         </div>

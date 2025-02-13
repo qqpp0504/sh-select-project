@@ -44,50 +44,53 @@ export default function ProductImages({
   }, [currentIndex]);
 
   return (
-    <div className="lg:flex lg:flex-row w-full lg:w-[40rem] lg:h-[43rem]">
-      <div className="hidden lg:block w-16 min-w-16 mr-4">
-        <div className="w-full h-full flex flex-col items-end">
-          {allImages.map((image, index) => (
-            <div
-              key={image}
-              className="w-full h-16 mb-2 rounded-md overflow-hidden"
-              onMouseEnter={() => handleMouseEnter(image, index)}
-            >
-              <img
-                src={`http://localhost:3000/${image}`}
-                alt={product.alt}
-                className="w-full h-full object-cover bg-gray-100"
-              />
-            </div>
-          ))}
+    <div className="lg:sticky lg:top-0 lg:pt-10 lg:flex lg:flex-row w-full lg:w-[40rem] lg:h-[43rem]">
+      <div className="lg:flex gap-4 hidden">
+        <div className="w-16 min-w-16">
+          <div className="w-full h-full flex flex-col items-end">
+            {allImages.map((image, index) => (
+              <div
+                key={image}
+                className="w-full h-16 mb-2 rounded-md overflow-hidden"
+                onMouseEnter={() => handleMouseEnter(image, index)}
+              >
+                <img
+                  src={`http://localhost:3000/${image}`}
+                  alt={product.alt}
+                  className="w-full h-full object-cover bg-gray-100"
+                />
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
 
-      <div className="w-full h-full hidden lg:block lg:mr-3">
-        <div className="relative flex justify-center items-center bg-gray-100 rounded-lg overflow-hidden aspect-[3/4]">
-          <img
-            src={`http://localhost:3000/${previewImage}`}
-            alt={product.alt}
-            className={`w-full object-cover ${
-              product.images.noBg && product.images.noBg.includes(previewImage)
-                ? undefined
-                : "h-full"
-            }`}
-          />
+        <div className="w-full h-full mr-3">
+          <div className="relative flex justify-center items-center bg-gray-100 rounded-lg overflow-hidden aspect-[3/4]">
+            <img
+              src={`http://localhost:3000/${previewImage}`}
+              alt={product.alt}
+              className={`w-full object-cover ${
+                product.images.noBg &&
+                product.images.noBg.includes(previewImage)
+                  ? undefined
+                  : "h-full"
+              }`}
+            />
 
-          <div className="absolute flex gap-2 right-5 bottom-5">
-            <button
-              onClick={handleEnterPreviousImage}
-              className="bg-white p-2 rounded-full active:bg-gray-300"
-            >
-              <GoChevronLeft />
-            </button>
-            <button
-              onClick={handleEnterNextImage}
-              className="bg-white p-2 rounded-full active:bg-gray-300"
-            >
-              <GoChevronRight />
-            </button>
+            <div className="absolute flex gap-2 right-5 bottom-5">
+              <button
+                onClick={handleEnterPreviousImage}
+                className="bg-white p-2 rounded-full active:bg-gray-300"
+              >
+                <GoChevronLeft />
+              </button>
+              <button
+                onClick={handleEnterNextImage}
+                className="bg-white p-2 rounded-full active:bg-gray-300"
+              >
+                <GoChevronRight />
+              </button>
+            </div>
           </div>
         </div>
       </div>
