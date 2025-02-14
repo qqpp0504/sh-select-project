@@ -82,7 +82,7 @@ export default function ProductsHeader({ isShowing, setIsShowing }) {
 
   if (Array.isArray(brands) && brands.length > 1) {
     moreFilters = (
-      <div className="padding-small lg:padding-large mt-3 mb-1">
+      <div className="padding-small lg:padding-large mt-3 mb-1 lg:mb-0">
         <ol className="flex flex-row">
           {brands.map((brand, index) => (
             <>
@@ -140,7 +140,11 @@ export default function ProductsHeader({ isShowing, setIsShowing }) {
   return (
     <>
       {moreFilters}
-      <div className="sticky top-0 z-10 bg-white py-3 lg:flex lg:flex-row lg:items-center lg:justify-between lg:pt-0 lg:pb-4 lg:mb-3 padding-small lg:padding-large">
+      <div
+        className={`sticky top-0 z-10 bg-white py-3 lg:flex lg:flex-row lg:items-center lg:justify-between lg:py-4 padding-small lg:padding-large ${
+          Array.isArray(brands) && brands.length > 1 ? "lg:mb-3" : "lg:my-3"
+        }`}
+      >
         <h1
           className={`font-500 flex gap-2 ${
             isSticky ? "text-base" : "text-xl lg:text-2xl"

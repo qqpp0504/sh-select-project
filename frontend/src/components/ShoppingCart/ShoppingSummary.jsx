@@ -25,7 +25,7 @@ export default function ShoppingSummary() {
               tag="小計"
               tipButtonStyle="text-[0.6rem] text-white"
               tipStyle="w-3 h-3 bg-black"
-              tipContentStyle="w-60 text-sm top-9 right-[-12px] p-4 bg-gray-500 after:content-[''] after:absolute after:right-2 after:top-[-10px] after:border-l-[10px] after:border-r-[10px] after:border-b-[10px] after:border-gray-500 after:border-l-transparent after:border-r-transparent"
+              tipContentStyle="w-60 text-sm top-9 left-7 lg:right-[-12px] lg:left-auto p-4 bg-gray-500 after:content-[''] after:absolute after:left-2 lg:after:left-auto lg:after:right-2 after:top-[-10px] after:border-l-[10px] after:border-r-[10px] after:border-b-[10px] after:border-gray-500 after:border-l-transparent after:border-r-transparent"
             >
               小計金額是訂單折扣前的總價，但不包含運費或其他手續費。
             </Tooltip>

@@ -51,6 +51,9 @@ export default function ShoppingCart() {
     }
   }
 
+  const displayAmount =
+    totalAmount === 0 ? <>&mdash;</> : currencyFormatter.format(totalAmount);
+
   let cartContent;
 
   if (productItems.length === 0) {
@@ -62,7 +65,7 @@ export default function ShoppingCart() {
           {productItems.map((productItem) => (
             <li
               key={productItem.idNumber}
-              className="flex items-start gap-5 w-full border-b-[1px] border-gray-200 pb-14"
+              className="flex items-start gap-3 lg:gap-5 w-full border-b-[1px] border-gray-200 pb-14"
             >
               <div>
                 <Link
@@ -172,9 +175,11 @@ export default function ShoppingCart() {
           購物車
         </h1>
         <div className="flex gap-2 justify-center lg:hidden">
-          <div>{`${totalQuantity} 品項`}</div>
-          <div>|</div>
-          <div>NT{currencyFormatter.format(totalAmount)}</div>
+          <div
+            className={totalQuantity === 0 && "text-gray"}
+          >{`${totalQuantity} 品項`}</div>
+          <div className={totalQuantity === 0 && "text-gray"}>|</div>
+          <div>{displayAmount}</div>
         </div>
       </div>
 

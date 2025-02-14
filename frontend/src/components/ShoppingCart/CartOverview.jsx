@@ -5,9 +5,10 @@ import ShoppingSummary from "./ShoppingSummary.jsx";
 import ResizableModal from "./ResizableModal.jsx";
 import FavoritesBlock from "./FavoritesBlock.jsx";
 import FavoriteAddedModal from "./FavoriteAddedModal.jsx";
+import ResponsiveCheckoutButton from "./ResponsiveCheckoutButton.jsx";
 
 export default function CartOverview() {
-  const activeItem = useSelector((state) => state.cart.activeItem);
+  const { activeItem } = useSelector((state) => state.cart);
 
   return (
     <section className="px-4 lg:padding-large mt-6">
@@ -20,11 +21,12 @@ export default function CartOverview() {
             <ShoppingSummary />
           </div>
           <div className="mt-12 lg:mt-7">
-            <h2 className="text-2xl font-500 mb-7">最愛</h2>
             <FavoritesBlock />
           </div>
         </div>
       </div>
+
+      <ResponsiveCheckoutButton />
     </section>
   );
 }

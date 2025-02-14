@@ -2,7 +2,7 @@
   @apply py-4 block cursor-pointer;
 }
 
-.accordion-header img {
+.accordion-header .icon {
   transition: transform 0.3s ease-in-out;
 }
 
@@ -26,6 +26,6 @@
   max-height: 20rem;
 }
 
-.accordion-toggle:checked + .accordion-header img {
+.accordion-toggle:checked + .accordion-header .icon {
   transform: rotate(180deg);
 }

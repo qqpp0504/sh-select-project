@@ -56,6 +56,7 @@ export default function FavoritesBlock() {
   } else if (token && favoritesProducts && favoritesProducts.length > 0) {
     favoritesItems = (
       <>
+        <h2 className="text-2xl font-500 mb-7">最愛</h2>
         <ul className="flex flex-col justify-between">
           <div className="flex flex-col lg:flex-row gap-6 border-b-[1px] border-gray-200">
             {favoritesProducts.slice(0, 2).map((product) => (

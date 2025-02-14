@@ -19,7 +19,7 @@ export default function Accordion({
       >
         <div className="flex flex-row justify-between items-center">
           <span className={`font-500 ${fontSize}`}>{tag}</span>
-          <IoIosArrowDown size="1.2rem" />
+          <IoIosArrowDown size="1.2rem" className={classes.icon} />
         </div>
       </label>
 

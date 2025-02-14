@@ -37,7 +37,7 @@ export default function SideBar({ children }) {
 
       <div className="flex lg:padding-large">
         <aside
-          className={`h-[80vh] overflow-y-scroll scrollbar-thin transition-all duration-300 ease hidden lg:block ${
+          className={`sticky top-14 h-[80vh] overflow-y-scroll scrollbar-thin transition-all duration-300 ease hidden lg:block ${
             isShowing
               ? "w-[16rem] translate-x-0 lg:mr-12"
               : "w-0 -translate-x-[calc(16rem+3rem)]"
