@@ -2,8 +2,11 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 import { IoCloseOutline } from "react-icons/io5";
+import { MdOutlineHelpOutline } from "react-icons/md";
+import { LiaShoppingBagSolid, LiaBoxSolid } from "react-icons/lia";
 
 import { NAVITEMS } from "@/data.js";
+import Button from "../UI/Button.jsx";
 
 export default function DropdownNav({ isOpenNav, setIsOpenNav }) {
   const [selectedOption, setSelectedOption] = useState();
@@ -53,8 +56,8 @@ export default function DropdownNav({ isOpenNav, setIsOpenNav }) {
             </button>
           </div>
 
-          <nav className="text-2xl font-500 px-3">
-            <ul className="flex flex-col gap-5">
+          <nav className="px-3">
+            <ul className="text-2xl flex flex-col gap-5 font-500">
               {NAVITEMS.map((item) => (
                 <li key={item.label}>
                   <button
@@ -67,6 +70,42 @@ export default function DropdownNav({ isOpenNav, setIsOpenNav }) {
                 </li>
               ))}
             </ul>
+
+            <div className="text-gray text-xl font-400 my-16">
+              成為 SH SELECT 會員，體驗優質產品、享受會員福利！
+              <Link
+                onClick={handleCloseNav}
+                to="/membership"
+                className="text-black"
+              >
+                瞭解更多資訊
+              </Link>
+              <div className="flex gap-2 mt-6">
+                <Button link="/accounts">加入</Button>
+                <Button link="/accounts" variant="bordered">
+                  登入
+                </Button>
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-5">
+              <Link onClick={handleCloseNav} to="help" className="flex gap-2">
+                <MdOutlineHelpOutline />
+                協助
+              </Link>
+              <Link onClick={handleCloseNav} to="cart" className="flex gap-2">
+                <LiaShoppingBagSolid />
+                購物車
+              </Link>
+              <Link
+                onClick={handleCloseNav}
+                to="/orders"
+                className="flex gap-2"
+              >
+                <LiaBoxSolid />
+                訂單
+              </Link>
+            </div>
           </nav>
         </div>
 
