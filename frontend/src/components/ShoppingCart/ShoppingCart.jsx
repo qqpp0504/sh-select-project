@@ -15,6 +15,7 @@ import ErrorModal from "../UI/ErrorModal.jsx";
 export default function ShoppingCart() {
   const queryClient = useQueryClient();
   const { token } = useSelector((state) => state.account.userData);
+  const { totalQuantity, totalAmount } = useSelector((state) => state.cart);
   const productItems = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -66,7 +67,7 @@ export default function ShoppingCart() {
               <div>
                 <Link
                   to={`/products/${productItem.slug}`}
-                  className="min-w-40 h-40 w-40 bg-gray-100 flex justify-center items-center"
+                  className="w-40 aspect-square bg-gray-100 flex justify-center items-center"
                 >
                   <img
                     src={`http://localhost:3000/${productItem.color.image}`}
@@ -111,8 +112,8 @@ export default function ShoppingCart() {
                 </div>
               </div>
 
-              <div className="flex flex-col gap-1">
-                <div className="flex justify-between w-[35rem]">
+              <div className="flex flex-col gap-1 w-full">
+                <div className="flex flex-col sm:flex-row justify-between w-full lg:max-w-[35rem]">
                   <Link
                     to={`/products/${productItem.slug}`}
                     className="font-500"
@@ -165,8 +166,18 @@ export default function ShoppingCart() {
   }
 
   return (
-    <section className="w-[70%]">
-      <h1 className="text-2xl font-500 mb-6">購物車</h1>
+    <section className="w-full lg:w-[45rem]">
+      <div className="border-b-[1px] border-gray-200 mb-6 pb-6 lg:border-none lg:m-0 lg:pb-0">
+        <h1 className="text-2xl font-500 text-center mb-1 lg:mb-6 lg:text-left">
+          購物車
+        </h1>
+        <div className="flex gap-2 justify-center lg:hidden">
+          <div>{`${totalQuantity} 品項`}</div>
+          <div>|</div>
+          <div>NT{currencyFormatter.format(totalAmount)}</div>
+        </div>
+      </div>
+
       {cartContent}
 
       {isError && (

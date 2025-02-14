@@ -10,16 +10,16 @@ export default function CartOverview() {
   const activeItem = useSelector((state) => state.cart.activeItem);
 
   return (
-    <section className="padding-large mt-6">
+    <section className="px-4 lg:padding-large mt-6">
       {activeItem && <ResizableModal />}
       <FavoriteAddedModal />
       <div className="flex justify-center">
         <div className="max-w-[67rem] w-full">
-          <div className="flex gap-6">
+          <div className="flex flex-col lg:flex-row gap-6">
             <ShoppingCart />
             <ShoppingSummary />
           </div>
-          <div className="mt-7">
+          <div className="mt-12 lg:mt-7">
             <h2 className="text-2xl font-500 mb-7">最愛</h2>
             <FavoritesBlock />
           </div>

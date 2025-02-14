@@ -36,7 +36,7 @@ export default function FavoriteAddedModal() {
         progress={progress}
         setProgress={setProgress}
       />
-      <div className="w-[30rem] h-[16rem] p-11 flex flex-col justify-between">
+      <div className="w-full md:w-[30rem] h-[16rem] p-11 flex flex-col justify-between">
         <div></div>
 
         <div className="flex justify-center items-center gap-2">

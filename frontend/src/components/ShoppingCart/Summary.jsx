@@ -8,7 +8,7 @@ export default function Summary({ tag, price, className }) {
   }
 
   return (
-    <div className={`flex justify-between my-4 ${className}`}>
+    <div className={`flex justify-between ${className}`}>
       <span>{tag}</span>
       <span>{value}</span>
     </div>

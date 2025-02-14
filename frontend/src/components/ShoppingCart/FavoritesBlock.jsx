@@ -57,14 +57,14 @@ export default function FavoritesBlock() {
     favoritesItems = (
       <>
         <ul className="flex flex-col justify-between">
-          <div className="flex gap-6 border-b-[1px] border-gray-200">
+          <div className="flex flex-col lg:flex-row gap-6 border-b-[1px] border-gray-200">
             {favoritesProducts.slice(0, 2).map((product) => (
               <FavoritesProducts key={product.id} product={product} />
             ))}
           </div>
 
           {isShowMore && (
-            <div className="flex gap-6 mt-8 border-b-[1px] border-gray-200">
+            <div className="flex flex-col lg:flex-row gap-6 mt-8 border-b-[1px] border-gray-200">
               {favoritesProducts.slice(2, 4).map((product) => (
                 <FavoritesProducts key={product.id} product={product} />
               ))}

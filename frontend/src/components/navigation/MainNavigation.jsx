@@ -27,7 +27,7 @@ export default function MainNavigation() {
   }
 
   return (
-    <header className="relative">
+    <header className="relative bg-white">
       <AccountBar />
       <MainNav />
       {showingNotification.isOpen && (

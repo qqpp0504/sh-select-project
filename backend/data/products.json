@@ -932,7 +932,7 @@
   {
     "id": "p14",
     "brand": "Asics x Unaffected",
-    "name": "Gel-Kayano 14 - 黑銀",
+    "name": "Gel-Kayano 14",
     "slug": "p14-asicsxUnaffected-Gel-Kayano14黑銀",
     "originalPrice": 7980,
     "discountPrice": 7980,
@@ -941,7 +941,7 @@
     "categoryCh": "鞋款",
     "gender": ["unisex", "men"],
     "image": "asics-kayano-black.jpg",
-    "alt": "Asics x Unaffected Gel-Kayano 14 黑銀圖片",
+    "alt": "Asics x Unaffected Gel-Kayano 14 圖片",
     "isOnSale": false,
     "isNew": false,
     "images": {
@@ -1003,7 +1003,7 @@
   {
     "id": "p15",
     "brand": "Asics",
-    "name": "Gel-Kayano 14 \"Silver Cream\" - 灰銀",
+    "name": "Gel-Kayano 14 \"Silver Cream\"",
     "slug": "p15-adidas-Gel-Kayano14-SilverCream灰銀",
     "originalPrice": 5880,
     "discountPrice": 5880,
@@ -1012,7 +1012,7 @@
     "categoryCh": "鞋款",
     "gender": ["unisex", "men"],
     "image": "asics-kayano.jpg",
-    "alt": "Asics Gel-Kayano 14 \"Silver Cream\" 灰銀圖片",
+    "alt": "Asics Gel-Kayano 14 \"Silver Cream\" 圖片",
     "isOnSale": false,
     "isNew": false,
     "images": {

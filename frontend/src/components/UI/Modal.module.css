@@ -1,0 +1,9 @@
+@media (max-width: 1024px) {
+  .dialog {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+  }
+}

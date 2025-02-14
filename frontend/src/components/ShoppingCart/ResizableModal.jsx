@@ -69,18 +69,29 @@ export default function ResizableModal() {
 
   return (
     <Modal open={isShowing} onClose={handleCloseModal}>
-      <section className="p-6 max-w-full w-[58rem]">
-        <div className="flex gap-4">
-          <div className="w-[27rem] h-[27rem] bg-gray-100 flex justify-center items-center">
-            <img
-              src={`http://localhost:3000/${activeItem.color.image}`}
-              alt={activeItem.alt}
-              className="w-[90%]"
-            />
+      <section className="p-4 md:p-6 max-w-full w-[58rem] overflow-hidden">
+        <div className="flex flex-col lg:flex-row gap-7 md:gap-4 w-full">
+          <div className="flex flex-col md:flex-row gap-3">
+            <div className="w-36 min-w-36 lg:w-[27rem] aspect-square bg-gray-100 flex justify-center items-center">
+              <img
+                src={`http://localhost:3000/${activeItem.color.image}`}
+                alt={activeItem.alt}
+                className="w-[90%]"
+              />
+            </div>
+            <div className="flex flex-col md:gap-1 font-500 lg:hidden">
+              <span>{activeItem.category}</span>
+              <h2 className="text-lg md:text-xl">
+                {activeItem.brand} - {activeItem.productName}
+              </h2>
+              <span>
+                NT{currencyFormatter.format(activeItem.discountPrice)}
+              </span>
+            </div>
           </div>
 
-          <div className="flex flex-col justify-between w-[27rem]">
-            <div className="flex flex-col gap-1 font-500">
+          <div className="flex flex-col justify-between w-full lg:w-[27rem]">
+            <div className="hidden lg:flex lg:flex-col gap-1 font-500">
               <span>{activeItem.category}</span>
               <h2 className="text-2xl">
                 {activeItem.brand} - {activeItem.productName}
@@ -97,7 +108,7 @@ export default function ResizableModal() {
                 {reminder ? reminder : "選取尺寸"}
               </span>
               <div
-                className={`grid grid-cols-5 gap-[0.45rem] text-center mb-5 ${
+                className={`flex lg:grid lg:grid-cols-5 gap-[0.45rem] text-center mb-5 overflow-auto ${
                   reminder && "border-[1px] border-red-500"
                 }`}
               >
@@ -110,6 +121,7 @@ export default function ResizableModal() {
                     roundedStyle="rounded-lg"
                     defaultChecked={size == activeItem.size}
                     onChange={handleSizeChange}
+                    className="flex-1 min-w-[5rem] max-w-[8rem] lg:w-auto"
                   >
                     {size.replace(/CM\s*/, "")}
                   </SelectBlock>
@@ -117,7 +129,7 @@ export default function ResizableModal() {
               </div>
               <Button
                 size="custom"
-                className="py-4 w-full rounded-full"
+                className="mt-3 md:mt-0 py-4 w-full rounded-full"
                 type="submit"
               >
                 {type === "default" && "更新尺寸"}
