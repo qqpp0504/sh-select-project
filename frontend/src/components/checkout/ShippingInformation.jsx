@@ -66,7 +66,7 @@ export default function ShippingInformation() {
   }
 
   return (
-    <section className="w-[28rem]">
+    <section className="w-full max-w-[35rem] mt-2 lg:w-[28rem] lg:mt-0">
       <h1 className="text-[1.7rem] font-500">寄送資訊</h1>
       {!token ? (
         <div className="font-500 flex flex-col gap-3 my-10">

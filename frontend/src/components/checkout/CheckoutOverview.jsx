@@ -1,15 +1,25 @@
 import ShippingInformation from "./ShippingInformation.jsx";
 import OrderSummary from "./OrderSummary.jsx";
 import SuccessSendOrdersModal from "./SuccessSendOrdersModal.jsx";
+import OrderAccordion from "./OrderAccordion.jsx";
+import OrderProgress from "./OrderProgress.jsx";
 
 export default function CheckoutOverview() {
   return (
-    <section className="mt-7">
+    <section className="lg:mt-7">
       <div className="flex justify-center">
-        <div className="flex justify-center flex-wrap max-w-[70rem] w-full gap-32">
+        <div className="flex flex-col items-center lg:flex-row lg:justify-center lg:items-start max-w-[35rem] lg:max-w-[70rem] w-full lg:gap-32">
           <SuccessSendOrdersModal />
+          <OrderAccordion />
+
+          <div className="w-full py-8 lg:hidden">
+            <OrderProgress />
+          </div>
+
           <ShippingInformation />
-          <OrderSummary />
+          <div className="hidden lg:block">
+            <OrderSummary />
+          </div>
         </div>
       </div>
     </section>

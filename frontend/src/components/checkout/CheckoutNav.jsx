@@ -18,34 +18,37 @@ export default function CheckoutNav() {
   }
 
   return (
-    <nav className="padding-large py-4 flex justify-between items-center">
-      <button onClick={() => handleOpenShippingModal("/")}>
-        <img src={logo} alt="SH-Select Logo" className="w-14" />
-      </button>
-
-      <div className="flex gap-9">
-        <span>0961-542-566</span>
-
-        <a href="/help" target="_blank" className="w-6 h-6">
-          <TbMessage />
-        </a>
-
-        <button
-          onClick={() => handleOpenShippingModal("/cart")}
-          className="w-6 h-6"
-        >
-          <PiShoppingBagBold />
+    <>
+      <nav className="padding-small w-full max-w-[38rem] mx-auto py-2 lg:max-w-full lg:padding-large lg:py-4 flex justify-between items-center">
+        <button onClick={() => handleOpenShippingModal("/")}>
+          <img src={logo} alt="SH-Select Logo" className="w-14" />
         </button>
 
-        {!token && (
+        <div className="flex gap-9">
+          <span>0961-542-566</span>
+
+          <a href="/help" target="_blank" className="w-6 h-6">
+            <TbMessage />
+          </a>
+
           <button
-            onClick={() => handleOpenShippingModal("/accounts")}
+            onClick={() => handleOpenShippingModal("/cart")}
             className="w-6 h-6"
           >
-            <RiAccountCircleLine />
+            <PiShoppingBagBold />
           </button>
-        )}
-      </div>
-    </nav>
+
+          {!token && (
+            <button
+              onClick={() => handleOpenShippingModal("/accounts")}
+              className="w-6 h-6"
+            >
+              <RiAccountCircleLine />
+            </button>
+          )}
+        </div>
+      </nav>
+      <hr className="border-gray-100 lg:hidden" />
+    </>
   );
 }

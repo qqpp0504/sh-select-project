@@ -23,7 +23,7 @@
 }
 
 .accordion-toggle:checked ~ .accordion-content {
-  max-height: 20rem;
+  max-height: 9999px;
 }
 
 .accordion-toggle:checked + .accordion-header .icon {

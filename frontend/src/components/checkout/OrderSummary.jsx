@@ -1,10 +1,9 @@
 import { useSelector } from "react-redux";
 
-import classes from "./OrderSummary.module.css";
 import Summary from "../shoppingCart/Summary.jsx";
 import Tooltip from "../UI/ToolTip.jsx";
-import { currencyFormatter } from "@/util/formatting.js";
-import DeliveryTime from "./DeliveryTime.jsx";
+import OrderProducts from "./OrderProducts.jsx";
+import OrderProgress from "./OrderProgress.jsx";
 
 export default function OrderSummary() {
   const { items, totalAmount, totalPrice, shippingFee } = useSelector(
@@ -12,45 +11,18 @@ export default function OrderSummary() {
   );
 
   const displayShippingFee = shippingFee === 0 ? "免費" : shippingFee;
-  const remainingAmount = `NT${currencyFormatter.format(4500 - totalAmount)}`;
-
-  let progressContent;
-
-  if (totalAmount >= 4500) {
-    progressContent = (
-      <div className="mb-5">
-        <p className="text-sm">你已符合免運費資格！</p>
-        <progress
-          value={totalAmount}
-          max="4500"
-          className={`${classes.progress} w-full h-2`}
-        ></progress>
-      </div>
-    );
-  } else {
-    progressContent = (
-      <div>
-        <p className="text-sm">{`再買 ${remainingAmount} 即可享免運費服務！`}</p>
-        <div className="mb-5 flex items-center justify-between">
-          {" "}
-          <progress
-            value={totalAmount}
-            max="4500"
-            className={`${classes.progress} w-[76%] h-2`}
-          ></progress>
-          <span className="text-sm inline-block">{`NT${currencyFormatter.format(
-            4500
-          )}`}</span>
-        </div>
-      </div>
-    );
-  }
 
   return (
-    <aside className="w-[22rem]">
-      <h3 className="text-[1.35rem] py-[0.4rem] font-500">訂單摘要</h3>
+    <aside className="w-[35rem] max-w-[35rem] lg:w-[22rem]">
+      <h3 className="text-[1.35rem] py-[0.4rem] font-500 hidden lg:block">
+        訂單摘要
+      </h3>
 
-      <div>
+      <div className="lg:hidden">
+        <OrderProducts items={items} />
+      </div>
+
+      <div className="flex flex-col gap-3 mt-5 lg:mt-2">
         <Summary
           tag={
             <Tooltip
@@ -63,50 +35,25 @@ export default function OrderSummary() {
             </Tooltip>
           }
           price={totalAmount}
-          className="text-gray"
+          className="lg:text-gray"
         />
         <Summary
           tag="出貨/寄送"
           price={displayShippingFee}
-          className="text-gray"
+          className="lg:text-gray"
         />
-        {progressContent}
+
+        <div className="hidden lg:block">
+          <OrderProgress />
+        </div>
+
         <hr />
         <Summary tag="總計" price={totalPrice} className="font-500" />
         <hr />
       </div>
 
-      <div className="my-7">
-        <DeliveryTime className="font-500" />
-        <div className="mt-3">
-          <div>
-            <ul className="flex flex-col gap-4">
-              {items.map((item) => (
-                <li key={item.idNumber} className="flex gap-3">
-                  <div className="bg-gray-100 w-[13rem] h-[13rem] flex justify-center items-center">
-                    <img
-                      src={`http://localhost:3000/${item.color.image}`}
-                      alt={item.alt}
-                      className="w-[90%]"
-                    />
-                  </div>
-
-                  <div className="text-sm w-[8rem] flex flex-col">
-                    <span>
-                      {item.brand} - {item.productName}
-                    </span>
-                    <span className="text-gray">{item.category}</span>
-                    <span className="text-gray">{`數量 ${item.quantity}`}</span>
-                    <span className="text-gray">{`尺寸 ${item.size}`}</span>
-                    <span className="text-gray">{`NT${currencyFormatter.format(
-                      item.itemTotalPrice
-                    )}`}</span>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+      <div className="hidden lg:block">
+        <OrderProducts items={items} />
       </div>
     </aside>
   );
