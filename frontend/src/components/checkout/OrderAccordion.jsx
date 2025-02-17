@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { IoIosArrowDown } from "react-icons/io";
 
@@ -13,9 +13,21 @@ export default function OrderAccordion() {
     setIsOpenSummary((prev) => !prev);
   }
 
+  useEffect(() => {
+    if (isOpenSummary) {
+      document.body.style.overflow = "hidden"; // 禁止滾動
+    } else {
+      document.body.style.overflow = ""; // 恢復滾動
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpenSummary]);
+
   return (
-    <>
-      <div className="py-[0.6rem] font-500 flex justify-between items-center w-full lg:hidden">
+    <div className="sticky top-0 z-50">
+      <div className="padding-small mx-auto w-full max-w-[38rem] bg-white z-50 py-[0.6rem] font-500 flex justify-between items-center lg:hidden">
         <div className="text-xl">摘要</div>
 
         <button
@@ -39,18 +51,18 @@ export default function OrderAccordion() {
 
       {!isOpenSummary && <hr className="w-screen lg:hidden" />}
       {isOpenSummary && (
-        <div className="relative">
-          <div className="lg:hidden">
+        <div className="relative w-screen lg:hidden">
+          <div className="padding-small absolute w-full z-50 bg-white top-0 flex justify-center overflow-y-auto max-h-[87vh]">
             <OrderSummary />
           </div>
           <div
             onClick={handleOpenOrderSummary}
-            className="absolute top-0 left-0 bg-black opacity-30 w-full h-screen z-20 lg:hidden"
-          >
-            sss
-          </div>
+            className={`absolute top-full right-0 bg-black opacity-30 w-full h-screen z-20 lg:hidden ${
+              !isOpenSummary && "hidden"
+            }`}
+          ></div>
         </div>
       )}
-    </>
+    </div>
   );
 }

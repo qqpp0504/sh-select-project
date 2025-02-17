@@ -8,8 +8,9 @@ export default function CheckoutOverview() {
   return (
     <section className="lg:mt-7">
       <div className="flex justify-center">
-        <div className="flex flex-col items-center lg:flex-row lg:justify-center lg:items-start max-w-[35rem] lg:max-w-[70rem] w-full lg:gap-32">
+        <div className="padding-small w-full max-w-[38rem] mx-auto flex flex-col items-center lg:flex-row lg:justify-center lg:items-start lg:max-w-[70rem] lg:gap-32">
           <SuccessSendOrdersModal />
+
           <OrderAccordion />
 
           <div className="w-full py-8 lg:hidden">

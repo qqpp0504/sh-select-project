@@ -13,7 +13,7 @@ export default function OrderSummary() {
   const displayShippingFee = shippingFee === 0 ? "免費" : shippingFee;
 
   return (
-    <aside className="w-[35rem] max-w-[35rem] lg:w-[22rem]">
+    <aside className="w-full lg:w-[22rem] lg:px-0 max-w-[35rem]">
       <h3 className="text-[1.35rem] py-[0.4rem] font-500 hidden lg:block">
         訂單摘要
       </h3>

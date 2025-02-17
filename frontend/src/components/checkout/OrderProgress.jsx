@@ -26,11 +26,10 @@ export default function OrderProgress() {
       <>
         <p className="text-sm">{`再買 ${remainingAmount} 即可享免運費服務！`}</p>
         <div className="flex items-center justify-between">
-          {" "}
           <progress
             value={totalAmount}
             max="4500"
-            className={`${classes.progress} w-[85%] lg:w-[76%] h-2`}
+            className={`${classes.progress} w-[80%] sm:w-[85%] lg:w-[76%] h-2`}
           ></progress>
           <span className="text-sm inline-block">{`NT${currencyFormatter.format(
             4500

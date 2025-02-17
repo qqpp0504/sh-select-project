@@ -24,7 +24,7 @@ export default function CheckoutNav() {
           <img src={logo} alt="SH-Select Logo" className="w-14" />
         </button>
 
-        <div className="flex gap-9">
+        <div className="flex gap-4 sm:gap-6 lg:gap-9">
           <span>0961-542-566</span>
 
           <a href="/help" target="_blank" className="w-6 h-6">
