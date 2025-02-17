@@ -79,14 +79,14 @@ export default function FavoritesProducts({ products, refetch }) {
   }
 
   return (
-    <ul className="grid grid-cols-2 gap-9 lg:grid-cols-3 mt-9">
+    <ul className="grid grid-cols-2 gap-4 lg:grid-cols-3 lg:mt-6">
       {products.map((product) => (
-        <li key={product.favoriteId} className="mb-1">
+        <li key={product.favoriteId} className="mb-8">
           <div className="relative mb-2 overflow-hidden">
             {favoriteProductId.includes(product.favoriteId) && (
               <>
                 <div className="bg-white opacity-30 absolute w-full h-full"></div>
-                <div className="absolute bottom-0 bg-black w-[95%] m-3 text-white text-center py-6 rounded-[0.25rem]">
+                <div className="fixed z-50 left-0 lg:absolute bottom-0 bg-black w-[95%] m-3 text-white text-center py-6 rounded-[0.25rem]">
                   <span className="text-sm mr-3">已從最愛中移除</span>
                   <button
                     onClick={() =>
@@ -102,7 +102,7 @@ export default function FavoritesProducts({ products, refetch }) {
 
             <Link
               to={`/products/${product.slug}`}
-              className="flex justify-center items-center bg-gray-100 w-full h-[27rem]"
+              className="flex justify-center items-center bg-gray-100 w-full aspect-square"
             >
               <img
                 src={`http://localhost:3000/${product.color.image}`}
@@ -115,7 +115,7 @@ export default function FavoritesProducts({ products, refetch }) {
               onClick={() =>
                 !isPending && handleStartDeleteFavorite(product.favoriteId)
               }
-              className="absolute top-4 right-4 bg-white p-[0.6rem] rounded-full"
+              className="absolute top-4 right-4 bg-white p-2 lg:p-[0.6rem] rounded-full"
             >
               {favoriteProductId.includes(product.favoriteId) ? (
                 <FaRegHeart size="1.3rem" />
@@ -125,7 +125,7 @@ export default function FavoritesProducts({ products, refetch }) {
             </button>
           </div>
 
-          <div className="flex justify-between mb-5">
+          <div className="flex flex-col lg:flex-row lg:justify-between mb-5 text-sm lg:text-base">
             <div>
               <Link to={`/products/${product.slug}`}>
                 <h3 className="font-500">
@@ -137,18 +137,16 @@ export default function FavoritesProducts({ products, refetch }) {
 
             {product.discountPrice !== product.originalPrice ? (
               <>
-                <div className="py-2">
-                  <s className="text-gray pr-3">
-                    NT{currencyFormatter.format(product.originalPrice)}
+                <div className="pt-1 lg:py-2">
+                  <s className="text-gray pr-2">
+                    {currencyFormatter.format(product.originalPrice)}
                   </s>
-                  <span>
-                    NT{currencyFormatter.format(product.discountPrice)}
-                  </span>
+                  <span>{currencyFormatter.format(product.discountPrice)}</span>
                 </div>
               </>
             ) : (
-              <span className="py-2 block">
-                NT{currencyFormatter.format(product.originalPrice)}
+              <span className="pt-1 lg:py-2 block">
+                {currencyFormatter.format(product.originalPrice)}
               </span>
             )}
           </div>

@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useSelector } from "react-redux";
 
@@ -10,6 +11,17 @@ import ResizableModal from "@/components/shoppingCart/ResizableModal.jsx";
 export default function FavoritesPage() {
   const activeItem = useSelector((state) => state.cart.activeItem);
   const { token, user } = useSelector((state) => state.account.userData);
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      setIsSticky(offset > 100);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const {
     data: favoritesProducts,
@@ -51,9 +63,15 @@ export default function FavoritesPage() {
   }
 
   return (
-    <section className="padding-large py-10">
+    <section className="px-4 lg:padding-large py-10">
       {activeItem && <ResizableModal />}
-      <h2 className="text-2xl font-500">最愛</h2>
+      <h2
+        className={`sticky top-0 z-20 bg-white font-500 py-4 ${
+          isSticky ? "text-base lg:text-xl" : "text-xl lg:text-2xl"
+        }`}
+      >
+        最愛
+      </h2>
       <div className="w-full">{favoritesItems}</div>
     </section>
   );

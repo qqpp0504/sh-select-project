@@ -35,7 +35,7 @@ export default function MainNavigation() {
           <CartNotification open={showingNotification.isOpen} />
           <div
             onClick={handleCloseNotification}
-            className="bg-gray-900 bg-opacity-20 z-10 absolute top-full left-0 bottom-0 w-full h-screen"
+            className="bg-gray-900 bg-opacity-30 z-30 absolute top-full left-0 bottom-0 w-full h-screen"
           ></div>
         </>
       )}
