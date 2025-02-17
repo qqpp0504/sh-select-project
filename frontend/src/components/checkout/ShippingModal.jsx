@@ -21,7 +21,7 @@ export default function ShippingModal() {
 
   return (
     <Modal open={isShowing} onClose={handleCloseShippingModal}>
-      <div className="w-[30rem] h-[20rem] p-10 flex flex-col justify-between">
+      <div className="w-full lg:w-[30rem] h-[20rem] p-10 flex flex-col justify-between">
         <div className="flex flex-col items-center gap-1">
           <p className="text-2xl">正在跳離結帳頁面</p>
           <p className="text-gray">你的結帳資料將遺失。是否要離開結帳頁面？</p>

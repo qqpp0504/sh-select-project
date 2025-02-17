@@ -38,7 +38,7 @@ export default function SuccessSendOrdersModal() {
         progress={progress}
         setProgress={setProgress}
       />
-      <div className="p-5 w-[30rem] h-[25rem] flex flex-col justify-center items-center gap-3">
+      <div className="px-12 py-8 lg:p-5 lg:w-[30rem] lg:h-[25rem] flex flex-col justify-center items-center gap-3">
         {isShowing && (
           <DotLottieReact
             className="w-[18rem]"

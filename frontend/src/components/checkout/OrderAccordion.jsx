@@ -26,8 +26,8 @@ export default function OrderAccordion() {
   }, [isOpenSummary]);
 
   return (
-    <div className="sticky top-0 z-50">
-      <div className="padding-small mx-auto w-full max-w-[38rem] bg-white z-50 py-[0.6rem] font-500 flex justify-between items-center lg:hidden">
+    <div className="sticky top-0 z-50 lg:hidden">
+      <div className="padding-small mx-auto w-full max-w-[38rem] bg-white z-50 py-[0.6rem] font-500 flex justify-between items-center">
         <div className="text-xl">摘要</div>
 
         <button
@@ -49,9 +49,9 @@ export default function OrderAccordion() {
         </button>
       </div>
 
-      {!isOpenSummary && <hr className="w-screen lg:hidden" />}
+      {!isOpenSummary && <hr className="w-screen" />}
       {isOpenSummary && (
-        <div className="relative w-screen lg:hidden">
+        <div className="relative w-screen">
           <div className="padding-small absolute w-full z-50 bg-white top-0 flex justify-center overflow-y-auto max-h-[87vh]">
             <OrderSummary />
           </div>

@@ -36,9 +36,9 @@ export default function HelpLayout() {
   }, [dispatch, params]);
 
   return (
-    <div className="flex justify-center">
-      <div className="max-w-[78rem] w-full flex flex-col items-center mt-10">
-        <div className="flex flex-col w-[29rem] gap-4 mb-24">
+    <div className="padding-small lg:padding-large flex justify-center">
+      <div className="max-w-[79rem] w-full flex flex-col items-center mt-10">
+        <div className="flex flex-col w-full max-w-[29rem] gap-4 mb-20">
           <h1 className="text-[2.1rem] font-500 text-center">取得協助</h1>
           <form className="relative">
             <Input

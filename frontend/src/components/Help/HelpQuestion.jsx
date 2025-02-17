@@ -40,5 +40,5 @@ export default function HelpQuestion() {
       break;
   }
 
-  return <section className="max-w-[40rem] w-full">{content}</section>;
+  return <section className="px-3 max-w-[40rem] w-full">{content}</section>;
 }

@@ -12,7 +12,7 @@ export default function HowToReturn() {
         網站訂單退貨。*只需依照以下步驟，就能完成訂單退貨。
       </p>
 
-      <ol className="list-decimal pl-5 flex flex-col gap-10">
+      <ol className="list-decimal pl-5 flex flex-col gap-10 leading-7">
         <li>
           <strong>登入你的 SH SELECT 會員個人檔案</strong>並前往訂單紀錄。
           對你要退貨的訂單選擇 View or Manage (檢視或管理)，然後選擇 Start
