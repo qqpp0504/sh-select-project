@@ -89,7 +89,7 @@ export default function MainNav() {
               {activeDropdown === navItem.label && (
                 <div className="absolute top-full left-0 w-full">
                   <ul
-                    className="relative flex justify-center gap-32 pt-4 pb-9 bg-white z-20"
+                    className="relative flex justify-center gap-32 pt-4 pb-9 bg-white z-50"
                     onMouseEnter={() => setActiveDropdown(navItem.label)}
                     onMouseLeave={() => setActiveDropdown(null)}
                   >

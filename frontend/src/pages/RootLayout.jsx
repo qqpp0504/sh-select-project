@@ -22,15 +22,15 @@ export default function RootLayout() {
   }, [location.pathname, dispatch]);
 
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <ScrollToTop />
       <MainNavigation />
-      <main>
+      <main className="flex-grow">
         <Outlet />
       </main>
       <footer>
         <Footer />
       </footer>
-    </>
+    </div>
   );
 }

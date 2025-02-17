@@ -93,12 +93,12 @@ export default function ProductsHeader({ isShowing, setIsShowing }) {
         </ol>
       </div>
     );
+  } else if (search) {
+    moreFilters = (
+      <div className="padding-small lg:padding-large mt-3">搜尋結果：</div>
+    );
   } else {
     moreFilters = <div className="py-2 lg:py-0"></div>;
-  }
-
-  if (search) {
-    moreFilters = <div className="mt-3 mb-1">搜尋結果：</div>;
   }
 
   function handleClickOutside(event) {
@@ -142,7 +142,9 @@ export default function ProductsHeader({ isShowing, setIsShowing }) {
       {moreFilters}
       <div
         className={`sticky top-0 z-10 bg-white py-3 lg:flex lg:flex-row lg:items-center lg:justify-between lg:py-4 padding-small lg:padding-large ${
-          Array.isArray(brands) && brands.length > 1 ? "lg:mb-3" : "lg:my-3"
+          (Array.isArray(brands) && brands.length > 1) || search
+            ? "lg:mb-3"
+            : "lg:my-3"
         }`}
       >
         <h1

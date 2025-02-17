@@ -2,7 +2,7 @@ import { Outlet, NavLink } from "react-router-dom";
 
 export default function MemberRootLayout() {
   return (
-    <div className="w-[90%] mt-10 mx-auto">
+    <div className="padding-small lg:padding-large mt-10">
       <div className="w-full border-b-[1px] border-gray-300 pb-3 flex items-center justify-between mb-10">
         <h2 className="font-500 flex-1 text-2xl">訂單</h2>
 

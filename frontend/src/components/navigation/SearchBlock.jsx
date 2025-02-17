@@ -1,15 +1,13 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { IoIosSearch } from "react-icons/io";
 
 import logo from "@/assets/logo.png";
-import { filterActions } from "@/store/filter-slice.js";
 import Button from "../UI/Button";
 
 export default function SearchBlock({ onClose }) {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [searchTerm, setSearchTerm] = useState("");
 
   const HOTSEARCH = ["dunk", "襪子", "黑色", "運動", "背包"];
@@ -23,13 +21,13 @@ export default function SearchBlock({ onClose }) {
       return;
     }
 
-    dispatch(filterActions.updatedSearchTerm(search));
-    navigate(`products?search=${search}`);
-    onClose();
+    handleSearch(search);
   }
 
   function handleSearch(search) {
-    dispatch(filterActions.updatedSearchTerm(search));
+    const newParams = new URLSearchParams(searchParams);
+    newParams.set("search", search);
+    setSearchParams(newParams);
     navigate(`products?search=${search}`);
     onClose();
   }
@@ -42,7 +40,7 @@ export default function SearchBlock({ onClose }) {
     <div>
       <form
         onSubmit={handleSubmit}
-        className="padding-large py-3 w-full h-[18rem] z-20 bg-white fixed inset-0"
+        className="padding-large py-3 w-full h-[18rem] z-50 bg-white fixed inset-0"
       >
         <div className="flex justify-between items-center">
           <img src={logo} alt="SH SELECT Logo" className="w-16" />
@@ -91,7 +89,7 @@ export default function SearchBlock({ onClose }) {
       </form>
       <div
         onClick={onClose}
-        className="bg-black opacity-30 fixed inset-0 z-10"
+        className="bg-black opacity-30 fixed inset-0 z-40"
       ></div>
     </div>
   );

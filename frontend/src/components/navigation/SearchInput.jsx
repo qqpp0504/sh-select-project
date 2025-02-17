@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { IoIosSearch } from "react-icons/io";
 
@@ -22,6 +22,10 @@ export default function SearchInput() {
   function handleCloseSearchBlock() {
     setIsOpen(false);
   }
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
 
   return (
     <>
