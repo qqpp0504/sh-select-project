@@ -163,7 +163,7 @@ export default function DropdownNav({ isOpenNav, setIsOpenNav }) {
 
       <div
         onClick={handleCloseNav}
-        className={`absolute top-0 left-0 bg-black opacity-30 w-full h-screen z-20 lg:hidden transition-all duration-300 ${
+        className={`absolute top-0 left-0 bg-black opacity-30 w-full h-screen z-40 lg:hidden transition-all duration-300 ${
           isOpenNav ? "block" : "hidden"
         }`}
       ></div>

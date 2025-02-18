@@ -39,7 +39,7 @@ export default function BannerBar() {
   }, []);
 
   return (
-    <div className="py-5 bg-gray-100 text-center overflow-hidden">
+    <div className="py-2 lg:py-5 bg-gray-100 text-center overflow-hidden">
       <div
         className={`flex items-center transition-transform duration-500 ease-in-out`}
         style={{

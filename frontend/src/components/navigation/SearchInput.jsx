@@ -29,7 +29,7 @@ export default function SearchInput() {
 
   return (
     <>
-      {isOpen && <SearchBlock onClose={handleCloseSearchBlock} />}
+      <SearchBlock isOpen={isOpen} onClose={handleCloseSearchBlock} />
       <div
         onClick={handleOpenSearchBlock}
         className="relative lg:w-[33%] group"

@@ -5,7 +5,7 @@ import { IoIosSearch } from "react-icons/io";
 import logo from "@/assets/logo.png";
 import Button from "../UI/Button";
 
-export default function SearchBlock({ onClose }) {
+export default function SearchBlock({ isOpen, onClose }) {
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchTerm, setSearchTerm] = useState("");
@@ -40,12 +40,20 @@ export default function SearchBlock({ onClose }) {
     <div>
       <form
         onSubmit={handleSubmit}
-        className="padding-large py-3 w-full h-[18rem] z-50 bg-white fixed inset-0"
+        className={`padding-small lg:padding-large py-3 w-full h-full lg:h-[18rem] z-50 bg-white fixed inset-0 transition-all duration-300 ease-out ${
+          isOpen
+            ? "translate-x-0 opacity-100"
+            : "translate-x-full opacity-0 duration-0"
+        }`}
       >
         <div className="flex justify-between items-center">
-          <img src={logo} alt="SH SELECT Logo" className="w-16" />
+          <img
+            src={logo}
+            alt="SH SELECT Logo"
+            className="w-16 hidden lg:block"
+          />
 
-          <div className="w-[60%] relative group">
+          <div className="w-[78%] lg:w-[60%] relative group">
             <button
               type="submit"
               className="absolute top-1/2 -translate-y-1/2 rounded-3xl p-[0.35rem] bg-gray-100 hover:bg-white-hoverColor"
@@ -68,10 +76,10 @@ export default function SearchBlock({ onClose }) {
           </button>
         </div>
 
-        <div className="flex flex-col justify-center items-center my-8 pl-3">
-          <div className="w-[50rem]">
+        <div className="flex flex-1 flex-col justify-center items-center my-8 lg:ml-6">
+          <div className="w-full lg:w-[60%]">
             <p className="text-gray text-[0.9rem]">熱門搜尋字詞</p>
-            <div className="my-4 flex gap-4">
+            <div className="my-4 flex flex-wrap gap-4">
               {HOTSEARCH.map((item) => (
                 <button
                   type="button"
@@ -87,10 +95,12 @@ export default function SearchBlock({ onClose }) {
           </div>
         </div>
       </form>
-      <div
-        onClick={onClose}
-        className="bg-black opacity-30 fixed inset-0 z-40"
-      ></div>
+      {isOpen && (
+        <div
+          onClick={onClose}
+          className="bg-black opacity-30 fixed inset-0 z-40"
+        ></div>
+      )}
     </div>
   );
 }

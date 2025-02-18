@@ -82,7 +82,7 @@ export default function ProductsHeader({ isShowing, setIsShowing }) {
 
   if (Array.isArray(brands) && brands.length > 1) {
     moreFilters = (
-      <div className="padding-small lg:padding-large mt-3 mb-1 lg:mb-0">
+      <div className="padding-small lg:padding-large mt-3 mb-1 lg:mb-0 text-sm lg:text-base">
         <ol className="flex flex-row">
           {brands.map((brand, index) => (
             <>
@@ -95,7 +95,9 @@ export default function ProductsHeader({ isShowing, setIsShowing }) {
     );
   } else if (search) {
     moreFilters = (
-      <div className="padding-small lg:padding-large mt-3">搜尋結果：</div>
+      <div className="padding-small lg:padding-large mt-3 text-sm lg:text-base">
+        搜尋結果：
+      </div>
     );
   } else {
     moreFilters = <div className="py-2 lg:py-0"></div>;
