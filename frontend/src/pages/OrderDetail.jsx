@@ -5,6 +5,7 @@ import { useParams, Link } from "react-router-dom";
 import { fetchUserOrderDetail } from "@/util/http.js";
 import { currencyFormatter } from "@/util/formatting.js";
 import LoadingIndicator from "@/components/UI/LoadingIndicator.jsx";
+import OrderProducts from "@/components/member/OrderProducts.jsx";
 
 export default function OrderDetail() {
   const { token, user } = useSelector((state) => state.account.userData);
@@ -36,7 +37,7 @@ export default function OrderDetail() {
           <p>{`訂單編號：${order.orderId}`}</p>
         </div>
 
-        <div className="flex flex-col gap-5 mt-10">
+        <div className="lg:flex flex-col gap-5 mt-10 hidden">
           <table>
             <thead>
               <tr className="border-b-[1px] border-gray-200 text-left">
@@ -101,8 +102,10 @@ export default function OrderDetail() {
           </table>
         </div>
 
-        <div className="flex flex-col items-end pr-[11rem] mt-5">
-          <div className="w-[19rem] flex flex-col gap-3">
+        <OrderProducts order={order} />
+
+        <div className="flex flex-col items-end lg:pr-[11rem] mt-5">
+          <div className="w-[13rem] md:w-[19rem] flex flex-col gap-1 sm:gap-3">
             <div className="flex justify-between">
               <div>小計：</div>
               <div>NT{currencyFormatter.format(order.totalAmount)}</div>
