@@ -3,11 +3,11 @@ import { Outlet, NavLink } from "react-router-dom";
 export default function MemberRootLayout() {
   return (
     <div className="padding-small lg:padding-large mt-10">
-      <div className="w-full border-b-[1px] border-gray-300 pb-3 flex items-center justify-between mb-10">
+      <div className="w-full border-b-[1px] border-gray-300 pb-3 flex flex-col lg:flex-row lg:items-center justify-between mb-10">
         <h2 className="font-500 flex-1 text-2xl">訂單</h2>
 
         <nav>
-          <ul className="flex flex-1 gap-8">
+          <ul className="flex flex-1 font-500 mt-10 lg:mt-0 gap-5 lg:gap-8">
             <li>
               <NavLink
                 to="/"
@@ -51,7 +51,7 @@ export default function MemberRootLayout() {
           </ul>
         </nav>
 
-        <div className="flex-1"></div>
+        <div className="flex-1 hidden lg:block"></div>
       </div>
       <Outlet />
     </div>
