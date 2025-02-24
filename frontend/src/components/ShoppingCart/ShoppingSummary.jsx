@@ -53,7 +53,11 @@ export default function ShoppingSummary() {
           <Button
             variant={`${totalPrice > 0 ? "black" : "disable"}`}
             size="xl"
-            link={`${userData.token ? "/checkout" : "/accounts"}`}
+            link={`${
+              userData.token
+                ? "/checkout"
+                : `/accounts?redirectTo=${encodeURIComponent("/checkout")}`
+            }`}
           >
             會員結帳
           </Button>

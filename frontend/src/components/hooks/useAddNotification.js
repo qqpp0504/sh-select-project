@@ -3,10 +3,12 @@ import { useDispatch } from "react-redux";
 import { cartActions } from "@/store/cart-slice.js";
 
 export function scrollToTop() {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
+  if (window.innerWidth > 1024) {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
 }
 
 // 更新滾動位置

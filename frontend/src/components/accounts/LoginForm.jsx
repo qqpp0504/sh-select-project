@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useMutation } from "@tanstack/react-query";
@@ -17,11 +18,21 @@ export default function LoginForm() {
   const { email } = useSelector((state) => state.account);
   const authPasswordInput = useInput("", (value) => isNotEmpty(value));
 
+  const searchParams = new URLSearchParams(location.search);
+  const redirectTo = searchParams.get("redirectTo");
+
+  useEffect(() => {
+    if (!email) {
+      navigate("/accounts");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [email]);
+
   const { mutate, isPending, isError, error } = useMutation({
     mutationFn: loginUser,
     onSuccess: (data) => {
       dispatch(accountActions.login({ token: data.token, user: data.user }));
-      navigate("/");
+      navigate(redirectTo);
     },
   });
 

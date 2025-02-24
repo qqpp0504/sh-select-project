@@ -22,6 +22,9 @@ export default function AuthEmail() {
     hasError: emailHasError,
   } = useInput(email, (value) => isEmail(value) && isNotEmpty(value));
 
+  const searchParams = new URLSearchParams(location.search);
+  const redirectTo = searchParams.get("redirectTo");
+
   const { mutate, isPending, isError, error } = useMutation({
     mutationFn: authEmail,
     onSuccess: (data) => {
@@ -30,7 +33,11 @@ export default function AuthEmail() {
       if (data.isNotExist) {
         navigate("register");
       } else {
-        navigate("login");
+        if (redirectTo) {
+          navigate(`login?redirectTo=${encodeURIComponent(redirectTo)}`);
+        } else {
+          navigate("login");
+        }
       }
     },
   });

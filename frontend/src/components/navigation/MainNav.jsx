@@ -114,10 +114,7 @@ export default function MainNav() {
 
         <div className="flex-1 flex justify-end items-center lg:gap-1">
           <SearchInput />
-          <Link
-            to={`${token ? "/favorites" : "/accounts"}`}
-            onClick={handlePreventDefault}
-          >
+          <Link to="/favorites" onClick={handlePreventDefault}>
             <div className="p-[0.375rem] rounded-full hover:bg-gray-200 hidden lg:block">
               <LiaHeart />
             </div>

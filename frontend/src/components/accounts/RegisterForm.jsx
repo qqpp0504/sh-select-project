@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
@@ -35,6 +36,13 @@ export default function RegisterForm() {
       navigate("/");
     },
   });
+
+  useEffect(() => {
+    if (!email) {
+      navigate("/accounts");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [email]);
 
   function handleSubmit(event) {
     event.preventDefault();

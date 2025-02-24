@@ -60,10 +60,10 @@ export default function ProductItem({ product }) {
 
       {showingNotification.isOpen && (
         <>
-          <CartNotification open={showingNotification.isOpen} />
+          <CartNotification />
           <div
             onClick={handleCloseNotification}
-            className="bg-gray-900 bg-opacity-30 z-30 absolute left-0 top-[6.7rem] w-full h-screen hidden lg:block"
+            className="bg-gray-900 bg-opacity-30 z-30 fixed lg:absolute left-0 top-0 lg:top-[6.7rem] w-full h-screen"
           ></div>
         </>
       )}
