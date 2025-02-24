@@ -10,6 +10,7 @@ import BrandsProducts from "@/components/banner/BrandsProducts.jsx";
 import MembershipBlock from "@/components/banner/MembershipBlock.jsx";
 import membershipBannerImage from "@/assets/membership-banner.jpg";
 import brandsBannerImg from "@/assets/brands-banner.jpg";
+import brandsBannerSmImg from "@/assets/brands-banner-sm.jpg";
 
 export default function HomePage() {
   const {
@@ -37,6 +38,7 @@ export default function HomePage() {
 
   const BRANDSBANNER = {
     image: brandsBannerImg,
+    imageSm: brandsBannerSmImg,
     alt: "各種品牌圖片",
     title: "探索頂尖品牌，展現非凡選擇",
     description: "匯聚全球知名品牌，為你帶來更豐富的生活選擇。",

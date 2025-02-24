@@ -1,10 +1,12 @@
 import Banner from "@/components/banner/Banner.jsx";
 import brandsBannerImg from "@/assets/brands-banner.jpg";
+import brandsBannerSmImg from "@/assets/brands-banner-sm.jpg";
 import { BRANDS } from "@/data.js";
 import BrandDetail from "@/components/banner/BrandDetail.jsx";
 
 const BRANDSBANNER = {
   image: brandsBannerImg,
+  imageSm: brandsBannerSmImg,
   alt: "各種品牌圖片",
   title: "精選世界知名品牌，豐富你的生活體驗",
   description: "我們匯聚來自各地的優質商品，讓你的生活更添色彩與便利。",

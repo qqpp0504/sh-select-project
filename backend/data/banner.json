@@ -10,6 +10,7 @@
     },
     "secondBanner": {
       "image": "new-banner.jpg",
+      "imageSm": "new-banner-sm.jpg",
       "alt": "新品圖片",
       "title": "新品上架，驚喜不斷",
       "description": "發掘全球最酷商品，為你的生活帶來新選擇。",
@@ -72,6 +73,7 @@
   "menPage": {
     "banner": {
       "image": "men-banner.jpg",
+      "imageSm": "men-banner-sm.jpg",
       "alt": "男款商品圖片",
       "title": "精選男士必備單品，風格與實用兼具",
       "description": "挑選全球優質男款，讓每件商品都成為日常必需。",
@@ -142,6 +144,7 @@
   "womenPage": {
     "banner": {
       "image": "female-banner.jpg",
+      "imageSm": "female-banner-sm.jpg",
       "alt": "女款商品圖片",
       "title": "發現獨特風格，展現自信優雅",
       "description": "精選女性服飾，讓妳每一天都充滿魅力。",
