@@ -114,7 +114,7 @@ export default function AccountBar() {
   }
 
   return (
-    <div className="relative hidden lg:flex lg:justify-between text-[0.8rem] bg-gray-100 px-12 py-2">
+    <header className="relative hidden lg:flex lg:justify-between text-[0.8rem] bg-gray-100 px-12 py-2">
       <h2 className="uppercase">SH Select</h2>
       <nav>
         <ul className="flex flex-row items-center list-none">
@@ -165,6 +165,6 @@ export default function AccountBar() {
           {userMenu}
         </ul>
       </nav>
-    </div>
+    </header>
   );
 }

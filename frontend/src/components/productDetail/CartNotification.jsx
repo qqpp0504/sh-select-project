@@ -64,7 +64,7 @@ export default function CartNotification() {
   }, []);
 
   return (
-    <div className="fixed left-0 bottom-0 lg:absolute lg:right-12 lg:top-full lg:left-auto lg:bottom-auto bg-white w-full lg:w-[25rem] h-[17rem] rounded-t-3xl lg:rounded-b-3xl lg:rounded-t-none z-50 p-5 text-[0.95rem]">
+    <div className="fixed left-0 bottom-0 lg:absolute lg:right-12 lg:top-[6.7rem] lg:left-auto lg:bottom-auto bg-white w-full lg:w-[25rem] h-[17rem] rounded-t-3xl lg:rounded-b-3xl lg:rounded-t-none z-50 p-5 text-[0.95rem]">
       <div className="flex flex-col justify-between h-full">
         <div className="flex items-center gap-2">
           <FaCircleCheck size="1.2rem" color="green" />

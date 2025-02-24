@@ -114,7 +114,7 @@ export default function DropdownNav({ isOpenNav, setIsOpenNav }) {
               </div>
             )}
 
-            <div className="flex flex-col gap-5 mt-16">
+            <div className="flex flex-col gap-5 mt-16 mb-20">
               {userData.token && (
                 <Link
                   onClick={handleCloseNav}
