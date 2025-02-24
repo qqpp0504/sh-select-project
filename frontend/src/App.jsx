@@ -25,6 +25,7 @@ import ProtectedRoute from "./components/util/ProtectedRoute.jsx";
 import MemberPage from "./pages/Member.jsx";
 import OrderDetailPage from "./pages/OrderDetail.jsx";
 import MemberRootLayout from "./pages/MemberRootLayout.jsx";
+import NotFoundPage from "./pages/NotFound.jsx";
 
 const HomePage = lazy(() => import("./pages/Home.jsx"));
 const MenPage = lazy(() => import("./pages/Men.jsx"));
@@ -70,6 +71,7 @@ const router = createBrowserRouter(
           path: "/",
           element: <BannerBarLayout />,
           children: [
+            { path: "*", element: <NotFoundPage /> },
             {
               index: true,
               element: (
