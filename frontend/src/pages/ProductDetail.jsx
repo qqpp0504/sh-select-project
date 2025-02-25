@@ -7,6 +7,7 @@ import ErrorBlock from "@/components/UI/ErrorBlock.jsx";
 import ProductItem from "@/components/productDetail/ProductItem.jsx";
 import DetailInformationModal from "@/components/productDetail/DetailInformationModal.jsx";
 import SizeDetailModal from "@/components/productDetail/SizeDetailModal.jsx";
+import SEO from "@/components/SEO.jsx";
 
 export default function ProductDetailPage() {
   const { slug } = useParams();
@@ -36,6 +37,10 @@ export default function ProductDetailPage() {
 
   return (
     <>
+      <SEO
+        title={`${productData.name}。SH SELECT`}
+        description={productData.summary.productDescription}
+      />
       <ProductItem product={productData} />
       <DetailInformationModal product={productData} />
       <SizeDetailModal productSizeInfo={productData.sizeGuide} />

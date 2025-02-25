@@ -3,6 +3,7 @@ import brandsBannerImg from "@/assets/brands-banner.jpg";
 import brandsBannerSmImg from "@/assets/brands-banner-sm.jpg";
 import { BRANDS } from "@/data.js";
 import BrandDetail from "@/components/banner/BrandDetail.jsx";
+import SEO from "@/components/SEO.jsx";
 
 const BRANDSBANNER = {
   image: brandsBannerImg,
@@ -17,16 +18,20 @@ const BRANDSBANNER = {
 
 export default function BrandsPage() {
   return (
-    <section>
+    <>
+      <SEO
+        title="SH SELECT 精選品牌"
+        description="探索 SH SELECT 精選的多樣商品，從時尚服飾到獨特配件，滿足您的每一個需求，讓您展現個人風格。"
+      />
       <Banner {...BRANDSBANNER} />
 
-      <div className="padding-small lg:padding-large">
+      <section className="padding-small lg:padding-large">
         <ul className="flex flex-col gap-10 overflow-hidden">
           {BRANDS.map((brand, index) => (
             <BrandDetail key={brand.title} index={index} brand={brand} />
           ))}
         </ul>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

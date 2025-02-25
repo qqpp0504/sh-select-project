@@ -11,6 +11,7 @@ import MembershipBlock from "@/components/banner/MembershipBlock.jsx";
 import membershipBannerImage from "@/assets/membership-banner.jpg";
 import brandsBannerImg from "@/assets/brands-banner.jpg";
 import brandsBannerSmImg from "@/assets/brands-banner-sm.jpg";
+import SEO from "@/components/SEO.jsx";
 
 export default function HomePage() {
   const {
@@ -49,6 +50,7 @@ export default function HomePage() {
 
   return (
     <>
+      <SEO description="歡迎來到 SH SELECT，我們提供高品質的商品與最佳購物體驗，立即探索最新商品！" />
       <Banner {...bannerData.firstBanner} />
       <SelectedProducts
         sectionTitle="精選"

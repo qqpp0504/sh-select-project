@@ -9,6 +9,7 @@ import FavoritesProducts from "@/components/favorites/FavoritesProducts.jsx";
 import ResizableModal from "@/components/shoppingCart/ResizableModal.jsx";
 import CartNotification from "@/components/productDetail/CartNotification.jsx";
 import { cartActions } from "@/store/cart-slice.js";
+import SEO from "@/components/SEO.jsx";
 
 export default function FavoritesPage() {
   const activeItem = useSelector((state) => state.cart.activeItem);
@@ -71,26 +72,32 @@ export default function FavoritesPage() {
   }
 
   return (
-    <section className="px-4 lg:padding-large py-10">
-      {activeItem && <ResizableModal />}
-      <h2
-        className={`sticky top-0 z-20 bg-white font-500 py-4 ${
-          isSticky ? "text-base lg:text-xl" : "text-xl lg:text-2xl"
-        }`}
-      >
-        最愛
-      </h2>
-      <div className="w-full">{favoritesItems}</div>
+    <>
+      <SEO
+        title="最愛商品。SH SELECT"
+        description="查看您的最愛商品，隨時檢視和管理您心儀的商品，輕鬆購買，讓選擇變得更簡單！"
+      />
+      <section className="px-4 lg:padding-large py-10">
+        {activeItem && <ResizableModal />}
+        <h2
+          className={`sticky top-0 z-20 bg-white font-500 py-4 ${
+            isSticky ? "text-base lg:text-xl" : "text-xl lg:text-2xl"
+          }`}
+        >
+          最愛
+        </h2>
+        <div className="w-full">{favoritesItems}</div>
 
-      {showingNotification.isOpen && (
-        <>
-          <CartNotification open={showingNotification.isOpen} />
-          <div
-            onClick={handleCloseNotification}
-            className="bg-gray-900 bg-opacity-30 z-30 fixed lg:absolute left-0 top-0 lg:top-[6.7rem] w-full h-screen"
-          ></div>
-        </>
-      )}
-    </section>
+        {showingNotification.isOpen && (
+          <>
+            <CartNotification open={showingNotification.isOpen} />
+            <div
+              onClick={handleCloseNotification}
+              className="bg-gray-900 bg-opacity-30 z-30 fixed lg:absolute left-0 top-0 lg:top-[6.7rem] w-full h-screen"
+            ></div>
+          </>
+        )}
+      </section>
+    </>
   );
 }

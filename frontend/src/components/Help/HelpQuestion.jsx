@@ -8,6 +8,8 @@ import FreeShipping from "./questionAnswer/FreeShipping.jsx";
 import InternationalShipping from "./questionAnswer/InternationalShipping.jsx";
 import OrderTracking from "./questionAnswer/OrderTracking.jsx";
 import ChangeCancelOrder from "./questionAnswer/ChangeCancelOrder.jsx";
+import SEO from "../SEO.jsx";
+import FAQDATA from "@/faqData.js";
 
 export default function HelpQuestion() {
   const { questionId } = useParams();
@@ -40,5 +42,18 @@ export default function HelpQuestion() {
       break;
   }
 
-  return <section className="px-3 max-w-[40rem] w-full">{content}</section>;
+  const allQuestions = FAQDATA.flatMap((category) => category.questions);
+  const currentQuestion = allQuestions.find(
+    (question) => question.id === questionId
+  );
+
+  return (
+    <>
+      <SEO
+        title={currentQuestion.question}
+        description={currentQuestion.question}
+      />
+      <section className="px-3 max-w-[40rem] w-full">{content}</section>
+    </>
+  );
 }

@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 
+import SEO from "../SEO.jsx";
+
 export default function SearchQuestions() {
   const { searchResult } = useSelector((state) => state.searchFaq);
   const [displayText, setDisplayText] = useState("");
@@ -49,16 +51,22 @@ export default function SearchQuestions() {
   }
 
   return (
-    <section className="w-full">
-      <div className="flex flex-col">
-        <p className="text-2xl font-500 text-center">
-          {`以下關鍵字的搜尋結果： ${displayText}`}
-        </p>
+    <>
+      <SEO
+        title="「取得協助」頁面搜尋結果。SH SELECT"
+        description="需要幫助嗎？在 SH SELECT 取得協助頁面，你可以找到退貨、出貨、訂單與付款等常見問題的解答，讓你的購物體驗更加順暢。"
+      />
+      <section className="w-full">
+        <div className="flex flex-col">
+          <p className="text-2xl font-500 text-center">
+            {`以下關鍵字的搜尋結果： ${displayText}`}
+          </p>
 
-        <hr className="border-gray-300 mt-12" />
+          <hr className="border-gray-300 mt-12" />
 
-        {allSearchResult}
-      </div>
-    </section>
+          {allSearchResult}
+        </div>
+      </section>
+    </>
   );
 }

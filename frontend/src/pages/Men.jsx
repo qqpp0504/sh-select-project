@@ -10,6 +10,7 @@ import BrandsProducts from "@/components/banner/BrandsProducts.jsx";
 import MembershipBlock from "@/components/banner/MembershipBlock.jsx";
 import GenderClassNavigation from "@/components/banner/GenderClassNavigation.jsx";
 import membershipBannerImage from "@/assets/membership-men.jpg";
+import SEO from "@/components/SEO.jsx";
 
 export default function MenPage() {
   const {
@@ -36,6 +37,10 @@ export default function MenPage() {
 
   return (
     <>
+      <SEO
+        title="SH SELECT 男用服裝、鞋款與配件。"
+        description="探索我們的男款服飾系列，包含最新的時尚男裝、運動服裝與配件，滿足你的所有穿搭需求。"
+      />
       <GenderClassNavigation gender="men" />
       <Banner {...bannerData.banner} />
       <NewSelectedProducts products={bannerData.selectedProducts} />

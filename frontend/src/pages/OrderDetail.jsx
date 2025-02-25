@@ -6,6 +6,8 @@ import { fetchUserOrderDetail } from "@/util/http.js";
 import { currencyFormatter } from "@/util/formatting.js";
 import LoadingIndicator from "@/components/UI/LoadingIndicator.jsx";
 import OrderProducts from "@/components/member/OrderProducts.jsx";
+import SEO from "@/components/SEO.jsx";
+import ErrorBlock from "@/components/UI/ErrorBlock.jsx";
 
 export default function OrderDetail() {
   const { token, user } = useSelector((state) => state.account.userData);
@@ -131,8 +133,18 @@ export default function OrderDetail() {
   }
 
   if (isError) {
-    orderContent = <p>{error.message}</p>;
+    orderContent = (
+      <ErrorBlock message={error.info?.message || "訂單資料加載失敗"} />
+    );
   }
 
-  return <section>{orderContent}</section>;
+  return (
+    <>
+      <SEO
+        title="會員訂單資訊。SH SELECT"
+        description="查看您的 SH SELECT 訂單資訊，包括訂單狀態、配送進度與購買明細，讓您隨時掌握最新資訊。"
+      />
+      <section>{orderContent}</section>
+    </>
+  );
 }

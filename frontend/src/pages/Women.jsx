@@ -10,6 +10,7 @@ import RecommendationProducts from "@/components/banner/RecommendationProducts.j
 import BrandsProducts from "@/components/banner/BrandsProducts.jsx";
 import MembershipBlock from "@/components/banner/MembershipBlock.jsx";
 import membershipBannerImage from "@/assets/membership-women.jpg";
+import SEO from "@/components/SEO.jsx";
 
 export default function WomenPage() {
   const {
@@ -36,6 +37,10 @@ export default function WomenPage() {
 
   return (
     <>
+      <SEO
+        title="SH SELECT 女用服裝、鞋款與配件。"
+        description="女款服飾新選擇，無論是休閒還是正式服裝，我們提供最新的女士時尚，讓你展現獨特的個人魅力！"
+      />
       <GenderClassNavigation gender="women" />
       <Banner {...bannerData.banner} />
       <NewSelectedProducts products={bannerData.selectedProducts} />
