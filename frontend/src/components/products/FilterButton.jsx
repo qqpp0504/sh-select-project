@@ -1,6 +1,6 @@
 import { useSearchParams } from "react-router-dom";
-
-import classes from "./FilterButton.module.css";
+import { IoIosCheckbox } from "react-icons/io";
+import { MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
 
 export default function FilterButton({
   filterType,
@@ -11,10 +11,10 @@ export default function FilterButton({
   const [searchParams, setSearchParams] = useSearchParams();
 
   // 獲取當前的性別過濾器值（可能是多個）
-  const getGenderFilters = () => {
+  function getGenderFilters() {
     const genderParam = searchParams.get(filterType);
     return genderParam ? genderParam.split("-") : [];
-  };
+  }
 
   function handleClickFilter() {
     const currentFilters = getGenderFilters();
@@ -53,10 +53,8 @@ export default function FilterButton({
   return (
     <>
       {type === "filter" && (
-        <button
-          onClick={handleClickFilter}
-          className={`${isChecked ? classes.checked : classes.unchecked}`}
-        >
+        <button onClick={handleClickFilter} className="flex items-center gap-1">
+          {isChecked ? <IoIosCheckbox /> : <MdOutlineCheckBoxOutlineBlank />}
           {children}
         </button>
       )}
