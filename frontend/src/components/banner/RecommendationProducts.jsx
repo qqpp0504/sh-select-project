@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import ScrollContainer from "./ScrollContainer.jsx";
 import { currencyFormatter } from "@/util/formatting.js";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function RecommendationProducts({ products }) {
   return (
     <ScrollContainer title="推薦單品">
@@ -11,7 +13,7 @@ export default function RecommendationProducts({ products }) {
           <li className="w-[27rem] h-[34rem] flex-shrink-0">
             <div className="bg-gray-100 flex justify-center items-center h-[83%]">
               <img
-                src={`http://localhost:3000/${product.image}`}
+                src={`${API_URL}/${product.image}`}
                 alt={product.alt}
                 className="w-[90%] h-[80%] object-cover"
               />

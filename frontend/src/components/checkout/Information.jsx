@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 export default function Information({ title, children }) {
   return (
     <div className="my-3">

@@ -9,6 +9,8 @@ import OrderProducts from "@/components/member/OrderProducts.jsx";
 import SEO from "@/components/SEO.jsx";
 import ErrorBlock from "@/components/UI/ErrorBlock.jsx";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function OrderDetail() {
   const { token, user } = useSelector((state) => state.account.userData);
   const { orderId } = useParams();
@@ -61,7 +63,7 @@ export default function OrderDetail() {
                       className="w-[13rem] h-[13rem] bg-gray-100 flex justify-center items-center"
                     >
                       <img
-                        src={`http://localhost:3000/${product.color.image}`}
+                        src={`${API_URL}/${product.color.image}`}
                         alt={product.alt}
                         className="w-[90%] h-[90%]"
                       />

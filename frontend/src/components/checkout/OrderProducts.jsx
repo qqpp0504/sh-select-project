@@ -1,6 +1,8 @@
 import DeliveryTime from "./DeliveryTime.jsx";
 import { currencyFormatter } from "@/util/formatting.js";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function OrderProducts({ items }) {
   return (
     <div className="my-5 lg:my-7">
@@ -12,7 +14,7 @@ export default function OrderProducts({ items }) {
               <li key={item.idNumber} className="flex gap-3">
                 <div className="bg-gray-100 w-[20rem] lg:w-[13rem] aspect-square flex justify-center items-center">
                   <img
-                    src={`http://localhost:3000/${item.color.image}`}
+                    src={`${API_URL}/${item.color.image}`}
                     alt={item.alt}
                     className="w-[90%]"
                   />

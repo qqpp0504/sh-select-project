@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 
 import ScrollContainer from "./ScrollContainer.jsx";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function newProducts({ products }) {
   return (
     <ScrollContainer title="新上架">
@@ -13,7 +15,7 @@ export default function newProducts({ products }) {
           <Link to={`/products/${product.slug}`}>
             <div className="bg-gray-100 flex justify-center items-center h-[85%] rounded-xl">
               <img
-                src={`http://localhost:3000/${product.image}`}
+                src={`${API_URL}/${product.image}`}
                 alt={product.alt}
                 className="w-[90%] h-[80%] object-cover object-bottom"
               />

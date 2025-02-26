@@ -10,6 +10,8 @@ import { cartActions } from "@/store/cart-slice.js";
 import { favoritesActions } from "@/store/favorites-slice.js";
 import { useAddNotification } from "../hooks/useAddNotification.js";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function ResizableModal() {
   const [sizeData, setSizeData] = useState(null);
   const [reminder, setReminder] = useState("");
@@ -74,7 +76,7 @@ export default function ResizableModal() {
           <div className="flex flex-col md:flex-row gap-3">
             <div className="w-36 min-w-36 lg:w-[27rem] aspect-square bg-gray-100 flex justify-center items-center">
               <img
-                src={`http://localhost:3000/${activeItem.color.image}`}
+                src={`${API_URL}/${activeItem.color.image}`}
                 alt={activeItem.alt}
                 className="w-[90%]"
               />

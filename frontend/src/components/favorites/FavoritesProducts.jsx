@@ -13,6 +13,8 @@ import { useAddNotification } from "../hooks/useAddNotification.js";
 import FavoritesAddToCartButton from "../UI/FavoritesAddToCartButton.jsx";
 import { favoritesActions } from "@/store/favorites-slice.js";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function FavoritesProducts({ products, refetch }) {
   const dispatch = useDispatch();
   const timer = useRef();
@@ -35,10 +37,7 @@ export default function FavoritesProducts({ products, refetch }) {
 
     timer.current = setTimeout(() => {
       mutate(favoritesProductId);
-      setFavoriteProductId((prev) =>
-        prev.filter((id) => id !== favoritesProductId)
-      );
-    }, 2000);
+    }, 3000);
   }
 
   function handleCancelDeleteFavorite(favoritesProductId) {
@@ -105,7 +104,7 @@ export default function FavoritesProducts({ products, refetch }) {
               className="flex justify-center items-center bg-gray-100 w-full aspect-square"
             >
               <img
-                src={`http://localhost:3000/${product.color.image}`}
+                src={`${API_URL}/${product.color.image}`}
                 alt={product.alt}
                 className="object-cover w-[90%] h-[90%]"
               />

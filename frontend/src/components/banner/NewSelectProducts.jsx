@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 
 import ScrollContainer from "./ScrollContainer.jsx";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function NewSelectedProducts({
   products,
   sectionTitle = "新品和精選",
@@ -12,7 +14,7 @@ export default function NewSelectedProducts({
         <Link key={product.title} to={`/products/${product.slug}`}>
           <li className="w-[27rem] h-[34rem] relative flex-shrink-0">
             <img
-              src={`http://localhost:3000/${product.image}`}
+              src={`${API_URL}/${product.image}`}
               alt={product.alt}
               className="w-full h-full object-cover object-bottom"
             />

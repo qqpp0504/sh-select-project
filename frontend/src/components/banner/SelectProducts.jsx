@@ -1,6 +1,8 @@
 import Button from "../UI/Button.jsx";
 import ScrollContainer from "./ScrollContainer.jsx";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function SelectedProducts({ products, sectionTitle }) {
   return (
     <ScrollContainer title={sectionTitle}>
@@ -10,7 +12,7 @@ export default function SelectedProducts({ products, sectionTitle }) {
           className="w-full max-w-[27rem] min-w-[20rem] aspect-[4/5] relative flex-shrink-0"
         >
           <img
-            src={`http://localhost:3000/${product.image}`}
+            src={`${API_URL}/${product.image}`}
             alt={product.alt}
             className="w-full h-full object-cover object-bottom"
           />

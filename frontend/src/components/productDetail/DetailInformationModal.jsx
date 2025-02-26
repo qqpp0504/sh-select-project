@@ -5,6 +5,8 @@ import Modal from "../UI/Modal.jsx";
 import { modalActions } from "@/store/modal-slice.js";
 import { currencyFormatter } from "@/util/formatting.js";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function DetailInformationModal({ product }) {
   const { isShowing } = useSelector((state) => state.modal.productModal);
   const dispatch = useDispatch();
@@ -19,7 +21,7 @@ export default function DetailInformationModal({ product }) {
         <div className="flex items-center justify-between">
           <div className="flex items-center mr-2">
             <img
-              src={`http://localhost:3000/${product.image}`}
+              src={`${API_URL}/${product.image}`}
               alt={product.alt}
               className="w-[4rem] mr-2"
             />

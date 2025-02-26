@@ -2,8 +2,10 @@ import { QueryClient } from "@tanstack/react-query";
 
 export const queryClient = new QueryClient();
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export async function fetchBanner({ page, signal }) {
-  const response = await fetch(`http://localhost:3000/${page}`, {
+  const response = await fetch(`${API_URL}/${page}`, {
     signal,
   });
 
@@ -24,7 +26,7 @@ export async function fetchProducts({ filters, signal }) {
       ? `?${new URLSearchParams(filters).toString()}`
       : "";
 
-  const response = await fetch(`http://localhost:3000/products/${query}`, {
+  const response = await fetch(`${API_URL}/products/${query}`, {
     signal,
   });
 
@@ -41,7 +43,7 @@ export async function fetchProducts({ filters, signal }) {
 
 export async function fetchProductDetail({ slug, signal }) {
   const response = await fetch(
-    `http://localhost:3000/products/${encodeURIComponent(slug)}`,
+    `${API_URL}/products/${encodeURIComponent(slug)}`,
     {
       signal,
     }
@@ -59,7 +61,7 @@ export async function fetchProductDetail({ slug, signal }) {
 }
 
 export async function authEmail(userInputEmail) {
-  const response = await fetch("http://localhost:3000/accounts", {
+  const response = await fetch(`${API_URL}/accounts`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -79,7 +81,7 @@ export async function authEmail(userInputEmail) {
 }
 
 export async function registerUser(userData) {
-  const response = await fetch("http://localhost:3000/accounts/register", {
+  const response = await fetch(`${API_URL}/accounts/register`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -99,7 +101,7 @@ export async function registerUser(userData) {
 }
 
 export async function loginUser(userData) {
-  const response = await fetch("http://localhost:3000/accounts/login", {
+  const response = await fetch(`${API_URL}/accounts/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -130,7 +132,7 @@ export async function addFavorites(product) {
     throw error;
   }
 
-  const response = await fetch("http://localhost:3000/favorites/add", {
+  const response = await fetch(`${API_URL}/favorites/add`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -152,7 +154,7 @@ export async function addFavorites(product) {
 export async function deleteFavoriteProduct(favoriteId) {
   const user = localStorage.getItem("user");
 
-  const response = await fetch("http://localhost:3000/favorites/delete", {
+  const response = await fetch(`${API_URL}/favorites/delete`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
@@ -175,12 +177,9 @@ export async function deleteFavoriteProduct(favoriteId) {
 }
 
 export async function fetchUserFavorites({ userEmail, signal }) {
-  const response = await fetch(
-    `http://localhost:3000/favorites/user/${userEmail}`,
-    {
-      signal,
-    }
-  );
+  const response = await fetch(`${API_URL}/favorites/user/${userEmail}`, {
+    signal,
+  });
 
   if (!response.ok) {
     const error = new Error("發生錯誤，無法獲取商品資訊");
@@ -196,7 +195,7 @@ export async function fetchUserFavorites({ userEmail, signal }) {
 export async function addOrder(newOrder) {
   const user = localStorage.getItem("user");
 
-  const response = await fetch("http://localhost:3000/checkout/add-order", {
+  const response = await fetch(`${API_URL}/checkout/add-order`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -219,12 +218,9 @@ export async function addOrder(newOrder) {
 }
 
 export async function fetchUserOrders({ userEmail, signal }) {
-  const response = await fetch(
-    `http://localhost:3000/checkout/orders/${userEmail}`,
-    {
-      signal,
-    }
-  );
+  const response = await fetch(`${API_URL}/checkout/orders/${userEmail}`, {
+    signal,
+  });
 
   if (!response.ok) {
     const error = new Error("發生錯誤，無法獲取商品資訊");
@@ -239,7 +235,7 @@ export async function fetchUserOrders({ userEmail, signal }) {
 
 export async function fetchUserOrderDetail({ userEmail, orderId, signal }) {
   const response = await fetch(
-    `http://localhost:3000/checkout/orders/${userEmail}/${orderId}`,
+    `${API_URL}/checkout/orders/${userEmail}/${orderId}`,
     {
       signal,
     }

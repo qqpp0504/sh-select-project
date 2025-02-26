@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 
 import Button from "../UI/Button.jsx";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function Banner({
   sectionTitle = null,
   image,
@@ -41,11 +43,7 @@ export default function Banner({
       )}
       <div className="h-[65vh] flex justify-center">
         <img
-          src={
-            type === "backend"
-              ? `http://localhost:3000/${currentImage}`
-              : currentImage
-          }
+          src={type === "backend" ? `${API_URL}/${currentImage}` : currentImage}
           alt={alt}
           className="w-full h-full object-cover"
         />

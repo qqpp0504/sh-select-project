@@ -12,6 +12,8 @@ import { modalActions } from "@/store/modal-slice.js";
 import { addFavorites } from "@/util/http.js";
 import ErrorModal from "../UI/ErrorModal.jsx";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function ShoppingCart() {
   const queryClient = useQueryClient();
   const { token } = useSelector((state) => state.account.userData);
@@ -73,7 +75,7 @@ export default function ShoppingCart() {
                   className="w-40 aspect-square bg-gray-100 flex justify-center items-center"
                 >
                   <img
-                    src={`http://localhost:3000/${productItem.color.image}`}
+                    src={`${API_URL}/${productItem.color.image}`}
                     alt={productItem.alt}
                     className="w-[90%]"
                   />

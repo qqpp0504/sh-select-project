@@ -7,6 +7,8 @@ import { modalActions } from "@/store/modal-slice.js";
 import { favoritesActions } from "@/store/favorites-slice.js";
 import FavoritesAddToCartButton from "../UI/FavoritesAddToCartButton.jsx";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function FavoritesProducts({ product }) {
   const dispatch = useDispatch();
 
@@ -37,7 +39,7 @@ export default function FavoritesProducts({ product }) {
         className="min-w-40 aspect-square w-40 bg-gray-100 flex justify-center items-center"
       >
         <img
-          src={`http://localhost:3000/${product.color.image}`}
+          src={`${API_URL}/${product.color.image}`}
           alt={product.alt}
           className="w-[90%]"
         />

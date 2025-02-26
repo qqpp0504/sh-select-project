@@ -7,6 +7,8 @@ import Button from "../UI/Button.jsx";
 import { filterActions } from "@/store/filter-slice.js";
 import { useEffect } from "react";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function ProductsList({ products }) {
   const [searchParams] = useSearchParams();
   const dispatch = useDispatch();
@@ -56,10 +58,7 @@ export default function ProductsList({ products }) {
           <li key={product.id} className="lg:mb-14">
             <Link to={`/products/${product.slug}`}>
               <div className="bg-gray-100 mb-4 flex justify-center items-center">
-                <img
-                  src={`http://localhost:3000/${product.image}`}
-                  alt={product.alt}
-                />
+                <img src={`${API_URL}/${product.image}`} alt={product.alt} />
               </div>
 
               <div className="ml-3 text-sm lg:ml-0 lg:text-base">

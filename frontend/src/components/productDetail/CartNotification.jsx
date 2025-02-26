@@ -8,6 +8,8 @@ import { currencyFormatter } from "@/util/formatting.js";
 import Button from "../UI/Button.jsx";
 import { cartActions } from "@/store/cart-slice.js";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function CartNotification() {
   const { activeItem, totalQuantity, scrollPosition, showingNotification } =
     useSelector((state) => state.cart);
@@ -84,7 +86,7 @@ export default function CartNotification() {
         <div className="h-28 flex items-center gap-3">
           <div className="w-28 h-full bg-slate-100 flex justify-center items-center">
             <img
-              src={`http://localhost:3000/${activeItem.color.image}`}
+              src={`${API_URL}/${activeItem.color.image}`}
               alt={activeItem.alt}
               className="w-[90%]"
             />
