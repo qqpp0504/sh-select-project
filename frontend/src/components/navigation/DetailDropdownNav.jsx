@@ -29,7 +29,7 @@ export default function DetailDropdownNav({
         </button>
       </div>
 
-      <div className="px-3">
+      <div className="px-3 pb-20">
         {selectedOption && (
           <>
             <Link to={selectedOption.link} onClick={onClose}>

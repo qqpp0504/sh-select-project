@@ -75,7 +75,7 @@ export default function ResponsiveCheckoutButton() {
       {!userData.token && isOpenModal && (
         <div
           onClick={handleCloseCheckoutButtonModal}
-          className="absolute top-0 left-0 bg-black opacity-30 w-full h-screen z-20"
+          className="fixed top-0 left-0 bg-black opacity-30 w-full h-screen z-40"
         ></div>
       )}
     </div>

@@ -61,7 +61,7 @@ export default function CartForm({ product, onSelect }) {
       if (token) {
         mutate(data);
       } else {
-        navigate("/accounts");
+        navigate("/favorites");
       }
     }
   }

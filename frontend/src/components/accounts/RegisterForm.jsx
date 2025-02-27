@@ -202,11 +202,13 @@ export default function RegisterForm() {
             </label>
           </div>
         </div>
-        <div className="my-9 flex justify-end">
+        <div className="my-9 flex sm:justify-end">
           <Button
             type={`${isPending ? "button" : "submit"}`}
             size="custom"
-            className={`${isPending ? "py-3 px-8" : "py-3 px-6"}`}
+            className={`w-full sm:w-auto ${
+              isPending ? "py-3 px-8" : "py-3 px-6"
+            }`}
           >
             {isPending ? (
               <LoadingIndicator color="white" margin="my-0" />
