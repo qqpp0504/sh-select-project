@@ -27,6 +27,8 @@ import OrderDetailPage from "./pages/OrderDetail.jsx";
 import MemberRootLayout from "./pages/MemberRootLayout.jsx";
 import NotFoundPage from "./pages/NotFound.jsx";
 
+const basename = import.meta.env.VITE_PUBLIC_URL;
+
 const HomePage = lazy(() => import("./pages/Home.jsx"));
 const MenPage = lazy(() => import("./pages/Men.jsx"));
 const WomenPage = lazy(() => import("./pages/Women.jsx"));
@@ -128,7 +130,7 @@ const router = createBrowserRouter(
     },
   ],
   {
-    basename: "/sh-select-project",
+    basename: `${basename}`,
   }
 );
 
