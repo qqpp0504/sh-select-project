@@ -125,7 +125,7 @@ export default function MainNav() {
             onClick={handlePreventDefault}
           >
             <div className="p-[0.375rem] rounded-full hover:bg-gray-200 block lg:hidden">
-              <RiAccountCircleLine />
+              <RiAccountCircleLine size="1.45rem" />
             </div>
           </Link>
 

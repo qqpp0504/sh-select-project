@@ -79,7 +79,7 @@ export default function Footer() {
 
       <ResponsiveFooter footerData={FOOTERDATA} />
 
-      <div className="bg-gray-100 pt-8 flex flex-col items-center">
+      <div className="bg-gray-100 pt-8 flex flex-col items-center pb-24 lg:pb-0">
         <ul className="flex flex-row items-center gap-3 md:gap-4 mb-1">
           {COMMUNITYLOGO.map(({ logo: Icon, href }) => (
             <li key={href}>
@@ -89,7 +89,7 @@ export default function Footer() {
             </li>
           ))}
         </ul>
-        <span className="py-2 text-gray uppercase text-sm">
+        <span className="px-4 py-2 text-gray uppercase text-sm">
           {`${currentYear}`} &copy; SH Select
           此網站僅作為作品集展示用途，故請勿下單
         </span>

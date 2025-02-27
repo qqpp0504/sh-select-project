@@ -47,7 +47,7 @@ export default function DetailInformationModal({ product }) {
           <div>
             <button
               onClick={handleCloseDetail}
-              className="p-[0.3rem] bg-gray-100 rounded-full hover:bg-gray-300"
+              className="p-[0.3rem] bg-gray-100 rounded-full outline-none hover:bg-gray-300"
             >
               <IoCloseOutline size="1.7rem" />
             </button>

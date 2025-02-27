@@ -16,7 +16,7 @@ export default function BrandDetail({ brand, index }) {
       className="w-full py-4"
     >
       <div className="flex flex-col md:flex-row gap-8">
-        <div className="w-full h-64 lg:w-96 md:w-80 md:h-64 lg:h-80 rounded-2xl overflow-hidden">
+        <div className="w-full h-64 lg:w-96 md:w-80 md:h-64 lg:h-80 rounded-2xl overflow-hidden bg-gray-200">
           <img
             src={brand.image}
             alt={brand.alt}

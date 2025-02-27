@@ -19,7 +19,7 @@ export default function SizeDetailModal({ productSizeInfo }) {
           <h3 className="text-xl font-500">尺寸資訊</h3>
           <button
             onClick={handleCloseSizeDetail}
-            className="p-[0.3rem] bg-gray-100 rounded-full hover:bg-gray-300"
+            className="p-[0.3rem] bg-gray-100 rounded-full outline-none hover:bg-gray-300"
           >
             <IoCloseOutline size="1.7rem" />
           </button>
