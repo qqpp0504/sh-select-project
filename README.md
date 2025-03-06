@@ -28,7 +28,7 @@ SH SELECT 是一個電商網站作品，整體復刻自 [**Nike**](https://www.n
 
 <br>
 
-## 使用之技能
+## 使用技能與第三方套件
 
 ### 前端技術
 
@@ -59,6 +59,18 @@ SH SELECT 是一個電商網站作品，整體復刻自 [**Nike**](https://www.n
 使用 Node.js 搭配 Express 框架來構建伺服器，以及使用後端 JSON 檔案存放應用所需資料，作為輕量級的資料庫。
 
 💭 本專案的後端部分主要由 **ChatGPT** 協助生成，感謝他的偉大！
+
+### 第三方套件
+
+- **React Icons**：提供多種常見圖示庫，本專案使用之所有 Icon 均為此套件下的圖示。
+
+- **AOS (Animate On Scroll)**：用來在滾動時觸發動畫效果，本專案的 [**品牌頁面**](https://qqpp0504.github.io/sh-select-project/brands) 有使用到此套件。
+
+- **Swiper**：滑動式輪播 (Carousel) 套件，在本專案的 [**商品詳細頁面**](https://qqpp0504.github.io/sh-select-project/products/p1-ordinary-%E6%8B%BC%E6%8E%A5%E6%BB%BE%E9%82%8A%E5%86%B0%E7%90%83%E9%95%B7Tee) 中，當螢幕寬度尺寸小於 1024px 時，有使用到此套件。
+
+- **LottieFiles**：動畫資源平台提供的動畫套件，在本專案的 [**結帳頁面**](https://qqpp0504.github.io/sh-select-project/checkout) 中，下訂單後彈出的 Modal 中，有使用到此動畫套件。
+
+- **Radix UI**：一個開源的 React UI 組件庫，在本專案的 [**購物車頁面**](https://qqpp0504.github.io/sh-select-project/cart) 中，將商品加入最愛後彈出的 Modal 中，有使用到此套件提供的 Progress 組件。
 
 <br>
 
