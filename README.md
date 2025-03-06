@@ -1,11 +1,10 @@
 # SH SELECT 電商網站
 
-<div>
-  <img src="frontend/src/assets/screenshot/web-version.png" alt="Mobile Version" width="693" style="margin-right: 20px;" />
-  <img src="frontend/src/assets/screenshot/mobile-version.png" alt="Web Version" width="200" />
-</div>
+![Website Screenshot](frontend/src/assets/screenshot/web-version.png)
 
 <br>
+
+本專案網址 (GitHub page)：https://qqpp0504.github.io/sh-select-project
 
 SH SELECT 是一個電商網站作品，整體復刻自 [**Nike**](https://www.nike.com/tw/) 官方網站。不同於 Nike 官網，本作品網站為服飾選貨為主題，選自各大知名潮流品牌之服飾產品來進行商品展示。用戶可以輕鬆完成購物流程，享受高效的購物體驗。
 
@@ -67,6 +66,8 @@ SH SELECT 是一個電商網站作品，整體復刻自 [**Nike**](https://www.n
 
 使用 Vite 作為構建工具。
 透過 Github、Render 平台進行前後端部署。
+
+⚠️ 由於 Render 平台的免費方案有冷啟動（Cold Start）問題，也就是伺服器會進入休眠狀態，當有請求時才會重新啟動，可能會導致首次加載變慢，故進入網站可能要耐心等待數秒時間加載資訊。
 
 <br>
 
