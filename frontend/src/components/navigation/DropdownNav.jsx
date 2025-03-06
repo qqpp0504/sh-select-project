@@ -106,7 +106,9 @@ export default function DropdownNav({ isOpenNav, setIsOpenNav }) {
                   瞭解更多資訊
                 </Link>
                 <div className="flex gap-2 mt-6">
-                  <Button link="/accounts">加入</Button>
+                  <Button link="/membership" onClick={handleCloseNav}>
+                    加入
+                  </Button>
                   <Button link="/accounts" variant="bordered">
                     登入
                   </Button>

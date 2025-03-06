@@ -15,12 +15,26 @@ async function add(data) {
   const storedData = await readData();
   const userId = generateId();
   const hashedPw = await hash(data.password, 12);
+
   if (!storedData.users) {
     storedData.users = [];
   }
-  storedData.users.push({ ...data, password: hashedPw, id: userId });
+
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = now.getMonth() + 1; // `getMonth()` 從 0 開始計算，所以要 +1
+
+  const newUser = {
+    ...data,
+    password: hashedPw,
+    id: userId,
+    createdAt: { year, month }, // 儲存年和月
+  };
+
+  storedData.users.push(newUser);
   await writeData(storedData);
-  return { id: userId, email: data.email };
+
+  return { id: userId, email: data.email, year, month };
 }
 
 // 假設你有一個用來讀取和寫入資料的 readData 和 writeData 函式

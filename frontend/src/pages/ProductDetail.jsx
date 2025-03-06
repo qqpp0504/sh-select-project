@@ -38,7 +38,7 @@ export default function ProductDetailPage() {
   return (
     <>
       <SEO
-        title={`${productData.name}。SH SELECT`}
+        title={`${productData.brand} ${productData.name}。SH SELECT`}
         description={productData.summary.productDescription}
       />
       <ProductItem product={productData} />

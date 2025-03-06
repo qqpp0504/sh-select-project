@@ -19,11 +19,7 @@ const FOOTERDATA = {
   品牌: [
     {
       text: "關於 SH SELECT",
-      link: "/",
-    },
-    {
-      text: "最新消息",
-      link: "/",
+      link: "/membership",
     },
   ],
 };
