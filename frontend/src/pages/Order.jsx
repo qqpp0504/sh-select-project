@@ -5,8 +5,10 @@ import { fetchUserOrders } from "@/util/http.js";
 import { currencyFormatter } from "@/util/formatting.js";
 import Button from "@/components/UI/Button.jsx";
 import SEO from "@/components/SEO.jsx";
+import LoadingIndicator from "@/components/UI/LoadingIndicator.jsx";
+import ErrorBlock from "@/components/UI/ErrorBlock.jsx";
 
-export default function MemberPage() {
+export default function OrderPage() {
   const { token, user } = useSelector((state) => state.account.userData);
 
   const {
@@ -140,8 +142,10 @@ export default function MemberPage() {
           )}
         </div>
 
-        {isLoading && <p>isLoading</p>}
-        {isError && <p>{error.message}</p>}
+        {isLoading && <LoadingIndicator />}
+        {isError && (
+          <ErrorBlock message={error.info?.message || "訂單資料加載失敗"} />
+        )}
       </section>
     </>
   );

@@ -138,7 +138,7 @@ export default function DropdownNav({ isOpenNav, setIsOpenNav }) {
               </Link>
               <Link
                 onClick={handleCloseNav}
-                to="/orders"
+                to="/member/orders"
                 className="flex gap-2"
               >
                 <LiaBoxSolid />

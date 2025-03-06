@@ -22,10 +22,11 @@ import HelpQuestionPage from "./components/help/HelpQuestion.jsx";
 import SearchQuestions from "./components/help/SearchQuestions.jsx";
 import FavoritesPage from "./pages/Favorites.jsx";
 import ProtectedRoute from "./components/util/ProtectedRoute.jsx";
-import MemberPage from "./pages/Member.jsx";
+import OrderPage from "./pages/Order.jsx";
 import OrderDetailPage from "./pages/OrderDetail.jsx";
 import MemberRootLayout from "./pages/MemberRootLayout.jsx";
 import NotFoundPage from "./pages/NotFound.jsx";
+import MemberInfo from "./components/member/MemberInfo.jsx";
 
 const basename = import.meta.env.VITE_PUBLIC_URL;
 
@@ -57,14 +58,15 @@ const router = createBrowserRouter(
           ),
         },
         {
-          path: "orders",
+          path: "member",
           element: (
             <ProtectedRoute>
               <MemberRootLayout />
             </ProtectedRoute>
           ),
           children: [
-            { index: true, element: <MemberPage /> },
+            { index: true, element: <MemberInfo /> },
+            { path: "orders", element: <OrderPage /> },
             { path: ":orderId", element: <OrderDetailPage /> },
           ],
         },

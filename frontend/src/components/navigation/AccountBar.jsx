@@ -75,7 +75,7 @@ export default function AccountBar() {
               <ul className="text-gray flex flex-col gap-2">
                 <li>
                   <Link
-                    to="/"
+                    to="/member"
                     onClick={() => setActiveDropdown(null)}
                     className="hover:text-black"
                   >
@@ -84,7 +84,7 @@ export default function AccountBar() {
                 </li>
                 <li>
                   <Link
-                    to="/orders"
+                    to="/member/orders"
                     onClick={() => setActiveDropdown(null)}
                     className="hover:text-black"
                   >

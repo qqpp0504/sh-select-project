@@ -49,12 +49,12 @@ export default function AccountDropdownNav({
 
         <ul className="flex flex-col gap-4 text-gray">
           <li>
-            <Link to="/" onClick={onClose}>
+            <Link to="/member" onClick={onClose}>
               個人檔案
             </Link>
           </li>
           <li>
-            <Link to="/orders" onClick={onClose}>
+            <Link to="/member/orders" onClick={onClose}>
               訂單
             </Link>
           </li>
