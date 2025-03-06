@@ -1,1 +1,84 @@
-{"users":[{"authCode":"12345678","lastName":"測","firstName":"小試","password":"$2a$12$fIfGamdZXSAlhlkHRW4cduIEHtWyCoJb.FM4y5hczIdGKGA.tDIQC","birthdayYear":"2025","birthdayMonth":"1","birthdayDay":"1","agree":true,"email":"test@gmail.com","id":"87d3e6d9-95fc-4e08-b790-9f70b9ea7bba","favorites":[{"id":"p8","productName":"潑漆做舊水洗工作褲","brand":"Ordinary","alt":"Ordinary 潑漆做舊水洗工作褲圖片","slug":"p8-ordinary-潑漆做舊水洗工作褲","category":"下著","allSizes":["M","L","XL"],"originalPrice":2880,"discountPrice":2880,"color":{"name":"水洗灰","image":"ordinary-pants-2.jpg"},"size":"M","favoriteId":"3577986b-a29a-47a3-982c-f9f69d061b8b"},{"id":"p7","productName":"寬鬆廓形西裝外套","brand":"Adidas x BLCG 巴黎世家聯名","alt":"Adidas x BLCG 聯名寬鬆廓形西裝外套圖片","slug":"p7-adidasxBLCG-寬鬆廓形西裝外套","category":"外套及背心","allSizes":["S","M","L","XL"],"originalPrice":9000,"discountPrice":9000,"color":{"name":"黑色","image":"adidas-blcg.jpg"},"size":"L","favoriteId":"c3581294-6f7b-4335-8e2d-50d034b0d072"}],"orders":[{"lastName":"測","firstName":"小試","country":"台灣","postal":"222","city":"臺北市","districts":"台北","address":"某地","email":"test@gmail.com","phone":"0981818181","products":[{"id":"p2","productName":"大Logo帽Tee","brand":"Nautica","alt":"Nautica 大Logo帽Tee圖片","slug":"p2-nautica-大Logo帽Tee","category":"上衣","allSizes":["S","M","L","XL"],"originalPrice":2500,"discountPrice":2500,"color":{"name":"綠色","image":"nautica-hoodie.jpg"},"size":"S","quantity":4,"itemTotalPrice":10000,"idNumber":1740371565230}],"totalAmount":10000,"totalPrice":10000,"shippingFee":0,"orderType":"member","date":"2025年02月24日","time":"14:48:23","orderId":"d7347b57-6c5b-44c2-b9d5-3b785d1c082e"}]}]}
+{
+  "users": [
+    {
+      "authCode": "12345678",
+      "lastName": "測",
+      "firstName": "小試",
+      "password": "$2a$12$fIfGamdZXSAlhlkHRW4cduIEHtWyCoJb.FM4y5hczIdGKGA.tDIQC",
+      "birthdayYear": "2025",
+      "birthdayMonth": "1",
+      "birthdayDay": "1",
+      "agree": true,
+      "email": "test@gmail.com",
+      "id": "87d3e6d9-95fc-4e08-b790-9f70b9ea7bba",
+      "favorites": [
+        {
+          "id": "p8",
+          "productName": "潑漆做舊水洗工作褲",
+          "brand": "Ordinary",
+          "alt": "Ordinary 潑漆做舊水洗工作褲圖片",
+          "slug": "p8-ordinary-潑漆做舊水洗工作褲",
+          "category": "下著",
+          "allSizes": ["M", "L", "XL"],
+          "originalPrice": 2880,
+          "discountPrice": 2880,
+          "color": { "name": "水洗灰", "image": "ordinary-pants-2.jpg" },
+          "size": "M",
+          "favoriteId": "3577986b-a29a-47a3-982c-f9f69d061b8b"
+        },
+        {
+          "id": "p7",
+          "productName": "寬鬆廓形西裝外套",
+          "brand": "Adidas x BLCG 巴黎世家聯名",
+          "alt": "Adidas x BLCG 聯名寬鬆廓形西裝外套圖片",
+          "slug": "p7-adidasxBLCG-寬鬆廓形西裝外套",
+          "category": "外套及背心",
+          "allSizes": ["S", "M", "L", "XL"],
+          "originalPrice": 9000,
+          "discountPrice": 9000,
+          "color": { "name": "黑色", "image": "adidas-blcg.jpg" },
+          "size": "L",
+          "favoriteId": "c3581294-6f7b-4335-8e2d-50d034b0d072"
+        }
+      ],
+      "orders": [
+        {
+          "lastName": "測",
+          "firstName": "小試",
+          "country": "台灣",
+          "postal": "222",
+          "city": "臺北市",
+          "districts": "台北",
+          "address": "某地",
+          "email": "test@gmail.com",
+          "phone": "0981818181",
+          "products": [
+            {
+              "id": "p2",
+              "productName": "大Logo帽Tee",
+              "brand": "Nautica",
+              "alt": "Nautica 大Logo帽Tee圖片",
+              "slug": "p2-nautica-大Logo帽Tee",
+              "category": "上衣",
+              "allSizes": ["S", "M", "L", "XL"],
+              "originalPrice": 2500,
+              "discountPrice": 2500,
+              "color": { "name": "綠色", "image": "nautica-hoodie.jpg" },
+              "size": "S",
+              "quantity": 4,
+              "itemTotalPrice": 10000,
+              "idNumber": 1740371565230
+            }
+          ],
+          "totalAmount": 10000,
+          "totalPrice": 10000,
+          "shippingFee": 0,
+          "orderType": "member",
+          "date": "2025年02月24日",
+          "time": "14:48:23",
+          "orderId": "d7347b57-6c5b-44c2-b9d5-3b785d1c082e"
+        }
+      ]
+    }
+  ]
+}
