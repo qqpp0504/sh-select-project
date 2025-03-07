@@ -114,6 +114,8 @@ SH SELECT 是一個電商網站作品，整體復刻自 [**Nike**](https://www.n
 信箱：test@gmail.com  
 密碼：Test1234
 
+⚠️ 也可自行註冊帳號體驗註冊、登入流程。
+
 <br>
 
 ## 尚未完成與注意事項
