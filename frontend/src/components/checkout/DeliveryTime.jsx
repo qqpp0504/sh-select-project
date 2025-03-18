@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 export default function DeliveryTime({ className }) {
   const now = new Date();
 
